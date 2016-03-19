@@ -3,7 +3,7 @@
 # Ben Fasoli
 
 setwd('/uufs/chpc.utah.edu/common/home/lin-group2/measurements/')
-source('proc/global.R')
+source('uataq-proc/global.R')
 
 # Packages --------------------------------------------------------------------
 lib <- '/uufs/chpc.utah.edu/common/home/u0791983/.Rpackages'
