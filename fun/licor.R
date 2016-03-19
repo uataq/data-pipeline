@@ -84,7 +84,7 @@ remove_bad <- function(df, site) {
 }
 
 # Directory structure and data ------------------------------------------------
-if (reset[[site]] | globalReset) {
+if (reset[[site]] | global_reset) {
   system(paste0('rm ', 'data/', site, '/parsed/*')) 
   system(paste0('rm ', 'data/', site, '/calibrated/*'))
   dir.create(file.path('data', site, 'parsed'), 

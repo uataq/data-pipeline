@@ -4,7 +4,7 @@ reset <- list(
   fru = F, 
   heb = F,
   hpl = F,
-  lgn = T,
+  lgn = F,
   roo = F,
   rpk = F,
   sug = F,
@@ -14,4 +14,4 @@ reset <- list(
   wbb = F
 )
 
-globalReset <- F
+global_reset <- T

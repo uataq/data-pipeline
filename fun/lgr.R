@@ -24,7 +24,7 @@ pull_lgr <- function(ip, site) {
 # Directory structure and data ------------------------------------------------
 pull_lgr(ip, site)
 
-if (reset[[site]] | globalReset) {
+if (reset[[site]] | global_reset) {
   system(paste0('rm ', 'data/', site, '/parsed/*')) 
   system(paste0('rm ', 'data/', site, '/calibrated/*'))
   dir.create(file.path('data', site, 'parsed'), 
