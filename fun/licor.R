@@ -63,26 +63,6 @@ get_cr1000 <- function(ip, port, table, site){
   return(data)
 }
 
-remove_bad <- function(df, site) {
-  bad <- readr::read_csv(paste0('proc/bad/', site, '.txt'), 
-                         locale=locale(tz='UTC'))
-  with(bad, {
-    for (i in 1:length(miu_old)) {
-      if (grepl('all', miu_old[i], ignore.case=T)) {
-        mask <- df$Time_UTC >= t_start[i] & 
-          df$Time_UTC <= t_end[i]
-        df   <- subset(df, !mask)
-      } else {
-        mask <- df$Time_UTC >= t_start[i] & 
-          df$Time_UTC <= t_end[i] &
-          grepl(miu_old[i], df$ID, fixed=T)
-        df$ID[mask] <- miu_new[i]
-      }
-    }
-  })
-  return(df)
-}
-
 # Directory structure and data ------------------------------------------------
 if (reset[[site]] | global_reset) {
   system(paste0('rm ', 'data/', site, '/parsed/*')) 
@@ -112,7 +92,6 @@ uataq::archive(parsed, path=file.path('data', site, 'parsed/%Y_%m_parsed.dat'))
 if (cal_all) {
   files <- dir(file.path('data', site, 'parsed'), full.names=T)
 } else files <- tail(dir(file.path('data', site, 'parsed'), full.names=T), 2)
-
 parsed <- lapply(files, read_csv, locale=locale(tz='UTC')) %>% bind_rows()
 
 cal <- with(parsed, 
