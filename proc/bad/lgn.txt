@@ -1,4 +1,0 @@
-t_start, t_end, miu_old, miu_new, comment
-2015-05-01 00:00:00.000, 2015-07-28 00:00:00.000, all, NA, Ben: Start of proper data.
-2015-09-15 00:00:00.000, 2015-09-28 19:20:00.000, all, NA, Ben: No nitrogen flow.
-2016-01-25 23:55:00.000, 2016-01-26 00:30:00.000, all, NA, Ryan: Bad calibration
