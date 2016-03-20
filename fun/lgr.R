@@ -58,7 +58,6 @@ tfs <- dir('data/wbb/raw', 'f....\\.{1}txt$', full.names=T, recursive=T)
 if (!cal_all) tfs <- tail(tfs, 2)
 
 # Read files ------------------------------------------------------------------
-tfs <- tfs_old[1:200]
 raw <- lapply(tfs, function(tf) {
   df <- tryCatch(suppressWarnings(
     read_csv(tf, col_names=F, skip=2, na=c('TO', '', 'NA'), 
