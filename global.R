@@ -23,19 +23,16 @@ global_reset <- T
 remove_bad <- function(df, site) {
   bad <- readr::read_csv(paste0('uataq-proc/bad/', site, '.txt'), 
                          locale=locale(tz='UTC'))
-  with(bad, {
-    for (i in 1:length(miu_old)) {
-      if (grepl('all', miu_old[i], ignore.case=T)) {
-        mask <- df$Time_UTC >= t_start[i] & 
-          df$Time_UTC <= t_end[i]
-        df   <- subset(df, !mask)
-      } else {
-        mask <- df$Time_UTC >= t_start[i] & 
-          df$Time_UTC <= t_end[i] &
-          grepl(miu_old[i], df$ID)
-        df$ID[mask] <- miu_new[i]
-      }
+  for (i in 1:nrow(bad)) {
+    if (grepl('all', bad$miu_old[i], ignore.case=T)) {
+      mask <- df$Time_UTC >= bad$t_start[i] & 
+        df$Time_UTC <= bad$t_end[i]
+    } else {
+      mask <- df$Time_UTC >= bad$t_start[i] & 
+        df$Time_UTC <= bad$t_end[i] &
+        grepl(bad$miu_old[i], df$ID)
     }
-  })
+    df$ID[mask] <- bad$miu_new[i]
+  }
   return(df)
 }

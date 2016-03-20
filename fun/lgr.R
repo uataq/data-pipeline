@@ -105,15 +105,16 @@ parsed <- raw %>%
   select(-pre_utc) %>%
   filter(!duplicated(Time_UTC)) %>%
   remove_bad(site) %>%
-  mutate(ID = gsub('\\s+|V:{1}[0-9]', '', ID),
-         ID = gsub('atmosphere', '-10', ID, ignore.case=T),
-         ID = gsub('flush', '-99', ID, ignore.case=T),
-         ID = gsub('unknown', 'NA', ID, ignore.case=T),
-         tmp_split = stringr::str_split_fixed(ID, '~', 3)) %>%
   filter(nchar(ID) > 0,
          !is.na(ID),
          GasP_torr > 135,
-         GasP_torr < 145)
+         GasP_torr < 145) %>%
+  mutate(ID = gsub('\\s+|V:{1}[0-9]', '', ID),
+         ID = gsub('atmosphere', '-10', ID, ignore.case=T),
+         ID = gsub('flush', '-99', ID, ignore.case=T),
+         ID = gsub('unknown', 'NA', ID, ignore.case=T)) 
+
+ID_split = stringr::str_split_fixed(parsed$ID, '~', 3)
 
 
 
