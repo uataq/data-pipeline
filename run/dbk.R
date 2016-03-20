@@ -7,6 +7,6 @@ port   <- 3001
 table  <- 'Dat'
 
 # Processing ------------------------------------------------------------------
-source('/uufs/chpc.utah.edu/common/home/lin-group2/measurements/uataq-proc/fun/licor.R')
+source('/uufs/chpc.utah.edu/common/home/lin-group2/measurements/lair-proc/fun/licor.R')
 
 q('no')
