@@ -3,7 +3,7 @@ LAIR and UATAQ processing is actively developed and maintained by [Ben Fasoli](h
 ## Updating CHPC
 Data processing is housed on `lin-group2`. To update to revised versions of the git repository, run
 ```
-cd /uufs/chpc.utah.edu/common/home/lin-group2/measurements/uataq-proc
+cd /uufs/chpc.utah.edu/common/home/lin-group2/measurements/lair-proc
 git pull
 ```
 
