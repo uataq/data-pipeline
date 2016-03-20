@@ -106,20 +106,20 @@ parsed <- raw %>%
   filter(!duplicated(Time_UTC)) %>%
   remove_bad(site) %>%
   filter(nchar(ID) > 0,
-         !is.na(ID),
          GasP_torr > 135,
          GasP_torr < 145) %>%
   mutate(ID = gsub('\\s+|V:{1}[0-9]', '', ID),
-         ID = gsub('atmosphere', '-10', ID, ignore.case=T),
-         ID = gsub('flush', '-99', ID, ignore.case=T),
-         ID = gsub('unknown', 'NA', ID, ignore.case=T)) 
+         ID = gsub('^~', '', ID),
+         ID = gsub('unknown', NA, ID, ignore.case=T)) %>%
+  filter(!is.na(ID))
 
-ID_split = stringr::str_split_fixed(parsed$ID, '~', 3)
+ID_split <- stringr::str_split_fixed(parsed$ID, '~', 2)
+ID_split[grepl('atmosphere', ID_split[ ,1], ignore.case=T)] <- '-10'
+ID_split[grepl('flush', ID_split[ ,1], ignore.case=T)]      <- '-99'
+ID_split <- matrix(as.numeric(ID_split), ncol=2)
 
-
-
-
-
+parsed$ID_co2 <- ID_split[ ,1]
+parsed$ID_ch4 <- ID_split[ ,2]
 
 uataq::archive(parsed, path=file.path('data', site, 'parsed/%Y_%m_parsed.dat'))
 
@@ -129,11 +129,21 @@ if (cal_all) {
 } else files <- tail(dir(file.path('data', site, 'parsed'), full.names=T), 2)
 parsed <- lapply(files, read_csv, locale=locale(tz='UTC')) %>% bind_rows()
 
-cal <- with(parsed, 
-            uataq::calibrate(Time_UTC, rawCO2, ID,
-                             auto=T, er_tol=0.15, dt_tol=18000)) %>%
-  rename(Time_UTC = time,
-         CO2d_ppm_cal = cal)
+cal_co2 <- with(parsed, 
+            uataq::calibrate(Time_UTC, CO2d_ppm, ID_co2,
+                             auto=T, er_tol=0.15, dt_tol=18000))
+
+cal_ch4 <- with(parsed, 
+                uataq::calibrate(Time_UTC, CH4d_ppm, ID_ch4,
+                                 auto=T, er_tol=0.15, dt_tol=18000))
+
+cal <- data_frame(Time_UTC = cal_co2$time,
+                  CO2d_ppm_cal = cal_co2$cal,
+                  CO2d_ppm_raw = cal_co2$raw,
+                  CH4d_ppm_cal = cal_ch4$cal,
+                  CH4d_ppm_raw = cal_ch4$raw,
+                  n_co2        = cal_co2$n,
+                  n_ch4        = cal_ch4$n)
 
 uataq::archive(cal, path=file.path('data', site, 
                                    'calibrated/%Y_%m_calibrated.dat'))
