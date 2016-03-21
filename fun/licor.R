@@ -36,7 +36,7 @@ get_cr1000 <- function(ip, port, table, site){
     t_end   <- ''
   }
   
-  python.load('proc/fun/licor_init.py')
+  python.load('lair-proc/fun/licor_init.py')
   raw <- python.call('crpull', ip, port, table, t_start, t_end)
   
   if(all(is.null(raw)) | length(raw) < 2) stop('No new data found on logger.')
