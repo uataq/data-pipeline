@@ -64,7 +64,9 @@ raw <- lapply(tfs, function(tf) {
     read_csv(tf, col_names=F, skip=2, na=c('TO', '', 'NA'), 
              locale=locale(tz='UTC'))),
     error=function(e){NULL})
-  if(is.null(df) | ncol(df) < 23) return(NULL)
+  
+  if(is.null(df) | ncol(df) < 23 | ncol(df) > 24) return(NULL)
+  
   # Adapt column names depending on LGR software version.
   #  2013-2014 version has 23 columns.
   #  2014+ version has 24 columns (MIU split into valve and description).
