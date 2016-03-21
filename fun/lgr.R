@@ -4,6 +4,7 @@
 
 setwd('/uufs/chpc.utah.edu/common/home/lin-group2/measurements/')
 source('lair-proc/global.R')
+lock_create()
 
 # Packages --------------------------------------------------------------------
 lib <- '/uufs/chpc.utah.edu/common/home/u0791983/.Rpackages'
@@ -146,3 +147,5 @@ cal <- data_frame(Time_UTC     = cal_co2$time,
 
 uataq::archive(cal, path=file.path('data', site, 
                                    'calibrated/%Y_%m_calibrated.dat'))
+
+lock_remove()
