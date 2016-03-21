@@ -21,7 +21,7 @@ global_reset <- T
 
 # Functions -------------------------------------------------------------------
 remove_bad <- function(df, site) {
-  bad <- readr::read_csv(paste0('uataq-proc/bad/', site, '.txt'), 
+  bad <- readr::read_csv(paste0('lair-proc/bad/', site, '.txt'), 
                          locale=locale(tz='UTC'))
   for (i in 1:nrow(bad)) {
     if (grepl('all', bad$miu_old[i], ignore.case=T)) {
