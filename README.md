@@ -11,6 +11,23 @@ The trace gas processing tools are broken into four components
 3. `fun` directory. Contains R and Python code that performs the bulk of the data processing utilizing the [UATAQ R package](https://github.com/benfasoli/uataq).  
 4. `run` directory. Contains R scripts that initialize site-specific parameters such as IP addresses, ports, and CR1000 data table names before calling the code found in `fun`.
 
+# Site naming conventions
+Additional site details can be found at [http://air.utah.edu/sites/](http://air.utah.edu/sites/)  
+
+Site                   | Abbreviation
+-----------------------|----------------------------------
+Castle Peak            | csp
+Daybreak               | dbk
+Fruitland              | fru
+Heber                  | heb
+Horsepool              | hpl
+Logan                  | lgn
+Roosevelt              | roo
+Rose Park              | rpk
+Sugarhouse             | sug
+Suncrest               | sun
+University of Utah     | wbb
+
 # Updating CHPC
 Data processing is housed on `lin-group2`. To update CHPC to a revised version of the master branch of the git repository, run
 ```
