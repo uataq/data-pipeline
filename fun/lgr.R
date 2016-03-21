@@ -123,10 +123,10 @@ parsed$ID_ch4 <- ID_split[ ,2]
 uataq::archive(parsed, path=file.path('data', site, 'parsed/%Y_%m_parsed.dat'))
 
 # Calibrations ----------------------------------------------------------------
-if (cal_all) {
-  files <- dir(file.path('data', site, 'parsed'), full.names=T)
-} else files <- tail(dir(file.path('data', site, 'parsed'), full.names=T), 2)
-parsed <- lapply(files, read_csv, locale=locale(tz='UTC')) %>% bind_rows()
+if (!cal_all) {
+  files <- tail(dir(file.path('data', site, 'parsed'), full.names=T), 2)
+  parsed <- lapply(files, read_csv, locale=locale(tz='UTC')) %>% bind_rows()
+}
 
 cal_co2 <- with(parsed, 
             uataq::calibrate(Time_UTC, CO2d_ppm, ID_co2,
@@ -136,7 +136,7 @@ cal_ch4 <- with(parsed,
                 uataq::calibrate(Time_UTC, CH4d_ppm, ID_ch4,
                                  auto=T, er_tol=0.15, dt_tol=18000))
 
-cal <- data_frame(Time_UTC = cal_co2$time,
+cal <- data_frame(Time_UTC     = cal_co2$time,
                   CO2d_ppm_cal = cal_co2$cal,
                   CO2d_ppm_raw = cal_co2$raw,
                   CH4d_ppm_cal = cal_ch4$cal,
