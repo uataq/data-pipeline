@@ -50,7 +50,7 @@ get_cr1000 <- function(ip, port, table, site){
   types <- c('POSIXct', 'numeric', 'numeric', 'numeric', 'numeric', 'numeric',
              'numeric', 'numeric', 'numeric', 'numeric', 'numeric', 'numeric', 
              'numeric', 'numeric', 'numeric', 'numeric', 'numeric', 'numeric', 
-             'numeric', 'numeric', 'character')
+             'numeric', 'character', 'character')
   for (i in 1:ncol(data)) {
     fun <- switch(types[i],
                   'character' = as.character,
