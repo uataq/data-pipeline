@@ -17,7 +17,7 @@ reset <- list(
   wbb   = F
 )
 
-global_reset <- T
+global_reset <- F
 
 
 # Functions -------------------------------------------------------------------
