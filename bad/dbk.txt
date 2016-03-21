@@ -1,0 +1,12 @@
+t_start, t_end, miu_old, miu_new, comment
+2015-09-25 00:00:00.000, 2015-09-30 17:00:00.000, -1, 406.58, Ryan: replace std values
+2015-09-25 00:00:00.000, 2015-09-30 17:00:00.000, -2, 486.80, Ryan: replace std values
+2015-09-25 00:00:00.000, 2015-09-30 17:00:00.000, -3, 573.06, Ryan: replace std values
+2015-10-01 21:20:00.000, 2015-10-02 01:30:00.000, all, NA, Doug: strange values after storm
+2015-10-04 21:14:00.000, 2015-10-05 00:00:00.000, all, NA, Ben: instrument issues with storm
+2015-10-10 22:20:00.000, 2015-10-11 00:00:00.000, all, NA, Ben: instrument issues with storm
+2015-10-12 20:50:00.000, 2015-10-13 01:30:00.000, all, NA, Ben: instrument issues with storm
+2015-10-13 20:35:00.000, 2015-10-14 01:24:00.000, all, NA, Ben: instrument issues with storm
+2015-10-14 20:10:00.000, 2015-10-15 01:15:00.000, all, NA, Ben: instrument issues with storm
+2015-10-15 20:24:00.000, 2015-10-16 01:27:00.000, all, NA, Ben: instrument issues with storm
+2015-10-16 15:22:00.000, 2015-10-16 16:13:10.000, all, NA, Ben: Ryan and doug on site

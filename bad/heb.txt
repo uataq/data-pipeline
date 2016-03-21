@@ -1,0 +1,4 @@
+t_start, t_end, miu_old, miu_new, comment
+2015-07-01 00:00:00.000, 2015-07-07 11:02:00.000, -1, 364.58, Ben: Known inputs forgotten.
+2015-08-03 08:24:39.000, 2015-08-03 08:24:41.000, all, NA, Ben: Single suspect data point.
+2015-08-29 00:00:00.000, 2015-12-01 00:00:00.000, 364.58, NA, Ben: Empty tank.
