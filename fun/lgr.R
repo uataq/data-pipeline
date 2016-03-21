@@ -39,7 +39,7 @@ if (reset[[site]] | global_reset) {
 
 # Determine files to be read --------------------------------------------------
 # Unzip necessary compressed data packets
-dir('data/wbb/raw', '\\.{1}txt\\.{1}zip', full.names=T, recursive=T) %>%
+dir(file.path('data', site, 'raw'), '\\.{1}txt\\.{1}zip', full.names=T, recursive=T) %>%
   lapply(function(zf) {
     tf <- tools::file_path_sans_ext(zf)
     if (file.exists(tf) && round(file.mtime(zf))==round(file.mtime(tf))) {
@@ -54,7 +54,7 @@ dir('data/wbb/raw', '\\.{1}txt\\.{1}zip', full.names=T, recursive=T) %>%
   }) %>% 
   invisible()
 
-tfs <- dir('data/wbb/raw', 'f....\\.{1}txt$', full.names=T, recursive=T)
+tfs <- dir(file.path('data', site, 'raw'), 'f....\\.{1}txt$', full.names=T, recursive=T)
 if (!cal_all) tfs <- tail(tfs, 2)
 
 # Read files ------------------------------------------------------------------
