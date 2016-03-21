@@ -59,7 +59,7 @@ get_cr1000 <- function(ip, port, table, site){
                     as.POSIXct(x, tz='UTC', format='%Y-%m-%d %H:%M:%S')})
     data[[i]] <- fun(data[[i]])
   }
-
+  
   uataq::archive(data, path=file.path('data', site, 'raw/%Y_%m_raw.dat'))
   return(data)
 }
@@ -76,8 +76,12 @@ if (reset[[site]] | global_reset) {
   cal_all <- T
   
   raw <- dir(paste0('data/', site, '/raw'), full.names=T) %>%
-    lapply(read_csv, locale=locale(tz='UTC')) %>%
+    lapply(read_csv, col_names=F, locale=locale(tz='UTC')) %>%
     bind_rows()
+  colnames(raw) <- c('Time_UTC', 'n', 'Year', 'jDay', 'HH', 'MM', 'SS',
+                     'batt_volt', 'PTemp', 'Room_T', 'IRGA_T', 'IRGA_P',
+                     'MF_Controller_mLmin', 'PressureVolt', 'rhVolt', 'gas_T',
+                     'rawCO2_Voltage', 'rawCO2', 'rawH2O', 'ID', 'Program')
   raw <- bind_rows(raw, get_cr1000(ip, port, table, site))
 } else {
   cal_all <- F
@@ -102,6 +106,6 @@ cal <- with(parsed,
          CO2d_ppm_cal = cal)
 
 uataq::archive(cal, path=file.path('data', site, 
-                                'calibrated/%Y_%m_calibrated.dat'))
+                                   'calibrated/%Y_%m_calibrated.dat'))
 
 lock_remove()
