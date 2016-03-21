@@ -50,7 +50,7 @@ get_cr1000 <- function(ip, port, table, site){
   types <- c('POSIXct', 'numeric', 'numeric', 'numeric', 'numeric', 'numeric',
              'numeric', 'numeric', 'numeric', 'numeric', 'numeric', 'numeric', 
              'numeric', 'numeric', 'numeric', 'numeric', 'numeric', 'numeric', 
-             'numeric', 'character', 'character')
+             'numeric', 'numeric', 'character')
   for (i in 1:ncol(data)) {
     fun <- switch(types[i],
                   'character' = as.character,
@@ -94,10 +94,10 @@ parsed <- remove_bad(raw, site)
 uataq::archive(parsed, path=file.path('data', site, 'parsed/%Y_%m_parsed.dat'))
 
 # Calibrations ----------------------------------------------------------------
-if (cal_all) {
-  files <- dir(file.path('data', site, 'parsed'), full.names=T)
-} else files <- tail(dir(file.path('data', site, 'parsed'), full.names=T), 2)
-parsed <- lapply(files, read_csv, locale=locale(tz='UTC')) %>% bind_rows()
+if (!cal_all) {
+  files <- tail(dir(file.path('data', site, 'parsed'), full.names=T), 2)
+  parsed <- lapply(files, read_csv, locale=locale(tz='UTC')) %>% bind_rows()
+}
 
 cal <- with(parsed, 
             uataq::calibrate(Time_UTC, rawCO2, ID,
