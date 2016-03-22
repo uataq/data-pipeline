@@ -76,12 +76,13 @@ if (reset[[site]] | global_reset) {
   cal_all <- T
   
   raw <- dir(paste0('data/', site, '/raw'), full.names=T) %>%
-    lapply(read_csv, col_names=F, locale=locale(tz='UTC')) %>%
+    lapply(read_csv, locale=locale(tz='UTC'),
+           col_names=c('Time_UTC', 'n', 'Year', 'jDay', 'HH', 'MM', 'SS',
+                       'batt_volt', 'PTemp', 'Room_T', 'IRGA_T', 'IRGA_P',
+                       'MF_Controller_mLmin', 'PressureVolt', 'rhVolt', 
+                       'gas_T', 'rawCO2_Voltage', 'rawCO2', 'rawH2O',
+                       'ID', 'Program')) %>%
     bind_rows()
-  colnames(raw) <- c('Time_UTC', 'n', 'Year', 'jDay', 'HH', 'MM', 'SS',
-                     'batt_volt', 'PTemp', 'Room_T', 'IRGA_T', 'IRGA_P',
-                     'MF_Controller_mLmin', 'PressureVolt', 'rhVolt', 'gas_T',
-                     'rawCO2_Voltage', 'rawCO2', 'rawH2O', 'ID', 'Program')
   raw <- bind_rows(raw, get_cr1000(ip, port, table, site))
 } else {
   cal_all <- F
