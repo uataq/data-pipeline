@@ -1,9 +1,3 @@
-Source code at  
-[https://github.com/benfasoli/lair-proc](https://github.com/benfasoli/lair-proc)  
-[https://github.com/benfasoli/uataq](https://github.com/benfasoli/uataq)
-
-LAIR and UATAQ processing is actively developed and maintained by [Ben Fasoli](https://benfasoli.com).
-
 # Repository structure
 The trace gas processing tools are broken into four components  
 1. `global.R` script. This includes reset flags and functions shared between different processing routines.  
@@ -35,3 +29,10 @@ Data processing is housed on `lin-group2`. To update CHPC to a revised version o
 cd /uufs/chpc.utah.edu/common/home/lin-group2/measurements/lair-proc
 git pull
 ```
+
+# More info
+Source code at  
+[https://github.com/benfasoli/lair-proc](https://github.com/benfasoli/lair-proc)  
+[https://github.com/benfasoli/uataq](https://github.com/benfasoli/uataq)
+
+LAIR and UATAQ processing is actively developed and maintained by [Ben Fasoli](https://benfasoli.com).
