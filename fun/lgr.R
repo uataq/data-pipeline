@@ -65,8 +65,6 @@ raw <- lapply(tfs, function(tf) {
              locale=locale(tz='UTC'))),
     error=function(e){NULL})
   
-  print(tf)
-  
   if(is.null(df) || ncol(df) < 23 || ncol(df) > 24) return(NULL)
   
   # Adapt column names depending on LGR software version.
