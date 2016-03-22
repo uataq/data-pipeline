@@ -144,10 +144,15 @@ cal_ch4 <- with(parsed,
 cal <- data_frame(Time_UTC     = cal_co2$time,
                   CO2d_ppm_cal = cal_co2$cal,
                   CO2d_ppm_raw = cal_co2$raw,
+                  m_co2        = cal_co2$m,
+                  b_co2        = cal_co2$b,
+                  n_co2        = cal_co2$n,
                   CH4d_ppm_cal = cal_ch4$cal,
                   CH4d_ppm_raw = cal_ch4$raw,
-                  n_co2        = cal_co2$n,
-                  n_ch4        = cal_ch4$n)
+                  m_ch4        = cal_ch4$m,
+                  b_ch4        = cal_ch4$b,
+                  n_ch4        = cal_ch4$n) %>%
+  filter(n_co2 > 0 | n_ch4 > 0)
 
 uataq::archive(cal, path=file.path('data', site, 
                                    'calibrated/%Y_%m_calibrated.dat'))

@@ -103,7 +103,8 @@ cal <- with(parsed,
             uataq::calibrate(Time_UTC, rawCO2, ID,
                              auto=T, er_tol=0.15, dt_tol=18000)) %>%
   rename(Time_UTC = time,
-         CO2d_ppm_cal = cal)
+         CO2d_ppm_cal = cal) %>%
+  filter(n > 0)
 
 uataq::archive(cal, path=file.path('data', site, 
                                    'calibrated/%Y_%m_calibrated.dat'))
