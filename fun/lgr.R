@@ -56,7 +56,12 @@ dir(file.path('data', site, 'raw'), '\\.{1}txt\\.{1}zip', full.names=T, recursiv
   invisible()
 
 tfs <- dir(file.path('data', site, 'raw'), 'f....\\.{1}txt$', full.names=T, recursive=T)
-if (!cal_all) tfs <- tail(tfs, 2)
+if (!cal_all) {
+  # Sort by file modification time since older versions of LGR's software
+  # are named non-sequentially
+  tfs <- tfs[order(file.mtime(tfs))]
+  tfs <- tail(tfs, 2)
+}
 
 # Read files ------------------------------------------------------------------
 raw <- lapply(tfs, function(tf) {
