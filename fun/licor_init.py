@@ -3,6 +3,7 @@ import sys
 sys.path.append('/uufs/chpc.utah.edu/common/home/u0791983/Python/anaconda/lib/python2.7/site-packages')
 from pycampbellcr1000 import CR1000
 from datetime import datetime
+
 def crpull(ip, port, table, tstart, tend):
     print('Connecting to device...')
     device = CR1000.from_url('tcp:' + str(ip) + ':' + str(port), timeout=10)

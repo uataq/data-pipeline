@@ -122,8 +122,10 @@ try({
   
   trx_interp %>%
     filter(Time_UTC > Sys.time() - 3600 * 2) %>%
-    (function(x) {if(nrow(x) > 0) 
-      saveRDS(x, file.path(data, site, 'recent.rds'))}) %>%
+    (function(x) {
+      if(nrow(x) > 0) 
+        saveRDS(x, file.path(data, site, 'recent.rds'))
+    }) %>%
     invisible()
   
 })
