@@ -14,11 +14,12 @@ try({
   library(uataq,   lib.loc=lib)
   
   # Functions -------------------------------------------------------------------
-  pull_trx <- function(ip, site) {
-    cmd <- paste0('/usr/bin/rsync -vrutzhO --stats --exclude="archive/" -e ',
-                  '"/usr/bin/ssh -i /uufs/chpc.utah.edu/common/home/u0791983/.ssh/id_rsa" ',
-                  'lgr@', ip, ':/home/lgr/data/ ',
-                  '/uufs/chpc.utah.edu/common/home/lin-group2/measurements/data/', site, '/raw/')
+  pull_trx <- function(ip, site, port) {
+    cmd <- paste0('/usr/bin/rsync --timeout=60 -vrutzhO -e "/usr/bin/ssh -i ',
+                  '/uufs/chpc.utah.edu/common/home/u0791983/.ssh/id_rsa -p ', port,
+                  '" pi@', ip, ':/home/pi/data/ ',
+                  '/uufs/chpc.utah.edu/common/home/lin-group2/measurements/data/', 
+                  site, '/raw/')
     system(cmd)
   }
   
