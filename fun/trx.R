@@ -42,14 +42,21 @@ try({
                                'case_P_hPa', 'amb_T_C', 'amb_RH_pct', 'box_T_C'))
     
     files <- dir(file.path('data', site, 'raw', inst), pattern=pattern, full.names=T)
-    if(!is.null(nf)) files <- tail(files, nf)
+    if (!is.null(nf)) files <- tail(files, nf)
     
-    data <- lapply(files, function(x){ try(readLines(x, skipNul=T)) }) %>%
+    data <- lapply(files, function(x, inst)
+    {
+      try({
+        ln <- readLines(x, skipNul=T)
+        if (inst == 'gps') ln <- grep('$GPGGA', ln, value=T, fixed=T)
+        return(ln)
+      })
+    }, inst=inst) %>%
       unlist() %>%
       uataq::breakstr(ncol=length(hdr))
     
     colnames(data) <- hdr
-    for(col in 2:ncol(data)) data[ ,col] <- as.numeric(data[ ,col])
+    for(col in 2:ncol(data)) data[[col]] <- as.numeric(data[[col]])
     
     if(nrow(data) < 1) return(NULL)
     
@@ -78,8 +85,9 @@ try({
     d$metone$PM25_ugm3 <- d$metone$PM25_ugm3 * 1000 
   }
   if ('gps' %in% names(d)) {
-    d$gps$lat <- with(d$gps, floor(lat/100)+(lat-floor(lat/100)*100)/60)
-    d$gps$lon <- with(d$gps, -(floor(lon/100)+(lon-floor(lon/100)*100)/60))
+    d$gps <- d$gps %>%
+      mutate(lat = floor(lat/100)+(lat-floor(lat/100)*100)/60,
+             lon = -(floor(lon/100)+(lon-floor(lon/100)*100)/60))
   }
   
   for(i in inst){
@@ -96,22 +104,12 @@ try({
     d$met[c('Time_UTC', 'case_T_C', 'case_RH_pct','case_P_hPa', 
             'amb_T_C', 'amb_RH_pct', 'box_T_C')])
   
+  trx <- trx[rowSums(!is.na(trx[-1])) > 0, ]
+  
   trx_s <- trx %>%
     arrange(Time_UTC) %>%
     group_by(Time_UTC = as.POSIXct(trunc(Time_UTC))) %>%
-    summarize(lat = mean(lat, na.rm=T),
-              lon = mean(lon, na.rm=T),
-              alt = mean(alt, na.rm=T),
-              co2d_ppm = mean(co2d_ppm, na.rm=T),
-              ch4d_ppm = mean(ch4d_ppm, na.rm=T),
-              O3_ppbv = mean(O3_ppbv, na.rm=T),
-              PM25_ugm3 = mean(PM25_ugm3, na.rm=T),
-              case_T_C = mean(case_T_C, na.rm=T),
-              case_RH_pct = mean(case_RH_pct, na.rm=T),
-              case_P_hPa = mean(case_P_hPa, na.rm=T),
-              amb_T_C = mean(amb_T_C, na.rm=T),
-              amb_RH_pct = mean(amb_RH_pct, na.rm=T),
-              box_T_C = mean(box_T_C, na.rm=T))
+    summarize_each(funs(mean(., na.rm=T)))
   
   trx_interp <- bind_cols(
     data_frame(Time_UTC = trx_s$Time_UTC),
