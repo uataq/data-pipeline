@@ -47,16 +47,21 @@ try({
     data <- lapply(files, function(x, inst)
     {
       try({
-        ln <- readLines(x, skipNul=T)
+        ln <- readLines(x, skipNul=T, encoding='latin1')
         if (inst == 'gps') ln <- grep('$GPGGA', ln, value=T, fixed=T)
         return(ln)
       })
     }, inst=inst) %>%
       unlist() %>%
+      iconv('latin1', 'ASCII', sub='') %>%
       uataq::breakstr(ncol=length(hdr))
     
     colnames(data) <- hdr
-    for(col in 2:ncol(data)) data[[col]] <- as.numeric(data[[col]])
+    for (col in 2:ncol(data)) {
+      try(
+        data[[col]] <- as.numeric(data[[col]])
+      )
+    }
     
     if(nrow(data) < 1) return(NULL)
     
