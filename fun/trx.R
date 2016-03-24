@@ -25,30 +25,29 @@ try({
   
   read <- function(inst, site, nf=1, pattern='.*\\.{1}dat') {
     hdr <- switch(inst,
-                  '2bo3'  = c('Time_common', 'O3_ppbv', 'CellT_C', 'CellP_hPa',
+                  '2bo3'  = c('Time_UTC', 'O3_ppbv', 'CellT_C', 'CellP_hPa',
                               'Flow_ccmin', 'Date', 'Time'),
-                  'gps'    = c('Time_common', 'NMEA_ID', 'fixtime', 'lat', 'NS', 'lon',
+                  'gps'    = c('Time_UTC', 'NMEA_ID', 'fixtime', 'lat', 'NS', 'lon',
                                'EW', 'quality', 'nsat', 'hordilut','alt', 'alt_unit',
                                'geoidht', 'geoidht_unit', 'DGPS_id','checksum'),
-                  'lgr' = c('Time_common', 'valve', 'lgrtime', 'ch4_ppm', 'ch4_ppm_sd',
+                  'lgr' = c('Time_UTC', 'valve', 'lgrtime', 'ch4_ppm', 'ch4_ppm_sd',
                             'h2o_ppm', 'h2o_ppm_sd', 'co2_ppm', 'co2_ppm_sd', 
                             'ch4d_ppm', 'ch4d_ppm_sd', 'co2d_ppm', 'co2d_ppm_sd',
                             'GasP_torr', 'GasP_torr_sd', 'GasT_C', 'GasT_C_sd', 'AmbT_C',
                             'AmbT_C_sd', 'RD0_us', 'RD0_us_sd', 'RD1_us', 'RD1_us_sd',
-                            'Fit_Flag', 'MIU_v', 'MIU_d'),
-                  'metone' = c('Time_common', 'PM25_ugm3', 'flow_lpm', 'T_C', 'RH_pct',
+                            'Fit_Flag', 'MIU_v', 'MIU'),
+                  'metone' = c('Time_UTC', 'PM25_ugm3', 'flow_lpm', 'T_C', 'RH_pct',
                                'P_hPa', 'unk', 'code'),
-                  'met'    = c('Time_common', 'case_T_C', 'case_RH_pct', 'case_T2_C',
+                  'met'    = c('Time_UTC', 'case_T_C', 'case_RH_pct', 'case_T2_C',
                                'case_P_hPa', 'amb_T_C', 'amb_RH_pct', 'box_T_C'))
     
     files <- dir(file.path('data', site, 'raw', inst), pattern=pattern, full.names=T)
     if(!is.null(nf)) files <- tail(files, nf)
     
-    raw <- lapply(files, function(x){ try(readLines(x, skipNul=T)) }) %>%
-      bind_rows()
+    data <- lapply(files, function(x){ try(readLines(x, skipNul=T)) }) %>%
+      unlist() %>%
+      uataq::breakstr(ncol=length(hdr))
     
-    
-    data <- uataq::breakstr(raw)
     colnames(data) <- hdr
     for(col in 2:ncol(data)) data[ ,col] <- as.numeric(data[ ,col])
     
@@ -68,8 +67,8 @@ try({
                showWarnings=FALSE, recursive=TRUE, mode='0755')
     dir.create(file.path('data', site, 'geoloc'), 
                showWarnings=FALSE, recursive=TRUE, mode='0755')
-    nf <- 1
-  } else nf <- NULL
+    nf <- NULL
+  } else nf <- 1
   
   # Read data and update archives ---------------------------------------------
   d        <- lapply(inst, read, site=site, nf=nf)
