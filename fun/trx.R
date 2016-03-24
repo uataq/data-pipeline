@@ -68,7 +68,8 @@ try({
                showWarnings=FALSE, recursive=TRUE, mode='0755')
     dir.create(file.path('data', site, 'geoloc'), 
                showWarnings=FALSE, recursive=TRUE, mode='0755')
-  }
+    nf <- 1
+  } else nf <- NULL
   
   # Read data and update archives ---------------------------------------------
   d        <- lapply(inst, read, site=site, nf=nf)
