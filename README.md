@@ -1,5 +1,5 @@
 # Repository structure
-The trace gas processing tools are broken into four components  
+The trace gas processing tools are broken into five components  
 1. `global.R` script. This includes reset flags and functions shared between different processing routines.  
 2. `bad` directory. Defines period of data that needs to be corrected or removed from the record at each site. These changes are reflected in the parsed and calibrated datasets.  
 3. `fun` directory. Contains R and Python code that performs the bulk of the data processing utilizing the [UATAQ R package](https://github.com/benfasoli/uataq).  
