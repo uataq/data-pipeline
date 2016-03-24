@@ -47,7 +47,7 @@ try({
     colnames(data) <- c('Time_UTC', 'n', 'Year', 'jDay', 'HH', 'MM', 'SS',
                         'batt_volt', 'PTemp', 'Room_T', 'IRGA_T', 'IRGA_P',
                         'MF_Controller_mLmin', 'PressureVolt', 'rhVolt', 'gas_T',
-                        'rawCO2_Voltage', 'rawCO2', 'rawH2O', 'ID', 'Program')
+                        'rawCO2_Voltage', 'rawCO2', 'rawH2O', 'ID_co2', 'Program')
     types <- c('POSIXct', 'numeric', 'numeric', 'numeric', 'numeric', 'numeric',
                'numeric', 'numeric', 'numeric', 'numeric', 'numeric', 'numeric', 
                'numeric', 'numeric', 'numeric', 'numeric', 'numeric', 'numeric', 
@@ -82,14 +82,14 @@ try({
                          'batt_volt', 'PTemp', 'Room_T', 'IRGA_T', 'IRGA_P',
                          'MF_Controller_mLmin', 'PressureVolt', 'rhVolt', 
                          'gas_T', 'rawCO2_Voltage', 'rawCO2', 'rawH2O',
-                         'ID', 'Program')) %>%
+                         'ID_co2', 'Program')) %>%
       bind_rows()
     raw <- bind_rows(raw, get_cr1000(ip, port, table, site))
   } else {
     cal_all <- F
     raw <- get_cr1000(ip, port, table, site)
   }
-  raw$ID <- round(raw$ID, 2)
+  raw$ID_co2 <- round(raw$ID_co2, 2)
   
   # User defined bad data -------------------------------------------------------
   parsed <- remove_bad(raw, site)
@@ -102,7 +102,7 @@ try({
   }
   
   cal <- with(parsed, 
-              uataq::calibrate(Time_UTC, rawCO2, ID,
+              uataq::calibrate(Time_UTC, rawCO2, ID_co2,
                                auto=T, er_tol=0.15, dt_tol=18000)) %>%
     rename(Time_UTC = time,
            CO2d_ppm_cal = cal) %>%
