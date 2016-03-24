@@ -32,7 +32,7 @@ try({
                                'geoidht', 'geoidht_unit', 'DGPS_id','checksum'),
                   'lgr' = c('Time_UTC', 'valve', 'lgrtime', 'ch4_ppm', 'ch4_ppm_sd',
                             'h2o_ppm', 'h2o_ppm_sd', 'co2_ppm', 'co2_ppm_sd', 
-                            'ch4d_ppm', 'ch4d_ppm_sd', 'co2d_ppm', 'co2d_ppm_sd',
+                            'CH4d_ppm', 'CH4d_ppm_sd', 'CO2d_ppm', 'CO2d_ppm_sd',
                             'GasP_torr', 'GasP_torr_sd', 'GasT_C', 'GasT_C_sd', 'AmbT_C',
                             'AmbT_C_sd', 'RD0_us', 'RD0_us_sd', 'RD1_us', 'RD1_us_sd',
                             'Fit_Flag', 'MIU_v', 'MIU'),
@@ -98,7 +98,7 @@ try({
   # Geolocation by linear interpolation ---------------------------------------
   trx <- bind_rows(
     d$gps[c('Time_UTC', 'lat', 'lon', 'alt')],
-    d$lgr[c('Time_UTC', 'co2d_ppm', 'ch4d_ppm')],
+    d$lgr[c('Time_UTC', 'CO2d_ppm', 'CH4d_ppm')],
     d$`2bo3`[c('Time_UTC', 'O3_ppbv')],
     d$metone[c('Time_UTC', 'PM25_ugm3')],
     d$met[c('Time_UTC', 'case_T_C', 'case_RH_pct','case_P_hPa', 
