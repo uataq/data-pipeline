@@ -96,6 +96,8 @@ try({
     filter(!is.na(Time_UTC)) %>%
     arrange(Time_UTC)
   
+  if ('MIU_v' %in% names(raw)) raw <- select(raw, -MIU_v)
+  
   # UTC Changeover --------------------------------------------------------------
   # Remove data during 12-29-2015 to 12-30-2015 during which the sites were
   # being changed from local time to UTC.
