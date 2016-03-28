@@ -73,8 +73,8 @@ try({
   pull_trx(ip, site, port)
   
   if (reset[[site]] | global_reset) {
-    system(paste0('rm ', 'data/', site, '/parsed/*')) 
-    system(paste0('rm ', 'data/', site, '/geoloc/*'))
+    system(paste0('rm -r ', 'data/', site, '/parsed/*')) 
+    system(paste0('rm -r ', 'data/', site, '/geoloc/*'))
     dir.create(file.path('data', site, 'parsed'), 
                showWarnings=FALSE, recursive=TRUE, mode='0755')
     dir.create(file.path('data', site, 'geoloc'), 
