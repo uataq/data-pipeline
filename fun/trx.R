@@ -20,7 +20,7 @@ try({
                   '" pi@', ip, ':/home/pi/data/ ',
                   '/uufs/chpc.utah.edu/common/home/lin-group2/measurements/data/', 
                   site, '/raw/')
-    system(cmd)
+    system(print(cmd, quote=F))
   }
   
   read <- function(inst, site, nf=1, pattern='.*\\.{1}dat') {

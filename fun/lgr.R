@@ -19,7 +19,7 @@ try({
                   '"/usr/bin/ssh -i /uufs/chpc.utah.edu/common/home/u0791983/.ssh/id_rsa" ',
                   'lgr@', ip, ':/home/lgr/data/ ',
                   '/uufs/chpc.utah.edu/common/home/lin-group2/measurements/data/', site, '/raw/')
-    system(cmd)
+    system(print(cmd, quote=F))
   }
   
   
