@@ -65,7 +65,7 @@ try({
     
     if(nrow(data) < 1) return(NULL)
     
-    data$Time_UTC <- as.POSIXct(data$Time_UTC, tz='UTC', format='%Y-%m-%d %H:%M:%S')
+    data$Time_UTC <- as.POSIXct(data$Time_UTC, tz='UTC', format='%Y-%m-%d %H:%M:%OS')
     data
   }
   
