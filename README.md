@@ -3,7 +3,7 @@ The trace gas processing tools are broken into five components
 1. `global.R` script. This includes reset flags and functions shared between different processing routines.  
 2. `bad` directory. Defines period of data that needs to be corrected or removed from the record at each site. These changes are reflected in the parsed and calibrated datasets.  
 3. `fun` directory. Contains R and Python code that performs the bulk of the data processing utilizing the [UATAQ R package](https://github.com/benfasoli/uataq).  
-4. `lock` directory. Cron lock files (in the form of `site.running`) prevent execution of processing code if a previous instance is still running.
+4. `lock` directory. Cron lock files (in the form of `site.running`) prevent execution of processing code if a previous instance is still running.  
 5. `run` directory. Contains R scripts that initialize site-specific parameters such as IP addresses, ports, and CR1000 data table names before calling the code found in `fun`.
 
 # Site naming conventions
