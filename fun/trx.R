@@ -70,7 +70,7 @@ try({
   }
   
   # Directory structure and data ------------------------------------------------
-  pull_trx(ip, site, port)
+  try({pull_trx(ip, site, port)})
   
   if (reset[[site]] | global_reset) {
     system(paste0('rm -r ', 'data/', site, '/parsed/*')) 
