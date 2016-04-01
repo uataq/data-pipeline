@@ -84,10 +84,10 @@ try({
                          'gas_T', 'rawCO2_Voltage', 'rawCO2', 'rawH2O',
                          'ID', 'Program')) %>%
       bind_rows()
-    try({raw <- bind_rows(raw, get_cr1000(ip, port, table, site))})
+    raw <- bind_rows(raw, get_cr1000(ip, port, table, site))
   } else {
     cal_all <- F
-    try({raw <- get_cr1000(ip, port, table, site)})
+    raw <- get_cr1000(ip, port, table, site)
   }
   raw$ID <- round(raw$ID, 2)
   
