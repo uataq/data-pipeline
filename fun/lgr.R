@@ -24,7 +24,7 @@ try({
   
   
   # Directory structure and data ------------------------------------------------
-  pull_lgr(ip, site)
+  try({pull_lgr(ip, site)})
   
   if (reset[[site]] | global_reset) {
     system(paste0('rm ', 'data/', site, '/parsed/*')) 
