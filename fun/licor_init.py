@@ -19,11 +19,11 @@ def crpull(ip, port, table, tstart, tend):
         device.bye()
 
     if len(rawdata) > 0:
-        orderedcol = rawdata.filter('Datetime', 'RecNbr', 'Year', 'jDay', 'HH', 'MM', 'SS',
+        orderedcol = rawdata.filter(('Datetime', 'RecNbr', 'Year', 'jDay', 'HH', 'MM', 'SS',
                                      'batt_volt_Min', 'PTemp_Avg', 'Room_T_Avg', 'IRGA_T_Avg', 
                                      'IRGA_P_Avg', 'MF_Controller_mLmin_Avg', 'PressureVolt_Avg', 
                                      'RH_voltage_Avg', 'Gas_T_Avg', 'rawCO2_Voltage_Avg', 
-                                     'rawCO2_Avg', 'rawH2O_Avg', 'ID', 'Program')
+                                     'rawCO2_Avg', 'rawH2O_Avg', 'ID', 'Program'))
         newdata = orderedcol.to_csv(header=False).split('\r\n')
         return(newdata)
     else:
