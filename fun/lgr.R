@@ -5,7 +5,6 @@
 setwd('/uufs/chpc.utah.edu/common/home/lin-group2/measurements/')
 source('lair-proc/global.R')
 lock_create()
-check_bad()
 
 try({
   # Packages --------------------------------------------------------------------
@@ -25,6 +24,7 @@ try({
   
   
   # Directory structure and data ------------------------------------------------
+  check_bad()
   try({pull_lgr(ip, site)})
   
   if (reset[[site]] | global_reset) {
