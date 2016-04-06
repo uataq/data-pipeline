@@ -5,6 +5,7 @@
 setwd('/uufs/chpc.utah.edu/common/home/lin-group2/measurements/')
 source('lair-proc/global.R')
 lock_create()
+check_bad()
 
 try({
   # Packages --------------------------------------------------------------------

@@ -49,3 +49,28 @@ lock_remove <- function() {
   lockfile <- paste0('lair-proc/lock/', site, '.running')
   system(paste('rm', lockfile))
 }
+
+# Bad data reset
+check_bad <- function() {
+  badf <- dir('bad', pattern=site, full.names=T)
+  mt <- badf %>%
+    file.info %>%
+    .$mtime
+
+  mt_df <- readRDS('bad/_log.rds')
+  if (trunc(mt) != trunc(mt_df[site, 'mtime'])) {
+    mt_df[site, 'mtime'] <- mt
+    saveRDS(mt_df, 'bad/_log.rds')
+    reset[[site]] <<- T
+    
+    # Generate initial:
+    # badf <- dir('bad', full.names=T)
+    # mt <- badf %>%
+    #   file.info %>%
+    #   .$mtime
+    # df <- data.frame(stringsAsFactors=F,
+    #                  mtime = mt)
+    # rownames(df) <- basename(tools::file_path_sans_ext(badf))
+    # df$site <- NULL
+  }
+}
