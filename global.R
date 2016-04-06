@@ -57,10 +57,10 @@ check_bad <- function() {
     file.info %>%
     .$mtime
 
-  mt_df <- readRDS('bad/_log.rds')
+  mt_df <- readRDS('lair-proc/bad/_log.rds')
   if (trunc(mt) != trunc(mt_df[site, 'mtime'])) {
     mt_df[site, 'mtime'] <- mt
-    saveRDS(mt_df, 'bad/_log.rds')
+    saveRDS(mt_df, 'lair-proc/bad/_log.rds')
     reset[[site]] <<- T
     
     # Generate initial:
