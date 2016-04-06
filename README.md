@@ -6,6 +6,9 @@ The trace gas processing tools are broken into five components
 4. `lock` directory. Cron lock files (in the form of `site.running`) prevent execution of processing code if a previous instance is still running.  
 5. `run` directory. Contains R scripts that initialize site-specific parameters such as IP addresses, ports, and CR1000 data table names before calling the code found in `fun`.
 
+# Revising historic data
+Changes in the historic datasets can be made using the `bad` data text files. When a new commit is made, the historic record for the given site is reprocessed on the next run (every 15 minutes).
+
 # Site naming conventions
 Additional site details can be found at [http://air.utah.edu/sites/](http://air.utah.edu/sites/)  
 
