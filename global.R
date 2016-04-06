@@ -52,7 +52,7 @@ lock_remove <- function() {
 
 # Bad data reset
 check_bad <- function() {
-  badf <- dir('bad', pattern=site, full.names=T)
+  badf <- dir('lair-proc/bad', pattern=site, full.names=T)
   mt <- badf %>%
     file.info %>%
     .$mtime
