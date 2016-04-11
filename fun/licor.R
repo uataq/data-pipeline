@@ -84,7 +84,7 @@ try({
                          'MF_Controller_mLmin', 'PressureVolt', 'rhVolt', 
                          'gas_T', 'rawCO2_Voltage', 'rawCO2', 'rawH2O',
                          'ID', 'Program'),
-             col_types='T______dddddddddddddc') %>%
+             col_types='Tdddddddddddddddddddc') %>%
       bind_rows()
     # raw <- bind_rows(raw, get_cr1000(ip, port, table, site))
   } else {
