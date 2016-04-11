@@ -70,8 +70,6 @@ try({
   }
   
   # Directory structure and data ------------------------------------------------
-  try({pull_trx(ip, site, port)})
-  
   if (reset[[site]] | global_reset) {
     system(paste0('rm -r ', 'data/', site, '/parsed/*')) 
     system(paste0('rm -r ', 'data/', site, '/geoloc/*'))
@@ -80,7 +78,10 @@ try({
     dir.create(file.path('data', site, 'geoloc'), 
                showWarnings=FALSE, recursive=TRUE, mode='0755')
     nf <- NULL
-  } else nf <- 1
+  } else {
+    nf <- 1
+    pull_trx(ip, site, port)
+  }
   
   # Read data and update archives ---------------------------------------------
   d        <- lapply(inst, read, site=site, nf=nf)

@@ -25,7 +25,6 @@ try({
   
   # Directory structure and data ------------------------------------------------
   check_bad()
-  try({pull_lgr(ip, site)})
   
   if (reset[[site]] | global_reset) {
     system(paste0('rm ', 'data/', site, '/parsed/*')) 
@@ -38,6 +37,7 @@ try({
     cal_all <- T
   } else {
     cal_all <- F
+    pull_lgr(ip, site)
   }
   
   # Determine files to be read --------------------------------------------------
