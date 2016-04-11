@@ -61,7 +61,8 @@ try({
       data[[i]] <- fun(data[[i]])
     }
     
-    uataq::archive(data, path=file.path('data', site, 'raw/%Y_%m_raw.dat'))
+    uataq::archive(data, path=file.path('data', site, 'raw/%Y_%m_raw.dat'), 
+                   col_names=NULL)
     return(data)
   }
   
