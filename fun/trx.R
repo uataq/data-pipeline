@@ -101,7 +101,7 @@ try({
       'data', site, 'parsed', i, '%Y_%m_parsed.dat'))
   }
   
-  # Geolocation by linear interpolation ---------------------------------------
+  # Aggregate data from different sources -------------------------------------
   trx <- bind_rows(
     d$gps[c('Time_UTC', 'lat', 'lon', 'alt')],
     d$lgr[c('Time_UTC', 'CO2d_ppm', 'CH4d_ppm')],
@@ -117,13 +117,14 @@ try({
     group_by(Time_UTC = as.POSIXct(trunc(Time_UTC))) %>%
     summarize_each(funs(mean(., na.rm=T)))
   
+  uataq::archive(trx_s, path=file.path(
+    'data', site, 'geoloc', '%Y_%m_geoloc.dat'))
+  
+  # Geolocation by linear interpolation ---------------------------------------
   trx_interp <- bind_cols(
     data_frame(Time_UTC = trx_s$Time_UTC),
     as_data_frame(lapply(trx_s[-1], uataq::na_interp, x=trx_s$Time_UTC))
   )
-  
-  uataq::archive(trx_interp, path=file.path(
-    'data', site, 'geoloc', '%Y_%m_geoloc.dat'))
   
   trx_interp %>%
     filter(Time_UTC > Sys.time() - 3600 * 2) %>%
