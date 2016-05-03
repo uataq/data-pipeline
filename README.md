@@ -10,7 +10,7 @@ The trace gas processing tools are broken into five components
 Changes in the historic datasets can be made using the `bad` data text files. When a new commit is made, the historic record for the given site is reprocessed on the next run (every 15 minutes).
 
 # Site naming conventions
-Additional site details can be found at [http://air.utah.edu/sites/](http://air.utah.edu/sites/)  
+Additional site details can be found at [http://air.utah.edu/s/auth/](http://air.utah.edu/s/auth/)  
 
 Site                   | Abbreviation
 -----------------------|----------------------------------
