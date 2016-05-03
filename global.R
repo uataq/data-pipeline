@@ -38,18 +38,6 @@ remove_bad <- function(df, site) {
   return(df)
 }
 
-# Lock file generation and management
-lock_create <- function() {
-  lockfile <- paste0('lair-proc/lock/', site, '.running')
-  if (file.exists(lockfile)) stop(paste(site, 'processing already running.'))
-  system(paste('touch', lockfile))
-}
-
-lock_remove <- function() {
-  lockfile <- paste0('lair-proc/lock/', site, '.running')
-  system(paste('rm', lockfile))
-}
-
 # Bad data reset
 check_bad <- function() {
   badf <- dir('lair-proc/bad', pattern=site, full.names=T)
@@ -73,4 +61,16 @@ check_bad <- function() {
     # rownames(df) <- basename(tools::file_path_sans_ext(badf))
     # df$site <- NULL
   }
+}
+
+# Lock file generation and management
+lock_create <- function() {
+  lockfile <- paste0('lair-proc/lock/', site, '.running')
+  if (file.exists(lockfile)) stop(paste(site, 'processing already running.'))
+  system(paste('touch', lockfile))
+}
+
+lock_remove <- function() {
+  lockfile <- paste0('lair-proc/lock/', site, '.running')
+  system(paste('rm', lockfile))
 }
