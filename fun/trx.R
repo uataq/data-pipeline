@@ -65,7 +65,9 @@ try({
     
     if(nrow(data) < 1) return(NULL)
     
-    data$Time_UTC <- as.POSIXct(data$Time_UTC, tz='UTC', format='%Y-%m-%d %H:%M:%OS')
+    data <- data %>%
+      mutate(Time_UTC = as.POSIXct(Time_UTC, tz='UTC', format='%Y-%m-%d %H:%M:%OS'),
+             site_id = site)
     data
   }
   
@@ -115,7 +117,8 @@ try({
   trx_s <- trx %>%
     arrange(Time_UTC) %>%
     group_by(Time_UTC = as.POSIXct(trunc(Time_UTC))) %>%
-    summarize_each(funs(mean(., na.rm=T)))
+    summarize_each(funs(mean(., na.rm=T))) %>%
+    mutate(site_id = site)
   
   uataq::archive(trx_s, path=file.path(
     'data', site, 'geoloc', '%Y_%m_geoloc.dat'))

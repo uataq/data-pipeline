@@ -121,7 +121,8 @@ try({
            GasP_torr < 145) %>%
     mutate(ID = gsub('\\s+|V:{1}[0-9]', '', ID),
            ID = gsub('^~', '', ID),
-           ID = gsub('unknown', NA, ID, ignore.case=T)) %>%
+           ID = gsub('unknown', NA, ID, ignore.case=T),
+           site_id = site) %>%
     filter(!is.na(ID))
   
   ID_split <- stringr::str_split_fixed(parsed$ID, '~', 2)
@@ -160,7 +161,8 @@ try({
                     m_ch4        = cal_ch4$m,
                     b_ch4        = cal_ch4$b,
                     n_ch4        = cal_ch4$n) %>%
-    filter(n_co2 > 0 | n_ch4 > 0)
+    filter(n_co2 > 0 | n_ch4 > 0) %>%
+    mutate(site_id = site)
   
   uataq::archive(cal, path=file.path('data', site, 
                                      'calibrated/%Y_%m_calibrated.dat'))

@@ -62,7 +62,7 @@ try({
     }
     
     uataq::archive(data, path=file.path('data', site, 'raw/%Y_%m_raw.dat'), 
-                   col_names=NULL)
+                   col_names=F)
     return(data)
   }
   
@@ -97,7 +97,8 @@ try({
   # User defined bad data -------------------------------------------------------
   parsed <- remove_bad(raw, site) %>%
     mutate(ID_co2 = ID,
-           CO2d_ppm = rawCO2)
+           CO2d_ppm = rawCO2,
+           site_id = site)
   uataq::archive(parsed, path=file.path('data', site, 'parsed/%Y_%m_parsed.dat'))
   
   # Calibrations ----------------------------------------------------------------
@@ -109,9 +110,14 @@ try({
   cal <- with(parsed, 
               uataq::calibrate(Time_UTC, rawCO2, ID_co2,
                                auto=T, er_tol=0.15, dt_tol=18000)) %>%
-    rename(Time_UTC = time,
-           CO2d_ppm_cal = cal) %>%
-    filter(n > 0)
+    rename(Time_UTC     = time,
+           CO2d_ppm_cal = cal,
+           CO2d_ppm_raw = raw,
+           m_co2        = m,
+           b_co2        = b,
+           n_co2        = n) %>%
+    filter(n_co2 > 0) %>%
+    mutate(site_id = site)
   
   uataq::archive(cal, path=file.path('data', site, 
                                      'calibrated/%Y_%m_calibrated.dat'))
