@@ -104,7 +104,8 @@ try({
   # Calibrations ----------------------------------------------------------------
   if (!cal_all) {
     files <- tail(dir(file.path('data', site, 'parsed'), full.names=T), 2)
-    parsed <- lapply(files, read_csv, locale=locale(tz='UTC')) %>% bind_rows()
+    parsed <- lapply(files, read_csv, locale=locale(tz='UTC'),
+                     col_types='T--------------------dd-') %>% bind_rows()
   }
   
   cal <- with(parsed, 
