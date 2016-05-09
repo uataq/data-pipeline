@@ -109,7 +109,7 @@ try({
   }
   
   cal <- with(parsed, 
-              uataq::calibrate(Time_UTC, rawCO2, ID_co2,
+              uataq::calibrate(Time_UTC, CO2d_ppm, ID_co2,
                                auto=T, er_tol=0.15, dt_tol=18000)) %>%
     rename(Time_UTC     = time,
            CO2d_ppm_cal = cal,
