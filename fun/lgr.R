@@ -105,10 +105,10 @@ try({
   raw <- raw %>%
     filter(Time_UTC < as.POSIXct('2015-12-29', tz='UTC') |
              Time_UTC > as.POSIXct('2015-12-30', tz='UTC')) %>%
-    mutate(pre_utc = Time_UTC > as.POSIXct('2015-12-30', tz='UTC'))
+    mutate(pre_utc = Time_UTC < as.POSIXct('2015-12-30', tz='UTC'))
   
   raw$Time_UTC[raw$pre_utc] <- as.POSIXct(format(raw$Time_UTC[raw$pre_utc], 
-                                                 tz='UTC'), tz='Denver')
+                                                 tz='UTC'), tz='America/Denver')
   
   # Remove bad data -------------------------------------------------------------
   # remove_bad() found in global.R
