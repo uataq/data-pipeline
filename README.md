@@ -1,6 +1,6 @@
 # Repository structure
 The trace gas processing tools are broken into five components  
-1. `global.R` script. This includes reset flags and functions shared between different processing routines.  
+1. `global.R` script. This includes run and reset flags, as well as functions shared between different processing routines. Set reset flags TRUE to reprocess site data from the raw measurements (unnecessary if just reprocessing due to changes in bad data files). Set run flags FALSE to disable processing for individual sites.
 2. `bad` directory. Defines period of data that needs to be corrected or removed from the record at each site. These changes are reflected in the parsed and calibrated datasets.  
 3. `fun` directory. Contains R and Python code that performs the bulk of the data processing utilizing the [UATAQ R package](https://github.com/benfasoli/uataq).  
 4. `lock` directory. Cron lock files (in the form of `site.running`) prevent execution of processing code if a previous instance is still running.  
