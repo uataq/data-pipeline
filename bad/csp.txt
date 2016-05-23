@@ -1,4 +1,5 @@
 t_start, t_end, miu_old, miu_new, comment
 2015-01-01 00:00:00.000, 2015-04-10 16:00:00.000, all, NA, Ben: Placeholder.
-2016-02-12 18:30:00.000, 2016-02-12 20:30:00.000, all, NA, Ryan: bad data associated with recal
-2016-03-11 11:30:00.000, 2016-02-13 12:30:00.000, all, NA, Ryan: Bad CO2 cal.  Ch4 looks ok
+2016-01-19 13:15:00.000, 2016-01-19 13:45:00.000, all, NA, Ryan: bad cal.
+2016-02-12 18:30:00.000, 2016-02-12 20:30:00.000, all, NA, Ryan: bad data associated with recal.
+2016-03-11 11:30:00.000, 2016-02-13 12:30:00.000, all, NA, Ryan: Bad CO2 cal.  Ch4 looks ok.
