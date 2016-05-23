@@ -1,5 +1,22 @@
 # Ben Fasoli
 
+run <- list(
+  csp   = F,
+  dbk   = T,
+  fru   = T, 
+  heb   = T,
+  hpl   = T,
+  lgn   = T,
+  roo   = T,
+  rpk   = T,
+  sug   = T,
+  sun   = T,
+  trx01 = T,
+  trx02 = T,
+  wbb   = T
+)
+
+
 # Reset flags -----------------------------------------------------------------
 reset <- list(
   csp   = F,
