@@ -4,7 +4,6 @@
 
 setwd('/uufs/chpc.utah.edu/common/home/lin-group2/measurements/')
 source('lair-proc/global.R')
-if (!run[[site]]) stop('Site processing disabled in global.R')
 lock_create()
 
 try({
@@ -90,6 +89,7 @@ try({
       bind_rows()
     # raw <- bind_rows(raw, get_cr1000(ip, port, table, site))
   } else {
+    if (!run[[site]]) stop('Site processing disabled in global.R')
     cal_all <- F
     raw <- get_cr1000(ip, port, table, site)
   }
