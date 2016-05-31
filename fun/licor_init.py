@@ -7,7 +7,6 @@ from datetime import datetime
 def crpull(ip, port, table, tstart, tend):
     print('Connecting to device...')
     device = CR1000.from_url('tcp:' + str(ip) + ':' + str(port), timeout=10)
-
     if len(tstart) > 0:
         tstart = datetime.strptime(tstart, '%Y-%m-%d %H:%M:%S')
         tend = datetime.strptime(tend, '%Y-%m-%d %H:%M:%S')
@@ -17,7 +16,6 @@ def crpull(ip, port, table, tstart, tend):
         print('Pulling all data from the ' + table + ' table...')
         rawdata = device.get_data('Dat')
         device.bye()
-
     if len(rawdata) > 0:
         orderedcol = rawdata.filter(('Datetime', 'RecNbr', 'Year', 'jDay', 'HH', 'MM', 'SS',
                                      'batt_volt_Min', 'PTemp_Avg', 'Room_T_Avg', 'IRGA_T_Avg', 
