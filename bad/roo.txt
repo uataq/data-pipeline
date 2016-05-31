@@ -3,3 +3,5 @@ t_start, t_end, miu_old, miu_new, comment
 2015-04-17 13:55:00.000, 2015-04-17 14:03:33.000, all, NA, Ben: On site maintenance.
 2015-09-04 07:45:00.000, 2015-09-04 09:00:00.000, all, NA, Ryan: On site maintenance.
 2015-07-25 18:42:00.000, 2015-10-06 00:00:00.000, ~420.55~1.893, NA, Ben: Empty tank.
+2015-12-01 03:45:00.000, 2015-12-01 04:00:00.000, all, NA, Ryan: Strange decrease in CO2.
+2016-01-26 22:45:00.000, 2016-02-01 05:58:00.000, all, NA, Ryan: decrease in CO2, but CH4 looks reasonable.
