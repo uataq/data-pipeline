@@ -127,7 +127,11 @@ try({
   # Geolocation by linear interpolation ---------------------------------------
   trx_interp <- bind_cols(
     data_frame(Time_UTC = trx_s$Time_UTC),
-    as_data_frame(lapply(trx_s[-1], uataq::na_interp, x=trx_s$Time_UTC))
+    as_data_frame(lapply(trx_s[-1], function(y,x){
+      if ('numeric' %in% class(y)) {
+        uataq::na_interp(y,x)
+      } else return(y)
+    }, x=trx_s$Time_UTC))
   )
   
   trx_interp %>%
