@@ -89,6 +89,7 @@ try({
   # Read data and update archives ---------------------------------------------
   d        <- lapply(inst, read, site=site, nf=nf)
   names(d) <- inst
+  d        <- d[!sapply(d, is.null)]
   
   if ('metone' %in% names(d)) {
     d$metone$PM25_ugm3 <- d$metone$PM25_ugm3 * 1000 
