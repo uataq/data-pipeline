@@ -29,7 +29,7 @@ reset <- list(
   lgn   = F,
   roo   = F,
   rpk   = F,
-  sno   = T,
+  sno   = F,
   sug   = F,
   sun   = F,
   trx01 = F,
@@ -64,22 +64,22 @@ check_bad <- function() {
   mt <- badf %>%
     file.info %>%
     .$mtime
-
+  
   mt_df <- readRDS('lair-proc/bad/_log.rds')
   if (trunc(mt) != trunc(mt_df[site, 'mtime'])) {
     mt_df[site, 'mtime'] <- mt
     saveRDS(mt_df, 'lair-proc/bad/_log.rds')
     reset[[site]] <<- T
-
+    
     # Generate initial:
-    # badf <- dir('bad', full.names=T)
-    # mt <- badf %>%
-    #   file.info %>%
-    #   .$mtime
-    # df <- data.frame(stringsAsFactors=F,
-    #                  mtime = mt)
-    # rownames(df) <- basename(tools::file_path_sans_ext(badf))
-    # df$site <- NULL
+    #     badf <- dir('bad', pattern='txt', full.names=T)
+    #     mt <- badf %>%
+    #       file.info %>%
+    #       .$mtime
+    #     df <- data.frame(stringsAsFactors=F, mtime = mt)
+    #     rownames(df) <- basename(tools::file_path_sans_ext(badf))
+    #     df$site <- NULL
+    #     saveRDS(df, 'lair-proc/bad/_log.rds')
   }
 }
 
