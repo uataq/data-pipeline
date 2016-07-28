@@ -4,12 +4,13 @@
 run <- list(
   csp   = F,
   dbk   = T,
-  fru   = T, 
+  fru   = T,
   heb   = T,
   hpl   = T,
   lgn   = T,
   roo   = T,
   rpk   = T,
+  sno   = T,
   sug   = T,
   sun   = T,
   trx01 = T,
@@ -22,12 +23,13 @@ run <- list(
 reset <- list(
   csp   = F,
   dbk   = F,
-  fru   = F, 
+  fru   = F,
   heb   = F,
   hpl   = F,
   lgn   = F,
   roo   = F,
   rpk   = F,
+  sno   = T,
   sug   = F,
   sun   = F,
   trx01 = F,
@@ -40,14 +42,14 @@ global_reset <- F
 
 # Functions -------------------------------------------------------------------
 remove_bad <- function(df, site) {
-  bad <- readr::read_csv(paste0('lair-proc/bad/', site, '.txt'), 
+  bad <- readr::read_csv(paste0('lair-proc/bad/', site, '.txt'),
                          locale=locale(tz='UTC'))
   for (i in 1:nrow(bad)) {
     if (grepl('all', bad$miu_old[i], ignore.case=T)) {
-      mask <- df$Time_UTC >= bad$t_start[i] & 
+      mask <- df$Time_UTC >= bad$t_start[i] &
         df$Time_UTC <= bad$t_end[i]
     } else {
-      mask <- df$Time_UTC >= bad$t_start[i] & 
+      mask <- df$Time_UTC >= bad$t_start[i] &
         df$Time_UTC <= bad$t_end[i] &
         grepl(bad$miu_old[i], df$ID)
     }
@@ -68,7 +70,7 @@ check_bad <- function() {
     mt_df[site, 'mtime'] <- mt
     saveRDS(mt_df, 'lair-proc/bad/_log.rds')
     reset[[site]] <<- T
-    
+
     # Generate initial:
     # badf <- dir('bad', full.names=T)
     # mt <- badf %>%

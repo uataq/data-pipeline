@@ -22,6 +22,7 @@ Horsepool              | hpl
 Logan                  | lgn
 Roosevelt              | roo
 Rose Park              | rpk
+Snowbird               | sno
 Sugarhouse             | sug
 Suncrest               | sun
 University of Utah     | wbb
