@@ -2,7 +2,7 @@
 
 # Parameters ------------------------------------------------------------------
 site   <- 'sno'
-ip     <- '172.16.95.93'
+ip     <- '207.108.161.93'
 
 # Processing ------------------------------------------------------------------
 source('/uufs/chpc.utah.edu/common/home/lin-group2/measurements/lair-proc/fun/lgr.R')
