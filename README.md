@@ -18,11 +18,12 @@ Castle Peak            | csp
 Daybreak               | dbk
 Fruitland              | fru
 Heber                  | heb
+Hidden Peak            | hdp
 Horsepool              | hpl
 Logan                  | lgn
+Murray                 | mur
 Roosevelt              | roo
 Rose Park              | rpk
-Snowbird               | sno
 Sugarhouse             | sug
 Suncrest               | sun
 University of Utah     | wbb
