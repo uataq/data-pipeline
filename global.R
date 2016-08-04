@@ -7,6 +7,7 @@ run <- list(
   fru   = T,
   heb   = T,
   hpl   = T,
+  ihc   = F,
   lgn   = T,
   roo   = T,
   rpk   = T,
@@ -26,6 +27,7 @@ reset <- list(
   fru   = F,
   heb   = F,
   hpl   = F,
+  ihc   = F,
   lgn   = F,
   roo   = F,
   rpk   = F,
@@ -64,13 +66,13 @@ check_bad <- function() {
   mt <- badf %>%
     file.info %>%
     .$mtime
-  
+
   mt_df <- readRDS('lair-proc/bad/_log.rds')
   if (trunc(mt) != trunc(mt_df[site, 'mtime'])) {
     mt_df[site, 'mtime'] <- mt
     saveRDS(mt_df, 'lair-proc/bad/_log.rds')
     reset[[site]] <<- T
-    
+
     # Generate initial:
     #     badf <- dir('bad', pattern='txt', full.names=T)
     #     mt <- badf %>%
