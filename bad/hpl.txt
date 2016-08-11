@@ -8,3 +8,4 @@ t_start, t_end, miu_old, miu_new, comment
 2016-02-15 00:00:00.000, 2016-02-16 19:05:30.000, all, NA, Ben: Instrument lost internal intensity calibration for CO2.
 2016-03-14 14:03:00.000, 2016-03-17 08:08:00.000, all, NA, Ryan: Removed data assoicated with bad cal.
 2016-04-25 00:00:00.000, 2016-05-31 21:00:00.000, all, NA, Ben: Instrument lost proper ringdown leading to poor precision.
+2016-08-01 00:00:00.000, 2016-09-01 00:00:00.000, 386.95~1.861, NA, Ben: Valve disabled but still propagating into data
