@@ -28,13 +28,6 @@ Sugarhouse             | sug
 Suncrest               | sun
 University of Utah     | wbb
 
-# Updating CHPC
-Data processing is housed on `lin-group2`. To update CHPC to a revised version of the master branch of the git repository, run
-```
-cd /uufs/chpc.utah.edu/common/home/lin-group2/measurements/lair-proc
-git pull
-```
-
 # More info
 Source code at  
 [https://github.com/benfasoli/lair-proc](https://github.com/benfasoli/lair-proc)  
