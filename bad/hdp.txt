@@ -4,3 +4,4 @@ t_start, t_end, miu_old, miu_new, comment
 2016-08-07 21:52:00.000, 2016-08-08 15:05:15.000, all, NA, Ben: MIU failure. Identified the LGR as the problem not the lgr-buddy
 2016-08-09 10:04:30.000, 2016-08-11 19:48:00.000, all, NA, Ben: New LGR had timezone set incorrectly. Issues with serial port
 2016-08-11 23:04:00.000, 2016-08-12 17:47:00.000, all, NA, Ben: LGR stopped outputting serial data
+2016-08-15 11:53:50.000, 2016-08-15 18:02:30.000, all, NA, Ben: LGR stopped outputting serial data. Added exception to code
