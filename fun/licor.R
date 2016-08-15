@@ -118,6 +118,7 @@ try({
            m_co2        = m,
            b_co2        = b,
            n_co2        = n,
+           r2_co2       = r_sq,
            rmse_co2     = rmse) %>%
     filter(n_co2 > 0) %>%
     mutate(site_id = site)
