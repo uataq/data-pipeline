@@ -164,7 +164,7 @@ try({
                     m_ch4        = cal_ch4$m,
                     b_ch4        = cal_ch4$b,
                     n_ch4        = cal_ch4$n,
-                    r2_ch4       = cal_ch4$r2,
+                    r2_ch4       = cal_ch4$r_sq,
                     rmse_ch4     = cal_ch4$rmse) %>%
     filter(n_co2 > 0 | n_ch4 > 0) %>%
     mutate(site_id = site)
