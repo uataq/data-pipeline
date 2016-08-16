@@ -10,3 +10,4 @@ t_start, t_end, miu_old, miu_new, comment
 2015-10-14 20:10:00.000, 2015-10-15 01:15:00.000, all, NA, Ben: instrument issues with storm
 2015-10-15 20:24:00.000, 2015-10-16 01:27:00.000, all, NA, Ben: instrument issues with storm
 2015-10-16 15:22:00.000, 2015-10-16 16:13:10.000, all, NA, Ben: Ryan and doug on site
+2016-07-18 16:00:00.000, 2016-08-16 00:08:00.000, 473.06, 573.06, Doug: wrong std3 input
