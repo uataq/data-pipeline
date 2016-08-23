@@ -1,5 +1,6 @@
 # Instructions for LAIR/UATAQ bad data definitions  
-Contact [Ben Fasoli](mailto:benfasoli@gmail.com) with questions.
+Contact [Ben Fasoli](mailto:benfasoli@gmail.com) with questions.  
+A helper utility is available at [air.utah.edu](http://air.utah.edu/s/utilities/find_bad/) for identifying previous failed calibrations.  
 
 **Header**:  t_start,t_end,miu_old,miu_new,comment  
 
