@@ -9,4 +9,3 @@ t_start, t_end, miu_old, miu_new, comment
 2016-08-18 12:09:00.000, 2016-08-18 18:30:00.000, all, NA, Ben: On site testing
 2016-08-22 03:02:00.000, 2016-08-22 16:42:00.000, all, NA, Ben: LGR serial comms issue. Added additional ValueError exception
 2016-08-24 11:17:00.000, 2016-08-24 16:19:30.000, all, NA, Ben: On site. Removed mg perchlorate trap and high reference tank
-2016-08-28 07:57:00.000, 2016-08-29 03:00:00.000, all, NA, Ryan: MIU failed again so all cal gasses were atmos. 
