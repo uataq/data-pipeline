@@ -9,3 +9,5 @@ t_start, t_end, miu_old, miu_new, comment
 2016-08-18 12:09:00.000, 2016-08-18 18:30:00.000, all, NA, Ben: On site testing
 2016-08-22 03:02:00.000, 2016-08-22 16:42:00.000, all, NA, Ben: LGR serial comms issue. Added additional ValueError exception
 2016-08-24 11:17:00.000, 2016-08-24 16:19:30.000, all, NA, Ben: On site. Removed mg perchlorate trap and high reference tank
+2016-08-28 23:06:00.000, 2016-08-29 15:00:00.000, all, NA, Ben: Serial MIU issues
+2016-08-30 23:13:30.000, 2016-08-31 19:00:00.000, all, NA, Ben: LGR has stopped outputting serial data
