@@ -4,3 +4,12 @@ t_start, t_end, miu_old, miu_new, comment
 2016-01-25 23:55:00.000, 2016-01-26 00:30:00.000, all, NA, Ryan: Bad calibration
 2016-06-17 20:40:00.000, 2016-06-17 22:05:00.000, all, NA, Doug: fixing bad H20 cal
 2016-05-30 16:00:00.000, 2016-06-17 20:40:00.000, all, NA, Doug: failing clippard valve on sample
+2015-10-03 10:11:00.000, 2015-10-05 23:59:50.000, all, NA, Nick: Bad Cals affecting data.
+2015-10-08 16:11:00.000, 2015-10-20 19:59:50.000, all, NA, Nick: Cals fall on a daily cycle then go back to max value.
+2015-10-30 23:59:50.000, 2015-10-31 00:11:00.000, 0, 0, Nick: Zero is off.
+2015-10-30 23:59:50.000, 2015-10-31 00:11:00.000, 385.29, 385.29, Nick: Cal tank one is off.
+2015-12-11 23:59:50.000, 2015-12-12 00:11:00.000, 0, 0, Nick: Zero is off.
+2015-12-24 23:59:50.000, 2015-12-25 00:11:00.000, 0, 0, Nick: Zero is off.
+2015-12-29 23:11:00.000, 2015-12-12 01:00:00.000, all, NA, Nick: Three cals are off.
+2016-01-03 23:59:50.000, 2016-01-04 00:11:00.000, 0, 0, Nick: Zero is off.
+2016-02-04 23:59:50.000, 2016-02-05 00:11:00.000, 0, 0, Nick: Zero is off.
