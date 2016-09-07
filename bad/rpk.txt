@@ -6,3 +6,4 @@ t_start, t_end, miu_old, miu_new, comment
 2016-06-08 00:00:00.000, 2016-06-08 00:15:00.000, 394, NA, Doug: strange midnight fluke
 2016-06-08 00:00:00.000, 2016-06-08 00:15:00.000, 490.37, NA, Doug: strange midnight fluke
 2016-04-04 00:00:00.000, 2016-04-30 06:00:00.000, all, NA, Nick: Few data points in large gap and jumps in cals.
+2015-12-07 23:59:00.000. 2015-12-08 04:11:00.000, 0, 0, Nick: Zero is off.
