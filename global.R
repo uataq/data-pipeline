@@ -45,7 +45,7 @@ global_reset <- F
 # Functions -------------------------------------------------------------------
 remove_bad <- function(df, site) {
   bad <- readr::read_csv(paste0('lair-proc/bad/', site, '.txt'),
-                         locale=locale(tz='UTC'))
+                         locale=locale(tz='UTC'), col_types = 'TTcc_')
   for (i in 1:nrow(bad)) {
     if (grepl('all', bad$miu_old[i], ignore.case=T)) {
       mask <- df$Time_UTC >= bad$t_start[i] &
