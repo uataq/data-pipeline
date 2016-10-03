@@ -3,7 +3,7 @@
 # Ben Fasoli
 
 setwd('/uufs/chpc.utah.edu/common/home/lin-group2/measurements/')
-source('lair-proc/global.R')
+source('lair-proc/global.r')
 lock_create()
 
 try({
@@ -22,7 +22,7 @@ try({
     #     table        CR1000 table to download
     require(rPython)
 
-    lastf <- tail(dir(file.path('data', site, 'raw'),
+    lastf <- tail(dir(file.path('data', site, 'licor-6262', 'raw'),
                       pattern='.*\\.{1}dat', full.names=T), 1)
 
     if(length(lastf)>0) {
@@ -61,7 +61,8 @@ try({
       data[[i]] <- fun(data[[i]])
     }
 
-    uataq::archive(data, path=file.path('data', site, 'raw/%Y_%m_raw.dat'),
+    uataq::archive(data, path=file.path('data', site, 'licor-6262',
+                                        'raw/%Y_%m_raw.dat'),
                    col_names=F)
     return(data)
   }
@@ -69,16 +70,16 @@ try({
   # Directory structure and data ------------------------------------------------
   check_bad()
   if (reset[[site]] | global_reset) {
-    system(paste0('rm ', 'data/', site, '/parsed/*'))
-    system(paste0('rm ', 'data/', site, '/calibrated/*'))
-    dir.create(file.path('data', site, 'parsed'),
+    system(paste0('rm ', 'data/', site, '/licor-6262/parsed/*'))
+    system(paste0('rm ', 'data/', site, '/licor-6262/calibrated/*'))
+    dir.create(file.path('data', site, 'licor-6262', 'parsed'),
                showWarnings=FALSE, recursive=TRUE, mode='0755')
-    dir.create(file.path('data', site, 'calibrated'),
+    dir.create(file.path('data', site, 'licor-6262', 'calibrated'),
                showWarnings=FALSE, recursive=TRUE, mode='0755')
 
     cal_all <- T
 
-    raw <- dir(paste0('data/', site, '/raw'), full.names=T) %>%
+    raw <- dir(paste0('data/', site, '/licor-6262/raw'), full.names=T) %>%
       lapply(read_csv, locale=locale(tz='UTC'),
              col_names=c('Time_UTC', 'n', 'Year', 'jDay', 'HH', 'MM', 'SS',
                          'batt_volt', 'PTemp', 'Room_T', 'IRGA_T', 'IRGA_P',
@@ -89,7 +90,7 @@ try({
       bind_rows()
     # raw <- bind_rows(raw, get_cr1000(ip, port, table, site))
   } else {
-    if (!run[[site]]) stop('Site processing disabled in global.R')
+    if (!run[[site]]) stop('Site processing disabled in global.r')
     cal_all <- F
     raw <- get_cr1000(ip, port, table, site)
   }
@@ -100,11 +101,13 @@ try({
     mutate(ID_co2 = ID,
            CO2d_ppm = rawCO2,
            site_id = site)
-  uataq::archive(parsed, path=file.path('data', site, 'parsed/%Y_%m_parsed.dat'))
+  uataq::archive(parsed, path=file.path('data', site, 'licor-6262', 
+                                        'parsed/%Y_%m_parsed.dat'))
 
   # Calibrations ----------------------------------------------------------------
   if (!cal_all) {
-    files <- tail(dir(file.path('data', site, 'parsed'), full.names=T), 2)
+    files <- tail(dir(file.path('data', site, 'licor-6262', 'parsed'),
+                      full.names=T), 2)
     parsed <- lapply(files, read_csv, locale=locale(tz='UTC'),
                      col_types='T--------------------dd-') %>% bind_rows()
   }
@@ -123,7 +126,7 @@ try({
     filter(n_co2 > 0) %>%
     mutate(site_id = site)
 
-  uataq::archive(cal, path=file.path('data', site,
+  uataq::archive(cal, path=file.path('data', site, 'licor-6262',
                                      'calibrated/%Y_%m_calibrated.dat'))
 })
 lock_remove()

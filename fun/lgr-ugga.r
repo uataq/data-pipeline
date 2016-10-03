@@ -3,7 +3,7 @@
 # Ben Fasoli
 
 setwd('/uufs/chpc.utah.edu/common/home/lin-group2/measurements/')
-source('lair-proc/global.R')
+source('lair-proc/global.r')
 lock_create()
 
 try({
@@ -18,7 +18,7 @@ try({
     cmd <- paste0('/usr/bin/rsync -vrutzhO --stats --exclude="archive/" -e ',
                   '"/usr/bin/ssh -i /uufs/chpc.utah.edu/common/home/u0791983/.ssh/id_rsa" ',
                   'lgr@', ip, ':/home/lgr/data/ ',
-                  '/uufs/chpc.utah.edu/common/home/lin-group2/measurements/data/', site, '/raw/')
+                  '/uufs/chpc.utah.edu/common/home/lin-group2/measurements/data/', site, '/lgr-ugga/raw/')
     system(print(cmd, quote=F))
   }
 
@@ -27,23 +27,24 @@ try({
   check_bad()
 
   if (reset[[site]] | global_reset) {
-    system(paste0('rm ', 'data/', site, '/parsed/*'))
-    system(paste0('rm ', 'data/', site, '/calibrated/*'))
-    dir.create(file.path('data', site, 'parsed'),
+    system(paste0('rm ', 'data/', site, '/lgr-ugga/parsed/*'))
+    system(paste0('rm ', 'data/', site, '/lgr-ugga/calibrated/*'))
+    dir.create(file.path('data', site, 'lgr-ugga', 'parsed'),
                showWarnings=FALSE, recursive=TRUE, mode='0755')
-    dir.create(file.path('data', site, 'calibrated'),
+    dir.create(file.path('data', site, 'lgr-ugga', 'calibrated'),
                showWarnings=FALSE, recursive=TRUE, mode='0755')
 
     cal_all <- T
   } else {
-    if (!run[[site]]) stop('Site processing disabled in global.R')
+    if (!run[[site]]) stop('Site processing disabled in global.r')
     cal_all <- F
     pull_lgr(ip, site)
   }
 
   # Determine files to be read --------------------------------------------------
   # Unzip necessary compressed data packets
-  dir(file.path('data', site, 'raw'), '\\.{1}txt\\.{1}zip', full.names=T, recursive=T) %>%
+  dir(file.path('data', site, 'lgr-ugga', 'raw'), '\\.{1}txt\\.{1}zip',
+      full.names=T, recursive=T) %>%
     lapply(function(zf) {
       tf <- tools::file_path_sans_ext(zf)
       if (file.exists(tf) && round(file.mtime(zf))==round(file.mtime(tf))) {
@@ -58,7 +59,8 @@ try({
     }) %>%
     invisible()
 
-  tfs <- dir(file.path('data', site, 'raw'), 'f....\\.{1}txt$', full.names=T, recursive=T)
+  tfs <- dir(file.path('data', site, 'lgr-ugga', 'raw'), 'f....\\.{1}txt$',
+             full.names=T, recursive=T)
   if (!cal_all) {
     # Sort by file modification time since older versions of LGR's software
     # are named non-sequentially
@@ -134,11 +136,13 @@ try({
   parsed$ID_co2 <- ID_split[ ,1]
   parsed$ID_ch4 <- ID_split[ ,2]
 
-  uataq::archive(parsed, path=file.path('data', site, 'parsed/%Y_%m_parsed.dat'))
+  uataq::archive(parsed,path=file.path('data', site, 'lgr-ugga',
+                                       'parsed/%Y_%m_parsed.dat'))
 
   # Calibrations ----------------------------------------------------------------
   if (!cal_all) {
-    files <- tail(dir(file.path('data', site, 'parsed'), full.names=T), 2)
+    files <- tail(dir(file.path('data', site, 'lgr-ugga', 'parsed'),
+                      full.names=T), 2)
     parsed <- lapply(files, read_csv, locale=locale(tz='UTC'),
                      col_types='T------d-d--------------dd') %>% bind_rows()
   }
@@ -169,7 +173,7 @@ try({
     filter(n_co2 > 0 | n_ch4 > 0) %>%
     mutate(site_id = site)
 
-  uataq::archive(cal, path=file.path('data', site,
+  uataq::archive(cal, path=file.path('data', site, 'lgr-ugga',
                                      'calibrated/%Y_%m_calibrated.dat'))
 })
 lock_remove()
