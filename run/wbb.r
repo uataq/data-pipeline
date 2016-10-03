@@ -1,12 +1,10 @@
 # Ben Fasoli
 
 # Parameters ------------------------------------------------------------------
-site   <- 'heb'
-ip     <- '166.130.69.244'
-port   <- 3001
-table  <- 'Dat'
+site   <- 'wbb'
+ip     <- 'GGA-13-0221.chpc.utah.edu'
 
 # Processing ------------------------------------------------------------------
-source('/uufs/chpc.utah.edu/common/home/lin-group2/measurements/lair-proc/fun/licor.R')
+source('/uufs/chpc.utah.edu/common/home/lin-group2/measurements/lair-proc/fun/lgr-ugga.r')
 
 q('no')

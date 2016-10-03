@@ -12,21 +12,21 @@ Changes in the historic datasets can be made using the `bad` data text files. Wh
 # Site naming conventions
 Additional site details can be found at [air.utah.edu](http://air.utah.edu)  
 
-Site                   | Abbreviation
------------------------|----------------------------------
-Castle Peak            | csp
-Daybreak               | dbk
-Fruitland              | fru
-Heber                  | heb
-Hidden Peak            | hdp
-Horsepool              | hpl
-Logan                  | lgn
-Murray                 | mur
-Roosevelt              | roo
-Rose Park              | rpk
-Sugarhouse             | sug
-Suncrest               | sun
-University of Utah     | wbb
+Site                         | Abbreviation
+-----------------------------|----------------------------------
+Castle Peak                  | csp
+Daybreak                     | dbk
+Fruitland                    | fru
+Heber                        | heb
+Hidden Peak                  | hdp
+Horsepool                    | hpl
+Intermountain Medical Center | imc
+Logan                        | lgn
+Roosevelt                    | roo
+Rose Park                    | rpk
+Sugarhouse                   | sug
+Suncrest                     | sun
+University of Utah           | wbb
 
 # More info
 Source code at  

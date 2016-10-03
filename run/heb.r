@@ -1,12 +1,12 @@
 # Ben Fasoli
 
 # Parameters ------------------------------------------------------------------
-site   <- 'rpk'
-ip     <- '205.127.188.48'
-port   <- 6785
+site   <- 'heb'
+ip     <- '166.130.69.244'
+port   <- 3001
 table  <- 'Dat'
 
 # Processing ------------------------------------------------------------------
-source('/uufs/chpc.utah.edu/common/home/lin-group2/measurements/lair-proc/fun/licor.R')
+source('/uufs/chpc.utah.edu/common/home/lin-group2/measurements/lair-proc/fun/licor-6262.r')
 
 q('no')
