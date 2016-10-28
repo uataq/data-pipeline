@@ -149,11 +149,11 @@ try({
 
   cal_co2 <- with(parsed,
                   uataq::calibrate(Time_UTC, CO2d_ppm, ID_co2,
-                                   auto=T, er_tol=0.15, dt_tol=18000))
+                                   auto=!cal_all, er_tol=0.15, dt_tol=18000))
 
   cal_ch4 <- with(parsed,
                   uataq::calibrate(Time_UTC, CH4d_ppm, ID_ch4,
-                                   auto=T, er_tol=0.15, dt_tol=18000))
+                                   auto=!cal_all, er_tol=0.15, dt_tol=18000))
 
   cal <- data_frame(Time_UTC     = cal_co2$time,
                     CO2d_ppm_cal = cal_co2$cal,
