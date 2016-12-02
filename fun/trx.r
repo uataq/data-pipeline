@@ -110,7 +110,9 @@ try({
   # Aggregate data from different sources -------------------------------------
   trx <- bind_rows(
     d$gps[c('Time_UTC', 'lat', 'lon', 'alt')],
-    d$lgr %>% filter(valve == 1) %>% .[c('Time_UTC', 'CO2d_ppm', 'CH4d_ppm')],
+    if (!is.null(d$lgr)) d$lgr %>% 
+      filter(valve == 1) %>% 
+      .[c('Time_UTC', 'CO2d_ppm', 'CH4d_ppm')],
     d$`2bo3`[c('Time_UTC', 'O3_ppbv')],
     d$metone[c('Time_UTC', 'PM25_ugm3')],
     d$met[c('Time_UTC', 'case_T_C', 'case_RH_pct','case_P_hPa',
