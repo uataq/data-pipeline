@@ -41,11 +41,11 @@ try({
     python.load('lair-proc/fun/licor-6262_init.py')
     raw <- python.call('crpull', ip, port, table, t_start, t_end)
     
-    if (site == 'dbk') {
-      pm <- python.call('crpull', ip, port, 'PM', '2016-12-01 00:00:00', t_end) %>%
-         uataq::breakstr()
-      saveRDS(pm, '~/dbk.rds')
-    }
+    #if (site == 'dbk') {
+    #  pm <- python.call('crpull', ip, port, 'PM', '2016-12-01 00:00:00', t_end) %>%
+    #     uataq::breakstr()
+    #  saveRDS(pm, '~/dbk.rds')
+    #}
 
     if(all(is.null(raw)) | length(raw) < 2) stop('No new data found on logger.')
 
