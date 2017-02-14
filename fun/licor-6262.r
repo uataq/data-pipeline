@@ -1,5 +1,5 @@
-# CO2 site processing script.
-# Sourced by SimCity and DoE network processing scripts.
+# UUCON CO2 site processing script.
+# Sourced by UUCON network processing scripts.
 # Ben Fasoli
 
 setwd('/uufs/chpc.utah.edu/common/home/lin-group2/measurements/')
@@ -15,13 +15,12 @@ try({
   library(uataq,   lib.loc=lib)
 
   # Functions -------------------------------------------------------------------
-  get_cr1000 <- function(ip, port, table, site){
+  get_cr1000 <- function(ip, port, site){
     # Collects data from a remote CR1000, using python.    Ben Fasoli
     #     ip           character ip address
     #     port         port number
-    #     table        CR1000 table to download
     require(rPython)
-
+    
     lastf <- tail(dir(file.path('data', site, 'licor-6262', 'raw'),
                       pattern='.*\\.{1}dat', full.names=T), 1)
 
@@ -38,14 +37,12 @@ try({
       t_end   <- ''
     }
 
+    python.exec('import sys')
+    python.exec("sys.path.append('/uufs/chpc.utah.edu/common/home/u0791983/Python/anaconda/lib/python2.7/site-packages')")
+    python.exec('from pycampbellcr1000 import CR1000')
+    python.exec('from datetime import datetime')
     python.load('lair-proc/fun/licor-6262_init.py')
-    raw <- python.call('crpull', ip, port, table, t_start, t_end)
-    
-    #if (site == 'dbk') {
-    #  pm <- python.call('crpull', ip, port, 'PM', '2016-12-01 00:00:00', t_end) %>%
-    #     uataq::breakstr()
-    #  saveRDS(pm, '~/dbk.rds')
-    #}
+    raw <- python.call('crpull', ip, port, t_start, t_end)
 
     if(all(is.null(raw)) | length(raw) < 2) stop('No new data found on logger.')
 
@@ -94,11 +91,10 @@ try({
                          'ID', 'Program'),
              col_types='Tdddddddddddddddddddc') %>%
       bind_rows()
-    # raw <- bind_rows(raw, get_cr1000(ip, port, table, site))
   } else {
     if (!run[[site]]) stop('Site processing disabled in global.r')
     cal_all <- F
-    raw <- get_cr1000(ip, port, table, site)
+    raw <- get_cr1000(ip, port, site)
   }
   raw$ID <- round(raw$ID, 2)
 

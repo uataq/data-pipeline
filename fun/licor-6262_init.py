@@ -1,19 +1,19 @@
 #!/bin/bash/python
-import sys
-sys.path.append('/uufs/chpc.utah.edu/common/home/u0791983/Python/anaconda/lib/python2.7/site-packages')
-from pycampbellcr1000 import CR1000
-from datetime import datetime
+# import sys
+# sys.path.append('/uufs/chpc.utah.edu/common/home/u0791983/Python/anaconda/lib/python2.7/site-packages')
+# from pycampbellcr1000 import CR1000
+# from datetime import datetime
 
-def crpull(ip, port, table, tstart, tend):
+def crpull(ip, port, tstart, tend):
     print('Connecting to device...')
     device = CR1000.from_url('tcp:' + str(ip) + ':' + str(port), timeout=10)
     if len(tstart) > 0:
         tstart = datetime.strptime(tstart, '%Y-%m-%d %H:%M:%S')
         tend = datetime.strptime(tend, '%Y-%m-%d %H:%M:%S')
-        print('Pulling data from the ' + table + ' table after ' + str(tstart) + '...')
+        print('Pulling data from the Dat table after ' + str(tstart) + '...')
         rawdata = device.get_data('Dat', tstart, tend)
     else:
-        print('Pulling all data from the ' + table + ' table...')
+        print('Pulling all data from the Dat table...')
         rawdata = device.get_data('Dat')
         device.bye()
     if len(rawdata) > 0:
