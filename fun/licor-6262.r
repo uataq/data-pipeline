@@ -36,11 +36,7 @@ try({
       t_start <- ''
       t_end   <- ''
     }
-
-    python.exec('import sys')
-    python.exec("sys.path.append('/uufs/chpc.utah.edu/common/home/u0791983/Python/anaconda/lib/python2.7/site-packages')")
-    python.exec('from pycampbellcr1000 import CR1000')
-    python.exec('from datetime import datetime')
+    
     python.load('lair-proc/fun/licor-6262_init.py')
     raw <- python.call('crpull', ip, port, t_start, t_end)
 
