@@ -23,7 +23,9 @@ try({
     system(print(cmd, quote=F))
   }
 
-  read <- function(inst, site, nf=1, pattern='.*\\.{1}dat') {
+  read <- function(inst, site, nf=1, t_start = NULL, t_end = NULL,
+                   pattern='.*\\.{1}dat') {
+    # Must specify either nf or t_start/t_end
     hdr <- switch(inst,
                   '2bo3'  = c('Time_UTC', 'O3_ppbv', 'CellT_C', 'CellP_hPa',
                               'Flow_ccmin', 'Date', 'Time'),
@@ -43,6 +45,13 @@ try({
 
     files <- dir(file.path('data', site, 'raw', inst), pattern=pattern, full.names=T)
     if (!is.null(nf)) files <- tail(files, nf)
+    if (!is.null(t_start) && !is.null(t_end)) {
+      times <- seq(t_start, t_end, by = 'day')
+      poll <- format(times, tz = 'UTC',
+                      format = paste0(file.path('data', site, 'raw', inst, inst),
+                      '_%Y_%m_%d.dat'))
+      files <- intersect(files, poll)
+    }
 
     data <- lapply(files, function(x, inst)
     {
@@ -87,6 +96,9 @@ try({
   }
 
   # Read data and update archives ---------------------------------------------
+  #nf <- NULL
+  #t_start <- as.POSIXct('2016-10-01', tz = 'UTC')
+  #t_end   <- as.POSIXct('2016-10-31', tz = 'UTC')
   d        <- lapply(inst, read, site=site, nf=nf)
   names(d) <- inst
   null_idx <- sapply(d, is.null)
@@ -110,8 +122,8 @@ try({
   # Aggregate data from different sources -------------------------------------
   trx <- bind_rows(
     d$gps[c('Time_UTC', 'lat', 'lon', 'alt')],
-    if (!is.null(d$lgr)) d$lgr %>% 
-      filter(valve == 1) %>% 
+    if (!is.null(d$lgr)) d$lgr %>%
+      filter(valve == 1) %>%
       .[c('Time_UTC', 'CO2d_ppm', 'CH4d_ppm')],
     d$`2bo3`[c('Time_UTC', 'O3_ppbv')],
     d$metone[c('Time_UTC', 'PM25_ugm3')],
