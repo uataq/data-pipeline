@@ -3,4 +3,5 @@ t_start, t_end, miu_old, miu_new, comment
 2016-08-02 22:23:00.000, 2016-10-10 16:00:00.000, all, NA, Doug: Bad Li-cor
 2016-10-18 00:04:40.000, 2016-10-18 00:04:40.000 , 453.92, NA, Doug: not sure
 2016-11-06 00:00:00.000, 2016-11-06 00:00:04.000, 392.18,NA, Doug: not sure
-2017-04-15 18:00:00.000, 2017-04-28 18:30:00.000, 453.92,NA, Doug: broken clippard valve
+2017-04-15 18:00:00.000, 2017-04-28 18:00:00.000, 453.92,NA, Doug: broken clippard valve
+2017-04-28 18:00:00.000, 2017-04-28 18:30:00.000, all,NA, Doug: broken clippard valve
