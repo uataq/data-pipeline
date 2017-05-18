@@ -8,7 +8,8 @@ ip     <- 'GGA-13-0221.chpc.utah.edu'
 source('/uufs/chpc.utah.edu/common/home/lin-group2/measurements/lair-proc/fun/lgr-ugga.r')
 
 # UATAQ Brain ------------------------------------------------------------------
-brain_instruments <- c('teledyne-t200', 'teledyne-t400', 'teom-1400ab')
+brain_instruments <- c('metone-es642', 'teledyne-t200', 'teledyne-t300',
+                       'teledyne-t400', 'teom-1400ab')
 for (inst in brain_instruments) {
   cmd <- paste0('/usr/bin/rsync -avz -e ',
                 '"/usr/bin/ssh -i /uufs/chpc.utah.edu/common/home/u0791983/.ssh/id_rsa" ',
