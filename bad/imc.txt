@@ -5,3 +5,4 @@ t_start, t_end, miu_old, miu_new, comment
 2016-11-06 00:00:00.000, 2016-11-06 00:00:04.000, 392.18,NA, Doug: not sure
 2017-04-15 18:00:00.000, 2017-04-28 18:00:00.000, 453.92,NA, Doug: broken clippard valve
 2017-04-28 17:45:00.000, 2017-04-28 18:30:00.000, all,NA, Doug: broken clippard valve
+2017-05-26 18:00:00.000, 2017-05-30 16:00:00.000, all, NA, Doug: bad clippard valve
