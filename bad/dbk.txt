@@ -35,3 +35,4 @@ t_start, t_end, miu_old, miu_new, comment
 2017-05-06 00:00:00.000, 2017-05-06 00:20:00.000, all, NA, Doug:Random bad data
 2017-06-05 20:08:00.000, 2017-06-06 02:00:00.000, all, NA, Ben:Licor step function to 46
 2017-05-29 20:07:30.000, 2017-05-30 02:01:00.000, all, NA, Ben:Licor step function to 46
+2017-06-06 20:30:00.000, 2017-06-06 20:38:00.000, all, NA, Doug: on site
