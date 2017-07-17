@@ -8,3 +8,4 @@ t_start, t_end, miu_old, miu_new, comment
 2017-05-26 18:00:00.000, 2017-05-30 16:00:00.000, all, NA, Doug: bad clippard valve
 2017-05-30 16:00:00.000, 2017-06-29 16:00:00.000, 356.77, 456.77, Doug: input wrong value
 2017-06-29 20:08:00.000, 2017-06-29 23:00:00.000, all, NA, Doug: on site
+2016-11-06 00:02:20.000, 2016-11-06 00:02:20.000, 392.18, NA, Doug: bad random data
