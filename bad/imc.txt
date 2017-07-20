@@ -15,7 +15,7 @@ t_start, t_end, miu_old, miu_new, comment
 2016-10-11 00:00:00.000, 2016-10-11 00:09:00.000, all, NA, Doug: NTP issue with cr1000
 2016-10-12 00:00:00.000, 2016-10-12 00:09:00.000, all, NA, Doug: NTP issue with cr1000
 2016-10-13 00:00:00.000, 2016-10-13 00:09:00.000, all, NA, Doug: NTP issue with cr1000
-2016-10-14 00:00:00.000, 2016-10-14 00:09:00.000, all, NA, Doug: NTP issue with cr1000
+2016-10-14 00:00:00.000, 2016-10-14 00:09:20.000, all, NA, Doug: NTP issue with cr1000
 2016-10-15 00:00:00.000, 2016-10-15 00:09:00.000, all, NA, Doug: NTP issue with cr1000
 2016-10-16 00:00:00.000, 2016-10-16 00:09:00.000, all, NA, Doug: NTP issue with cr1000
 2016-10-17 00:00:00.000, 2016-10-17 00:09:00.000, all, NA, Doug: NTP issue with cr1000
