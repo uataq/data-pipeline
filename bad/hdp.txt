@@ -13,3 +13,4 @@ t_start, t_end, miu_old, miu_new, comment
 2016-08-28 23:06:00.000, 2016-08-29 15:00:00.000, all, NA, Ben: Serial MIU issues
 2016-08-30 23:13:30.000, 2016-08-31 19:00:00.000, all, NA, Ben: LGR has stopped outputting serial data
 2016-08-30 23:04:37.000, 2016-11-08 15:53:14.000, all, NA, Logan: Very little data. Values look unrealistic.
+2016-09-21 19:54:11.000, 2016-09-22 21:40:38.000, all, NA, Logan: Obs appear to be atm but IDed as cal gas. 
