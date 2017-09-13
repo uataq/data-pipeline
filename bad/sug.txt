@@ -6,3 +6,12 @@ t_start, t_end, miu_old, miu_new, comment
 2016-01-21 22:11:00.000, 2016-01-23 00:11:30.000, all, NA, Nick: Temporary jump in cals and measurements.
 2016-11-15 00:00:00.000, 2016-11-15 20:30:00.000, 499.65, 499.84, Doug: Fixing wrong entry
 2016-08-16 18:08:00.000, 2016-08-16 20:00:00.000, all, NA, Ben: Step function in cal measurements
+2017-03-05 00:00:00.000, 2017-03-05 00:08:30.000, all, NA, Doug: NTP issue
+2017-03-06 00:00:00.000, 2017-03-06 00:08:30.000, all, NA, Doug: NTP issue
+2017-03-07 00:00:00.000, 2017-03-07 00:08:30.000, all, NA, Doug: NTP issue
+2017-03-08 00:00:00.000, 2017-03-08 00:08:30.000, all, NA, Doug: NTP issue
+2017-03-09 00:00:00.000, 2017-03-09 00:08:30.000, all, NA, Doug: NTP issue
+2017-03-10 00:00:00.000, 2017-03-10 00:08:30.000, all, NA, Doug: NTP issue
+2017-03-11 00:00:00.000, 2017-03-11 00:08:30.000, all, NA, Doug: NTP issue
+2017-03-12 00:00:00.000, 2017-03-12 00:08:30.000, all, NA, Doug: NTP issue
+2017-03-13 00:00:00.000, 2017-03-13 00:08:30.000, all, NA, Doug: NTP issue

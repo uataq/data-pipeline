@@ -37,3 +37,4 @@ t_start, t_end, miu_old, miu_new, comment
 2017-05-29 20:07:30.000, 2017-05-30 02:01:00.000, all, NA, Ben:Licor step function to 46
 2017-06-06 20:30:00.000, 2017-06-06 20:38:00.000, all, NA, Doug: on site
 2017-06-19 20:00:00.000, 2017-07-20 16:00:00.000, all, NA, Doug:power blown on Metone
+2016-12-27 21:00:00.000, 2017-04-13 00:00:00.000, all, NA, Doug:parsing issue
