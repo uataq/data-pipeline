@@ -38,3 +38,7 @@ t_start, t_end, miu_old, miu_new, comment
 2017-06-06 20:30:00.000, 2017-06-06 20:38:00.000, all, NA, Doug: on site
 2017-06-19 20:00:00.000, 2017-07-20 16:00:00.000, all, NA, Doug:power blown on Metone
 2016-12-27 21:00:00.000, 2017-04-13 00:00:00.000, all, NA, Doug:parsing issue
+2017-10-06 18:15:00.000, 2017-10-07 01:00:00.000, all, NA, Doug:Site over heating
+2017-10-07 18:15:00.000, 2017-10-07 01:00:00.000, all, NA, Doug:Site over heating
+2017-10-09 18:15:00.000, 2017-10-10 01:00:00.000, all, NA, Doug:Site over heating
+2017-10-10 20:35:00.000, 2017-10-10 23:00:00.000, all, NA, Doug:Site over heating
