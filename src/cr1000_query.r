@@ -1,7 +1,7 @@
-query_cr1000 <- function(ip, table, t_start) {
+cr1000_query <- function(ip, table, t_start) {
   
   if (!table %in% cr1000_tables(ip))
-    stop(table, ' not found at ', ip)
+    stop(table, ' table not found at ', ip)
   
   t_start <- format(t_start, tz = 'UTC', '%Y-%m-%dT%H:%M:%S')
   
