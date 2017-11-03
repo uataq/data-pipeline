@@ -91,7 +91,7 @@ config <- list(
 
 
 # Data naming and type configuration
-col_info <- list(
+data_struct <- list(
   licor_6262 = list(
     raw = list(
       col_names = c('TIMESTAMP', 'batt_volt_Min', 'PTemp_Avg', 'Room_T_Avg', 'IRGA_T_Avg',
@@ -100,10 +100,15 @@ col_info <- list(
                     'rawH2O_Avg', 'ID', 'Program'),
       col_types = 'Tdddddddddddddc'),
     parsed = list(
-      col_names = c('Time_UTC','Battery_Voltage_V','Panel_T_C', 'Room_T_C', 
+      col_names = c('Time_UTC', 'Battery_Voltage_V', 'Panel_T_C', 'Room_T_C', 
                     'Cavity_T_C_IRGA', 'Cavity_P_kPa_IRGA', 'Flow_mLmin', 'Cavity_P_mV',
                     'Cavity_RH_mV', 'Cavity_T_C', 'CO2_Analog_ppm', 'CO2_ppm', 
-                    'H2O_ppth_IRGA', 'ID_co2', 'Program'),
-      col_types = 'Tdddddddddddddd')
+                    'H2O_ppth_IRGA', 'ID', 'Program', 'ID_CO2', 'Cavity_RH_pct',
+                    'Cavity_P_Pa', 'H2O_ppm', 'CO2d_ppm'),
+      col_types = 'Tdddddddddddddcddddd'),
+    calibrated = list(
+      col_names = c('Time_UTC', 'CO2d_ppm_cal', 'CO2d_ppm_meas', 'CO2d_m', 'CO2d_b',
+                    'CO2d_n', 'CO2d_rsq', 'CO2d_rmse'),
+      col_types = 'Tddddddd')
   )
 )
