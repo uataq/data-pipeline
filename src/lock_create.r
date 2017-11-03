@@ -1,8 +1,10 @@
-lock_create <- function() {
-  if (!site %in% ls())
-    stop('"site" not found in global environment')
-  lockfile <- paste0('lair-proc/.lock/', site, '.lock')
+lock_create <- function(site = get('site', envir = globalenv()),
+                        proc_wd = get('proc_wd', envir = globalenv())) {
+  
+  lockfile <- file.path(proc_wd, '.lock', paste0(site, '.lock'))
+  
   if (file.exists(lockfile))
-    stop(paste(site, 'processing already running.'))
+    stop(paste(site, 'processing running and locked. Exiting...'))
+  
   system(paste('touch', lockfile))
 }

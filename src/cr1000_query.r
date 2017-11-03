@@ -7,9 +7,13 @@ cr1000_query <- function(ip, table, t_start) {
   
   uri <- paste0('https://air.utah.edu/api/cr1000_query/?ip=', ip, '&table=', table,
                 '&t_start=', t_start)
-  response <- scan(uri, character(), sep = '\n', quiet = T)
   
+  response <- scan(uri, character(), sep = '\n', quiet = T)
   data <- read.table(text = response, sep = ',', skip = 4, stringsAsFactors = F)
+  
+  if (nrow(data) < 1)
+    stop('No data returned by query at ', uri)
+  
   colnames(data) <- scan(text = response[2], what = character(), sep = ',', quiet = T)
   return(data)
 }
