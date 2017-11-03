@@ -1,5 +1,8 @@
 cr1000_query <- function(ip, table, t_start) {
   
+  # if (!ping(ip))
+    # stop('No ping returned from ', ip)
+  
   if (!table %in% cr1000_tables(ip))
     stop(table, ' table not found at ', ip)
   
@@ -7,6 +10,8 @@ cr1000_query <- function(ip, table, t_start) {
   
   uri <- paste0('https://air.utah.edu/api/cr1000_query/?ip=', ip, '&table=', table,
                 '&t_start=', t_start)
+  
+  print(uri)
   
   response <- scan(uri, character(), sep = '\n', quiet = T)
   data <- read.table(text = response, sep = ',', skip = 4, stringsAsFactors = F)

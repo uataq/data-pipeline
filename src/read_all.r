@@ -1,4 +1,4 @@
-read_all <- function(path, col_names = F, pattern = NULL, ...) {
+read_all <- function(path, pattern = NULL, col_names = F, ...) {
   raw_wd <- file.path(wd, 'raw')
   files <- dir(raw_wd, pattern = pattern, full.names = T)
   
