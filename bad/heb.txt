@@ -5,4 +5,5 @@ t_start, t_end, miu_old, miu_new, comment
 2015-11-22 14:00:00.000, 2015-12-08 19:00:00.000, 395.54, NA, Nick: Cal steadily increasing.
 2015-12-08 19:10:00.000, 2015-12-08 20:15:00.000, 0, 0, Nick: Half of zero calibration above zero.
 2016-01-19 14:00:00.000, 2016-03-15 16:11:00.000, 437.79, NA, Nick: Cal begins to travel up and down.
-2017-02-11 04:30:00.000, 2017-02-24 10:30:00.000, 451.45s, NA, Doug:Bad cal flow
+2017-02-11 04:30:00.000, 2017-02-24 10:30:00.000, 451.45, NA, Doug:Bad cal flow
+2017-10-31 22:00:00.000, 2017-11-13 17:30:00.000, 406.17, NA, Doug:Bad cal flow
