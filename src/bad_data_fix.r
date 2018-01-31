@@ -1,9 +1,12 @@
-bad_data_fix <- function(data, site = get('site', envir = globalenv()),
-                            proc_wd = get('proc_wd', envir = globalenv())) {
+bad_data_fix <- function(data, 
+                         instrument = get('instrument', envir = globalenv()),
+                         site = get('site', envir = globalenv())) {
   
-  bf <- file.path(proc_wd, 'bad', site, 'licor_6262.csv')
-  if (!file.exists(bf))
-    stop('No bad data file found at ', bf)
+  bf <- file.path('proc', 'bad', site, paste0(instrument, '.csv'))
+  if (!file.exists(bf)) {
+    message('No bad data file found at ', bf)
+    return(data)
+  }
   
   bad_tbl <- read_csv(bf, col_types = 'TTcc_', locale = locale(tz = 'UTC'))
   

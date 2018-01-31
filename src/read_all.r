@@ -1,12 +1,10 @@
 read_all <- function(path, pattern = NULL, col_names = F, ...) {
-  raw_wd <- file.path(wd, 'raw')
-  files <- dir(raw_wd, pattern = pattern, full.names = T)
+  
+  files <- dir(path, pattern = pattern, full.names = T)
   
   if (length(files) < 1)
-    stop('No files found in ', raw_wd)
+    stop('No files found in ', path)
   
-  return(bind_rows(lapply(files, read_csv,
-                          col_names = col_names,
-                          locale = locale(tz = 'UTC'),
-                          ...)))
+  return(bind_rows(lapply(files, read_csv, col_names = col_names, 
+                          locale = locale(tz = 'UTC'), progress = F, ...)))
 }
