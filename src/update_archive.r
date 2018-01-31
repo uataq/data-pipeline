@@ -18,9 +18,9 @@ update_archive <- function(nd, path = '%Y_%m.dat', tz = 'UTC') {
     append <- file.exists(file)
     if (append) {
       hdr <- get_file_header(file)
-      if (hdr != colnames(out))
+      if (!all.equal(hdr, colnames(out)))
         stop('Data structure has changed and headers now conflict.')
-      out <- out[out[[time_col]] > get_last_time(file)]
+      out <- out[out[[time_col]] > get_last_time(file), ]
     }
     if (nrow(out) < 1)
       next

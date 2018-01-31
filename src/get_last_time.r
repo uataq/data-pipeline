@@ -1,8 +1,7 @@
 get_last_time <- function(file, timecol = 1, tz = 'UTC', ...) {
   
   if (is.null(file) || !file.exists(file)) {
-    if (interactive())
-      message('No file found for extracting last time')
+    message('No file found for extracting last time at: ', file)
     return(as.POSIXct(0, tz = 'UTC', origin = '1970-01-01'))
   }
 

@@ -6,9 +6,8 @@ bad_log_check <- function(site = get('site', envir = globalenv()),
   
   # Proceed if no bad data file exists
   if (!file.exists(badf)) {
-    if (interactive())
-      message('No bad data file found for: ', 
-              paste(site, instrument, sep = '/'))
+    message('No bad data file found for: ', 
+            paste(site, instrument, sep = '/'))
     return()
   }
   

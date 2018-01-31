@@ -16,18 +16,23 @@ proc_init <- function() {
   # Check if reprocess flag is TRUE. If site/instrument archive needs to be
   # reprocessed, remove parsed and calibrated data levels
   if (site_info[[site]]$reprocess) {
-    if (interactive())
-      message('Reprocessing data archive for: ', site)
+    message('Reprocessing data archive for: ', site)
     for (path in file.path(wd, c('qaqc', 'calibrated'))) {
       system(paste('rm -r', path))
     }
   }
   
+  # Ensure that past processed data for exists and reprocess site/instrument
+  # if needed
+  for (path in file.path(wd, c('qaqc', 'calibrated'))) {
+    if (!file.exists(path))
+      site_info[[site]]$reprocess <<- T
+  }
+  
   # Ensure directory structure for site/instrument data archive exists
   for (path in file.path(wd, c('raw', 'qaqc', 'calibrated'))) {
     if (!file.exists(path)) {
-      if (interactive())
-        message('Path missing. Creating: ', path)
+      message('Path missing. Creating: ', path)
       
       dir.create(path, recursive = T, mode = '0755')
     }

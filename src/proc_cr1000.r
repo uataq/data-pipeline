@@ -2,7 +2,7 @@ proc_cr1000 <- function() {
   
   if (site_info[[site]]$reprocess) {
     # Read all historic raw data into memory as new data
-    return(read_all(file.path(wd, 'raw'),
+    return(read_all(file.path('data', site, instrument, 'raw'),
                     col_names = data_info[[instrument]]$raw$col_names,
                     col_types = data_info[[instrument]]$raw$col_types))
   }
@@ -12,7 +12,7 @@ proc_cr1000 <- function() {
   last_time <- get_last_time(last_file)
   
   # TODO: temporary last time two days prior to now for testing
-  last_time <- Sys.time() - 1*3600
+  last_time <- Sys.time() - 6*3600
   
   uri <- paste(site_info[[site]][[instrument]]$ip, 
                site_info[[site]][[instrument]]$port, sep = ':')

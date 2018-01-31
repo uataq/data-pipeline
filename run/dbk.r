@@ -20,6 +20,7 @@ try({
   
   
   # MetOne ES642 ---------------------------------------------------------------
+  site_info[[site]]$reprocess <- T
   instrument <- 'metone_es642'
   proc_init()
   nd <- proc_cr1000()
