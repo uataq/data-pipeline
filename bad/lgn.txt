@@ -32,8 +32,10 @@ t_start, t_end, miu_old, miu_new, comment
 2017-06-30 23:00:00.000, 2017-07-07 17:00:00.000, 599.21, NA, Doug:Tank was turned off.
 2017-07-01 00:00:00.000, 2017-07-21 00:00:00.000, 429.67, 429.57, Ryan: The LTS tank was entered incorrectly.
 2017-01-09 21:46:00.000, 2017-01-10 18:32:00.000, all, NA, Ryan: Stuck Clippard on atmosphere line.
+2017-04-19 01:25:00.000, 2017-04-19 01:25:40.000, all, NA, Ryan: High point, what Logan M would call a flyer. 
 2017-04-21 23:59:00.000, 2017-04-22 00:10:00.000, all, NA, Ryan: LTS install caused issue with all standard tanks.
 2017-04-22 23:59:00.000, 2017-04-23 00:10:00.000, all, NA, Ryan: LTS install caused issue with all standard tanks.
 2017-04-23 23:59:00.000, 2017-04-24 00:10:00.000, all, NA, Ryan: LTS install caused issue with all standard tanks.
 2017-04-24 23:59:00.000, 2017-04-25 00:10:00.000, all, NA, Ryan: LTS install caused issue with all standard tanks.
-2017-04-25 15:50:00.000, 2017-04-25 16:03:00.000, all, NA, Ryan: Standard inputed as -1 and -2, but reset after so not needed to save
+2017-04-25 15:50:00.000, 2017-04-25 16:03:00.000, all, NA, Ryan: Standard inputed as -1 and -2, but reset after so not needed to save.
+
