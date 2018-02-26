@@ -1,8 +1,8 @@
-t_start, t_end, miu_old, miu_new, comment
-2015-07-01 00:00:00.000, 2015-07-07 11:02:00.000, -1, 364.58, Ben: Known inputs forgotten.
-2015-08-03 08:24:39.000, 2015-08-03 08:24:41.000, all, NA, Ben: Single suspect data point.
-2015-08-29 00:00:00.000, 2015-12-01 00:00:00.000, 364.58, NA, Ben: Empty tank.
-2015-11-22 14:00:00.000, 2015-12-08 19:00:00.000, 395.54, NA, Nick: Cal steadily increasing.
-2015-12-08 19:10:00.000, 2015-12-08 20:15:00.000, 0, 0, Nick: Half of zero calibration above zero.
-2016-01-19 14:00:00.000, 2016-03-15 16:11:00.000, 437.79, NA, Nick: Cal begins to travel up and down.
-2017-02-11 04:30:00.000, 2017-02-24 10:30:00.000, 451.45s, NA, Doug:Bad cal flow
+t_start,t_end,miu_old,miu_new,t_added,name,comment
+2015-07-01 00:00:00.000, 2015-07-07 11:02:00.000, -1, 364.58, NA, Ben, Known inputs forgotten.
+2015-08-03 08:24:39.000, 2015-08-03 08:24:41.000, all, NA, NA, Ben, Single suspect data point.
+2015-08-29 00:00:00.000, 2015-12-01 00:00:00.000, 364.58, NA, NA, Ben, Empty tank.
+2015-11-22 14:00:00.000, 2015-12-08 19:00:00.000, 395.54, NA, NA, Nick, Cal steadily increasing.
+2015-12-08 19:10:00.000, 2015-12-08 20:15:00.000, 0, 0, NA, Nick, Half of zero calibration above zero.
+2016-01-19 14:00:00.000, 2016-03-15 16:11:00.000, 437.79, NA, NA, Nick, Cal begins to travel up and down.
+2017-02-11 04:30:00.000, 2017-02-24 10:30:00.000, 451.45s, NA, NA, Doug,Bad cal flow

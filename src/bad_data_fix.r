@@ -8,7 +8,7 @@ bad_data_fix <- function(data,
     return(data)
   }
   
-  bad_tbl <- read_csv(bf, col_types = 'TTcc_', locale = locale(tz = 'UTC'))
+  bad_tbl <- read_csv(bf, col_types = 'TTcc___', locale = locale(tz = 'UTC'))
   
   for (i in 1:nrow(bad_tbl)) {
     if (grepl('all', bad_tbl$miu_old[i], ignore.case = T)) {

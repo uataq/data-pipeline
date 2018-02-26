@@ -1,16 +1,16 @@
-t_start, t_end, miu_old, miu_new, comment
-2015-05-01 00:00:00.000, 2015-07-28 00:00:00.000, all, NA, Ben: Start of proper data.
-2016-04-29 19:00:00.000, 2016-05-02 18:14:00.000, all, NA, Doug: Starting rpk back up after outage.
-2016-05-13 21:15:00.000, 2016-05-13 22:00:00.000, all, NA, Doug: swapped out li-Corr.
-2016-06-08 00:00:00.000, 2016-06-08 00:15:00.000, 0, NA, Doug: strange midnight fluke
-2016-06-08 00:00:00.000, 2016-06-08 00:15:00.000, 394, NA, Doug: strange midnight fluke
-2016-06-08 00:00:00.000, 2016-06-08 00:15:00.000, 490.37, NA, Doug: strange midnight fluke
-2016-04-04 00:00:00.000, 2016-04-30 06:00:00.000, all, NA, Nick: Few data points in large gap and jumps in cals.
-2015-12-07 20:11:00.000, 2015-12-08 07:59:50.000, all, NA, Nick: Cals shift and have large jumps.
-2016-01-19 22:11:00.000, 2016-01-19 22:59:00.000, all, NA, Nick: Cals fall: data in between inaccurate.
-2016-05-13 20:11:00.000, 2016-05-13 21:25:00.000, all, NA, Nick: Large gap between cals again.
-2016-10-10 18:10:00.000, 2016-10-10 19:10:00.000, all, NA, Doug: Working at site
-2016-11-04 16:40:00.000, 2016-11-04 16:15:00.000, all, NA, Doug: Working at site
-2017-06-14 14:00:00.000, 2017-06-14 22:00:00.000, -1, 402.55, Doug: Working at site
-2017-06-14 14:00:00.000, 2017-06-14 22:00:00.000, -2, 490.3743, Doug: Working at site
-2017-06-14 14:00:00.000, 2017-06-14 22:00:00.000, -3, 629.67, Doug: Working at site
+t_start,t_end,miu_old,miu_new,t_added,name,comment
+2015-05-01 00:00:00.000, 2015-07-28 00:00:00.000, all, NA, NA, Ben, Start of proper data.
+2016-04-29 19:00:00.000, 2016-05-02 18:14:00.000, all, NA, NA, Doug, Starting rpk back up after outage.
+2016-05-13 21:15:00.000, 2016-05-13 22:00:00.000, all, NA, NA, Doug, swapped out li-Corr.
+2016-06-08 00:00:00.000, 2016-06-08 00:15:00.000, 0, NA, NA, Doug, strange midnight fluke
+2016-06-08 00:00:00.000, 2016-06-08 00:15:00.000, 394, NA, NA, Doug, strange midnight fluke
+2016-06-08 00:00:00.000, 2016-06-08 00:15:00.000, 490.37, NA, NA, Doug, strange midnight fluke
+2016-04-04 00:00:00.000, 2016-04-30 06:00:00.000, all, NA, NA, Nick, Few data points in large gap and jumps in cals.
+2015-12-07 20:11:00.000, 2015-12-08 07:59:50.000, all, NA, NA, Nick, Cals shift and have large jumps.
+2016-01-19 22:11:00.000, 2016-01-19 22:59:00.000, all, NA, NA, Nick, Cals fall: data in between inaccurate.
+2016-05-13 20:11:00.000, 2016-05-13 21:25:00.000, all, NA, NA, Nick, Large gap between cals again.
+2016-10-10 18:10:00.000, 2016-10-10 19:10:00.000, all, NA, NA, Doug, Working at site
+2016-11-04 16:40:00.000, 2016-11-04 16:15:00.000, all, NA, NA, Doug, Working at site
+2017-06-14 14:00:00.000, 2017-06-14 22:00:00.000, -1, 402.55, NA, Doug, Working at site
+2017-06-14 14:00:00.000, 2017-06-14 22:00:00.000, -2, 490.3743, NA, Doug, Working at site
+2017-06-14 14:00:00.000, 2017-06-14 22:00:00.000, -3, 629.67, NA, Doug, Working at site

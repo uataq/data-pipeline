@@ -1,21 +1,21 @@
-t_start, t_end, miu_old, miu_new, comment
-2016-01-01 00:00:00.000, 2016-07-25 00:00:00.000, all, NA, Ben: Data from before analyzer was installed
-2016-07-30 14:57:00.000, 2016-08-02 22:23:00.000, all, NA, Ben: MIU failure and lost intensity calibration
-2016-08-03 20:29:30.000, 2016-08-05 19:30:00.000, all, NA, Ben: MIU failure
-2016-08-07 21:52:00.000, 2016-08-08 15:05:15.000, all, NA, Ben: MIU failure. Identified the LGR as the problem not the lgr-buddy
-2016-08-09 10:04:30.000, 2016-08-11 19:48:00.000, all, NA, Ben: New LGR had timezone set incorrectly. Issues with serial port
-2016-08-11 23:04:00.000, 2016-08-12 17:47:00.000, all, NA, Ben: LGR stopped outputting serial data
-2016-08-15 11:53:50.000, 2016-08-16 06:37:50.000, all, NA, Ben: LGR stopped outputting serial data. Added exception to code
-2016-08-16 17:58:53.000, 2016-08-16 18:12:24.000, all, NA, Logan: unrealistic 10 min spike to 900ppm removed 
-2016-08-18 12:09:00.000, 2016-08-18 18:30:00.000, all, NA, Ben: On site testing
-2016-08-22 03:02:00.000, 2016-08-22 16:42:00.000, all, NA, Ben: LGR serial comms issue. Added additional ValueError exception
-2016-08-23 22:46:00.000, 2016-08-24 11:17:00.000, all, NA, Logan: Bad data prior to Bens site visit. 
-2016-08-24 11:17:00.000, 2016-08-24 16:19:30.000, all, NA, Ben: On site. Removed mg perchlorate trap and high reference tank
-2016-08-28 23:06:00.000, 2016-08-29 15:00:00.000, all, NA, Ben: Serial MIU issues
-2016-08-30 23:13:30.000, 2016-08-31 19:00:00.000, all, NA, Ben: LGR has stopped outputting serial data
-2016-08-30 23:04:37.000, 2016-11-08 15:53:14.000, all, NA, Logan: Very little data. Values look unrealistic.
-2016-09-21 19:54:11.000, 2016-09-22 21:40:38.000, all, NA, Logan: Obs appear to be atm but IDed as cal gas. 
-2017-04-03 06:19:35.000, 2017-04-03 19:28:26.000, all, NA, Logan: Anomolous time shift causing overlapping data. 
-2017-04-05 07:57:05.000, 2017-04-10 20:48:40.000, all, NA, Logan: CO2 obs anomalously low
-2017-05-19 15:46:21.000, 2017-06-19 17:00:00.000, all, NA, Logan: a few data points removed during a large data gap. 
-2016-07-25 01:01:01.000, 2017-08-09 01:01:01.000, 409.97, NA, Logan: Anomalous MIU value appears sporadically through whole record (MIU=0) 
+t_start,t_end,miu_old,miu_new,t_added,name,comment
+2016-01-01 00:00:00.000, 2016-07-25 00:00:00.000, all, NA, NA, Ben, Data from before analyzer was installed
+2016-07-30 14:57:00.000, 2016-08-02 22:23:00.000, all, NA, NA, Ben, MIU failure and lost intensity calibration
+2016-08-03 20:29:30.000, 2016-08-05 19:30:00.000, all, NA, NA, Ben, MIU failure
+2016-08-07 21:52:00.000, 2016-08-08 15:05:15.000, all, NA, NA, Ben, MIU failure. Identified the LGR as the problem not the lgr-buddy
+2016-08-09 10:04:30.000, 2016-08-11 19:48:00.000, all, NA, NA, Ben, New LGR had timezone set incorrectly. Issues with serial port
+2016-08-11 23:04:00.000, 2016-08-12 17:47:00.000, all, NA, NA, Ben, LGR stopped outputting serial data
+2016-08-15 11:53:50.000, 2016-08-16 06:37:50.000, all, NA, NA, Ben, LGR stopped outputting serial data. Added exception to code
+2016-08-16 17:58:53.000, 2016-08-16 18:12:24.000, all, NA, NA, Logan, unrealistic 10 min spike to 900ppm removed 
+2016-08-18 12:09:00.000, 2016-08-18 18:30:00.000, all, NA, NA, Ben, On site testing
+2016-08-22 03:02:00.000, 2016-08-22 16:42:00.000, all, NA, NA, Ben, LGR serial comms issue. Added additional ValueError exception
+2016-08-23 22:46:00.000, 2016-08-24 11:17:00.000, all, NA, NA, Logan, Bad data prior to Bens site visit. 
+2016-08-24 11:17:00.000, 2016-08-24 16:19:30.000, all, NA, NA, Ben, On site. Removed mg perchlorate trap and high reference tank
+2016-08-28 23:06:00.000, 2016-08-29 15:00:00.000, all, NA, NA, Ben, Serial MIU issues
+2016-08-30 23:13:30.000, 2016-08-31 19:00:00.000, all, NA, NA, Ben, LGR has stopped outputting serial data
+2016-08-30 23:04:37.000, 2016-11-08 15:53:14.000, all, NA, NA, Logan, Very little data. Values look unrealistic.
+2016-09-21 19:54:11.000, 2016-09-22 21:40:38.000, all, NA, NA, Logan, Obs appear to be atm but IDed as cal gas. 
+2017-04-03 06:19:35.000, 2017-04-03 19:28:26.000, all, NA, NA, Logan, Anomolous time shift causing overlapping data. 
+2017-04-05 07:57:05.000, 2017-04-10 20:48:40.000, all, NA, NA, Logan, CO2 obs anomalously low
+2017-05-19 15:46:21.000, 2017-06-19 17:00:00.000, all, NA, NA, Logan, a few data points removed during a large data gap. 
+2016-07-25 01:01:01.000, 2017-08-09 01:01:01.000, 409.97, NA, NA, Logan, Anomalous MIU value appears sporadically through whole record (MIU=0) 
