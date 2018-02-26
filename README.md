@@ -1,4 +1,4 @@
-![](assets/workflow.pdf)
+![](assets/workflow.png)
 
 # Repository structure
 The trace gas processing tools are broken into five components  
