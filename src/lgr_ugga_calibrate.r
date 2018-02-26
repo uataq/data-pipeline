@@ -15,11 +15,9 @@ licor_6262_calibrate <- function() {
   }
   files <- tail(dir(file.path('data', site, instrument, 'qaqc'),
                     pattern = '.*\\.{1}dat', full.names = T), N)
-  nd <- read_files(file.path('data', site, instrument, 'qaqc'),
-                   col_types = data_info[[instrument]]$qaqc$col_types,
-                   N = N)
-  if (!all.equal(colnames(nd), data_info[[instrument]]$qaqc$col_names))
-    stop('Header disagreement between common definition and: ', lf)
+  nd <- read_files(files, skip = 1,
+                   col_names = data_info[[instrument]]$qaqc$col_names,
+                   col_types = data_info[[instrument]]$qaqc$col_types)
 
   # Invalidate measured mole fraction for records that fail to pass qaqc
   invalid <- c('CO2d_ppm', 'ID_CO2', 'CH4d_ppm', 'ID_CH4')

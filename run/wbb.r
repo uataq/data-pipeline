@@ -14,7 +14,7 @@ try({
   nd <- lgr_ugga_init()
   nd <- lgr_ugga_qaqc()
   update_archive(nd, file.path('data', site, instrument, 'qaqc/%Y_%m_qaqc.dat'))
-  nd <- licor_6262_calibrate()
+  nd <- lgr_ugga_calibrate()
   update_archive(nd, file.path('data', site, instrument, 'calibrated/%Y_%m_calibrated.dat'))
 
 })

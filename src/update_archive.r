@@ -24,7 +24,7 @@ update_archive <- function(nd, path = '%Y_%m.dat', tz = 'UTC') {
     }
     if (nrow(out) < 1)
       next
-    out[[time_col]] <- format(out[[time_col]], tz = tz, '%Y-%m-%d %H:%M:%OS2')
+    out[[time_col]] <- format(out[[time_col]], tz = tz, '%Y-%m-%dT%H:%M:%OS2')
     write_csv(out, file, append = append)
   }
 }

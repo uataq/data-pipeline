@@ -16,15 +16,15 @@
   "lgr_ugga" : {
     "raw" : {
       "col_names" : ["Time_UTC", "CH4_ppm", "CH4_ppm_sd", "H2O_ppm", "H2O_ppm_sd", "CO2_ppm", "CO2_ppm_sd", "CH4d_ppm", "CH4d_ppm_sd", "CO2d_ppm", "CO2d_ppm_sd", "GasP_torr", "GasP_torr_sd", "GasT_C", "GasT_C_sd", "AmbT_C", "AmbT_C_sd", "RD0_us", "RD0_us_sd", "RD1_us", "RD1_us_sd", "Fit_Flag", "ID"],
-      "col_types" : "Tdddddddddddddddddddddc"
+      "col_types" : "cdddddddddddddddddddddc"
     },
     "qaqc" : {
-      "col_names" : ["Time_UTC", "CH4_ppm", "CH4_ppm_sd", "H2O_ppm", "H2O_ppm_sd", "CO2_ppm", "CO2_ppm_sd", "CH4d_ppm", "CH4d_ppm_sd", "CO2d_ppm", "CO2d_ppm_sd", "Cavity_P_torr", "Cavity_P_torr_sd", "Cavity_T_C", "Cavity_T_C_sd", "Ambient_T_C", "Ambient_T_C_sd", "RD0_us", "RD0_us_sd", "RD1_us", "RD1_us_sd", "Fit_Flag", "ID"],
-      "col_types" : "Tddddddddddddccdddddd"
+      "col_names" : ["Time_UTC", "CH4_ppm", "CH4_ppm_sd", "H2O_ppm", "H2O_ppm_sd", "CO2_ppm", "CO2_ppm_sd", "CH4d_ppm", "CH4d_ppm_sd", "CO2d_ppm", "CO2d_ppm_sd", "Cavity_P_torr", "Cavity_P_torr_sd", "Cavity_T_C", "Cavity_T_C_sd", "Ambient_T_C", "Ambient_T_C_sd", "RD0_us", "RD0_us_sd", "RD1_us", "RD1_us_sd", "Fit_Flag", "ID", "ID_CO2", "ID_CH4", "QAQC_Flag"],
+      "col_types" : "Tdddddddddddddddddddddcddd"
     },
     "calibrated" : {
-      "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_meas", "CO2d_m", "CO2d_b", "CO2d_n", "CO2d_rsq", "CO2d_rmse", "ID_CO2", "QAQC_Flag"],
-      "col_types" : "Tddddddd"
+      "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_meas", "CO2d_m", "CO2d_b", "CO2d_n", "CO2d_rsq", "CO2d_rmse", "ID_CO2", "CH4d_ppm_cal", "CH4d_ppm_meas", "CH4d_m", "CH4d_b", "CH4d_n", "CH4d_rsq", "CH4d_rmse", "ID_CH4", "QAQC_Flag"],
+      "col_types" : "Tddddddddddddddddc"
     }
   },
   "metone_es642" : {

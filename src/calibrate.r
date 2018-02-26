@@ -183,7 +183,7 @@ calibrate <- function(time, meas, known, er_tol = 100, drift_tol = 100, dt_tol =
 
   return(data_frame(time = time,
                     cal  = (meas - b) / m,
-                    raw  = meas,
+                    meas  = meas,
                     m    = m,
                     b    = b,
                     n    = n_cal,
