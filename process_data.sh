@@ -21,12 +21,12 @@ exec=(dbk.r heb.r imc.r lgn.r rpk.r sug.r sun.r)
 echo "Spawning: ${exec[@]}"
 echo
 
-# Store process ids to monitor completion
+# Spawn parallel R child processes
 for i in ${exec[@]}; do
   Rscript run/$i &
 done
 
-# Wait for processing to finish (max 4 minutes)
+# Wait for processing to finish (max ~4 minutes)
 sleep 10
 maxit=2400
 for i in $(seq 0 $maxit); do
@@ -40,3 +40,7 @@ done
 
 # Build air.utah.edu
 echo "Building air.utah.edu source code..."
+
+
+echo "Pushing air.utah.edu changes to webserver..."
+# rsync -az _site/* benfasoli@air.utah.edu:/var/www/html/

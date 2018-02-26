@@ -2,5 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
+.Rapp.history
+.DS_Store
 proc.Rproj
 log.txt

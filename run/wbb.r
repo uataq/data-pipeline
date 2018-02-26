@@ -1,21 +1,22 @@
 # Ben Fasoli
 
-# Parameters -------------------------------------------------------------------
 site   <- 'wbb'
-ip     <- 'GGA-13-0221.chpc.utah.edu'
 
-# Processing -------------------------------------------------------------------
-source('/uufs/chpc.utah.edu/common/home/lin-group2/measurements/lair-proc/fun/lgr-ugga.r')
+# Load settings and initialize lock file
+source('/uufs/chpc.utah.edu/common/home/lin-group2/measurements-beta/proc/_global.r')
+lock_create()
 
-# UATAQ Brain ------------------------------------------------------------------
-brain_instruments <- c('metone-es642', 'teledyne-t200', 'teledyne-t300',
-                       'teledyne-t400', 'teom-1400ab')
-for (inst in brain_instruments) {
-  cmd <- paste0('/usr/bin/rsync -avz -e ',
-                '"/usr/bin/ssh -i /uufs/chpc.utah.edu/common/home/u0791983/.ssh/id_rsa" ',
-                'uataq@uataq-brain.atmos.utah.edu:/home/uataq/air-trend/log/data/', inst, '/* ',
-                '/uufs/chpc.utah.edu/common/home/lin-group2/measurements/data/wbb/', inst, '/raw/')
-  system(print(cmd, quote=F))
-}
+try({
 
-q('no')
+  # LGR UGGA -------------------------------------------------------------------
+  instrument <- 'lgr_ugga'
+  proc_init()
+  nd <- lgr_ugga_init()
+  nd <- lgr_ugga_qaqc()
+  update_archive(nd, file.path('data', site, instrument, 'qaqc/%Y_%m_qaqc.dat'))
+  nd <- licor_6262_calibrate()
+  update_archive(nd, file.path('data', site, instrument, 'calibrated/%Y_%m_calibrated.dat'))
+
+})
+
+lock_remove()

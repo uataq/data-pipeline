@@ -11,7 +11,7 @@ try({
   # Licor 6262 -----------------------------------------------------------------
   instrument <- 'licor_6262'
   proc_init()
-  nd <- proc_cr1000()
+  nd <- cr1000_init()
   update_archive(nd, file.path('data', site, instrument, 'raw/%Y_%m_raw.dat'))
   nd <- licor_6262_qaqc()
   update_archive(nd, file.path('data', site, instrument, 'qaqc/%Y_%m_qaqc.dat'))
@@ -23,7 +23,7 @@ try({
   site_info[[site]]$reprocess <- T
   instrument <- 'metone_es642'
   proc_init()
-  nd <- proc_cr1000()
+  nd <- cr1000_init()
   update_archive(nd, file.path('data', site, instrument, 'raw/%Y_%m_raw.dat'))
   nd <- metone_es642_qaqc()
   update_archive(nd, file.path('data', site, instrument, 'qaqc/%Y_%m_qaqc.dat'))

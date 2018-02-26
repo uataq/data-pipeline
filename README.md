@@ -1,3 +1,5 @@
+![](assets/workflow.pdf)
+
 # Repository structure
 The trace gas processing tools are broken into five components  
 1. `global.R` script. This includes run and reset flags, as well as functions shared between different processing routines. Set reset flags TRUE to reprocess site data from the raw measurements (unnecessary if just reprocessing due to changes in bad data files). Set run flags FALSE to disable processing for individual sites.
