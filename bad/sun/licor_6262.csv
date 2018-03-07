@@ -1,16 +1,15 @@
 t_start,t_end,miu_old,miu_new,t_added,name,comment
-2015-05-01 00:00:00.000, 2015-09-01 00:00:00.000, all, NA, NA, Ben, Interference from nearby vent. Moved inlet.
-2015-09-25 01:00:00.000, 2015-09-25 01:40:00.000, all, NA, NA, Doug, Testing for leaks. None found. N2 empty.
-2015-09-29 12:25:00.000, 2015-09-29 13:45:00.000, all, NA, NA, Doug, Replaced N2 and STK2.
-2016-01-24 20:00:00.000, 2016-01-25 18:30:00.000, 384.63, NA, NA, Doug, Bad stk1 clippard recalibrate with only stk2 and stk3.
-2016-01-29 00:00:00.000, 2016-01-29 18:30:00.000, 384.63, NA, NA, Doug, Bad stk1 clippard recalibrate with only stk2 and stk3.
-2016-03-04 17:09:00.000, 2016-03-21 14:00:00.000, -3, 580.70, NA, Doug, Forgot to enter tank value into logger
-2016-04-08 14:45:00.000, 2016-04-08 18:00:00.000, all, Na, NA, Doug, onsite
- troubleshooting,,,, NA,,
-2016-07-14 05:30:00.000, 2016-07-22 18:00:00.000, all, Na, NA, Doug, Bad li-cor
-2015-11-04 12:10:00.000, 2015-11-04 14:00:00.000, all, NA, NA, Nick, Bad cal and jump in data.
-2016-03-04 16:10:00.000, 2016-03-04 18:00:00.000, all, NA, NA, Nick, Jump in data between cals. Calibrated data falls.
-2016-07-09 12:11:00.000, 2016-07-14 00:45:00.000, all, NA, NA, Nick, Jump in data and cals by 100 ppm
-2016-01-27 02:00:00.000, 2016-01-27 02:10:00.000, all, NA, NA, Nick, Bad Cal.
-2016-10-07 17:00:00.000, 2016-10-07 19:00:00.000, -1, NA, NA, Doug, On site.
-2017-02-25 00:00:00.000, 2017-03-10 00:00:00.000, all, NA, NA, Doug, N2 tank bad
+2015-05-01T00:00:00Z,2015-09-01T00:00:00Z,all,NA,2018-03-07T19:32:49Z,Ben,Interference from nearby vent. Moved inlet.
+2015-09-25T01:00:00Z,2015-09-25T01:40:00Z,all,NA,2018-03-07T19:32:49Z,Doug,Testing for leaks. None found. N2 empty.
+2015-09-29T12:25:00Z,2015-09-29T13:45:00Z,all,NA,2018-03-07T19:32:49Z,Doug,Replaced N2 and STK2.
+2016-01-24T20:00:00Z,2016-01-25T18:30:00Z,384.63,NA,2018-03-07T19:32:49Z,Doug,Bad stk1 clippard recalibrate with only stk2 and stk3.
+2016-01-29T00:00:00Z,2016-01-29T18:30:00Z,384.63,NA,2018-03-07T19:32:49Z,Doug,Bad stk1 clippard recalibrate with only stk2 and stk3.
+2016-03-04T17:09:00Z,2016-03-21T14:00:00Z,-3,580.70,2018-03-07T19:32:49Z,Doug,Forgot to enter tank value into logger
+2016-04-08T14:45:00Z,2016-04-08T18:00:00Z,all,Na,2018-03-07T19:32:49Z,Doug,onsite troubleshooting
+2016-07-14T05:30:00Z,2016-07-22T18:00:00Z,all,Na,2018-03-07T19:32:49Z,Doug,Bad li-cor
+2015-11-04T12:10:00Z,2015-11-04T14:00:00Z,all,NA,2018-03-07T19:32:49Z,Nick,Bad cal and jump in data.
+2016-03-04T16:10:00Z,2016-03-04T18:00:00Z,all,NA,2018-03-07T19:32:49Z,Nick,Jump in data between cals. Calibrated data falls.
+2016-07-09T12:11:00Z,2016-07-14T00:45:00Z,all,NA,2018-03-07T19:32:49Z,Nick,Jump in data and cals by 100 ppm
+2016-01-27T02:00:00Z,2016-01-27T02:10:00Z,all,NA,2018-03-07T19:32:49Z,Nick,Bad Cal.
+2016-10-07T17:00:00Z,2016-10-07T19:00:00Z,-1,NA,2018-03-07T19:32:49Z,Doug,On site.
+2017-02-25T00:00:00Z,2017-03-10T00:00:00Z,all,NA,2018-03-07T19:32:49Z,Doug,N2 tank bad

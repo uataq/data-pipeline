@@ -1,16 +1,19 @@
 t_start,t_end,miu_old,miu_new,t_added,name,comment
-2015-05-01 00:00:00.000, 2015-07-28 00:00:00.000, all, NA, NA, Ben, Start of proper data.
-2016-04-29 19:00:00.000, 2016-05-02 18:14:00.000, all, NA, NA, Doug, Starting rpk back up after outage.
-2016-05-13 21:15:00.000, 2016-05-13 22:00:00.000, all, NA, NA, Doug, swapped out li-Corr.
-2016-06-08 00:00:00.000, 2016-06-08 00:15:00.000, 0, NA, NA, Doug, strange midnight fluke
-2016-06-08 00:00:00.000, 2016-06-08 00:15:00.000, 394, NA, NA, Doug, strange midnight fluke
-2016-06-08 00:00:00.000, 2016-06-08 00:15:00.000, 490.37, NA, NA, Doug, strange midnight fluke
-2016-04-04 00:00:00.000, 2016-04-30 06:00:00.000, all, NA, NA, Nick, Few data points in large gap and jumps in cals.
-2015-12-07 20:11:00.000, 2015-12-08 07:59:50.000, all, NA, NA, Nick, Cals shift and have large jumps.
-2016-01-19 22:11:00.000, 2016-01-19 22:59:00.000, all, NA, NA, Nick, Cals fall: data in between inaccurate.
-2016-05-13 20:11:00.000, 2016-05-13 21:25:00.000, all, NA, NA, Nick, Large gap between cals again.
-2016-10-10 18:10:00.000, 2016-10-10 19:10:00.000, all, NA, NA, Doug, Working at site
-2016-11-04 16:40:00.000, 2016-11-04 16:15:00.000, all, NA, NA, Doug, Working at site
-2017-06-14 14:00:00.000, 2017-06-14 22:00:00.000, -1, 402.55, NA, Doug, Working at site
-2017-06-14 14:00:00.000, 2017-06-14 22:00:00.000, -2, 490.3743, NA, Doug, Working at site
-2017-06-14 14:00:00.000, 2017-06-14 22:00:00.000, -3, 629.67, NA, Doug, Working at site
+2015-05-01T00:00:00Z,2015-07-28T00:00:00Z,all,NA,2018-03-07T19:32:49Z,Ben,Start of proper data.
+2016-04-29T19:00:00Z,2016-05-02T18:14:00Z,all,NA,2018-03-07T19:32:49Z,Doug,Starting rpk back up after outage.
+2016-05-13T21:15:00Z,2016-05-13T22:00:00Z,all,NA,2018-03-07T19:32:49Z,Doug,swapped out li-Corr.
+2016-06-08T00:00:00Z,2016-06-08T00:15:00Z,0,NA,2018-03-07T19:32:49Z,Doug,strange midnight fluke
+2016-06-08T00:00:00Z,2016-06-08T00:15:00Z,394,NA,2018-03-07T19:32:49Z,Doug,strange midnight fluke
+2016-06-08T00:00:00Z,2016-06-08T00:15:00Z,490.37,NA,2018-03-07T19:32:49Z,Doug,strange midnight fluke
+2016-04-04T00:00:00Z,2016-04-30T06:00:00Z,all,NA,2018-03-07T19:32:49Z,Nick,Few data points in large gap and jumps in cals.
+2015-12-07T20:11:00Z,2015-12-08T07:59:50Z,all,NA,2018-03-07T19:32:49Z,Nick,Cals shift and have large jumps.
+2016-01-19T22:11:00Z,2016-01-19T22:59:00Z,all,NA,2018-03-07T19:32:49Z,Nick,Cals fall: data in between inaccurate.
+2016-05-13T20:11:00Z,2016-05-13T21:25:00Z,all,NA,2018-03-07T19:32:49Z,Nick,Large gap between cals again.
+2016-10-10T18:10:00Z,2016-10-10T19:10:00Z,all,NA,2018-03-07T19:32:49Z,Doug,Working at site
+2016-11-04T16:40:00Z,2016-11-04T16:15:00Z,all,NA,2018-03-07T19:32:49Z,Doug,Working at site
+2017-06-14T14:00:00Z,2017-06-14T22:00:00Z,-1,402.55,2018-03-07T19:32:49Z,Doug,Working at site
+2017-06-14T14:00:00Z,2017-06-14T22:00:00Z,-2,490.3743,2018-03-07T19:32:49Z,Doug,Working at site
+2017-06-14T14:00:00Z,2017-06-14T22:00:00Z,-3,629.67,2018-03-07T19:32:49Z,Doug,Working at site
+2017-10-28T06:06:00Z,2017-11-07T22:29:40Z,629.67,NA,2018-03-07T19:32:49Z,Doug,empty Tank
+2015-01-01T00:00:00Z,2018-02-13T16:13:00Z,339.17,339.19,2018-03-07T19:32:49Z,Ben,Tank value input to logger incorrect
+2018-02-13T16:35:00Z,2018-02-13T16:40:00Z,all,NA,2018-03-07T19:32:49Z,Ben,Ryan on-site and didn't disable recording for filter swap

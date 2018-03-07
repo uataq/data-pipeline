@@ -1,4 +1,16 @@
 {
+  "asb" : {
+    "is_active" : false,
+    "reprocess" : false,
+    "lati"      : 40.763226,
+    "long"      : -111.849278,
+    "zagl"      : null,
+    "licor_6262" : {
+      "ip"           : null,
+      "port"         : null,
+      "cr1000_table" : null
+    }
+  },
   "csp" : {
     "is_active" : false,
     "reprocess" : false,
@@ -6,11 +18,11 @@
     "long"      : -110.0194,
     "zagl"      : 4,
     "lgr_ugga" : {
-      "ip"   : "69.55.97.78",
-      "port" : 22
+      "ip"   : null,
+      "port" : null
     }
   },
-    "dbk" : {
+  "dbk" : {
     "is_active" : true,
     "reprocess" : false,
     "lati"      : 40.538497,
@@ -94,6 +106,30 @@
       "ip"        : "129.123.46.97",
       "port"      : 80,
       "cr1000_table" : "Dat"
+    }
+  },
+  "msa" : {
+    "is_active" : false,
+    "reprocess" : false,
+    "lati"      : 40.763226,
+    "long"      : -111.849278,
+    "zagl"      : null,
+    "licor_6262" : {
+      "ip"           : null,
+      "port"         : null,
+      "cr1000_table" : null
+    }
+  },
+  "mur" : {
+    "is_active" : false,
+    "reprocess" : false,
+    "lati"      : 40.763226,
+    "long"      : -111.849278,
+    "zagl"      : null,
+    "licor_6262" : {
+      "ip"           : null,
+      "port"         : null,
+      "cr1000_table" : null
     }
   },
   "roo" : {

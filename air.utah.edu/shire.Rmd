@@ -1,0 +1,47 @@
+---
+title: Shire Help
+output:
+  html_document:
+    theme: cosmo
+    includes:
+      in_header: _header.html
+---
+<!-- Ben Fasoli -->
+<br>
+
+Contact [Ben Fasoli](mailto:benfasoli@gmail.com) with questions or issues.  
+Last updated: July 16, 2016
+
+
+### Where to?
+Below are directories of importance listed along with their specific purpose. Permissions are group based and recursively sticky in shared directories.
+
+Directory        | Purpose
+---------------- | -----------------------------------
+/home            | Directories dedicated per-user. Default permissions give the owner read/write access and group/world read access.
+~/public_html    | Users can create a public_html folder in their home directory to access and share files using apache. Files can be accessed at [air.utah.edu/~user_name](http://air.utah.edu/~benfasoli/).
+/projects        | Shared between users in the `project-data` group. This is where the vast majority of code and data lives.
+/projects/data   | Measurement data from UATAQ observation sites.
+/var/www         | Shared between users in the `www-data` group. This is where files for [air.utah.edu](http://air.utah.edu) are hosted.
+/srv/shiny-server| Shared between users in the `shiny` group. Shiny is a package for creating R-based web apps which are proxied to [air.utah.edu/s/app_name/](http://air.utah.edu/s/air/).
+
+
+### Backups
+`rsync` based incremental backups are automated to archive the entire filesystem, including users home directories, shared directories, and configuration files. Two types of backups are regularly performed:
+
+1. Hourly, of which the 48 most recent are retained (2 days).
+2. Every other day, of which the 21 most recent are retained (6 weeks).
+
+Due to the nature of this style of incremental backups, files will ideally be recovered from the hourly backups to reduce losses. It is crucial to catch mistakes as early as possible - after six weeks, nothing will be recoverable. Contact [Ben Fasoli](mailto:benfasoli@gmail.com) immediately to minimize data loss.
+
+
+### Hardware Specs
+Spec          | Installed
+------------- | ---------------------------
+Storage       | 4x 3TB HDDs in RAID 10
+CPU           | Quad core Xeon E3-1225v3
+RAM           | 32GB DDR3 1600MHz
+
+
+### rstudio-server
+Rstudio is an interactive IDE for R. The shire has the server edition of rstudio installed, making code and data stored on the Shire interactively available through most web browsers. Access rstudio at [air.utah.edu/r/](http://air.utah.edu/r/).

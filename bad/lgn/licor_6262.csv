@@ -1,32 +1,40 @@
 t_start,t_end,miu_old,miu_new,t_added,name,comment
-2015-05-01 00:00:00.000, 2015-07-28 00:00:00.000, all, NA, NA, Ben, Start of proper data.
-2015-09-15 00:00:00.000, 2015-09-28 19:20:00.000, all, NA, NA, Ben, No nitrogen flow.
-2016-01-25 23:55:00.000, 2016-01-26 00:30:00.000, all, NA, NA, Ryan, Bad calibration
-2016-06-17 20:40:00.000, 2016-06-17 22:05:00.000, all, NA, NA, Doug, fixing bad H20 cal
-2016-05-30 16:00:00.000, 2016-06-17 20:40:00.000, all, NA, NA, Doug, failing clippard valve on sample
-2015-10-03 10:11:00.000, 2015-10-05 23:59:50.000, all, NA, NA, Nick, Bad Cals affecting data.
-2015-10-08 16:11:00.000, 2015-10-20 19:59:50.000, all, NA, NA, Nick, Cals fall on a daily cycle then go back to max value.
-2015-10-30 23:59:50.000, 2015-10-31 00:11:00.000, 0, NA, NA, Nick, Zero is off.
-2015-10-30 23:59:50.000, 2015-10-31 00:11:00.000, 385.29, NA, NA, Nick, Cal tank one is off.
-2015-12-11 23:59:50.000, 2015-12-12 00:11:00.000, 0, NA, NA, Nick, Zero is off.
-2015-12-24 23:59:50.000, 2015-12-25 00:11:00.000, 0, NA, NA, Nick, Zero is off.
-2015-12-29 23:11:00.000, 2015-12-12 01:00:00.000, all, NA, NA, Nick, Three cals are off.
-2016-01-03 23:59:50.000, 2016-01-04 00:11:00.000, 0, NA, NA, Nick, Zero is off.
-2016-02-04 23:59:50.000, 2016-02-05 00:11:00.000, 385.29, NA, NA, Nick, Cal Tank one is off.
-2016-02-06 23:59:50.000, 2016-02-07 00:11:00.000, 385.29, NA, NA, Nick, Cal Tank one is off.
-2015-08-29 20:11:00.000, 2015-08-30 03:59:50.000, all, NA, NA, Nick, Jump in cals.
-2016-02-09 23:59:50.000, 2016-02-10 00:11:00.000, 0, NA, NA, Nick, Zero is off.
-2016-02-10 23:59:50.000, 2016-02-11 00:11:00.000, 0, NA, NA, Nick, Zero is off.
-2016-02-10 23:59:50.000, 2016-02-11 00:11:00.000, 385.29, NA, NA, Nick, Cal is off.
-2016-02-11 23:59:50.000, 2016-02-12 00:11:00.000, 0, NA, NA, Nick, Zero is off.
-2016-02-11 23:59:50.000, 2016-02-12 00:11:00.000, 402.18, NA, NA, Nick, Cal is off.
-2016-02-18 23:59:50.000, 2016-02-19 00:11:00.000, 0, NA, NA, Nick, Zero is off.
-2016-03-04 23:59:50.000, 2016-03-05 00:11:00.000, 0, NA, NA, Nick, Zero is off.
-2016-03-06 23:59:50.000, 2016-03-07 00:11:00.000, 0, NA, NA, Nick, Zero is off.
-2016-03-06 23:59:50.000, 2016-03-07 00:11:00.000, 402.18, NA, NA, Nick, Cal is off.
-2016-03-12 22:11:00.000, 2016-03-13 02:00:00.000, all, NA, NA, Nick, All but one cal are off.
-2016-03-13 16:11:00.000, 2016-03-15 04:00:00.000, all, NA, NA, Nick, Atmos data flatlines for a day and then proceeds to jump around cals.
-2016-03-19 22:11:00.000, 2016-03-20 02:00:00.000, all, NA, NA, Nick, All but one cal are off.
-2017-02-19 10:00:00.000, 2017-02-24 00:30:00.000, 433.97, NA, NA, Doug,Bad cal flow
-2017-03-18 23:00:00.000, 2017-04-04 20:00:00.000, 402.18, NA, NA, Doug,Bad cal flow
-2017-06-30 23:00:00.000, 2017-07-07 17:00:00.000, 599.21, NA, NA, Doug,Tank was turned off
+2015-05-01T00:00:00Z,2015-07-28T00:00:00Z,all,NA,2018-03-07T19:32:49Z,Ben,Start of proper data.
+2015-09-15T00:00:00Z,2015-09-28T19:20:00Z,all,NA,2018-03-07T19:32:49Z,Ben,No nitrogen flow.
+2016-01-25T23:55:00Z,2016-01-26T00:30:00Z,all,NA,2018-03-07T19:32:49Z,Ryan,Bad calibration
+2016-06-17T20:40:00Z,2016-06-17T22:05:00Z,all,NA,2018-03-07T19:32:49Z,Doug,fixing bad H20 cal
+2016-05-30T16:00:00Z,2016-06-17T20:40:00Z,all,NA,2018-03-07T19:32:49Z,Doug,failing clippard valve on sample
+2015-10-03T10:11:00Z,2015-10-05T23:59:50Z,all,NA,2018-03-07T19:32:49Z,Nick,Bad Cals affecting data.
+2015-10-08T16:11:00Z,2015-10-20T19:59:50Z,all,NA,2018-03-07T19:32:49Z,Nick,Cals fall on a daily cycle then go back to max value.
+2015-10-30T23:59:50Z,2015-10-31T00:11:00Z,0,NA,2018-03-07T19:32:49Z,Nick,Zero is off.
+2015-10-30T23:59:50Z,2015-10-31T00:11:00Z,385.29,NA,2018-03-07T19:32:49Z,Nick,Cal tank one is off.
+2015-12-11T23:59:50Z,2015-12-12T00:11:00Z,0,NA,2018-03-07T19:32:49Z,Nick,Zero is off.
+2015-12-24T23:59:50Z,2015-12-25T00:11:00Z,0,NA,2018-03-07T19:32:49Z,Nick,Zero is off.
+2015-12-29T23:11:00Z,2015-12-12T01:00:00Z,all,NA,2018-03-07T19:32:49Z,Nick,Three cals are off.
+2016-01-03T23:59:50Z,2016-01-04T00:11:00Z,0,NA,2018-03-07T19:32:49Z,Nick,Zero is off.
+2016-02-04T23:59:50Z,2016-02-05T00:11:00Z,385.29,NA,2018-03-07T19:32:49Z,Nick,Cal Tank one is off.
+2016-02-06T23:59:50Z,2016-02-07T00:11:00Z,385.29,NA,2018-03-07T19:32:49Z,Nick,Cal Tank one is off.
+2015-08-29T20:11:00Z,2015-08-30T03:59:50Z,all,NA,2018-03-07T19:32:49Z,Nick,Jump in cals.
+2016-02-09T23:59:50Z,2016-02-10T00:11:00Z,0,NA,2018-03-07T19:32:49Z,Nick,Zero is off.
+2016-02-10T23:59:50Z,2016-02-11T00:11:00Z,0,NA,2018-03-07T19:32:49Z,Nick,Zero is off.
+2016-02-10T23:59:50Z,2016-02-11T00:11:00Z,385.29,NA,2018-03-07T19:32:49Z,Nick,Cal is off.
+2016-02-11T23:59:50Z,2016-02-12T00:11:00Z,0,NA,2018-03-07T19:32:49Z,Nick,Zero is off.
+2016-02-11T23:59:50Z,2016-02-12T00:11:00Z,402.18,NA,2018-03-07T19:32:49Z,Nick,Cal is off.
+2016-02-18T23:59:50Z,2016-02-19T00:11:00Z,0,NA,2018-03-07T19:32:49Z,Nick,Zero is off.
+2016-03-04T23:59:50Z,2016-03-05T00:11:00Z,0,NA,2018-03-07T19:32:49Z,Nick,Zero is off.
+2016-03-06T23:59:50Z,2016-03-07T00:11:00Z,0,NA,2018-03-07T19:32:49Z,Nick,Zero is off.
+2016-03-06T23:59:50Z,2016-03-07T00:11:00Z,402.18,NA,2018-03-07T19:32:49Z,Nick,Cal is off.
+2016-03-12T22:11:00Z,2016-03-13T02:00:00Z,all,NA,2018-03-07T19:32:49Z,Nick,All but one cal are off.
+2016-03-13T16:11:00Z,2016-03-15T04:00:00Z,all,NA,2018-03-07T19:32:49Z,Nick,Atmos data flatlines for a day and then proceeds to jump around cals.
+2016-03-19T22:11:00Z,2016-03-20T02:00:00Z,all,NA,2018-03-07T19:32:49Z,Nick,All but one cal are off.
+2017-02-19T10:00:00Z,2017-02-24T00:30:00Z,433.97,NA,2018-03-07T19:32:49Z,Doug,Bad cal flow.
+2017-03-18T23:00:00Z,2017-04-04T20:00:00Z,402.18,NA,2018-03-07T19:32:49Z,Doug,Bad cal flow.
+2017-06-30T23:00:00Z,2017-07-07T17:00:00Z,599.21,NA,2018-03-07T19:32:49Z,Doug,Tank was turned off.
+2017-07-01T00:00:00Z,2017-07-21T00:00:00Z,429.67,429.57,2018-03-07T19:32:49Z,Ryan,The LTS tank was entered incorrectly.
+2017-01-09T21:46:00Z,2017-01-10T18:32:00Z,all,NA,2018-03-07T19:32:49Z,Ryan,Stuck Clippard on atmosphere line.
+2017-04-19T01:25:00Z,2017-04-19T01:25:40Z,all,NA,2018-03-07T19:32:49Z,Ryan,High point what Logan M would call a flyer.
+2017-04-21T23:59:00Z,2017-04-22T00:10:00Z,all,NA,2018-03-07T19:32:49Z,Ryan,LTS install caused issue with all standard tanks.
+2017-04-22T23:59:00Z,2017-04-23T00:10:00Z,all,NA,2018-03-07T19:32:49Z,Ryan,LTS install caused issue with all standard tanks.
+2017-04-23T23:59:00Z,2017-04-24T00:10:00Z,all,NA,2018-03-07T19:32:49Z,Ryan,LTS install caused issue with all standard tanks.
+2017-04-24T23:59:00Z,2017-04-25T00:10:00Z,all,NA,2018-03-07T19:32:49Z,Ryan,LTS install caused issue with all standard tanks.
+2017-04-25T15:50:00Z,2017-04-25T16:03:00Z,all,NA,2018-03-07T19:32:49Z,Ryan,Standard inputed as -1 and -2 but reset after so not needed to save.

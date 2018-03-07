@@ -1,0 +1,89 @@
+/* map positioning */
+.map {
+  width: 100%;
+  height: calc(100vh - 48px);
+  height: -o-calc(100% - 48px); /* opera */
+  height: -webkit-calc(100% - 48px); /* google, safari */
+  height: -moz-calc(100% - 48px); /* firefox */
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
+/* tracer div spacing */
+div.tracer-left {
+  width: 40px;
+  display: inline-block;
+}
+
+/* input group sizing */
+.input-group-addon {
+    min-width: 53px;
+    text-align: middle;
+}
+
+/* link color */
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #c3252c;
+}
+a.leaflet-control-zoom-in,
+a.leaflet-control-zoom-out {
+  color: #000000;
+}
+
+/* hide title */
+#header {
+    visibility: hidden;
+    position: absolute;
+    top: -9999px;
+}
+
+/* last updated time well */
+div.last-upd {
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+/* navbar menu color on mouse hover */
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  color: #000000;
+  text-decoration: none;
+  background-color: #F8F8F8;
+}
+/* navbar menu active color */
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  color: #000000;
+  text-decoration: none;
+  outline: 0;
+  background-color: #E8E8E8;
+}
+/* leaflet legend position */
+.legend {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+}
+
+/* hide on mobile browsers */
+.mobileHide {
+  display: inline;
+}
+@media only screen
+and (max-device-width: 480px) {
+  .mobileHide { display: none; }
+}
+.mobileShow {
+  display: none;
+}
+@media only screen
+and (max-device-width: 480px) {
+  .mobileShow { display: inline; }
+}

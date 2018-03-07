@@ -40,7 +40,8 @@ done
 
 # Build air.utah.edu
 echo "Building air.utah.edu source code..."
-
+cd web
+# Rscript _build.r
 
 echo "Pushing air.utah.edu changes to webserver..."
 # rsync -az _site/* benfasoli@air.utah.edu:/var/www/html/

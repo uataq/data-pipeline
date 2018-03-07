@@ -49,7 +49,7 @@ lgr_ugga_init <- function() {
     }
     df <- tryCatch(suppressWarnings({
       read_csv(file, col_names = col_names, col_types = col_types, skip = 2, 
-               na = c('TO', '', 'NA'))
+               na = c('TO', '', 'NA'), progress = F)
     }),
     error = function(e) NULL)
     
