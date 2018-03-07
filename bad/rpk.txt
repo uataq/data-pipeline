@@ -15,5 +15,5 @@ t_start, t_end, miu_old, miu_new, comment
 2017-06-14 14:00:00.000, 2017-06-14 22:00:00.000, -2, 490.3743, Doug: Working at site
 2017-06-14 14:00:00.000, 2017-06-14 22:00:00.000, -3, 629.67, Doug: Working at site
 2017-10-28 06:06:00.000, 2017-11-07 22:29:40.000, 629.67, NA, Doug:empty Tank
-2015-01-01 00:00:00.000, 2018-02-13 16:13:00.000 339.17, 339.19, Ben: Tank value input to logger incorrect
+2015-01-01 00:00:00.000, 2018-02-13 16:13:00.000, 339.17, 339.19, Ben: Tank value input to logger incorrect
 2018-02-13 16:35:00.000, 2018-02-13 16:40:00.000, all, NA, Ben: Ryan on-site and didn't disable recording for filter swap
