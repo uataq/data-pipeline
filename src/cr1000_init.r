@@ -13,9 +13,6 @@ cr1000_init <- function() {
                     pattern = '.*\\.{1}dat', full.names = T), 1)
   last_time <- get_last_time(last_file)
 
-  # TODO: temporary last time two days prior to now for testing
-  last_time <- Sys.time() - 48*3600
-
   uri <- paste(site_info[[site]][[instrument]]$ip,
                site_info[[site]][[instrument]]$port, sep = ':')
   table <- site_info[[site]][[instrument]]$cr1000_table
