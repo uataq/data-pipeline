@@ -5,7 +5,7 @@ t_start, t_end, miu_old, miu_new, comment
 2016-01-24 20:00:00.000, 2016-01-25 18:30:00.000, 384.63, NA, Doug: Bad stk1 clippard recalibrate with only stk2 and stk3.
 2016-01-29 00:00:00.000, 2016-01-29 18:30:00.000, 384.63, NA, Doug: Bad stk1 clippard recalibrate with only stk2 and stk3.
 2016-03-04 17:09:00.000, 2016-03-21 14:00:00.000, -3, 580.70, Doug: Forgot to enter tank value into logger
-2016-04-08 14:45:00.000, 2016-04-08 18:00:00.000, all, Na, Doug: onsite, troubleshooting
+2016-04-08 14:45:00.000, 2016-04-08 18:00:00.000, all, Na, Doug: onsite troubleshooting
 2016-07-14 05:30:00.000, 2016-07-22 18:00:00.000, all, Na, Doug: Bad li-cor
 2015-11-04 12:10:00.000, 2015-11-04 14:00:00.000, all, NA, Nick: Bad cal and jump in data.
 2016-03-04 16:10:00.000, 2016-03-04 18:00:00.000, all, NA, Nick: Jump in data between cals. Calibrated data falls.
