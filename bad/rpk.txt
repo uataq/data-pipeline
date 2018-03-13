@@ -5,7 +5,6 @@ t_start, t_end, miu_old, miu_new, comment
 2016-06-08 00:00:00.000, 2016-06-08 00:15:00.000, 0, NA, Doug: strange midnight fluke
 2016-06-08 00:00:00.000, 2016-06-08 00:15:00.000, 394, NA, Doug: strange midnight fluke
 2016-06-08 00:00:00.000, 2016-06-08 00:15:00.000, 490.37, NA, Doug: strange midnight fluke
-2016-04-04 00:00:00.000, 2016-04-30 06:00:00.000, all, NA, Nick: Few data points in large gap and jumps in cals.
 2015-12-07 20:11:00.000, 2015-12-08 07:59:50.000, all, NA, Nick: Cals shift and have large jumps.
 2016-01-19 22:11:00.000, 2016-01-19 22:59:00.000, all, NA, Nick: Cals fall: data in between inaccurate.
 2016-05-13 20:11:00.000, 2016-05-13 21:25:00.000, all, NA, Nick: Large gap between cals again.
@@ -17,3 +16,14 @@ t_start, t_end, miu_old, miu_new, comment
 2017-10-28 06:06:00.000, 2017-11-07 22:29:40.000, 629.67, NA, Doug:empty Tank
 2015-01-01 00:00:00.000, 2018-02-13 16:13:00.000, 339.17, 339.19, Ben: Tank value input to logger incorrect
 2018-02-13 16:35:00.000, 2018-02-13 16:40:00.000, all, NA, Ben: Ryan on-site and didn't disable recording for filter swap
+2016-05-23 16:47:00.000, 2016-05-23 16:53:00.000, all, NA, Ryan: negative 1 and 2 removed from cal period
+2016-10-10 20:54:00.000, 2016-10-10 21:14:00.000, all, NA, Ryan: bad cal period 
+2016-11-11 16:44:00.000, 2017-03-30 22:21:10.000, 629.55, 629.67, Ryan: Tank 161006_M9 was incorrectly entered for a long time
+2016-11-01 01:00:00.000, 2016-11-04 18:20:00.000, all, NA, Ryan: bad cal
+2016-11-01 00:01:00.000, 2016-11-05 23:00:00.000, -1, NA, Ryan: I know there is a negative 1 in there somewhere but I cant find it
+2017-06-14 06:00:00.000, 2017-06-14 22:00:00.000, all, NA, Ryan: Atm marked as 402.55 and ther isnt a way to figure out what is cal gas and what is atmosphere so I am trashing all of the data
+2017-06-16 00:01:10.000, 2017-06-16 00:07:10.000, all, NA, Ryan: bad cal
+2017-06-29 18:32:30.000, 2017-06-29 18:33:30.000, all, NA, Ryan: bad LTS with a huge range
+2017-11-07 21:00:00.000, 2018-02-13 17:52:30.000, 399.17, 399.19, Ryan: Cal value was off by a little for a long period of time
+2018-02-26 00:01:30.000, 2018-02-26 00:02:30.000, all, NA, Ryan: Bad cal
+
