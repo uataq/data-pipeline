@@ -17,7 +17,7 @@ t_start, t_end, miu_old, miu_new, comment
 2017-03-13 00:00:00.000, 2017-03-13 00:08:30.000, all, NA, Doug: NTP issue
 2018-01-22 15:00:00.000, 2018-02-05 21:33:00.000, all, NA, Ryan: Power on MF controller off
 2016-07-11 17:58:00.000, 2016-07-11 17:59:00.000, 406.65, NA, Ryan: Removing negative 1 value
-2017-03-06 26:59:30.000, 2017-03-07 00:11:00.000, all, NA, Ryan: Strange downward dip
+2017-03-06 23:59:30.000, 2017-03-07 00:11:00.000, all, NA, Ryan: Strange downward dip
 2017-03-30 22:55:00.000, 2017-03-30 23:10:00.000, -1, NA, Ryan: Messy cal period with bad values saved in data file
 2017-03-30 22:55:00.000, 2017-03-30 23:10:00.000, 519.77, NA, Ryan: Messy cal period with bad values saved in data file
 2017-03-28 01:00:00.000, 2017-03-31 05:00:00.000, 499.84, NA, Ryan: Either bad cal tank or clippard problem 
