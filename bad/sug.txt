@@ -16,3 +16,4 @@ t_start, t_end, miu_old, miu_new, comment
 2017-03-12 00:00:00.000, 2017-03-12 00:08:30.000, all, NA, Doug: NTP issue
 2017-03-13 00:00:00.000, 2017-03-13 00:08:30.000, all, NA, Doug: NTP issue
 2018-01-22 15:00:00.000, 2018-02-05 21:33:00.000, all, NA, Ryan: Power on MF controller off
+2016-07-11 17:58:00.000, 2016-07-11 17:59:00.000, -1, NA, Ryan: Removing -1 value
