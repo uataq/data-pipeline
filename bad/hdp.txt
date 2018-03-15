@@ -19,3 +19,9 @@ t_start, t_end, miu_old, miu_new, comment
 2017-04-05 07:57:05.000, 2017-04-10 20:48:40.000, all, NA, Logan: CO2 obs anomalously low
 2017-05-19 15:46:21.000, 2017-06-19 17:00:00.000, all, NA, Logan: a few data points removed during a large data gap. 
 2016-07-25 01:01:01.000, 2017-08-09 01:01:01.000, 409.97, NA, Logan: Anomalous MIU value appears sporadically through whole record (MIU=0) 
+2016-08-30 16:58:06.000, 2016-08-30 17:01:41.000, all, NA, Ryan: atmpspheric contamination
+2017-04-03 05:19:00.000, 2017-04-03 05:25:30.000, all NA, Ryan: Bad cal with bad ring down time
+2017-04-28 22:41:00.000, 2017-04-28 23:00:00.000, all, NA, Ryan: Bad cal with frequency at 1 second not 10'
+2017-06-19 17:40:56.000, 2017-06-19 17:46:18.000, all, NA, Ryan: Strange downward dip prior to cal
+2017-09-14 16:33:00.000, 2017-10-05 19:00:00.000, 379.61, NA, Ryan: Empthy tank
+2018-03-04 03:15:52.000, 2018-03-04 16:53:54.000, all, NA, Ryan: Bad ring down
