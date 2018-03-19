@@ -24,4 +24,4 @@ t_start, t_end, miu_old, miu_new, comment
 2017-04-28 22:41:00.000, 2017-04-28 23:00:00.000, all, NA, Ryan: Bad cal with frequency at 1 second not 10'
 2017-06-19 17:40:56.000, 2017-06-19 17:46:18.000, all, NA, Ryan: Strange downward dip prior to cal
 2017-09-14 16:33:00.000, 2017-10-05 19:00:00.000, 379.61, NA, Ryan: Empthy tank
-2018-03-04 03:15:52.000, 2018-03-04 16:53:54.000, all, NA, Ryan: Bad ring down
+2018-03-04 03:15:52.000, 2018-03-05 16:55:00.000, all, NA, Ryan: Bad ring down
