@@ -6,7 +6,7 @@
     },
     "qaqc" : {
       "col_names" : ["Time_UTC", "Battery_Voltage_V", "Panel_T_C", "Ambient_T_C", "Cavity_T_C_IRGA", "Cavity_P_kPa_IRGA", "Flow_mLmin", "Cavity_P_mV", "Cavity_RH_mV", "Cavity_T_C", "CO2_Analog_ppm", "CO2_ppm", "H2O_ppth_IRGA", "ID", "Program", "QAQC_Flag", "ID_CO2", "Cavity_RH_pct", "Cavity_P_Pa", "H2O_ppm", "CO2d_ppm"],
-      "col_types" : "Tddddddddddddccdddddd"
+      "col_types" : "Tdddddddddddddcdddddd"
     },
     "calibrated" : {
       "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_meas", "CO2d_m", "CO2d_b", "CO2d_n", "CO2d_rsq", "CO2d_rmse", "ID_CO2", "QAQC_Flag"],
