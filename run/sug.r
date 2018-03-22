@@ -7,28 +7,29 @@ source('/uufs/chpc.utah.edu/common/home/lin-group2/measurements-beta/proc/_globa
 lock_create()
 
 try({
-  
   # Licor 6262 -----------------------------------------------------------------
   instrument <- 'licor_6262'
   proc_init()
   nd <- cr1000_init()
-  update_archive(nd, file.path('data', site, instrument, 'raw/%Y_%m_raw.dat'))
+  if (!site_info[[site]]$reprocess)
+    update_archive(nd, data_path(site, instrument, 'raw'))
   nd <- licor_6262_qaqc()
-  update_archive(nd, file.path('data', site, instrument, 'qaqc/%Y_%m_qaqc.dat'))
+  update_archive(nd, data_path(site, instrument, 'qaqc'), as_fst = T)
   nd <- licor_6262_calibrate()
-  update_archive(nd, file.path('data', site, instrument, 'calibrated/%Y_%m_calibrated.dat'))
-  
-  
+  update_archive(nd, data_path(site, instrument, 'calibrated'), as_fst = T)
+})
+
+try({
   # MetOne ES642 ---------------------------------------------------------------
   instrument <- 'metone_es642'
   proc_init()
   nd <- cr1000_init()
-  update_archive(nd, file.path('data', site, instrument, 'raw/%Y_%m_raw.dat'))
+  if (!site_info[[site]]$reprocess)
+    update_archive(nd, data_path(site, instrument, 'raw'))
   nd <- metone_es642_qaqc()
-  update_archive(nd, file.path('data', site, instrument, 'qaqc/%Y_%m_qaqc.dat'))
+  update_archive(nd, data_path(site, instrument, 'qaqc'), as_fst = T)
   nd <- metone_es642_calibrate()
-  update_archive(nd, file.path('data', site, instrument, 'calibrated/%Y_%m_calibrated.dat'))
-  
+  update_archive(nd, data_path(site, instrument, 'calibrated'), as_fst = T)
 })
 
 lock_remove()
