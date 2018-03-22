@@ -43,6 +43,7 @@ lgr_ugga_init <- function() {
     col_types <- data_info[[instrument]]$raw$col_types
     ndelim <- str_count(system(paste('head -n 2', file, '| tail -n 1'), 
                                intern = T), ',')
+    if (length(ndelim) == 0) return()
     if (ndelim == 23) {
       col_names <- append(col_names, 'fillvalue', after = 22)
       col_types <- paste0(col_types, 'c')
@@ -67,7 +68,7 @@ lgr_ugga_init <- function() {
   nd$Time_UTC <- as.POSIXct(nd$Time_UTC, tz = 'UTC',
                             format = '%m/%d/%Y %H:%M:%S')
   nd <- nd %>%
-    dplyr::filter(!is.na(Time_UTC), !is.na(ID)) %>%
+    dplyr::filter(!is.na(Time_UTC)) %>%
     arrange(Time_UTC)
   
   nd

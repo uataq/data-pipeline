@@ -18,6 +18,8 @@ bad_log_check <- function(site = get('site', envir = globalenv()),
   # Check if last modified time has changed since last run. Set flag to 
   # reprocess data if bad data file has been modified
   badf_log <- 'proc/bad/_log.rds'
+  if (!file.exists(badf_log))
+    bad_log_init()
   mtime_log <- readRDS(badf_log)
   
   if (trunc(mtime) != trunc(mtime_log[badf])) {

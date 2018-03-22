@@ -12,7 +12,25 @@ licor_6262_qaqc <- function() {
   
   # Extract numeric valve identifier and round result to eliminate precision
   # errors reported by the cr1000
-  nd$ID_CO2 <- round(as.numeric(nd$ID), 3)
+  nd$ID_CO2 <- suppressWarnings(round(as.numeric(nd$ID), 3))
+  
+  # QAQC flag identifiers
+  #   1 - Data manually removed
+  #   2 - System flush
+  #   3 - Invalid valve identifier
+  #   4 - Flow rate or cavity pressure out of range
+  #   5 - Drift between adjacent reference tank measurements out of range
+  #   6 - Time elapsed between reference tank measurements out of range
+  #   7 - Reference tank measurements out of range
+  #   8 - Measurement data filled from backup data recording source
+  analog_mask <- with(nd, !is.na(CO2_Analog_ppm) &
+                        abs(CO2_ppm - CO2_Analog_ppm) > 10 |
+                        is.na(CO2_ppm))
+  nd$CO2_ppm[analog_mask] <- nd$CO2_Analog_ppm[analog_mask]
+  nd$QAQC_Flag[analog_mask] <- 8
+  nd$QAQC_Flag[with(nd, Flow_mLmin < 395 | Flow_mLmin > 405)] <- 4
+  nd$QAQC_Flag[with(nd, ID_CO2 %in% c(-1, -2, -3, NA))] <- 3
+  nd$QAQC_Flag[with(nd, ID_CO2 == -99)] <- 2
   
   # Compute H2O concentration in ppm
   nd$Cavity_RH_pct <- with(nd, -1.91e-9 * Cavity_RH_mV^3 +
@@ -32,17 +50,9 @@ licor_6262_qaqc <- function() {
   ref_mask <- !is.na(nd$ID_CO2) & nd$ID_CO2 >= 0
   nd$CO2d_ppm[ref_mask] <- nd$CO2_ppm[ref_mask]
   
-  # QAQC flag identifiers
-  #   1 - Data manually removed
-  #   2 - System flush
-  #   3 - Invalid valve identifier
-  #   4 - Flow rate or cavity pressure out of range
-  #   5 - Drift between adjacent reference tank measurements out of range
-  #   6 - Time elapsed between reference tank measurements out of range
-  #   7 - Reference tank measurements out of range
-  nd$QAQC_Flag[with(nd, Flow_mLmin < 395 | Flow_mLmin > 405)] <- 4
-  nd$QAQC_Flag[with(nd, ID_CO2 %in% c(-1, -2, -3, NA))] <- 3
-  nd$QAQC_Flag[with(nd, ID_CO2 == -99)] <- 2
+  # Fill already-corrected historic SLCCO2 data with NaN in RH column
+  dry_mask <- is.na(nd$Cavity_RH_pct)
+  nd$CO2d_ppm[dry_mask] <- nd$CO2_ppm[dry_mask]
   
   nd
 }

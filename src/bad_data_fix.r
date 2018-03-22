@@ -4,7 +4,6 @@ bad_data_fix <- function(data,
   
   bf <- file.path('proc', 'bad', site, paste0(instrument, '.csv'))
   if (!file.exists(bf)) {
-    message('No bad data file found at ', bf)
     return(data)
   }
   
