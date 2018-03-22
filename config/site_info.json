@@ -51,7 +51,7 @@
     }
   },
   "hdp" : {
-    "is_active" : false,
+    "is_active" : true,
     "reprocess" : false,
     "lati"      : 40.560644,
     "long"      : -111.645278,
