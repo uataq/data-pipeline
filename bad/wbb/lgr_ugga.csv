@@ -1,36 +1,11 @@
 t_start,t_end,miu_old,miu_new,t_added,name,comment
-2010-01-01T00:00:00Z,2014-11-01T00:00:00Z,all,NA,2018-03-07T19:32:49Z,Ben,Data older than 2014-11 needs to be checked for issues. This should be updated down the road to recover any usable data before the WBB site was more closely maintained.
-2014-12-01T00:00:00Z,2014-12-19T00:00:00Z,639.48,NA,2018-03-07T19:32:49Z,Ben,Empty cal tank
-2015-01-23T10:00:00Z,2015-01-23T16:00:00Z,all,NA,2018-03-07T19:32:49Z,Ben,Bad data
-2015-02-09T14:00:00Z,2015-02-09T14:20:00Z,all,NA,2018-03-07T19:32:49Z,Ben,Bad data
-2015-02-20T13:09:00Z,2015-02-20T13:45:00Z,all,NA,2018-03-07T19:32:49Z,Ben,Bad data
-2015-03-19T10:00:00Z,2015-03-19T15:00:00Z,all,NA,2018-03-07T19:32:49Z,Ben,Bad data
-2015-03-23T07:30:00Z,2015-03-23T08:50:00Z,all,NA,2018-03-07T19:32:49Z,Ben,Bad data
-2015-04-28T15:07:00Z,2015-04-28T15:16:00Z,all,NA,2018-03-07T19:32:49Z,Ben,Wrong MIU valve temporarily set for flush.
-2015-05-01T00:00:00Z,2015-06-19T14:10:00Z,all,NA,2018-03-07T19:32:49Z,Ben,Leak found that compromises historic data.
-2016-02-27T00:04:00Z,2016-03-01T12:00:00Z,~442.91~4.905,NA,2018-03-07T19:32:49Z,Doug,Replaced tank that leaked.
-2014-12-04T21:43:00Z,2014-12-04T22:40:00Z,all,NA,2018-03-07T19:32:49Z,Nick,Bad Cal.
-2015-03-31T15:20:00Z,2015-03-31T21:25:00Z,all,NA,2018-03-07T19:32:49Z,Nick,Sudden Drop in cals.
-2015-03-30T17:00:00Z,2015-03-30T19:00:00Z,385.29,NA,2018-03-07T19:32:49Z,Nick,Bad Cal.
-2015-04-28T21:06:00Z,2015-04-28T21:16:00Z,all,NA,2018-03-07T19:32:49Z,Nick,Bad set of two cals.
-2015-08-13T14:36:00Z,2015-08-13T20:45:00Z,all,NA,2018-03-07T19:32:49Z,Nick,Jump in cals
-2015-08-24T14:00:00Z,2015-08-24T19:50:00Z,all,NA,2018-03-07T19:32:49Z,Nick,Bad set of cals.
-2015-11-05T19:52:50Z,2015-11-05T21:00:00Z,~461.25~4.888,NA,2018-03-07T19:32:49Z,Nick,Only calibration in area. Can't be used for cal.
-2016-01-05T21:00:00Z,2016-01-06T00:43:00Z,all,NA,2018-03-07T19:32:49Z,Nick,Low cals.
-2016-01-06T16:33:00Z,2016-01-07T01:51:00Z,all,NA,2018-03-07T19:32:49Z,Nick,Jump in cals.
-2016-02-17T10:51:00Z,2016-02-19T00:22:00Z,all,NA,2018-03-07T19:32:49Z,Nick,Large fall in cals for a period.
-2016-04-04T15:00:00Z,2016-04-08T23:40:00Z,all,NA,2018-03-07T19:32:49Z,Nick,Calibrations vary too much to be calibrated out.
-2016-04-14T14:53:00Z,2016-04-14T17:54:00Z,all,Na,2018-03-07T19:32:49Z,Nick,Large difference between cals.
-2016-05-13T18:55:00Z,2016-05-14T23:22:00Z,~390.89~2.514,NA,2018-03-07T19:32:49Z,Nick,Cal starts to drift on its own.
-2016-05-14T23:11:00Z,2016-05-27T20:12:00Z,all,NA,2018-03-07T19:32:49Z,Nick,Cals are shifting by over 10ppm per cal.
-2016-06-30T13:48:00Z,2016-06-30T21:23:00Z,all,NA,2018-03-07T19:32:49Z,Nick,Large jump in cals.
-2016-08-15T17:58:00Z,2016-08-15T20:13:00Z,all,NA,2018-03-07T19:32:49Z,Nick,Large jump in cals.
-2016-08-22T20:55:00Z,2016-08-22T21:40:00Z,all,NA,2018-03-07T19:32:49Z,Nick,Large jump in cals.
-2016-08-27T15:57:00Z,2016-08-27T17:30:00Z,all,NA,2018-03-07T19:32:49Z,Nick,Large Jump in cals.
-2016-08-29T16:11:00Z,2016-08-29T19:01:00Z,all,NA,2018-03-07T19:32:49Z,Nick,Large jump in cals.
-2016-09-01T03:41:00Z,2016-09-01T06:43:00Z,all,NA,2018-03-07T19:32:49Z,Nick,Jump in cals.
-2017-08-09T14:45:20Z,2017-08-09T14:46:00Z,all,NA,2018-03-07T19:32:49Z,Nick,First value in calibrations is incorrect.
-2017-08-21T13:31:30Z,2017-08-21T13:33:00Z,all,NA,2018-03-07T19:32:49Z,Nick,First value in calibrations is incorrect.
-2017-08-28T15:19:00Z,2017-08-28T15:20:30Z,all,NA,2018-03-07T19:32:49Z,Nick,First value in calibrations is incorrect.
-2016-08-27T17:37:00Z,2016-08-27T17:47:30Z,all,NA,2018-03-07T19:32:49Z,Nick,Cal goes negative and is several billion off followed by zero cals.
-2015-08-24T19:00:00Z,2015-08-28T14:58:00Z,~437.83~1.888,NA,2018-03-07T19:32:49Z,Nick,Cal goes to zero for several periods.
+2010-01-01T00:00:00Z,2014-11-01T00:00:00Z,all,NA,2018-03-22T04:23:10Z,Ben,Data older than 2014-11 needs to be checked for issues. This should be updated down the road to recover any usable data before the WBB site was more closely maintained.
+2014-12-01T00:00:00Z,2014-12-19T00:00:00Z,639.48,NA,2018-03-22T04:23:10Z,Ben,Empty cal tank
+2015-01-23T10:00:00Z,2015-01-23T16:00:00Z,all,NA,2018-03-22T04:23:10Z,Ben,Bad data
+2015-02-09T14:00:00Z,2015-02-09T14:20:00Z,all,NA,2018-03-22T04:23:10Z,Ben,Bad data
+2015-02-20T13:09:00Z,2015-02-20T13:45:00Z,all,NA,2018-03-22T04:23:10Z,Ben,Bad data
+2015-03-19T10:00:00Z,2015-03-19T15:00:00Z,all,NA,2018-03-22T04:23:10Z,Ben,Bad data
+2015-03-23T07:30:00Z,2015-03-23T08:50:00Z,all,NA,2018-03-22T04:23:10Z,Ben,Bad data
+2015-04-28T15:07:00Z,2015-04-28T15:16:00Z,all,NA,2018-03-22T04:23:10Z,Ben,Wrong MIU valve temporarily set for flush.
+2015-05-01T00:00:00Z,2015-06-19T14:10:00Z,all,NA,2018-03-22T04:23:10Z,Ben,Leak found that compromises historic data.
+2016-02-27T00:04:00Z,2016-03-01T12:00:00Z,~442.91~4.905,NA,2018-03-22T04:23:10Z,Doug,Replaced tank that leaked.
