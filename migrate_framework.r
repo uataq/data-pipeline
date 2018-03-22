@@ -10,6 +10,10 @@ path <- list(
   v1 = '~/links/lin-group6/lem/measurements/data/'     # lem slcco2
 )
 
+# Ensure v2 is at latest git commit
+system(paste('/uufs/chpc.utah.edu/sys/installdir/git/2.10.0-c7/bin/git -C',
+             '~/links/lin-group2/measurements/lair-proc pull'))
+
 # Merge data sources -----------------------------------------------------------
 # Reinitialize beta data directory
 message('Reinitializing data paths')
@@ -18,7 +22,12 @@ system(cmd)
 
 # Sync v2 raw data
 message('Syncing UUCON data archive')
-cmd <- paste('rsync -av --exclude="calibrated" --exclude="parsed"', 
+cmd <- paste('rsync -av',
+             '--exclude="calibrated"',
+             '--exclude="parsed"',
+             '--exclude="geoloc"', 
+             '--exclude="trx01"',  #temporary to reduce transfer time
+             '--exclude="trx02"',  #temporary to reduce transfer time
              #'--dry-run',
              path$v2, 'data/')
 system(cmd)
