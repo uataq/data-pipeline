@@ -8,11 +8,13 @@
 setwd('/uufs/chpc.utah.edu/common/home/lin-group2/measurements-beta')
 
 # Load library dependencies
-for (lib in c('dplyr', 'fasttime', 'jsonlite', 'RCurl', 'readr', 
+for (lib in c('dplyr', 'fasttime', 'fst', 'jsonlite', 'RCurl', 'readr',
               'stringr', 'uataq')) {
-  suppressPackageStartupMessages(
-    library(lib, character.only = T,
-            lib.loc = '/uufs/chpc.utah.edu/common/home/u0791983/.Rpackages')
+  invisible(
+    suppressPackageStartupMessages(
+      library(lib, character.only = T,
+              lib.loc = '/uufs/chpc.utah.edu/common/home/u0791983/.Rpackages')
+    )
   )
 }
 
@@ -23,6 +25,6 @@ for (fun in dir('proc/src', full.names = T)) {
 
 # Load json configurations contained in proc/config
 for (config_file in dir('proc/config', full.names = T)) {
-  assign(tools::file_path_sans_ext(basename(config_file)), 
+  assign(tools::file_path_sans_ext(basename(config_file)),
          fromJSON(config_file))
 }
