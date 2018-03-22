@@ -38,4 +38,20 @@ t_start, t_end, miu_old, miu_new, comment
 2017-04-23 23:59:00.000, 2017-04-24 00:10:00.000, all, NA, Ryan: LTS install caused issue with all standard tanks.
 2017-04-24 23:59:00.000, 2017-04-25 00:10:00.000, all, NA, Ryan: LTS install caused issue with all standard tanks.
 2017-04-25 15:50:00.000, 2017-04-25 16:03:00.000, all, NA, Ryan: Standard inputed as -1 and -2 but reset after so not needed to save.
-
+2015-12-29 23:59:45.000, 2015-12-30 00:07:30.000, all, NA, Ryan: Bad cal period
+2016-02-05 00:01:30.000, 2016-02-05 00:02:30.000, 0, NA, Ryan: Bad zero
+2016-02-07 00:01:30.000, 2016-02-07 00:02:30.000, 0, NA, Ryan: Bad zero
+2016-05-25 03:27:30.000, 2016-05-25 03:30:20.000, -10, NA, Ryan: atmospheric contamination
+2016-07-19 21:00:00.000, 2016-07-26 21:13:16.000, 433.98, 433.97
+2016-09-02 01:18:50.000, 2016-09-02 01:21:00.000, -10, NA, Ryan: Strange jump then dip in atmospheric obs
+2017-01-09 20:08:50.000, 2017-01-09 21:45:50.000, all, NA, Ryan: tail obs before large data gap
+2017-07-26 15:18:00.000, 2017-07-26 15:19:30.000, all, NA, Ryan: Strange downward dip in atmospheric obs
+2017-07-26 20:08:40.000, 2017-07-26 20:11:50.000, all, NA, Ryan: Strange upward climb in atmospheric obs
+2017-10-25 15:30:00.000, 2017-10-25 16:09:00.000, -1, 395.88, Ryan: known values not input
+2017-10-25 15:30:00.000, 2017-10-25 16:09:00.000, -2, 426.35, Ryan: known values not input
+2017-10-25 15:30:00.000, 2017-10-25 16:09:00.000, -3, 599.21, Ryan: known values not input
+2017-11-10 21:55:00.000, 2017-11-10 22:06:30.000, all, NA, Ryan: known values not input
+2017-11-29 07:47:20.000, 2017-11-29 07:49:30.000, all, NA, Ryan: Atmospheric contamination
+2018-01-18 00:00:00.000, 2018-01-18 00:02:30.000, all, NA, Ryan: Bad cal
+2018-02-19 00:00:00.000, 2018-02-19 00:02:30.000, all, NA, Ryan: Bad cal
+2018-03-22 00:00:00.000, 2018-03-22 00:02:30.000, all, NA, Ryan: Bad cal
