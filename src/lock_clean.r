@@ -1,3 +1,3 @@
-unlock_all <- function() {
+lock_clean <- function() {
   system('rm proc/.lock/*')
 }
