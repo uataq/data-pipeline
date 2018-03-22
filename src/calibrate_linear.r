@@ -128,9 +128,6 @@ calibrate_linear <- function(time, meas, known, er_tol = 100, drift_tol = 100, d
   
   # Invalidate periods when difference between sequential reference gas measurements
   # exceeds drift_tol.
-  message('working...')
-  str(data)
-  str(stdm)
   delta <- rbind(rep.int(NA, ncol(stdm)), 
                  abs(as.matrix(stdm[2:N, ] - stdm[1:(N-1), ])))
   mask <- delta > (drift_tol / stdtelap)
