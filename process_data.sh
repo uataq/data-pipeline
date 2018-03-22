@@ -16,18 +16,20 @@ git pull
 echo
 
 # Execute site processing scripts
-# EXEC=$(ls run)
-exec=(dbk.r heb.r imc.r lgn.r rpk.r sug.r sun.r)
-echo "Spawning: ${exec[@]}"
+exec=$(ls run)
 echo
 
 # Spawn parallel R child processes
 for i in ${exec[@]}; do
-  Rscript run/$i &
+  echo "Spawning: $i"
+  lf=log/$(echo $i | cut -f 1 -d '.').log
+  echo "Run: `date`" > $lf
+  Rscript run/$i &>> $lf &
 done
 
 # Wait for processing to finish (max ~4 minutes)
-sleep 10
+sleep 5
+echo "Awaiting process completion..."
 maxit=2400
 for i in $(seq 0 $maxit); do
   nrun=$(ls .lock | wc -l)
@@ -39,9 +41,12 @@ for i in $(seq 0 $maxit); do
 done
 
 # Build air.utah.edu
-echo "Building air.utah.edu source code..."
-cd web
-# Rscript _build.r
+echo "Building air.utah.edu static source code..."
+# Rscript air.utah.edu/_build.r
 
 echo "Pushing air.utah.edu changes to webserver..."
 # rsync -az _site/* benfasoli@air.utah.edu:/var/www/html/
+# rsync -az _site ~/public_html/air.utah.edu
+
+echo "Pushing database changes to webserver..."
+rsync -az ../data benfasoli@air.utah.edu:/projects/data-beta
