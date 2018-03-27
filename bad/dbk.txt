@@ -42,5 +42,20 @@ t_start, t_end, miu_old, miu_new, comment
 2017-10-07 18:15:00.000, 2017-10-07 01:00:00.000, all, NA, Doug:Site over heating
 2017-10-09 18:15:00.000, 2017-10-10 01:00:00.000, all, NA, Doug:Site over heating
 2017-10-10 20:35:00.000, 2017-10-10 23:00:00.000, all, NA, Doug:Site over heating
-2018-03-23 17:16:55.000, 2017-03-23 17:17:10.000, all, NA, Ryan: One bad cal point
-2018-03-23 17:23:10.000, 2017-03-23 17:25:00.000, all, NA, Ryan: left Atm port closed for a bit
+2016-04-05 20:00:00.000, 2016-04-22 14:45:00.000, 486.6, 486.8, Ryan: standard input incorrectly
+2016-12-16 19:43:30.000, 2016-12-16 19:44:30.000, all, NA, Ryan: strange downward dip followed by some elevated obs
+2017-10-07 19:43:30.000, 2017-10-08 00:22:50.000, all, NA, Ryan: Bad data
+2017-11-07 23:55:00.000, 2017-11-29 18:11:30.000, 560.53, NA, Ryan: Cal tank left closed / clippard off
+2017-11-08 00:07:10.000, 2017-11-08 00:08:10.000, all, NA, Ryan: Bad cal
+2017-11-05 11:09:30.000, 2017-11-05 11:11:10.000, all, NA, Ryan: strange downward dip in atm obs
+2017-11-11 00:26:50.000, 2017-11-11 00:31:40.000, all, NA, Ryan: strange upwards bump in atm obs
+2017-12-03 21:52:00.000, 2017-12-03 21:52:50.000, all, NA, Ryan: strange downward dip in atm obs
+2017-12-15 20:52:00.000, 2017-12-15 21:42:10.000, all, NA, Ryan: Bad cals early on in a tank swap
+2017-12-15 20:52:00.000, 2017-12-18 16:09:00.000, -1, 405.96, Ryan: Known cal value not input
+2017-12-15 20:52:00.000, 2017-12-18 16:09:00.000, -2, 481.91, Ryan: Known cal value not input
+2017-12-15 20:52:00.000, 2017-12-18 16:09:00.000, -3, 560.53, Ryan: Known cal value not input
+2017-12-15 20:52:00.000, 2017-12-18 16:09:00.000, -4, 427.99, Ryan: Known cal value not input
+2018-01-30 17:00:00.000, 2018-01-30 18:07:00.000, all, NA, Ryan: Known values not input and this cal is not needed
+2018-01-25 16:24:30.000, 2018-01-25 16:26:20.000, all, NA, Ryan: Stange downward dip
+2018-03-23 17:16:55.000, 2018-03-23 17:17:10.000, all, NA, Ryan: One bad cal point
+2018-03-23 17:23:10.000, 2018-03-23 17:25:00.000, all, NA, Ryan: left Atm port closed for a bit
