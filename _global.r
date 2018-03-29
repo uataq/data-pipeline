@@ -8,8 +8,8 @@
 setwd('/uufs/chpc.utah.edu/common/home/lin-group2/measurements-beta')
 
 # Load library dependencies
-for (lib in c('dplyr', 'fasttime', 'fst', 'jsonlite', 'RCurl', 'readr',
-              'stringr', 'uataq')) {
+for (lib in c('data.table', 'dplyr', 'fasttime', 'fst', 'jsonlite', 'RCurl', 
+              'readr', 'stringr', 'uataq')) {
   invisible(
     suppressPackageStartupMessages(
       library(lib, character.only = T,
