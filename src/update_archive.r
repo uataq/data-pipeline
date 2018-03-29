@@ -26,6 +26,6 @@ update_archive <- function(nd, path = '%Y_%m.dat', tz = 'UTC', as_fst = F) {
     }
     if (nrow(out) < 1)
       next
-    fwrite(out, file, append = append)
+    fwrite(out, file, append = append, dateTimeAs = 'ISO', showProgress = F)
   }
 }
