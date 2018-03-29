@@ -5,9 +5,7 @@ cr1000_init <- function() {
     files <- dir(file.path('data', site, instrument, 'raw'), full.names = T)
     if (length(files) == 0)
       stop('No prior data found: ', file.path('data', site, instrument, 'raw'))
-    return(read_files(files, skip = 1,
-                      col_names = data_info[[instrument]]$raw$col_names,
-                      col_types = data_info[[instrument]]$raw$col_types))
+    return(read_files(files))
   }
 
   # Query CR1000 for new records

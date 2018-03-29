@@ -10,6 +10,7 @@ update_archive <- function(nd, path = '%Y_%m.dat', tz = 'UTC', as_fst = F) {
 
   nd <- nd[!is.na(nd[[time_col]]), ]
   nd <- nd[order(nd[[time_col]]), ]
+  nd <- nd[!duplicated(nd$Time_UTC), ]
   files <- format(nd[[time_col]], tz = tz, format = path)
   ufiles <- unique(files)
   
@@ -25,23 +26,6 @@ update_archive <- function(nd, path = '%Y_%m.dat', tz = 'UTC', as_fst = F) {
     }
     if (nrow(out) < 1)
       next
-    out[[time_col]] <- format(out[[time_col]], tz = tz, '%Y-%m-%d %H:%M:%OS2')
-    write_csv(out, file, append = append)
+    fwrite(out, file, append = append)
   }
-
-  if (!as_fst) return()
-  invisible(threads_fst(4))
-  
-  fst_base <- dirname(path)
-  fst_dir <- dirname(fst_base)
-  fst_file <- file.path(fst_dir, paste0(basename(fst_base), '.fst'))
-
-  if (!file.exists(fst_file)) {
-    fst_data <- NULL
-  } else {
-    fst_data <- read_fst(fst_file)
-    nd <- nd[nd$Time_UTC > tail(fst_data$Time_UTC, 1), ]
-  }
-  fst_data <- bind_rows(fst_data, nd)
-  write_fst(fst_data, fst_file, compress = 50)
 }
