@@ -17,6 +17,11 @@ lgr_ugga_qaqc <- function() {
     tzone = 'UTC'
   )
   
+  # Initialize qaqc flag
+  nd$QAQC_Flag <- 0
+  
+  # Apply manual qaqc definitions in bad/site/instrument.csv
+  nd <- bad_data_fix(nd)
   
   # Parse ID column (~CO2~CH4) into ID_CO2 and ID_CH4
   nd$ID <- gsub('atmosphere', '-10', nd$ID, ignore.case = T)
@@ -27,19 +32,11 @@ lgr_ugga_qaqc <- function() {
   
   mask_no_ch4_ref <- !grepl('~', nd$ID, fixed = T)
   nd$ID[mask_no_ch4_ref] <- paste0(nd$ID[mask_no_ch4_ref], '~NA')
-  
+
   ID_split <- stringr::str_split_fixed(nd$ID, '~', 2)
   suppressWarnings(class(ID_split) <- 'numeric')
-  ID_split <- round(ID_split, 3)
-  
-  nd$ID_CO2 <- ID_split[, 1]
-  nd$ID_CH4 <- ID_split[, 2]
-  
-  # Initialize qaqc flag
-  nd$QAQC_Flag <- 0
-  
-  # Apply manual qaqc definitions in bad/site/instrument.csv
-  nd <- bad_data_fix(nd)
+  nd$ID_CO2 <- round(ID_split[, 1], 2)
+  nd$ID_CH4 <- round(ID_split[, 2], 3)
   
   # QAQC flag identifiers
   #   1 - Data manually removed

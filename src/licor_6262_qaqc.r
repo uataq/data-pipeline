@@ -7,12 +7,14 @@ licor_6262_qaqc <- function() {
   # Initialize qaqc flag
   nd$QAQC_Flag <- 0
   
+  # Extract numeric valve identifier and round result to eliminate precision
+  # errors reported by the cr1000
+  nd$ID <- suppressWarnings(round(as.numeric(nd$ID), 2))
+  
   # Apply manual qaqc definitions in bad/site/instrument.csv
   nd <- bad_data_fix(nd)
   
-  # Extract numeric valve identifier and round result to eliminate precision
-  # errors reported by the cr1000
-  nd$ID_CO2 <- suppressWarnings(round(as.numeric(nd$ID), 3))
+  nd$ID_CO2 <- suppressWarnings(round(as.numeric(nd$ID), 2))
   
   # QAQC flag identifiers
   #   1 - Data manually removed
