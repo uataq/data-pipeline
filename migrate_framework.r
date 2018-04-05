@@ -14,6 +14,9 @@ path <- list(
 system(paste('/uufs/chpc.utah.edu/sys/installdir/git/2.10.0-c7/bin/git -C',
              '~/links/lin-group2/measurements/lair-proc pull'))
 
+# Wipe v3 lock files
+system('rm proc/.lock/*')
+
 # Merge data sources -----------------------------------------------------------
 # Reinitialize beta data directory
 message('Reinitializing data paths')
