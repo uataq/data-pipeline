@@ -11,9 +11,8 @@ bad_data_fix <- function(data,
   
   for (i in 1:nrow(bad_tbl)) {
     if (grepl('all', bad_tbl$miu_old[i], ignore.case = T)) {
-      mask <- with(bad_tbl[i, ],
-                   data$Time_UTC >= t_start &
-                     data$Time_UTC <= t_end)
+      mask <- data$Time_UTC >= bad_tbl$t_start[i] &
+        data$Time_UTC <= bad_tbl$t_end[i]
       data$QAQC_Flag[mask] <- 1
     } else {
       mask <- with(bad_tbl[i, ],
