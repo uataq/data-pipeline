@@ -12,10 +12,10 @@ proc_init <- function() {
   # reprocessed, remove parsed and calibrated data levels
   if (site_info[[site]]$reprocess) {
     message('Reprocessing data archive for: ', site)
+    system(paste('rm -r', file.path('data', site, 'hourly')))
     for (path in file.path(wd, c('qaqc', 'calibrated'))) {
       system(paste('rm -r', path))
     }
-    system(paste('rm', file.path(wd, c('qaqc.fst', 'calibrated.fst'))))
   }
   
   # Ensure that past processed data exists and set reprocess flag as needed
