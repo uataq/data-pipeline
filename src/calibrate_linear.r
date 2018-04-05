@@ -20,7 +20,7 @@ calibrate_linear <- function(time, meas, known, er_tol = 100, drift_tol = 100, d
   N <- length(time)
   qaqc <- rep.int(0, N)
   
-  std_uniq <- unique(known[!is.na(known) & known > 0])
+  std_uniq <- unique(known[!is.na(known) & known >= 0])
   if (length(std_uniq) < 1) {
     out <- data_frame(time = time,
                       cal  = NA,
