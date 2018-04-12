@@ -35,10 +35,11 @@ t_start, t_end, miu_old, miu_new, comment
 2017-05-11 22:40:00.000, 2017-05-12 01:15:00.000, all, NA, Doug:Random bad data
 2017-05-04 23:45:00.000, 2017-05-05 00:00:00.000, all, NA, Doug:Random bad data
 2017-05-06 00:00:00.000, 2017-05-06 00:20:00.000, all, NA, Doug:Random bad data
-2017-06-05 20:08:00.000, 2017-06-06 02:00:00.000, all, NA, Ben:Licor step function to 46
+2017-05-23 20:01:30.000, 2017-05-23 20:07:10.000m all, NA, Ryan: Random zeros
 2017-05-29 20:07:30.000, 2017-05-30 02:01:00.000, all, NA, Ben:Licor step function to 46
-2017-06-04 21:49:00.000, 2017-06-05 02:15:00.000, all, NA, Doug:Random bad data
 2017-06-03 21:23:00.000, 2017-06-04 02:20:00.000, all, NA, Doug:Random bad data
+2017-06-04 21:49:00.000, 2017-06-05 02:15:00.000, all, NA, Doug:Random bad data
+2017-06-05 20:08:00.000, 2017-06-06 02:00:00.000, all, NA, Ben:Licor step function to 46
 2017-06-06 20:30:00.000, 2017-06-06 20:38:00.000, all, NA, Doug: on site
 2017-06-19 20:00:00.000, 2017-07-20 16:00:00.000, all, NA, Doug:power blown on Metone
 2017-10-06 18:15:00.000, 2017-10-07 01:00:00.000, all, NA, Doug:Site over heating
@@ -51,6 +52,8 @@ t_start, t_end, miu_old, miu_new, comment
 2017-11-05 11:09:30.000, 2017-11-05 11:11:10.000, all, NA, Ryan: strange downward dip in atm obs
 2017-11-11 00:26:50.000, 2017-11-11 00:31:40.000, all, NA, Ryan: strange upwards bump in atm obs
 2017-12-03 21:52:00.000, 2017-12-03 21:52:50.000, all, NA, Ryan: strange downward dip in atm obs
+2017-12-15 20:01:50.000, 2017-12-18 18:00:00.000, 405.96, NA, Ryan: Looks like atm valve impacted thes obs
+2017-12-18 17:00:00.000, 2017-12-18 18:00:00.000, -4, NA, Ryan: No known value input
 2017-12-15 20:52:00.000, 2017-12-15 21:42:10.000, all, NA, Ryan: Bad cals early on in a tank swap
 2017-12-15 20:52:00.000, 2017-12-18 16:09:00.000, -1, 405.96, Ryan: Known cal value not input
 2017-12-15 20:52:00.000, 2017-12-18 16:09:00.000, -2, 481.91, Ryan: Known cal value not input
@@ -60,3 +63,4 @@ t_start, t_end, miu_old, miu_new, comment
 2018-01-30 17:00:00.000, 2018-01-30 18:07:00.000, all, NA, Ryan: Known values not input and this cal is not needed
 2018-03-23 17:16:55.000, 2018-03-23 17:17:10.000, all, NA, Ryan: One bad cal point
 2018-03-23 17:23:10.000, 2018-03-23 17:25:00.000, all, NA, Ryan: left Atm port closed for a bit
+2018-04-07 21:49:00.000, 2018-04-09 20:33:30.000, all, NA, Ryan: Poweroutage
