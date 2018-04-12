@@ -1,13 +1,10 @@
 t_start, t_end, miu_old, miu_new, comment
 2016-07-30 14:57:00.000, 2016-08-02 22:23:00.000, all, NA, Ben: Placeholder
 2016-08-02 22:23:00.000, 2016-10-10 16:00:00.000, all, NA, Doug: Bad Li-cor
+2016-10-10 15:00:00.000, 2016-10-13 13:00:00.000, -1, NA, Ryan: Removing a -1
 2016-10-18 00:04:40.000, 2016-10-18 00:04:40.000 , 453.92, NA, Doug: not sure
+2016-10-29 00:01:40.000, 2016-10-29 00:02:30.000, all, NA: Bad Cal from NTP
 2016-11-06 00:00:00.000, 2016-11-06 00:00:04.000, 392.18,NA, Doug: not sure
-2017-04-15 18:00:00.000, 2017-04-28 18:00:00.000, 453.92,NA, Doug: broken clippard valve
-2017-04-28 17:45:00.000, 2017-04-28 18:30:00.000, all,NA, Doug: broken clippard valve
-2017-05-26 18:00:00.000, 2017-05-30 16:00:00.000, all, NA, Doug: bad clippard valve
-2017-05-30 16:00:00.000, 2017-06-29 16:00:00.000, 356.77, 456.77, Doug: input wrong value
-2017-06-29 20:08:00.000, 2017-06-29 23:00:00.000, all, NA, Doug: on site
 2016-11-06 00:02:20.000, 2016-11-06 00:02:20.000, 392.18, NA, Doug: bad random data
 2016-11-15 00:02:20.000, 2016-11-15 00:02:20.000, 392.18, NA, Doug: bad random data
 2016-10-10 16:00:20.000, 2016-10-10 17:30:00.000, all, NA, Doug: bad random data
@@ -69,11 +66,17 @@ t_start, t_end, miu_old, miu_new, comment
 2016-12-04 00:00:00.000, 2016-12-04 00:09:00.000, all, NA, Doug: NTP issue with cr1000
 2016-12-05 00:00:00.000, 2016-12-05 00:09:00.000, all, NA, Doug: NTP issue with cr1000
 2016-12-06 00:00:00.000, 2016-12-06 00:09:00.000, all, NA, Doug: NTP issue with cr1000
+2017-04-15 18:00:00.000, 2017-04-28 18:00:00.000, 453.92,NA, Doug: broken clippard valve
+2017-04-28 17:35:00.000, 2017-04-28 17:38:00.000, all, NA, Strange cal during respanning of instrument
+2017-04-28 17:38:00.000, 2017-04-28 17:38:45.000, all, NA Ryan: Strange cal removed
+2017-04-28 17:45:00.000, 2017-04-28 18:30:00.000, all,NA, Doug: broken clippard valve
+2017-05-26 18:00:00.000, 2017-05-30 16:00:00.000, all, NA, Doug: bad clippard valve
+2017-05-30 16:00:00.000, 2017-06-29 16:00:00.000, 356.77, 456.77, Doug: input wrong value
+2017-06-29 17:00:00.000, 2017-09-14 18:50:10.000, 431.44, 431.14, Ryan: Long term standard value incorrect at start
+2017-06-29 20:08:00.000, 2017-06-29 23:00:00.000, all, NA, Doug: on site
 2017-09-11 02:00:00.000, 2017-09-15 17:00:00.000, 392.18, NA, Doug:tank/clippard issue
+2017-09-14 20:00:00.000, 2017-10-06 15:00:00.000, 388.79, NA, Doug:tank/clippard issue
 2017-10-06 15:00:00.000, 2017-10-10 20:39:00.000, 383.79, NA, Doug:tank/clippard issue
 2017-10-06 15:00:00.000, 2017-10-10 20:39:00.000, 492.81, NA, Doug:tank/clippard issue
-2017-09-14 20:00:00.000, 2017-10-06 15:00:00.000, 388.79, NA, Doug:tank/clippard issue
-2017-04-28 17:35:00.000, 2017-04-28 17:38:00.000, all, NA, Strange cal during respanning of instrument
-2017-06-29 17:00:00.000, 2017-09-14 18:50:10.000, 431.44, 431.14, Ryan: Long term standard value incorrect at start
 2017-10-06 16:00:00.000, 2017-10-06 16:08:00.000, all, NA, Ryan: Strange cal
 2018-02-28 18:08:40.000, 2018-03-02 15:51:10.000, all, NA, Ryan: N2 not flowing
