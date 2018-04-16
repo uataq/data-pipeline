@@ -53,7 +53,7 @@ remove_bad <- function(df, site) {
     } else {
       mask <- df$Time_UTC >= bad$t_start[i] &
         df$Time_UTC <= bad$t_end[i] &
-        grepl(bad$miu_old[i], df$ID)
+        df$ID == bad$miu_old[i]
     }
     df$ID[mask] <- bad$miu_new[i]
   }
