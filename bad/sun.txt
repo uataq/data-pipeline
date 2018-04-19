@@ -33,3 +33,9 @@ t_start, t_end, miu_old, miu_new, comment
 2017-05-24 15:05:30.000, 2017-05-24 15:07:30.000, all, NA, Ryan: Atm contamination
 2017-06-30 00:01:35.000, 2017-06-30 00:04:45.000, all, NA, Ryan: Bad cal
 2017-07-01 00:01:00.000, 2017-07-31 23:59:00.000, all, NA, Rayn: mostly missing data but the one day that is there is pretty bad
+2017-12-12 00:01:35.000, 2017-12-12 00:02:30.000, all, NA, Ryan: Bad cal
+2017-12-26 14:00:00.000, 2017-12-27 01:13:00.000, all, NA, Ryan: Bad data
+2018-01-26 13:36:30.000, 2018-01-26 13:59:30.000, all, NA, Ryan: Atm contamination
+2018-02-07 00:09:00.000, 2018-08-13 18:00:00.000, 421.87, NA, Ryan: Cal tank drained
+2018-03-10 02:04:10.000, 2018-03-10 02:04:40.000, all, NA, Ryan: Bad cal
+2018-03-23 09:58:30.000, 2018-03-23 15:09:50.000, all, NA, Ryan: Cals not working 
