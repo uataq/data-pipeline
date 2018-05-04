@@ -27,6 +27,7 @@ t_start, t_end, miu_old, miu_new, comment
 2017-06-16 20:50:00.000, 2017-06-16 21:04:35.000, all, NA, Ryan: Strange cal
 2017-06-16 20:15:00.000, 2017-06-29 21:04:00.000, 431.88, 431.38, Ryan: cal value input worong
 2017-06-29 20:15:00.000, 2017-07-06 20:26:00.000, 436.84, NA, Ryan: LTS issue when first installed
+2017-07-06 00:00:01.000, 2017-07-16 22:00:00.000, 436.84, NA, Ryan: Removing first 10 LTS check tank
 2017-07-18 21:23:10.000, 2017-07-18 21:24:10.000, -1, 389.61, Ryan: Fixing negative 1 value
 2017-11-07 21:39:00.000, 2017-11-07 21:48:00.000, 389.63, NA, Ryan: Bad cal
 2018-01-03 23:59:50.000, 2018-01-04 00:04:10.000, 389.63, NA, Ryan: Bad cal
