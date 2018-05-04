@@ -21,7 +21,8 @@ t_start, t_end, miu_old, miu_new, comment
 2017-06-14 14:00:00.000, 2017-06-14 22:00:00.000, -2, 490.3743, Doug: Working at site
 2017-06-14 14:00:00.000, 2017-06-14 22:00:00.000, -3, 629.67, Doug: Working at site
 2017-10-28 06:06:00.000, 2017-11-07 22:29:40.000, 629.67, NA, Doug:empty Tank
-2017-06-14 06:00:00.000, 2017-06-14 22:00:00.000, all, NA, Ryan: Atm marked as 402.55 and ther isnt a way to figure out what is cal gas and what is atmosphere so I am trashing all of the data
+2017-06-14 06:00:00.000, 2017-06-14 22:00:00.000, all, NA, Ryan: Atm marked as 402.55 and there isnt a way to figure out what is cal gas and what is atmosphere so I am trashing all of the data
+2017-06-30 00:00:01.000, 2017-07-10 10:00:00.000, 434.53, NA, Ryan: Removing frist 10 LTS check tanks
 2017-06-16 00:01:10.000, 2017-06-16 00:07:10.000, all, NA, Ryan: bad cal
 2017-06-29 18:32:30.000, 2017-06-29 18:33:30.000, all, NA, Ryan: bad LTS with a huge range
 2017-11-07 21:00:00.000, 2018-02-13 17:52:30.000, 399.17, 399.19, Ryan: Cal value was off by a little for a long period of time
