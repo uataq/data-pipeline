@@ -15,6 +15,7 @@ t_start, t_end, miu_old, miu_new, comment
 2016-11-21 16:55:00.000, 2016-11-21 17:04:00.000, all, NA, Ryan: Known inputs forgotten
 2017-02-11 04:30:00.000, 2017-02-24 10:30:00.000, 451.45, NA, Doug:Bad cal flow
 2017-02-23 22:13:30.000, 2017-02-23 22:14:30.000, -1, NA, Ryan: Known inputs forgtten
+2017-06-30 00:00:01.000, 2017-07-10 15:00:00.000, 436.3, NA, Ryan: Removing first 10 LTS check tank obs
 2017-09-06 19:51:20.000, 2017-09-06 19:51:40.000, -10, NA, Ryan: Strange downward dip
 2017-10-31 18:01:30.000, 2017-10-31 18:02:20.000, 406.17, NA, Ryan: Bad cal
 2017-10-31 22:00:00.000, 2017-11-13 17:30:00.000, 406.17, NA, Doug:Bad cal flow
