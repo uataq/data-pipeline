@@ -31,3 +31,4 @@ t_start, t_end, miu_old, miu_new, comment
 2018-01-02 16:50:00.000, 2018-01-02 16:51:00.000, all, NA, Ryan: Bad cal on reboot
 2018-02-26 20:12:00.000, 2018-02-26 22:34:00.000, all, NA, Ryan: Bad cal on reboot
 2018-03-09 21:49:00.000, 2018-03-09 22:08:00.000, all, NA, Ryan: Bad cal on reboot 
+2018-05-02 18:27:30.000, 2018-05-02 18:30:00.000, all, NA, Nick: First cal reads atmosphere and needs to be deleted
