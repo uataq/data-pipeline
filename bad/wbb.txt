@@ -49,10 +49,10 @@ t_start, t_end, miu_old, miu_new, comment
 2016-08-27 15:57:00.000, 2016-08-27 17:30:00.000, all, NA, Nick: Large Jump in cals.
 2016-08-27 16:30:00.000, 2016-08-29 17:30:00.000, all, NA, Ryan: Junk data from bad ring down CH4 DATA IS STILL GOOD
 2016-08-27 17:30:00.000, 2016-08-27 17:50:00.000, all, NA, Nick: Cals are either negative or all zero
-2016-08-27 17:37:00.000, 2016-08-27 17:47:30.000, all, NA, Nick: Cal goes negative and is several billion off followed by zero cals.
-2017-08-28 15:19:00.000, 2017-08-28 15:20:30.000, all, NA, Nick: First value in calibrations is incorrect.
-2016-08-29 16:11:00.000, 2016-08-29 19:01:00.000, all, NA, Nick: Large jump in cals.
-2016-09-01 03:41:00.000, 2016-09-01 06:43:00.000, all, NA, Nick: Jump in cals.
+2016-08-27 17:37:00.000, 2016-08-27 17:47:30.000, all, NA, Nick: Cal goes negative and is several billion off followed by zero cals
+2017-08-28 15:19:00.000, 2017-08-28 15:20:30.000, all, NA, Nick: First value in calibrations is incorrect
+2016-08-29 16:11:00.000, 2016-08-29 19:01:00.000, all, NA, Nick: Large jump in cals
+2016-09-01 03:41:00.000, 2016-09-01 06:43:00.000, all, NA, Nick: Jump in cals
 2016-10-05 10:44:52.000, 2016-10-11 18:29:00.000, all, NA, Ryan: All bad data
 2016-10-18 21:30:28.000, 2016-10-18 21:33:58.000, all, NA, Ryan: Atm contamination
 2016-10-18 22:55:00.000, 2016-10-18 22:55:00.000, all, NA, Ryan: Atm contamination
@@ -68,3 +68,4 @@ t_start, t_end, miu_old, miu_new, comment
 2017-12-21 15:25:25.000, 2017-12-21 15:28:00.000, all, NA, Ryan: bad cal points
 2018-03-21 20:41:56.000, 2018-03-21 20:46:00.000, all, NA, Ryan: bad cal before a good cal
 2018-03-22 19:35:35.000, 2018-03-22 19:37:30.000, all, NA, Ryan: Atm Contamination
+2018-05-07 13:50:00.000, 2018-05-07 14:00:00.000, all, NA, Nick: I messed up cals but later recalibrated
