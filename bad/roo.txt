@@ -125,3 +125,4 @@ t_start, t_end, miu_old, miu_new, comment
 2017-12-13 23:13:20.000, 2018-01-03 18:48:57.000, ~468.05~2.694, NA, Ryan: strange issue with the tank looks like it was not open 
 2017-12-26 18:48:57.000, 2017-12-26 18:57:16.000, all, NA, Ryan: bad data on reboot
 2017-12-20 21:53:00.000, 2017-12-20 21:56:00.000, all, NA, Ryan: Atmospheric obs impacted by tand pressure issue above
+2018-05-02 20:35:00.000, 2018-05-02 20:45:00.000, all, NA, Nick: Half of cal is bad
