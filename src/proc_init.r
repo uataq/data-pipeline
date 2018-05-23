@@ -30,12 +30,11 @@ proc_init <- function() {
   }
   
   # Ensure directory structure for site/instrument data archive exists
-  for (path in file.path(wd, c('raw', 'qaqc', 'calibrated'))) {
-    if (!dir.exists(path)) {
-      message('Path missing. Creating: ', path)
-      
-      dir.create(path, recursive = T, mode = '0755')
-    }
-  }
+  # for (path in file.path(wd, c('raw', 'qaqc', 'calibrated'))) {
+  #   if (!dir.exists(path)) {
+  #     message('Path missing. Creating: ', path)
+  #     dir.create(path, recursive = T, mode = '0755')
+  #   }
+  # }
   
 }

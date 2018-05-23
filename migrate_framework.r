@@ -23,14 +23,14 @@ message('Reinitializing data paths')
 cmd <- paste('rm -r', path$v3, '; mkdir -p', path$v3)
 system(cmd)
 
-# Sync v2 raw data
+# Sync v2 raw datase
 message('Syncing UUCON data archive')
 cmd <- paste('rsync -av',
              '--exclude="calibrated"',
              '--exclude="parsed"',
              '--exclude="geoloc"', 
-             '--exclude="trx01"',  #temporary to reduce transfer time
-             '--exclude="trx02"',  #temporary to reduce transfer time
+             # '--exclude="trx01"',  #temporary to reduce transfer time
+             # '--exclude="trx02"',  #temporary to reduce transfer time
              #'--dry-run',
              path$v2, 'data/')
 system(cmd)
@@ -90,6 +90,7 @@ for (i in 1:length(files)) {
 message('Migrating bad data definitions')
 cmd <- 'rm -r proc/bad; mkdir proc/bad'
 system(cmd)
+
 
 # Sync most recent bad data definitions into new format
 files <- dir('~/links/lin-group2/measurements/lair-proc/bad', pattern = 'txt', 
