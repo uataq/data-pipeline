@@ -61,28 +61,41 @@ for (site in sites) {
   }
 }
 
+# Move trax formatting from raw/inst to inst/raw
+base_path <- 'data/trx01/raw'
+insts <- dir(base_path, full.names = T)
+for (i in insts) {
+  system(paste('mv', i, 'data/trx01/'))
+}
+system('rmdir data/trx01/raw')
+system('mv data/trx01/lgr data/trx01/lgr_ugga')
+system('mkdir data/trx01/lgr_ugga/raw')
+system('mv data/trx01/lgr_ugga/*.dat data/trx01/lgr_ugga/raw/')
+
 # Add column headers to raw files
 source('proc/_global.r')
-files <- dir('data', pattern = 'raw.dat', recursive = T)
-files_split <- strsplit(files, '/')
-
-site <- sapply(files_split, function(x) x[1])
-instrument <- sapply(files_split, function(x) x[2])
-
-files <- file.path('data', files)
-for (i in 1:length(files)) {
-  hdr_std <- paste(data_info[[instrument[i]]]$raw$col_names, collapse = ',')
-  if (nchar(hdr_std) == 0) next
-  
-  hdr_is <- readLines(files[i], 1)
-  
-  if (hdr_is != hdr_std) {
-    message('Adding header to: ', files[i])
-    cmd <- paste0('echo "', hdr_std, '" | cat - ', files[i], 
-                  ' > tmp && mv tmp ', files[i])
-    system(cmd)
-  }
-}
+# Removing since this adds a layer of extra data processing necessary with 
+# rsync'ed raw data
+# files <- dir('data', pattern = 'raw.dat', recursive = T)
+# files_split <- strsplit(files, '/')
+# 
+# site <- sapply(files_split, function(x) x[1])
+# instrument <- sapply(files_split, function(x) x[2])
+# 
+# files <- file.path('data', files)
+# for (i in 1:length(files)) {
+#   hdr_std <- paste(data_info[[instrument[i]]]$raw$col_names, collapse = ',')
+#   if (nchar(hdr_std) == 0) next
+#   
+#   hdr_is <- readLines(files[i], 1)
+#   
+#   if (hdr_is != hdr_std) {
+#     message('Adding header to: ', files[i])
+#     cmd <- paste0('echo "', hdr_std, '" | cat - ', files[i], 
+#                   ' > tmp && mv tmp ', files[i])
+#     system(cmd)
+#   }
+# }
 
 
 # Migrate bad data definitions -------------------------------------------------

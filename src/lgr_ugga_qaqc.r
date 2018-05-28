@@ -39,13 +39,14 @@ lgr_ugga_qaqc <- function() {
   nd$ID_CH4 <- round(ID_split[, 2], 3)
   
   # QAQC flag identifiers
-  #   1 - Data manually removed
-  #   2 - System flush
-  #   3 - Invalid valve identifier
-  #   4 - Flow rate or cavity pressure out of range
-  #   5 - Drift between adjacent reference tank measurements out of range
-  #   6 - Time elapsed between reference tank measurements out of range
-  #   7 - Reference tank measurements out of range
+  # -1 - Data manually removed
+  # -2 - System flush
+  # -3 - Invalid valve identifier
+  # -4 - Flow rate or cavity pressure out of range
+  # -5 - Drift between adjacent reference tank measurements out of range
+  # -6 - Time elapsed between reference tank measurements out of range
+  # -7 - Reference tank measurements out of range
+  # 1 - Measurement data filled from backup data recording source
   nd$QAQC_Flag[with(nd, Cavity_P_torr < 135 | Cavity_P_torr > 145)] <- 4
   nd$QAQC_Flag[with(nd, ID_CO2 %in% c(-1, -2, -3, NA))] <- 3
   nd$QAQC_Flag[with(nd, ID_CO2 == -99)] <- 2
