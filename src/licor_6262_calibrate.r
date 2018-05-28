@@ -15,7 +15,7 @@ licor_6262_calibrate <- function() {
 
   # Invalidate measured mole fraction for records that fail to pass qaqc
   invalid <- c('CO2d_ppm')
-  nd[nd$QAQC_Flag %in% 2:4, invalid] <- NA
+  nd[nd$QAQC_Flag < 0, invalid] <- NA
 
   # Batch calibrate data by year to reduce matrix sizes
   # cal <- with(nd, calibrate_linear(Time_UTC, CO2d_ppm, ID_CO2))
@@ -25,7 +25,9 @@ licor_6262_calibrate <- function() {
     ungroup() %>%
     select(-yyyy)
   colnames(cal) <- data_info[[instrument]]$calibrated$col_names
-  cal$QAQC_Flag <- ifelse(nd$QAQC_Flag > 0, nd$QAQC_Flag, cal$QAQC_Flag)
+
+  # Set QAQC flag giving priority to calibration QAQC then initial QAQC
+  cal$QAQC_Flag[cal$QAQC_Flag == 0] <- nd$QAQC_Flag[cal$QAQC_Flag == 0]
 
   if (nrow(cal) != nrow(nd))
     stop('Calibration script returned wrong number of records at: ', site)

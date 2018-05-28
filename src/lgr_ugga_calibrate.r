@@ -15,7 +15,7 @@ lgr_ugga_calibrate <- function() {
 
   # Invalidate measured mole fraction for records that fail to pass qaqc
   invalid <- c('CO2d_ppm', 'CH4d_ppm')
-  nd[nd$QAQC_Flag %in% 2:4, invalid] <- NA
+  nd[nd$QAQC_Flag < 0, invalid] <- NA
 
   # cal_co2 <- with(nd, calibrate_linear(Time_UTC, CO2d_ppm, ID_CO2))
   # cal_ch4 <- with(nd, calibrate_linear(Time_UTC, CH4d_ppm, ID_CH4))
@@ -35,10 +35,10 @@ lgr_ugga_calibrate <- function() {
   )
   colnames(cal) <- data_info[[instrument]]$calibrated$col_names[1:ncol(cal)]
 
-  # Set QAQC flag giving priority to initial QAQC then calibration QAQC
-  cal$QAQC_Flag <- nd$QAQC_Flag
-  cal$QAQC_Flag[cal$QAQC_Flag == 0] <- cal_co2$qaqc[cal$QAQC_Flag == 0]
+  # Set QAQC flag giving priority to calibration QAQC then initial QAQC
+  cal$QAQC_Flag <- cal_co2$QAQC_Flag
   cal$QAQC_Flag[cal$QAQC_Flag == 0] <- cal_ch4$qaqc[cal$QAQC_Flag == 0]
+  cal$QAQC_Flag[cal$QAQC_Flag == 0] <- nd$QAQC_Flag[cal$QAQC_Flag == 0]
 
   if (nrow(cal) != nrow(nd))
     stop('Calibration script returned wrong number of records at: ', site)
