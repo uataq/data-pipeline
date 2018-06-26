@@ -1,43 +1,43 @@
 t_start,t_end,miu_old,miu_new,t_added,name,comment
-2015-01-01T00:00:00Z,2015-04-10T16:00:00Z,all,NA,2018-03-22T04:23:06Z,Ben,Data from before instrument was installed.
-2015-04-17T14:00:00Z,2015-04-18T12:01:00Z,all,NA,2018-03-22T04:23:06Z,Ben,On site maintenance. Tanks installed. MIU later corrected.
-2015-04-23T02:00:00Z,2015-04-23T18:06:30Z,~438.55~1.889,NA,2018-03-22T04:23:06Z,Ben,Flush valve was not changed on site. Fixed remotely.
-2015-12-05T17:30:00Z,2015-12-09T09:00:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Bad cal again.
-2016-02-21T01:06:00Z,2016-02-27T08:00:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Bad cal.
-2016-04-14T12:00:00Z,2016-04-26T10:00:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Bad data.
-2015-04-01T00:00:00Z,2015-04-24T16:40:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,All the data up to this point is poorly calibrated and messy
-2015-06-04T20:29:00Z,2015-06-04T20:35:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Bad cal surrounded by good cals.  Probably a reboot ringdown issue
-2015-06-24T15:45:00Z,2015-06-24T15:56:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Bad cal
-2015-06-29T20:23:00Z,2015-06-29T20:25:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,one bad cal point removed
-2015-07-28T16:45:00Z,2015-07-28T17:25:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Bad cals probably due to ring down issue
-2015-08-25T18:16:00Z,2015-08-25T18:20:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,one bad cal point removed exact same as point removed on june 29
-2015-09-04T16:20:22Z,2015-09-04T16:33:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Bad atmospheric obs. very high. probably tech contamination while on site
-2015-09-17T21:04:00Z,2015-09-17T21:06:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Bad atmospheric obs. very low.
-2015-10-13T17:25:00Z,2015-10-13T18:18:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Junk data.
-2015-10-27T16:30:00Z,2015-10-27T16:58:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Junk data.
-2015-12-23T22:06:00Z,2015-12-23T22:09:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Bad cal on reboot
-2016-02-12T22:09:00Z,2016-02-12T22:11:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Bad cal
-2016-03-09T20:03:30Z,2016-03-09T20:05:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Bad cal on reboot
-2016-05-19T22:34:00Z,2016-05-19T23:00:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Junk data probably from ring down issue with all obs really high
-2016-06-01T17:24:40Z,2016-06-01T18:05:25Z,all,NA,2018-03-22T04:23:06Z,Ryan,Bad ring down
-2016-06-21T18:24:00Z,2016-06-21T18:30:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Bad cal
-2016-08-03T14:07:38Z,2016-08-03T15:49:55Z,all,NA,2018-03-22T04:23:06Z,Ryan,Atmos obs get noisy and have strange downward dip
-2016-08-28T18:00:00Z,2016-08-30T14:53:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Bad ring down all ovs very low
-2016-09-23T21:11:52Z,2016-09-23T21:50:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Bad data and strange tank identifiers removed
-2016-10-26T17:38:00Z,2016-10-26T18:02:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Bad cal on reboot
-2016-11-14T22:09:00Z,2016-11-14T22:13:30Z,all,NA,2018-03-22T04:23:06Z,Ryan,bad cal on reboot
-2017-01-17T16:09:00Z,2017-01-17T16:13:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Strange cal in the middle of no data big data gap
-2017-04-17T18:28:00Z,2017-04-17T18:57:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Bad cal on reboot
-2017-04-28T14:51:00Z,2017-04-28T14:58:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Bad cal removed
-2017-05-26T16:45:00Z,2017-06-06T20:00:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,some bad data before and during a large data gap removed.  Not actually much data removed in this large block
-2017-06-23T17:52:45Z,2017-06-23T17:59:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Atm contamination while a tank was changed
-2017-09-08T02:30:00Z,2017-09-17T07:20:00Z,~433.68~2.62,NA,2018-03-22T04:23:06Z,Ryan,Empty tank
-2017-09-21T19:12:00Z,2017-09-21T19:28:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Bad data
-2017-10-03T14:52:00Z,2017-10-03T22:26:30Z,all,NA,2018-03-22T04:23:06Z,Ryan,I wish I could figure out why this data is bad but it is crap
-2017-10-18T15:15:00Z,2017-10-18T17:17:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,One bad cal on 436.86 tank
-2017-10-19T18:23:00Z,2017-10-19T18:25:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,One bad cal in 436.86 tank
-2017-10-31T19:25:00Z,2017-10-31T19:27:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,One bad cal on 436.86 tank.  Thinking there might be a sticky miu valve
-2017-12-26T17:48:00Z,2017-12-26T18:30:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Bad cal on reboot
-2018-01-30T16:50:00Z,2017-01-30T18:10:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Bad cal on reboot
-2018-02-08T22:32:00Z,2017-02-08T22:42:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Bad cal on reboot
-2018-02-26T20:10:00Z,2017-02-26T20:13:00Z,all,NA,2018-03-22T04:23:06Z,Ryan,Bad cal on reboot
+2015-01-01T00:00:00Z,2015-04-10T16:00:00Z,all,NA,2018-06-21T22:33:06Z,Ben,Data from before instrument was installed.
+2015-04-17T14:00:00Z,2015-04-18T12:01:00Z,all,NA,2018-06-21T22:33:06Z,Ben,On site maintenance. Tanks installed. MIU later corrected.
+2015-04-23T02:00:00Z,2015-04-23T18:06:30Z,~438.55~1.889,NA,2018-06-21T22:33:06Z,Ben,Flush valve was not changed on site. Fixed remotely.
+2015-12-05T17:30:00Z,2015-12-09T09:00:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Bad cal again.
+2016-02-21T01:06:00Z,2016-02-27T08:00:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Bad cal.
+2016-04-14T12:00:00Z,2016-04-26T10:00:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Bad data.
+2015-04-01T00:00:00Z,2015-04-24T16:40:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,All the data up to this point is poorly calibrated and messy
+2015-06-04T20:29:00Z,2015-06-04T20:35:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Bad cal surrounded by good cals.  Probably a reboot ringdown issue
+2015-06-24T15:45:00Z,2015-06-24T15:56:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Bad cal
+2015-06-29T20:23:00Z,2015-06-29T20:25:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,one bad cal point removed
+2015-07-28T16:45:00Z,2015-07-28T17:25:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Bad cals probably due to ring down issue
+2015-08-25T18:16:00Z,2015-08-25T18:20:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,one bad cal point removed exact same as point removed on june 29
+2015-09-04T16:20:22Z,2015-09-04T16:33:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Bad atmospheric obs. very high. probably tech contamination while on site
+2015-09-17T21:04:00Z,2015-09-17T21:06:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Bad atmospheric obs. very low.
+2015-10-13T17:25:00Z,2015-10-13T18:18:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Junk data.
+2015-10-27T16:30:00Z,2015-10-27T16:58:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Junk data.
+2015-12-23T22:06:00Z,2015-12-23T22:09:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Bad cal on reboot
+2016-02-12T22:09:00Z,2016-02-12T22:11:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Bad cal
+2016-03-09T20:03:30Z,2016-03-09T20:05:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Bad cal on reboot
+2016-05-19T22:34:00Z,2016-05-19T23:00:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Junk data probably from ring down issue with all obs really high
+2016-06-01T17:24:40Z,2016-06-01T18:05:25Z,all,NA,2018-06-21T22:33:06Z,Ryan,Bad ring down
+2016-06-21T18:24:00Z,2016-06-21T18:30:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Bad cal
+2016-08-03T14:07:38Z,2016-08-03T15:49:55Z,all,NA,2018-06-21T22:33:06Z,Ryan,Atmos obs get noisy and have strange downward dip
+2016-08-28T18:00:00Z,2016-08-30T14:53:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Bad ring down all ovs very low
+2016-09-23T21:11:52Z,2016-09-23T21:50:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Bad data and strange tank identifiers removed
+2016-10-26T17:38:00Z,2016-10-26T18:02:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Bad cal on reboot
+2016-11-14T22:09:00Z,2016-11-14T22:13:30Z,all,NA,2018-06-21T22:33:06Z,Ryan,bad cal on reboot
+2017-01-17T16:09:00Z,2017-01-17T16:13:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Strange cal in the middle of no data big data gap
+2017-04-17T18:28:00Z,2017-04-17T18:57:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Bad cal on reboot
+2017-04-28T14:51:00Z,2017-04-28T14:58:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Bad cal removed
+2017-05-26T16:45:00Z,2017-06-06T20:00:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,some bad data before and during a large data gap removed
+2017-06-23T17:52:45Z,2017-06-23T17:59:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Atm contamination while a tank was changed
+2017-09-08T02:30:00Z,2017-09-17T07:20:00Z,~433.68~2.62,NA,2018-06-21T22:33:06Z,Ryan,Empty tank
+2017-09-21T19:12:00Z,2017-09-21T19:28:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Bad data
+2017-10-03T14:52:00Z,2017-10-03T22:26:30Z,all,NA,2018-06-21T22:33:06Z,Ryan,I wish I could figure out why this data is bad but it is bad
+2017-10-18T15:15:00Z,2017-10-18T17:17:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,One bad cal on 436 tank
+2017-10-19T18:23:00Z,2017-10-19T18:25:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,One bad cal in 436 tank
+2017-10-31T19:25:00Z,2017-10-31T19:27:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,One bad cal on 436 tank
+2017-12-26T17:48:00Z,2017-12-26T18:30:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Bad cal on reboot
+2018-01-30T16:50:00Z,2017-01-30T18:10:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Bad cal on reboot
+2018-02-08T22:32:00Z,2017-02-08T22:42:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Bad cal on reboot
+2018-02-26T20:10:00Z,2017-02-26T20:13:00Z,all,NA,2018-06-21T22:33:06Z,Ryan,Bad cal on reboot

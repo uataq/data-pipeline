@@ -18,7 +18,6 @@ licor_6262_calibrate <- function() {
   nd[nd$QAQC_Flag < 0, invalid] <- NA
 
   # Batch calibrate data by year to reduce matrix sizes
-  # cal <- with(nd, calibrate_linear(Time_UTC, CO2d_ppm, ID_CO2))
   cal <- nd %>%
     group_by(yyyy = format(Time_UTC, '%Y', tz = 'UTC')) %>%
     do(with(., calibrate_linear(Time_UTC, CO2d_ppm, ID_CO2))) %>%
@@ -33,5 +32,6 @@ licor_6262_calibrate <- function() {
     stop('Calibration script returned wrong number of records at: ', site)
 
   last_cal <- with(cal, tail(which(ID_CO2 == -10 & CO2d_n > 0), 1))
+  if (length(last_cal) == 0) return(cal)
   cal[1:last_cal, ]
 }

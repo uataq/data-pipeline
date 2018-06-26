@@ -1,4 +1,5 @@
 read_pattern <- function(selector, colnums = NULL, pattern = NULL, ...) {
+  message(selector)
   
   # Parse colnums into format compatible with `cut -f`
   # colnums examples:
@@ -8,28 +9,29 @@ read_pattern <- function(selector, colnums = NULL, pattern = NULL, ...) {
   # colnums <- c(1, 2, 3)
   if (is.null(colnums)) {
     cut_cmd <- ''
-    awk_cmd <- ''
   } else {
     if (is.vector(colnums, 'numeric') || (length(colnums) > 1)) {
       colnums <- paste(colnums, collapse = ',')
     }
     cut_cmd <- paste('| cut -d \',\' -f', colnums)
-    awk_cmd <- paste0('| awk \'NF==', str_count(colnums, ',') + 1, '\'')
   }
   
   # Parse pattern into format compatible with `grep`
   # pattern <- NULL
   # pattern <- ','
   # pattern <- '$GPGGA'
-  if (is.null(pattern)) {
+  if (is.null(pattern[1])) {
     grep_cmd <- ''
   } else {
-    grep_cmd <- paste('| grep', pattern)
+    grep_cmd <- paste('| grep', pattern, collapse = ' ')
   }
   
   # Remove null bytes and quotes
-  sed_cmd <- "| sed 's/\\x0/ /g;s/\"//g'"
+  sed_cmd <- "| sed 's/\\x0/ /g;s/\"/ /g'"
+  iconv_cmd <- '| iconv -c'
   
-  cmd <- paste('cat', selector, sed_cmd, grep_cmd, cut_cmd, awk_cmd)
-  data.table::fread(cmd, fill = T, showProgress = F, ...)
+  cmd <- paste('cat', selector, sed_cmd, iconv_cmd, grep_cmd, cut_cmd)
+  con <- pipe(cmd, 'r')
+  on.exit(close(con))
+  breakstr(readLines(con, skipNul = T))
 }

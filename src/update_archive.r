@@ -1,4 +1,4 @@
-update_archive <- function(nd, path = '%Y_%m.dat', tz = 'UTC', as_fst = F) {
+update_archive <- function(nd, path = '%Y_%m.dat', tz = 'UTC') {
 
   if (nrow(nd) < 1)
     stop('No new data to append.')
@@ -20,12 +20,12 @@ update_archive <- function(nd, path = '%Y_%m.dat', tz = 'UTC', as_fst = F) {
     append <- file.exists(file)
     if (append) {
       hdr <- get_file_header(file)
-      if (!all.equal(hdr, colnames(out)))
+      if (!all(hdr == colnames(out)))
         stop('Data structure has changed and headers now conflict.')
       out <- out[out[[time_col]] > get_last_time(file), ]
     }
-    if (nrow(out) < 1)
+    if (nrow(out) < 10)
       next
-    fwrite(out, file, append = append, showProgress = F, na = 'NA')
+    fwrite(out, file, append = append, showProgress = F, na = 'NA', quote = F)
   }
 }

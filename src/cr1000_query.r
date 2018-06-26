@@ -8,10 +8,8 @@ cr1000_query <- function(ip, table, t_start) {
   
   t_start <- format(t_start, tz = 'UTC', '%Y-%m-%dT%H:%M:%S')
   
-  uri <- paste0('https://air.utah.edu/api/cr1000_query/',
-                '?ip=', ip, 
-                '&table=', table,
-                '&t_start=', t_start)
+  uri <- paste0('http://', ip, '/?command=dataquery&uri=dl:', table, 
+                '&format=TOA5&mode=since-time&p1=', t_start)
   
   if (interactive())
     message('Sending GET request to: ', uri)

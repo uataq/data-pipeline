@@ -27,7 +27,7 @@ for (fun in dir('proc/src', full.names = T)) {
 }
 
 # Load json configurations contained in proc/config
-for (config_file in dir('proc/config', full.names = T)) {
+for (config_file in dir('proc/config', '*\\.json$', full.names = T)) {
   assign(tools::file_path_sans_ext(basename(config_file)),
          fromJSON(config_file))
 }

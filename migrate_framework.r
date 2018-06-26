@@ -71,6 +71,10 @@ system('rmdir data/trx01/raw')
 system('mv data/trx01/lgr data/trx01/lgr_ugga')
 system('mkdir data/trx01/lgr_ugga/raw')
 system('mv data/trx01/lgr_ugga/*.dat data/trx01/lgr_ugga/raw/')
+system('mkdir data/trx01/gps/raw')
+system('mv data/trx01/gps/*.dat data/trx01/gps/raw/')
+system('mkdir data/trx01/2bo3/raw')
+system('mv data/trx01/2bo3/*.dat data/trx01/2bo3/raw/')
 
 # Add column headers to raw files
 source('proc/_global.r')
