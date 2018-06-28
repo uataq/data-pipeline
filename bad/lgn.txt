@@ -45,7 +45,7 @@ t_start, t_end, miu_old, miu_new, comment
 2017-04-24 23:59:00.000, 2017-04-25 00:10:00.000, all, NA, Ryan: LTS install caused issue with all standard tanks.
 2017-04-25 15:50:00.000, 2017-04-25 16:03:00.000, all, NA, Ryan: Standard inputed as -1 and -2 but reset after so not needed to save.
 2017-06-29 23:00:00.000, 2017-07-07 17:00:00.000, 599.21, NA, Doug:Tank was turned off.
-2017-06-29 00:01:00.000, 2017-07-10 06:00:00.000, 429.57, NA, Ryan: Removing the first 10 LTS obs
+2017-06-29 00:01:00.000, 2017-07-10 06:00:00.000, 429.67, NA, Ryan: Removing the first 10 LTS obs
 2017-07-01 00:00:00.000, 2017-07-21 00:00:00.000, 429.67, 429.57, Ryan: The LTS tank was entered incorrectly.
 2017-07-26 15:18:00.000, 2017-07-26 15:19:30.000, all, NA, Ryan: Strange downward dip in atmospheric obs
 2017-07-26 20:08:40.000, 2017-07-26 20:11:50.000, all, NA, Ryan: Strange upward climb in atmospheric obs
