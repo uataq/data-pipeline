@@ -47,8 +47,8 @@ licor_6262_qaqc <- function() {
 
   # Compute dry air CO2 mole fraction estimate by correcting for the dilution
   # effect of H2O on CO2 for atmospheric samples
-  nd$CO2d_ppm <- with(nd, calc_h2o_dilution(CO2_ppm, H2O_ppm))
-  nd$CO2d_ppm <- with(nd, calc_h2o_broadening(CO2d_ppm, H2O_ppm*10^-6))
+  nd$CO2d_ppm <- with(nd, calc_h2o_broadening(CO2_ppm, H2O_ppm*10^-6))
+  nd$CO2d_ppm <- with(nd, calc_h2o_dilution(CO2d_ppm, H2O_ppm))
   ref_mask <- !is.na(nd$ID_CO2) & nd$ID_CO2 >= 0
   nd$CO2d_ppm[ref_mask] <- nd$CO2_ppm[ref_mask]
 
