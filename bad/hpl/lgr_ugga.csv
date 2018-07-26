@@ -1,34 +1,34 @@
 t_start,t_end,miu_old,miu_new,t_added,name,comment
-2015-02-26T00:00:00Z,2015-02-26T11:25:25Z,all,NA,2018-06-21T22:33:07Z,Ben,QAQC.
-2015-04-10T10:15:00Z,2015-04-10T11:00:00Z,all,NA,2018-06-21T22:33:07Z,Ben,On site maintenance.
-2015-04-17T09:25:00Z,2015-04-20T11:17:30Z,all,NA,2018-06-21T22:33:07Z,Ben,Leak in MIU.
-2015-04-30T17:30:00Z,2015-05-04T00:00:00Z,all,NA,2018-06-21T22:33:07Z,Ben,Problem with instrument reading 0 and NaN.
-2015-10-07T12:43:00Z,2015-10-07T12:59:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,Remove data from when i was on site.
-2016-02-12T02:50:00Z,2016-02-12T05:15:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,Strange decrease in CO2.
-2016-02-15T00:00:00Z,2016-02-16T19:05:30Z,all,NA,2018-06-21T22:33:07Z,Ben,Instrument lost internal intensity calibration for CO2.
-2016-03-14T14:03:00Z,2016-03-17T08:08:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,Removed data assoicated with bad cal.
-2016-04-25T00:00:00Z,2016-05-31T21:00:00Z,all,NA,2018-06-21T22:33:07Z,Ben,Instrument lost proper ringdown leading to poor precision.
-2016-08-01T00:00:00Z,2016-09-01T00:00:00Z,~386.95~1.861,NA,2018-06-21T22:33:07Z,Ben,Valve disabled but still propagating into data
-2015-01-01T00:00:00Z,2015-04-20T17:58:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,All data prior to this is either uncalibrated or junk.
-2015-06-17T21:00:00Z,2015-06-17T21:02:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,bad cal on reboot
-2015-07-17T15:04:00Z,2015-07-17T15:05:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,Removing one bad cal point prior to a full calibration period
-2015-10-07T17:10:00Z,2015-10-07T19:00:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,Bad cal after reboot
-2015-10-26T20:33:00Z,2015-10-27T17:14:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,Junk data
-2015-11-11T19:28:00Z,2015-11-11T19:35:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,Bad cal on 419.63 tank
-2015-11-13T17:20:00Z,2015-11-18T20:42:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,Some bad cal on 419.63 tank during a large data gap. not much data removed here
-2015-12-28T14:26:00Z,2015-12-28T14:31:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,Bad cal on reboot
-2016-02-12T17:23:56Z,2016-02-12T17:25:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,Atm contamination
-2016-03-10T19:58:39Z,2016-03-10T20:00:58Z,all,NA,2018-06-21T22:33:07Z,Ryan,Atm contamination
-2016-04-04T15:17:00Z,2016-04-04T15:27:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,Bad cal after reboot
-2016-09-12T20:48:30Z,2016-09-12T20:50:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,Bad cal after reboot
-2016-09-23T17:00:00Z,2016-09-30T22:21:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,Bad ringdown makes for bad data
-2016-10-31T15:00:00Z,2016-11-22T18:10:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,Tons of total junk data lots of lost data
-2016-12-14T18:00:00Z,2016-12-28T16:53:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,More bad ringdown data losses
-2017-03-07T16:00:00Z,2017-03-27T21:00:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,So much lost data due to ring down issues.
-2017-05-15T16:23:00Z,2017-05-15T18:25:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,More ring down lost data
-2017-06-03T12:49:53Z,2017-06-03T12:59:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,Atm contamination
-2017-10-17T15:50:00Z,2017-10-17T16:23:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,Bad cal on reboot
-2018-01-02T16:50:00Z,2018-01-02T16:51:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,Bad cal on reboot
-2018-02-26T20:12:00Z,2018-02-26T22:34:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,Bad cal on reboot
-2018-03-09T21:49:00Z,2018-03-09T22:08:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,Bad cal on reboot
-2018-05-02T18:27:30Z,2018-05-02T18:30:00Z,all,NA,2018-06-21T22:33:07Z,Nick,First cal reads atmosphere and needs to be deleted
+2015-02-26T00:00:00Z,2015-02-26T11:25:25Z,all,NA,2018-07-26T16:47:09Z,Ben,QAQC.
+2015-04-10T10:15:00Z,2015-04-10T11:00:00Z,all,NA,2018-07-26T16:47:09Z,Ben,On site maintenance.
+2015-04-17T09:25:00Z,2015-04-20T11:17:30Z,all,NA,2018-07-26T16:47:09Z,Ben,Leak in MIU.
+2015-04-30T17:30:00Z,2015-05-04T00:00:00Z,all,NA,2018-07-26T16:47:09Z,Ben,Problem with instrument reading 0 and NaN.
+2015-10-07T12:43:00Z,2015-10-07T12:59:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,Remove data from when i was on site.
+2016-02-12T02:50:00Z,2016-02-12T05:15:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,Strange decrease in CO2.
+2016-02-15T00:00:00Z,2016-02-16T19:05:30Z,all,NA,2018-07-26T16:47:09Z,Ben,Instrument lost internal intensity calibration for CO2.
+2016-03-14T14:03:00Z,2016-03-17T08:08:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,Removed data assoicated with bad cal.
+2016-04-25T00:00:00Z,2016-05-31T21:00:00Z,all,NA,2018-07-26T16:47:09Z,Ben,Instrument lost proper ringdown leading to poor precision.
+2016-08-01T00:00:00Z,2016-09-01T00:00:00Z,~386.95~1.861,NA,2018-07-26T16:47:09Z,Ben,Valve disabled but still propagating into data
+2015-01-01T00:00:00Z,2015-04-20T17:58:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,All data prior to this is either uncalibrated or junk.
+2015-06-17T21:00:00Z,2015-06-17T21:02:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,bad cal on reboot
+2015-07-17T15:04:00Z,2015-07-17T15:05:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,Removing one bad cal point prior to a full calibration period
+2015-10-07T17:10:00Z,2015-10-07T19:00:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,Bad cal after reboot
+2015-10-26T20:33:00Z,2015-10-27T17:14:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,Junk data
+2015-11-11T19:28:00Z,2015-11-11T19:35:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,Bad cal on 419.63 tank
+2015-11-13T17:20:00Z,2015-11-18T20:42:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,Some bad cal on 419.63 tank during a large data gap. not much data removed here
+2015-12-28T14:26:00Z,2015-12-28T14:31:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,Bad cal on reboot
+2016-02-12T17:23:56Z,2016-02-12T17:25:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,Atm contamination
+2016-03-10T19:58:39Z,2016-03-10T20:00:58Z,all,NA,2018-07-26T16:47:09Z,Ryan,Atm contamination
+2016-04-04T15:17:00Z,2016-04-04T15:27:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,Bad cal after reboot
+2016-09-12T20:48:30Z,2016-09-12T20:50:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,Bad cal after reboot
+2016-09-23T17:00:00Z,2016-09-30T22:21:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,Bad ringdown makes for bad data
+2016-10-31T15:00:00Z,2016-11-22T18:10:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,Tons of total junk data lots of lost data
+2016-12-14T18:00:00Z,2016-12-28T16:53:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,More bad ringdown data losses
+2017-03-07T16:00:00Z,2017-03-27T21:00:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,So much lost data due to ring down issues.
+2017-05-15T16:23:00Z,2017-05-15T18:25:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,More ring down lost data
+2017-06-03T12:49:53Z,2017-06-03T12:59:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,Atm contamination
+2017-10-17T15:50:00Z,2017-10-17T16:23:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,Bad cal on reboot
+2018-01-02T16:50:00Z,2018-01-02T16:51:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,Bad cal on reboot
+2018-02-26T20:12:00Z,2018-02-26T22:34:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,Bad cal on reboot
+2018-03-09T21:49:00Z,2018-03-09T22:08:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,Bad cal on reboot
+2018-05-02T18:27:30Z,2018-05-02T18:30:00Z,all,NA,2018-07-26T16:47:09Z,Nick,First cal reads atmosphere and needs to be deleted

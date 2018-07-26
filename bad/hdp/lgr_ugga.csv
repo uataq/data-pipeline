@@ -1,27 +1,27 @@
 t_start,t_end,miu_old,miu_new,t_added,name,comment
-2016-01-01T00:00:00Z,2016-07-25T00:00:00Z,all,NA,2018-06-21T22:33:07Z,Ben,Data from before analyzer was installed
-2016-07-30T14:57:00Z,2016-08-02T22:23:00Z,all,NA,2018-06-21T22:33:07Z,Ben,MIU failure and lost intensity calibration
-2016-08-03T20:29:30Z,2016-08-05T19:30:00Z,all,NA,2018-06-21T22:33:07Z,Ben,MIU failure
-2016-08-07T21:52:00Z,2016-08-08T15:05:15Z,all,NA,2018-06-21T22:33:07Z,Ben,MIU failure. Identified the LGR as the problem not the lgr-buddy
-2016-08-09T10:04:30Z,2016-08-11T19:48:00Z,all,NA,2018-06-21T22:33:07Z,Ben,New LGR had timezone set incorrectly. Issues with serial port
-2016-08-11T23:04:00Z,2016-08-12T17:47:00Z,all,NA,2018-06-21T22:33:07Z,Ben,LGR stopped outputting serial data
-2016-08-15T11:53:50Z,2016-08-16T06:37:50Z,all,NA,2018-06-21T22:33:07Z,Ben,LGR stopped outputting serial data. Added exception to code
-2016-08-16T17:58:53Z,2016-08-16T18:12:24Z,all,NA,2018-06-21T22:33:07Z,Logan,unrealistic 10 min spike to 900ppm removed
-2016-08-18T12:09:00Z,2016-08-18T18:30:00Z,all,NA,2018-06-21T22:33:07Z,Ben,On site testing
-2016-08-22T03:02:00Z,2016-08-22T16:42:00Z,all,NA,2018-06-21T22:33:07Z,Ben,LGR serial comms issue. Added additional ValueError exception
-2016-08-23T22:46:00Z,2016-08-24T11:17:00Z,all,NA,2018-06-21T22:33:07Z,Logan,Bad data prior to Bens site visit.
-2016-08-24T11:17:00Z,2016-08-24T16:19:30Z,all,NA,2018-06-21T22:33:07Z,Ben,On site. Removed mg perchlorate trap and high reference tank
-2016-08-28T23:06:00Z,2016-08-29T15:00:00Z,all,NA,2018-06-21T22:33:07Z,Ben,Serial MIU issues
-2016-08-30T23:13:30Z,2016-08-31T19:00:00Z,all,NA,2018-06-21T22:33:07Z,Ben,LGR has stopped outputting serial data
-2016-08-30T23:04:37Z,2016-11-08T15:53:14Z,all,NA,2018-06-21T22:33:07Z,Logan,Very little data. Values look unrealistic.
-2016-09-21T19:54:11Z,2016-09-22T21:40:38Z,all,NA,2018-06-21T22:33:07Z,Logan,Obs appear to be atm but IDed as cal gas.
-2017-04-03T06:19:35Z,2017-04-03T19:28:26Z,all,NA,2018-06-21T22:33:07Z,Logan,Anomolous time shift causing overlapping data.
-2017-04-05T07:57:05Z,2017-04-10T20:48:40Z,all,NA,2018-06-21T22:33:07Z,Logan,CO2 obs anomalously low
-2017-05-19T15:46:21Z,2017-06-19T17:00:00Z,all,NA,2018-06-21T22:33:07Z,Logan,a few data points removed during a large data gap.
-2016-07-25T01:01:01Z,2017-08-09T01:01:01Z,~409.97~1.857,NA,2018-06-21T22:33:07Z,Logan,Anomalous MIU value appears sporadically through whole record (MIU=0)
-2016-08-30T16:58:06Z,2016-08-30T17:01:41Z,all,NA,2018-06-21T22:33:07Z,Ryan,atmpspheric contamination
-2017-04-03T05:19:00Z,2017-04-03T05:25:30Z,all,NA,2018-06-21T22:33:07Z,Ryan,Bad cal with bad ring down time
-2017-04-28T22:41:00Z,2017-04-28T23:00:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,Bad cal with frequency at 1 second not 10'
-2017-06-19T17:40:56Z,2017-06-19T17:46:18Z,all,NA,2018-06-21T22:33:07Z,Ryan,Strange downward dip prior to cal
-2017-09-14T16:33:00Z,2017-10-05T19:00:00Z,~379.61~1.805,NA,2018-06-21T22:33:07Z,Ryan,Empthy tank
-2018-03-04T03:15:52Z,2018-03-05T16:55:00Z,all,NA,2018-06-21T22:33:07Z,Ryan,Bad ring down
+2016-01-01T00:00:00Z,2016-07-25T00:00:00Z,all,NA,2018-07-26T16:47:09Z,Ben,Data from before analyzer was installed
+2016-07-30T14:57:00Z,2016-08-02T22:23:00Z,all,NA,2018-07-26T16:47:09Z,Ben,MIU failure and lost intensity calibration
+2016-08-03T20:29:30Z,2016-08-05T19:30:00Z,all,NA,2018-07-26T16:47:09Z,Ben,MIU failure
+2016-08-07T21:52:00Z,2016-08-08T15:05:15Z,all,NA,2018-07-26T16:47:09Z,Ben,MIU failure. Identified the LGR as the problem not the lgr-buddy
+2016-08-09T10:04:30Z,2016-08-11T19:48:00Z,all,NA,2018-07-26T16:47:09Z,Ben,New LGR had timezone set incorrectly. Issues with serial port
+2016-08-11T23:04:00Z,2016-08-12T17:47:00Z,all,NA,2018-07-26T16:47:09Z,Ben,LGR stopped outputting serial data
+2016-08-15T11:53:50Z,2016-08-16T06:37:50Z,all,NA,2018-07-26T16:47:09Z,Ben,LGR stopped outputting serial data. Added exception to code
+2016-08-16T17:58:53Z,2016-08-16T18:12:24Z,all,NA,2018-07-26T16:47:09Z,Logan,unrealistic 10 min spike to 900ppm removed
+2016-08-18T12:09:00Z,2016-08-18T18:30:00Z,all,NA,2018-07-26T16:47:09Z,Ben,On site testing
+2016-08-22T03:02:00Z,2016-08-22T16:42:00Z,all,NA,2018-07-26T16:47:09Z,Ben,LGR serial comms issue. Added additional ValueError exception
+2016-08-23T22:46:00Z,2016-08-24T11:17:00Z,all,NA,2018-07-26T16:47:09Z,Logan,Bad data prior to Bens site visit.
+2016-08-24T11:17:00Z,2016-08-24T16:19:30Z,all,NA,2018-07-26T16:47:09Z,Ben,On site. Removed mg perchlorate trap and high reference tank
+2016-08-28T23:06:00Z,2016-08-29T15:00:00Z,all,NA,2018-07-26T16:47:09Z,Ben,Serial MIU issues
+2016-08-30T23:13:30Z,2016-08-31T19:00:00Z,all,NA,2018-07-26T16:47:09Z,Ben,LGR has stopped outputting serial data
+2016-08-30T23:04:37Z,2016-11-08T15:53:14Z,all,NA,2018-07-26T16:47:09Z,Logan,Very little data. Values look unrealistic.
+2016-09-21T19:54:11Z,2016-09-22T21:40:38Z,all,NA,2018-07-26T16:47:09Z,Logan,Obs appear to be atm but IDed as cal gas.
+2017-04-03T06:19:35Z,2017-04-03T19:28:26Z,all,NA,2018-07-26T16:47:09Z,Logan,Anomolous time shift causing overlapping data.
+2017-04-05T07:57:05Z,2017-04-10T20:48:40Z,all,NA,2018-07-26T16:47:09Z,Logan,CO2 obs anomalously low
+2017-05-19T15:46:21Z,2017-06-19T17:00:00Z,all,NA,2018-07-26T16:47:09Z,Logan,a few data points removed during a large data gap.
+2016-07-25T01:01:01Z,2017-08-09T01:01:01Z,~409.97~1.857,NA,2018-07-26T16:47:09Z,Logan,Anomalous MIU value appears sporadically through whole record (MIU=0)
+2016-08-30T16:58:06Z,2016-08-30T17:01:41Z,all,NA,2018-07-26T16:47:09Z,Ryan,atmpspheric contamination
+2017-04-03T05:19:00Z,2017-04-03T05:25:30Z,all,NA,2018-07-26T16:47:09Z,Ryan,Bad cal with bad ring down time
+2017-04-28T22:41:00Z,2017-04-28T23:00:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,Bad cal with frequency at 1 second not 10'
+2017-06-19T17:40:56Z,2017-06-19T17:46:18Z,all,NA,2018-07-26T16:47:09Z,Ryan,Strange downward dip prior to cal
+2017-09-14T16:33:00Z,2017-10-05T19:00:00Z,~379.61~1.805,NA,2018-07-26T16:47:09Z,Ryan,Empthy tank
+2018-03-04T03:15:52Z,2018-03-05T16:55:00Z,all,NA,2018-07-26T16:47:09Z,Ryan,Bad ring down
