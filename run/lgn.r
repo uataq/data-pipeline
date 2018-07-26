@@ -11,7 +11,8 @@ try({
   instrument <- 'licor_6262'
   proc_init()
   nd <- cr1000_init()
-  update_archive(nd, data_path(site, instrument, 'raw'))
+  if (!site_info[[site]]$reprocess)
+    update_archive(nd, data_path(site, instrument, 'raw'), check_header = F)
   nd <- licor_6262_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
   nd <- licor_6262_calibrate()
