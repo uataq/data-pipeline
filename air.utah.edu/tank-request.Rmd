@@ -1,9 +1,0 @@
----
-title: Tank Request
-output:
-  html_document:
-    includes:
-      in_header: _header.html
-      after_body: _tank_request_form.html
----
-<!-- Ben Fasoli -->
