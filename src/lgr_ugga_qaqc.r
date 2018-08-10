@@ -10,8 +10,8 @@ lgr_ugga_qaqc <- function() {
       filter(Time_UTC < as.POSIXct('2015-12-29', tz = 'UTC') |
                Time_UTC > as.POSIXct('2015-12-30', tz = 'UTC')) %>%
       mutate(Time_UTC = ifelse(Time_UTC < as.POSIXct('2015-12-30', tz = 'UTC'),
-                               fastPOSIXct(format(Time_UTC, tz = 'UTC'),
-                                           tz = 'America/Denver'),
+                               as.POSIXct(format(Time_UTC, tz = 'UTC'),
+                                          tz = 'America/Denver'),
                                Time_UTC))
     attributes(nd$Time_UTC) <- list(
       class = c('POSIXct', 'POSIXt'),
