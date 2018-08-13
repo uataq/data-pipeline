@@ -27,7 +27,7 @@ for i in ${exec[@]}; do
   Rscript run/$i &>> $lf &
   pid=$!
   
-  maxit=300
+  maxit=500
   for j in $(seq 0 $maxit); do
     sleep 1
     if ! ps -p $pid &> /dev/null; then
