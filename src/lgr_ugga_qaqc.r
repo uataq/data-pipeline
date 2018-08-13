@@ -2,7 +2,7 @@ lgr_ugga_qaqc <- function() {
   
   if (!grepl('trx', site)) {
     # Standardize field names
-    colnames(nd) <- data_info[[instrument]]$qaqc$col_names[1:ncol(nd)]
+    colnames(nd) <- data_config[[instrument]]$qaqc$col_names[1:ncol(nd)]
     
     # Timezone America/Denver to UTC shift
     # Data during 12-29-2015 to 12-30-2015 invalid due to shift on day

@@ -6,7 +6,7 @@ metone_es642_calibrate <- function() {
 
   # Use qaqc data as "calibrated", or best available data
   cal <- nd
-  colnames(cal) <- data_info[[instrument]]$calibrated$col_names
+  colnames(cal) <- data_config[[instrument]]$calibrated$col_names
 
   cal
 }

@@ -1,12 +1,11 @@
 lgr_ugga_calibrate <- function() {
 
-  # Exit if currently sampling reference gases
-  if (!site_info[[site]]$reprocess && tail(nd$ID_CO2, 1) != -10) {
-    stop('Calibrations disabled. Sampling reference tank at: ', site)
-  }
-
-  # Import recent data to ensure bracketing reference measurements
-  if (!site_info[[site]]$reprocess) {
+  if (!site_config$reprocess) {
+    # Exit if currently sampling reference gases
+    if (tail(nd$ID_CO2, 1) != -10) 
+      stop('Calibrations disabled. Sampling reference tank at: ', site)
+    
+    # Import recent data to ensure bracketing reference measurements
     N <- 1 + (as.numeric(format(nd$Time_UTC[1], tz = 'UTC', '%d')) == 1)
     files <- tail(dir(file.path('data', site, instrument, 'qaqc'),
                       pattern = '.*\\.{1}dat', full.names = T), N)
@@ -31,7 +30,7 @@ lgr_ugga_calibrate <- function() {
     cal_co2 %>% select(time, cal, meas, m, b, n, rsq, rmse, id),
     cal_ch4 %>% select(cal, meas, m, b, n, rsq, rmse, id)
   )
-  colnames(cal) <- data_info[[instrument]]$calibrated$col_names[1:ncol(cal)]
+  colnames(cal) <- data_config[[instrument]]$calibrated$col_names[1:ncol(cal)]
 
   # Set QAQC flag giving priority to calibration QAQC then initial QAQC
   cal$QAQC_Flag <- cal_co2$qaqc

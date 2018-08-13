@@ -2,7 +2,7 @@ licor_6262_qaqc <- function() {
 
   # Invalidate columns containing record number and redundant datetime fields
   nd[, 2:7] <- NULL
-  colnames(nd) <- data_info[[instrument]]$qaqc$col_names[1:ncol(nd)]
+  colnames(nd) <- data_config[[instrument]]$qaqc$col_names[1:ncol(nd)]
 
   # Initialize qaqc flag
   nd$QAQC_Flag <- 0

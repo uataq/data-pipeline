@@ -2,7 +2,7 @@ metone_es642_qaqc <- function() {
 
   # Invalidate column containing record number
   nd[, 2] <- NULL
-  colnames(nd) <- data_info[[instrument]]$qaqc$col_names[1:ncol(nd)]
+  colnames(nd) <- data_config[[instrument]]$qaqc$col_names[1:ncol(nd)]
 
   # Convert PM2.5 mass concentration from mg m-3 to ug m-3
   nd$PM2.5_ugm3 <- nd$PM2.5_ugm3 * 1000

@@ -1,0 +1,19 @@
+stid, name, active, ip, port, reprocess, lati, long, zagl
+asb, Aline Wilmot Skaggs (UoU), FALSE, NA, NA, TRUE, 40.763226, -111.849278, NA
+csp, Castle Peak (CSP), FALSE, NA, NA, TRUE, 40.0509, -110.0194, 4
+dbk, Daybreak (DBK), TRUE, 166.130.22.212, 80, TRUE, 40.538497, -112.069528, 5
+fru, Fruitland (FRU), TRUE, 166.130.125.75, 22, TRUE, 40.208731, -110.8403, 4
+hdp, Hidden Peak (HDP), TRUE, 50.224.25.93, 22, TRUE, 40.560644, -111.645278, 15
+heb, Heber (HEB), TRUE, 166.130.69.244, 80, TRUE, 40.506808, -111.403636, 7
+hpl, Horsepool (HPL), TRUE, 69.55.97.79, 22, TRUE, 40.143711, -109.4672, 4
+imc, Intermountain Medical Center (IMC), TRUE, 67.128.146.28, 80, TRUE, 40.660395, -111.89075, 35
+lgn, Logan (LGN), TRUE, 129.123.46.97, 80, TRUE, 41.761353, -111.822739, 5
+msa, Murray Satellite (MSA), FALSE, NA, NA, TRUE, 40.763226, -111.849278, NA
+mur, Murray (MUR), FALSE, NA, NA, TRUE, 40.763226, -111.849278, NA
+roo, Roosevelt (ROO), TRUE, 67.213.235.123, 22, TRUE, 40.294169, -110.009, 4
+rpk, Rose Park (RPK), TRUE, 205.127.188.48, 80, TRUE, 40.794386, -111.931925, 7
+sug, Sugarhouse (SUG), TRUE, 166.130.89.167, 80, TRUE, 40.739906, -111.857831, 10
+sun, Suncrest (SUN), TRUE, 166.130.104.236, 80, TRUE, 40.480978, -111.837047, 5
+trx01, TRAX 1136 (TRX01), TRUE, uutrax1136.dyndns-remote.com, 5022, TRUE, NA, NA, 5
+trx02, TRAX 1104 (TRX02), FALSE, NA, NA, TRUE, NA, NA, 5
+wbb, William Browning Building (WBB), TRUE, GGA-13-0221.chpc.utah.edu, 22, TRUE, 40.766189, -111.847672, 35

@@ -1,10 +1,9 @@
 lgr_ugga_init <- function() {
   
-  if (!site_info[[site]]$reprocess) {
-    remote <- paste0('lgr@', site_info[[site]][[instrument]]$ip,
-                     ':/home/lgr/data/')
+  if (!site_config$reprocess) {
+    remote <- paste0('lgr@', site_config$ip, ':/home/lgr/data/')
     local <- file.path('data', site, instrument, 'raw/')
-    rsync(from = remote, to = local, port = site_info[[site]][[instrument]]$port)
+    rsync(from = remote, to = local, port = site_config$port)
   }
   
   # Unzip necessary compressed archives
@@ -34,13 +33,13 @@ lgr_ugga_init <- function() {
                full.names = T, recursive = T)
   files <- files[order(file.mtime(files))]
   
-  N <- ifelse(site_info[[site]]$reprocess, Inf, 2)
+  N <- ifelse(site_config$reprocess, Inf, 2)
   files <- tail(files, N)
   
   nd <- lapply(files, function(file) {
     # Catch change in number of columns in different model LGRs
-    col_names <- data_info[[instrument]]$raw$col_names
-    col_types <- data_info[[instrument]]$raw$col_types
+    col_names <- data_config[[instrument]]$raw$col_names
+    col_types <- data_config[[instrument]]$raw$col_types
     ndelim <- str_count(system(paste('head -n 2', file, '| tail -n 1'), 
                                intern = T), ',')
     if (length(ndelim) == 0) return()
@@ -61,7 +60,7 @@ lgr_ugga_init <- function() {
     #  2014+ version has 24 columns (MIU split into valve and description)
     if (ncol(df) == 24)
       df[[23]] <- NULL
-    setNames(df, data_info[[instrument]]$raw$col_names)
+    setNames(df, data_config[[instrument]]$raw$col_names)
   }) %>%
     bind_rows()
   

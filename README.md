@@ -14,28 +14,12 @@ The trace gas processing tools are broken into five components
 Changes in the historic datasets can be made using the `bad/` data text files. When a new commit is made, the historic record for the given site is reprocessed on the next run (every 5 minutes).
 
 
-# Site naming conventions
-Additional site metadata can be found in [config/site_info.json](config/site_info.json) and at [air.utah.edu](http://air.utah.edu).  
-
-Site                         | Abbreviation
------------------------------|----------------------------------
-Castle Peak                  | csp
-Daybreak                     | dbk
-Fruitland                    | fru
-Heber                        | heb
-Hidden Peak                  | hdp
-Horsepool                    | hpl
-Intermountain Medical Center | imc
-Logan                        | lgn
-Roosevelt                    | roo
-Rose Park                    | rpk
-Sugarhouse                   | sug
-Suncrest                     | sun
-University of Utah           | wbb
+# Site metadata
+Site metadata can be found in [config/site_config.csv](config/site_config.csv) and at [air.utah.edu](http://air.utah.edu).  
 
 
 # Instrument naming conventions
-Additional instrument metadata can be found in [config/data_info.json](config/data_info.json).  
+Additional instrument metadata can be found in [config/data_config.json](config/data_config.json).  
 
 Instrument                   | Abbreviation
 -----------------------------|----------------------------------

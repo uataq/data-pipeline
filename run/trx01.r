@@ -4,11 +4,13 @@ site   <- 'trx01'
 
 # Load settings and initialize lock file
 source('/uufs/chpc.utah.edu/common/home/lin-group2/measurements-beta/proc/_global.r')
+site_config <- site_config[site_config$stid == site, ]
+
 lock_create()
 
-if (!site_info[[site]]$reprocess && !ping(site_info[[site]]$trax$ip)) {
+if (!site_config$reprocess && !ping(site_config$ip)) {
   lock_remove()
-  stop('Unable to connect to ', site_info[[site]]$trax$ip)
+  stop('Unable to connect to ', site_config$ip)
 }
 
 try({
@@ -18,11 +20,10 @@ try({
   
   path <- file.path('data', site, instrument, 'raw')
   
-  if (!site_info[[site]]$reprocess) {
-    remote <- paste0('lgr@', site_info[[site]][['trax']]$ip,
-                     ':/home/pi/data/lgr/')
+  if (!site_config$reprocess) {
+    remote <- paste0('lgr@', site_config$ip, ':/home/pi/data/lgr/')
     local <- file.path('data', site, instrument, 'raw/')
-    rsync(from = remote, to = local, port = site_info[[site]][['trax']]$port)
+    rsync(from = remote, to = local, port = site_config$port)
     
     lt <- dir(file.path('data', site, instrument, 'qaqc'), full.names = T) %>%
       tail(1) %>%
@@ -98,11 +99,10 @@ try({
   
   path <- file.path('data', site, instrument, 'raw')
   
-  if (!site_info[[site]]$reprocess) {
-    remote <- paste0('lgr@', site_info[[site]][['trax']]$ip,
-                     ':/home/pi/data/gps/')
+  if (!site_config$reprocess) {
+    remote <- paste0('lgr@', site_config$ip, ':/home/pi/data/gps/')
     local <- file.path('data', site, instrument, 'raw/')
-    rsync(from = remote, to = local, port = site_info[[site]][['trax']]$port)
+    rsync(from = remote, to = local, port = site_config$port)
     
     lt <- dir(file.path('data', site, instrument, 'qaqc'), full.names = T) %>%
       tail(1) %>%
@@ -162,11 +162,10 @@ try({
   
   path <- file.path('data', site, instrument, 'raw')
   
-  if (!site_info[[site]]$reprocess) {
-    remote <- paste0('lgr@', site_info[[site]][['trax']]$ip,
-                     ':/home/pi/data/2bo3/')
+  if (!site_config$reprocess) {
+    remote <- paste0('lgr@', site_config$ip, ':/home/pi/data/2bo3/')
     local <- file.path('data', site, instrument, 'raw/')
-    rsync(from = remote, to = local, port = site_info[[site]][['trax']]$port)
+    rsync(from = remote, to = local, port = site_config$port)
     
     lt <- dir(file.path('data', site, instrument, 'qaqc'), full.names = T) %>%
       tail(1) %>%
