@@ -23,6 +23,24 @@ Additional instrument metadata can be found in [config/data_config.json](config/
 
 Instrument                   | Abbreviation
 -----------------------------|----------------------------------
-Licor 6262 CO2 IRGA          | licor_6262
-LGR UGGA CO2, CH4, H2O       | lgr_ugga
-MetOne ES642 PM2.5           | metone_es642
+Licor 6262 IRGA              | licor_6262
+Los Gatos Research UGGA      | lgr_ugga
+MetOne ES642                 | metone_es642
+
+
+# QAQC flagging conventions
+Numeric values are assigned to observations that meet certain automated or human identified criterion. The meaning of these identifiers are as follows.
+
+Flag  | Description
+------|-----------------
+1     | Measurement data filled from backup data recording source
+0     | Data passes all QAQC metrics
+-1    | Data manually removed
+-2    | System flush
+-3    | Invalid valve identifier
+-4    | Flow rate or cavity pressure out of range
+-5    | Drift between adjacent reference tank measurements out of range
+-6    | Time elapsed between reference tank measurements out of range
+-7    | Reference tank measurements out of range
+
+

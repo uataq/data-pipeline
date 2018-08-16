@@ -53,6 +53,7 @@ done
 # Build air.utah.edu
 # echo "Building air.utah.edu static source code..."
 # Rscript air.utah.edu/_build.r
+Rscript ../air.utah.edu/_render.r
 
 # echo "Pushing air.utah.edu changes to webserver..."
 # rsync -az _site/* benfasoli@air.utah.edu:/var/www/html/

@@ -27,6 +27,7 @@ update_archive <- function(nd, path = '%Y_%m.dat', tz = 'UTC', check_header = T)
     }
     if (nrow(out) < 10)
       next
+    out[[time_col]] <- format(out[[time_col]], tz = 'UTC', format = '%Y-%m-%d %H:%M:%OS2')
     fwrite(out, file, append = append, showProgress = F, na = 'NA', quote = F)
   }
 }

@@ -21,7 +21,7 @@ try({
   path <- file.path('data', site, instrument, 'raw')
   
   if (!site_config$reprocess) {
-    remote <- paste0('lgr@', site_config$ip, ':/home/pi/data/lgr/')
+    remote <- paste0('pi@', site_config$ip, ':/home/pi/data/lgr/')
     local <- file.path('data', site, instrument, 'raw/')
     rsync(from = remote, to = local, port = site_config$port)
     
@@ -100,7 +100,7 @@ try({
   path <- file.path('data', site, instrument, 'raw')
   
   if (!site_config$reprocess) {
-    remote <- paste0('lgr@', site_config$ip, ':/home/pi/data/gps/')
+    remote <- paste0('pi@', site_config$ip, ':/home/pi/data/gps/')
     local <- file.path('data', site, instrument, 'raw/')
     rsync(from = remote, to = local, port = site_config$port)
     
@@ -163,7 +163,7 @@ try({
   path <- file.path('data', site, instrument, 'raw')
   
   if (!site_config$reprocess) {
-    remote <- paste0('lgr@', site_config$ip, ':/home/pi/data/2bo3/')
+    remote <- paste0('pi@', site_config$ip, ':/home/pi/data/2bo3/')
     local <- file.path('data', site, instrument, 'raw/')
     rsync(from = remote, to = local, port = site_config$port)
     

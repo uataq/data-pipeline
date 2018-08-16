@@ -10,6 +10,9 @@ setwd('/uufs/chpc.utah.edu/common/home/lin-group2/measurements-beta')
 # Set timezone
 Sys.setenv(TZ = 'UTC')
 
+# Global options
+options(stringsAsFactors = F)
+
 # Load library dependencies
 for (lib in c('data.table', 'dplyr', 'fasttime', 'jsonlite', 'RCurl', 'readr', 'stringr', 
               'uataq')) {
@@ -26,8 +29,8 @@ for (fun in dir('proc/src', full.names = T)) {
   source(fun)
 }
 
-# Load json configurations contained in proc/config
-site_config <- read.csv('proc/config/site_config.csv')
+# Load configurations contained in proc/config
+site_config <- fread('proc/config/site_config.csv')
 data_config <- fromJSON('proc/config/data_config.json')
 
 # Force global reprocess
