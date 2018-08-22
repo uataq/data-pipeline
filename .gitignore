@@ -2,3 +2,9 @@
 .Rhistory
 .RData
 .Ruserdata
+.Rapp.history
+.DS_Store
+*.Rproj
+log.txt
+bad/_log.rds
+.lock/*.lock
