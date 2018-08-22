@@ -1,12 +1,6 @@
 # Ben Fasoli
 
 site   <- 'sun'
-<<<<<<< HEAD
-ip     <- '166.130.104.236'
-port   <- 6785
-table  <- 'Dat'
-=======
->>>>>>> dev
 
 # Load settings and initialize lock file
 source('/uufs/chpc.utah.edu/common/home/lin-group2/measurements/pipeline/_global.r')

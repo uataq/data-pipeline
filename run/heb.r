@@ -1,21 +1,12 @@
 # Ben Fasoli
 
 site   <- 'heb'
-<<<<<<< HEAD
-ip     <- '166.130.69.244'
-port   <- 6785
-table  <- 'Dat'
-=======
->>>>>>> dev
 
 # Load settings and initialize lock file
 source('/uufs/chpc.utah.edu/common/home/lin-group2/measurements/pipeline/_global.r')
 site_config <- site_config[site_config$stid == site, ]
 lock_create()
 
-<<<<<<< HEAD
-q('no')
-=======
 try({
   # Licor 6262 -----------------------------------------------------------------
   instrument <- 'licor_6262'
@@ -30,4 +21,3 @@ try({
 })
 
 lock_remove()
->>>>>>> dev

@@ -1,19 +1,12 @@
 # Ben Fasoli
 
 site   <- 'hpl'
-<<<<<<< HEAD
-ip     <- '69.55.97.79'
-=======
->>>>>>> dev
 
 # Load settings and initialize lock file
 source('/uufs/chpc.utah.edu/common/home/lin-group2/measurements/pipeline/_global.r')
 site_config <- site_config[site_config$stid == site, ]
 lock_create()
 
-<<<<<<< HEAD
-q('no')
-=======
 try({
   # LGR UGGA -------------------------------------------------------------------
   instrument <- 'lgr_ugga'
@@ -26,4 +19,3 @@ try({
 })
 
 lock_remove()
->>>>>>> dev

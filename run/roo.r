@@ -1,10 +1,6 @@
 # Ben Fasoli
 
 site   <- 'roo'
-<<<<<<< HEAD
-ip     <- '67.213.235.123'
-=======
->>>>>>> dev
 
 # Load settings and initialize lock file
 source('/uufs/chpc.utah.edu/common/home/lin-group2/measurements/pipeline/_global.r')
