@@ -3,9 +3,9 @@
 
 # Data processing working directory
 # Should contain subdirectories
-#   proc/ : containing data processing source code
-#   data/ : containing data archive in site/instrument/(raw,qaqc,calibrated)
-setwd('/uufs/chpc.utah.edu/common/home/lin-group2/measurements-beta')
+#   pipeline/ : containing data processing source code
+#   data/     : containing data archive in site/instrument/(raw,qaqc,calibrated)
+setwd('/uufs/chpc.utah.edu/common/home/lin-group2/measurements')
 
 # Set timezone
 Sys.setenv(TZ = 'UTC')
@@ -24,14 +24,14 @@ for (lib in c('data.table', 'dplyr', 'fasttime', 'jsonlite', 'RCurl', 'readr', '
   )
 }
 
-# Load functions contained in proc/src
-for (fun in dir('proc/src', full.names = T)) {
+# Load functions contained in pipeline/src
+for (fun in dir('pipeline/src', full.names = T)) {
   source(fun)
 }
 
-# Load configurations contained in proc/config
-site_config <- fread('proc/config/site_config.csv')
-data_config <- fromJSON('proc/config/data_config.json')
+# Load configurations contained in pipeline/config
+site_config <- fread('pipeline/config/site_config.csv')
+data_config <- fromJSON('pipeline/config/data_config.json')
 
 # Force global reprocess
 # site_config$reprocess <- T

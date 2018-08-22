@@ -1,15 +1,9 @@
 # Ben Fasoli
 
 site   <- 'trx01'
-<<<<<<< HEAD
-ip     <- 'uutrax1136.dyndns-remote.com'
-port   <- 8022
-inst <- c('lgr', 'gps', '2bo3')
-=======
->>>>>>> dev
 
 # Load settings and initialize lock file
-source('/uufs/chpc.utah.edu/common/home/lin-group2/measurements-beta/proc/_global.r')
+source('/uufs/chpc.utah.edu/common/home/lin-group2/measurements/pipeline/_global.r')
 site_config <- site_config[site_config$stid == site, ]
 
 lock_create()
@@ -74,8 +68,8 @@ try({
     
     if (nrow(nd) < 1) next
     
-    # Apply tank reference values from proc/config
-    tank_vals <- read_csv('proc/config/trx01_tanks.csv',
+    # Apply tank reference values from pipeline/config
+    tank_vals <- read_csv('pipeline/config/trx01_tanks.csv',
                           locale = locale(tz = 'UTC', date_format = '%m/%d/%Y'),
                           col_types = 'D_dd') %>%
       mutate(t1 = as.POSIXct(Date),

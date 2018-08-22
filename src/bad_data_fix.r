@@ -2,7 +2,7 @@ bad_data_fix <- function(data,
                          instrument = get('instrument', envir = globalenv()),
                          site = get('site', envir = globalenv())) {
 
-  bf <- file.path('proc', 'bad', site, paste0(instrument, '.csv'))
+  bf <- file.path('pipeline', 'bad', site, paste0(instrument, '.csv'))
   if (!file.exists(bf)) {
     return(data)
   }

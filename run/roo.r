@@ -7,7 +7,7 @@ ip     <- '67.213.235.123'
 >>>>>>> dev
 
 # Load settings and initialize lock file
-source('/uufs/chpc.utah.edu/common/home/lin-group2/measurements-beta/proc/_global.r')
+source('/uufs/chpc.utah.edu/common/home/lin-group2/measurements/pipeline/_global.r')
 site_config <- site_config[site_config$stid == site, ]
 lock_create()
 

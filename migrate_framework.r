@@ -1,13 +1,13 @@
 #!/uufs/chpc.utah.edu/sys/installdir/R/3.4.2i/bin/Rscript
 # Ben Fasoli
-setwd('~/links/lin-group2/measurements-beta/')
+setwd('~/links/lin-group2/measurements/')
 
 library(tidyverse)
 
 path <- list(
-  v3 = '~/links/lin-group2/measurements-beta/data/',   # uucon beta
-  v2 = '~/links/lin-group2/measurements/data/',        # uucon active
-  v1 = '~/links/lin-group6/lem/measurements/data/'     # lem slcco2
+  v3 = '~/links/lin-group2/measurements/data/',   # uucon new
+  v2 = '~/links/lin-group2/measurements-old/data/',  # uucon old
+  v1 = '~/links/lin-group6/lem/measurements/data/'  # lem slcco2
 )
 
 # Ensure v2 is at latest git commit
@@ -15,10 +15,10 @@ system(paste('/uufs/chpc.utah.edu/sys/installdir/git/2.10.0-c7/bin/git -C',
              '~/links/lin-group2/measurements/lair-proc pull'))
 
 # Wipe v3 lock files
-system('rm proc/.lock/*')
+system('rm pipeline/.lock/*')
 
 # Merge data sources -----------------------------------------------------------
-# Reinitialize beta data directory
+# Reinitialize new data directory
 message('Reinitializing data paths')
 cmd <- paste('rm -r', path$v3, '; mkdir -p', path$v3)
 system(cmd)
@@ -77,7 +77,7 @@ system('mkdir data/trx01/2bo3/raw')
 system('mv data/trx01/2bo3/*.dat data/trx01/2bo3/raw/')
 
 # Add column headers to raw files
-source('proc/_global.r')
+source('pipeline/_global.r')
 # Removing since this adds a layer of extra data processing necessary with 
 # rsync'ed raw data
 # files <- dir('data', pattern = 'raw.dat', recursive = T)
@@ -105,7 +105,7 @@ source('proc/_global.r')
 # Migrate bad data definitions -------------------------------------------------
 # Reinitialize new bad data archive
 message('Migrating bad data definitions')
-cmd <- 'rm -r proc/bad; mkdir proc/bad'
+cmd <- 'rm -r pipeline/bad; mkdir pipeline/bad'
 system(cmd)
 
 
@@ -134,7 +134,7 @@ for (file in files) {
   df$comment <- gsub('^ ', '', split[, 2])
   
   # Output file in new directory structure
-  new_file <- file.path('proc', 'bad', site, paste0(instrument, '.csv'))
+  new_file <- file.path('pipeline', 'bad', site, paste0(instrument, '.csv'))
   new_dir <- dirname(new_file)
   cmd <- paste('mkdir -p', new_dir)
   system(cmd)

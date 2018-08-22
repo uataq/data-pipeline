@@ -5,7 +5,7 @@
 source $HOME/.bash_profile
 
 # Set working directory
-WD=/uufs/chpc.utah.edu/common/home/lin-group2/measurements-beta/proc/
+WD=/uufs/chpc.utah.edu/common/home/lin-group2/measurements/pipeline/
 cd $WD
 echo "Initializing processing in $WD"
 echo
@@ -51,15 +51,10 @@ done
 # done
 
 # Build air.utah.edu
-# echo "Building air.utah.edu static source code..."
-# Rscript air.utah.edu/_build.r
+echo "Building air.utah.edu static source code..."
 Rscript ../air.utah.edu/_render.r
-
-# echo "Pushing air.utah.edu changes to webserver..."
-# rsync -az _site/* benfasoli@air.utah.edu:/var/www/html/
-# rsync -az _site ~/public_html/air.utah.edu
 
 echo "Pushing database changes to webserver..."
 rsync -aqvtz --delete -e \
   '/usr/bin/ssh -i /uufs/chpc.utah.edu/common/home/u0791983/.ssh/id_rsa' \
-  ../data/* benfasoli@air.utah.edu:/projects/data-beta/
+  ../data/* benfasoli@air.utah.edu:/projects/data/

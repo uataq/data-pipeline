@@ -1,3 +1,3 @@
 lock_clean <- function() {
-  system('rm proc/.lock/*')
+  system('rm pipeline/.lock/*')
 }
