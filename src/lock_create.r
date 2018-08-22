@@ -1,6 +1,6 @@
 lock_create <- function(site = get('site', envir = globalenv())) {
   
-  lockfile <- file.path('proc', '.lock', paste0(site, '.lock'))
+  lockfile <- file.path('pipeline', '.lock', paste0(site, '.lock'))
   
   if (file.exists(lockfile))
     stop(paste(site, 'processing running and locked. Exiting...'))
