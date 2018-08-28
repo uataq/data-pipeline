@@ -6,7 +6,7 @@ fru, Fruitland, TRUE, 166.130.125.75, 22, FALSE, 40.208731, -110.8403, 4
 hdp, Hidden Peak, TRUE, 50.224.25.93, 22, FALSE, 40.560644, -111.645278, 15
 heb, Heber, TRUE, 166.130.69.244, 80, FALSE, 40.506808, -111.403636, 7
 hpl, Horsepool, TRUE, 69.55.97.79, 22, FALSE, 40.143711, -109.4672, 4
-imc, Intermountain Medical Center, TRUE, 67.128.146.28, 80, FALSE, 40.660395, -111.89075, 35
+imc, Intermountain Medical, TRUE, 67.128.146.28, 80, FALSE, 40.660395, -111.89075, 35
 lgn, Logan, TRUE, 129.123.46.97, 80, FALSE, 41.761353, -111.822739, 5
 msa, Murray Satellite, FALSE, NA, NA, FALSE, 40.763226, -111.849278, NA
 mur, Murray, FALSE, NA, NA, FALSE, 40.763226, -111.849278, NA
@@ -16,4 +16,4 @@ sug, Sugarhouse, TRUE, 166.130.89.167, 80, FALSE, 40.739906, -111.857831, 10
 sun, Suncrest, TRUE, 166.130.104.236, 80, FALSE, 40.480978, -111.837047, 5
 trx01, TRAX 1136, TRUE, uutrax1136.dyndns-remote.com, 5022, FALSE, NA, NA, 5
 trx02, TRAX 1104, FALSE, NA, NA, FALSE, NA, NA, 5
-wbb, William Browning Building, TRUE, GGA-13-0221.chpc.utah.edu, 22, FALSE, 40.766189, -111.847672, 35
+wbb, William Browning, TRUE, GGA-13-0221.chpc.utah.edu, 22, FALSE, 40.766189, -111.847672, 35
