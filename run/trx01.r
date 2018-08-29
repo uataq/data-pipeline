@@ -14,7 +14,7 @@ if (!site_config$reprocess && !ping(site_config$ip)) {
 }
 
 try({
-  # LGR UGGA -------------------------------------------------------------------
+  # LGR UGGA
   instrument <- 'lgr_ugga'
   proc_init()
   
@@ -93,7 +93,7 @@ try({
 })
 
 try({
-  # GPS ------------------------------------------------------------------------
+  # GPS
   instrument <- 'gps'
   proc_init()
   
@@ -156,7 +156,7 @@ try({
 })
 
 try({
-  # 2B Ozone -------------------------------------------------------------------
+  # 2B Ozone
   instrument <- '2bo3'
   proc_init()
   
@@ -215,6 +215,15 @@ try({
     # Apply manual qaqc definitions in bad/site/instrument.csv
     nd <- bad_data_fix(nd)
     update_archive(nd, data_path(site, instrument, 'qaqc'))
+  }
+})
+
+try({
+  # Tank pressure photos
+  if (!site_config$reprocess) {
+    remote <- paste0('pi@', site_config$ip, ':/home/pi/data/img/')
+    local <- file.path('data', site, 'img')
+    rsync(from = remote, to = local, port = site_config$port)
   }
 })
 
