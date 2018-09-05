@@ -133,6 +133,7 @@ try({
                  'Altitude_m')) %>%
       mutate_at(c('Lati_deg', 'Long_deg'), funs(suppressWarnings(gps_dm2dd(.))))
     
+    nd$Long_deg <- -nd$Long_deg
     nd$Time_UTC <- fastPOSIXct(nd$Time_UTC, tz = 'UTC')
     attributes(nd$Time_UTC)$tzone <- 'UTC'
     
@@ -184,9 +185,9 @@ try({
     # longer-term averaged measurements) - drop the extra columns
     colnums <- 1:5
     # Pattern matching passed as command args to grep
-    # / : date separator in LGR datetime syntax
-    # e : exponent notation in LGR output
-    pattern <- '/'
+    # / : date separator in 2b datetime syntax
+    # -v e : invert matching any lines containing exponential notation
+    pattern <- c('/', '-v e')
     
     nd <- read_pattern(selector, colnums, pattern)
     if (nrow(nd) < 1) next
@@ -206,8 +207,6 @@ try({
       arrange(Time_UTC)
     
     if (nrow(nd) < 1) next
-    
-    # END RAW / BEGIN QAQC 
     
     # Initialize qaqc flag
     nd$QAQC_Flag <- 0
