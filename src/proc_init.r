@@ -17,7 +17,7 @@ proc_init <- function() {
   # Check if reprocess flag is TRUE. If site/instrument archive needs to be
   # reprocessed, remove parsed and calibrated data levels
   if (site_config$reprocess) {
-    message('Reprocessing data archive for: ', site)
+    message('Reprocessing data archive for: ', site, '/', instrument)
     for (path in file.path(wd, c('qaqc', 'calibrated'))) {
       system(paste('rm -r', path))
     }
