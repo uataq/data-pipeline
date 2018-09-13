@@ -45,4 +45,48 @@ try({
   update_archive(nd, data_path(site, instrument, 'calibrated'))
 })
 
+try({
+  # Teledyne T200 --------------------------------------------------------------
+  instrument <- 'teledyne_t200'
+  proc_init()
+  remote <- 'uataq@uataq-brain.atmos.utah.edu:~/air-trend/log/data/teledyne-t200/'
+  local <- file.path('data', site, instrument, 'raw/')
+  if (!site_config$reprocess) {
+    rsync(from = remote, to = local)
+  }
+})
+
+try({
+  # Teledyne T300 --------------------------------------------------------------
+  instrument <- 'teledyne_t300'
+  proc_init()
+  remote <- 'uataq@uataq-brain.atmos.utah.edu:~/air-trend/log/data/teledyne-t300/'
+  local <- file.path('data', site, instrument, 'raw/')
+  if (!site_config$reprocess) {
+    rsync(from = remote, to = local)
+  }
+})
+
+try({
+  # Teledyne T400 --------------------------------------------------------------
+  instrument <- 'teledyne_t400'
+  proc_init()
+  remote <- 'uataq@uataq-brain.atmos.utah.edu:~/air-trend/log/data/teledyne-t400/'
+  local <- file.path('data', site, instrument, 'raw/')
+  if (!site_config$reprocess) {
+    rsync(from = remote, to = local)
+  }
+})
+
+try({
+  # TEOM 1400ab --------------------------------------------------------------==
+  instrument <- 'teom_1400ab'
+  proc_init()
+  remote <- 'uataq@uataq-brain.atmos.utah.edu:~/air-trend/log/data/teom-1400ab/'
+  local <- file.path('data', site, instrument, 'raw/')
+  if (!site_config$reprocess) {
+    rsync(from = remote, to = local)
+  }
+})
+
 lock_remove()
