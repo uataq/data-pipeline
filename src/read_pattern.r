@@ -1,5 +1,4 @@
 read_pattern <- function(selector, colnums = NULL, pattern = NULL, ...) {
-  message(selector)
   
   # Parse colnums into format compatible with `cut -f`
   # colnums examples:

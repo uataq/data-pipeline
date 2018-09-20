@@ -14,8 +14,7 @@ Sys.setenv(TZ = 'UTC')
 options(stringsAsFactors = F)
 
 # Load library dependencies
-for (lib in c('data.table', 'dplyr', 'fasttime', 'jsonlite', 'RCurl', 'readr', 'stringr', 
-              'uataq')) {
+for (lib in c('data.table', 'fasttime', 'jsonlite', 'RCurl', 'tidyverse', 'uataq')) {
   invisible(
     suppressPackageStartupMessages(
       library(lib, character.only = T,
