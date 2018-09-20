@@ -42,5 +42,6 @@ Flag  | Description
 -5    | Drift between adjacent reference tank measurements out of range
 -6    | Time elapsed between reference tank measurements out of range
 -7    | Reference tank measurements out of range
+-8    | Cavity humidity out of range
 
 
