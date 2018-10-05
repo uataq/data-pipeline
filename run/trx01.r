@@ -219,11 +219,9 @@ try({
 
 try({
   # Tank pressure photos
-  if (!site_config$reprocess) {
-    remote <- paste0('pi@', site_config$ip, ':/home/pi/data/img/')
-    local <- file.path('data', site, 'img')
-    rsync(from = remote, to = local, port = site_config$port)
-  }
+  remote <- paste0('pi@', site_config$ip, ':/home/pi/data/img/')
+  local <- file.path('data', site, 'img')
+  rsync(from = remote, to = local, port = site_config$port)
 })
 
 lock_remove()

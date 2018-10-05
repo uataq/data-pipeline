@@ -1,6 +1,8 @@
 proc_init <- function() {
 
   invisible(gc())
+  
+  message('Run: ', site, '/', instrument, ' ', Sys.time())
 
   # Working directory defined as ./site/instrument/(raw,qaqc,calibrated)
   wd <- file.path('data', site, instrument)

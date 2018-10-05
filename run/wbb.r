@@ -51,9 +51,10 @@ try({
   proc_init()
   remote <- 'uataq@uataq-brain.atmos.utah.edu:~/air-trend/log/data/teledyne-t200/'
   local <- file.path('data', site, instrument, 'raw/')
-  if (!site_config$reprocess) {
+  # TODO: find workaround for reprocessing flag to still sync
+  # if (!site_config$reprocess) {
     rsync(from = remote, to = local)
-  }
+  # }
 })
 
 try({
@@ -62,9 +63,9 @@ try({
   proc_init()
   remote <- 'uataq@uataq-brain.atmos.utah.edu:~/air-trend/log/data/teledyne-t300/'
   local <- file.path('data', site, instrument, 'raw/')
-  if (!site_config$reprocess) {
+  # if (!site_config$reprocess) {
     rsync(from = remote, to = local)
-  }
+  # }
 })
 
 try({
@@ -73,9 +74,9 @@ try({
   proc_init()
   remote <- 'uataq@uataq-brain.atmos.utah.edu:~/air-trend/log/data/teledyne-t400/'
   local <- file.path('data', site, instrument, 'raw/')
-  if (!site_config$reprocess) {
+  # if (!site_config$reprocess) {
     rsync(from = remote, to = local)
-  }
+  # }
 })
 
 try({
@@ -84,9 +85,9 @@ try({
   proc_init()
   remote <- 'uataq@uataq-brain.atmos.utah.edu:~/air-trend/log/data/teom-1400ab/'
   local <- file.path('data', site, instrument, 'raw/')
-  if (!site_config$reprocess) {
+  # if (!site_config$reprocess) {
     rsync(from = remote, to = local)
-  }
+  # }
 })
 
 lock_remove()

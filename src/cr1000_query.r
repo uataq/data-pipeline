@@ -11,10 +11,10 @@ cr1000_query <- function(ip, table, t_start) {
   uri <- paste0('http://', ip, '/?command=dataquery&uri=dl:', table, 
                 '&format=TOA5&mode=since-time&p1=', t_start)
   
-  if (interactive())
-    message('Sending GET request to: ', uri)
+  message('Sending GET request to: ', uri)
   
-  response <- scan(uri, character(), sep = '\n', quiet = T)
+  response <- getURL(uri, timeout = 600)
+  response <- unlist(str_split(response, pattern = '\r\n'))
   header <- scan(text = response[2], what = character(), sep = ',', quiet = T)
   data <- read.table(text = response, sep = ',', skip = 4, stringsAsFactors = F)
   

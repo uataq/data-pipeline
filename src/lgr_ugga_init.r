@@ -70,5 +70,8 @@ lgr_ugga_init <- function() {
     dplyr::filter(!is.na(Time_UTC)) %>%
     arrange(Time_UTC)
   
+  message('New data:')
+  str(nd)
+  
   nd
 }

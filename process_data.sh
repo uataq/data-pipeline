@@ -15,6 +15,9 @@ echo "Fetching remote updates..."
 git pull
 echo
 
+# Ensure no zombie processes exist
+# kill `ps -f -u u0791983 | awk '$3 == 1 {print $2}'`
+
 # Execute site processing scripts
 exec=$(ls run)
 echo
@@ -23,11 +26,10 @@ echo
 for i in ${exec[@]}; do
   echo "Running: $i"
   lf=log/$(echo $i | cut -f 1 -d '.').log
-  echo "Run: `date`" > $lf
-  Rscript run/$i &>> $lf &
+  nohup Rscript run/$i &> $lf &
   pid=$!
   
-  maxit=500
+  maxit=600
   for j in $(seq 0 $maxit); do
     sleep 1
     if ! ps -p $pid &> /dev/null; then
