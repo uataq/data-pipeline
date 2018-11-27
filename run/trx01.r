@@ -8,7 +8,8 @@ site_config <- site_config[site_config$stid == site, ]
 
 lock_create()
 
-if (!site_config$reprocess && !ping(site_config$ip)) {
+if (!site_config$reprocess && 
+    !cr1000_is_online(paste(sep=':', site_config$ip, 9191))) {
   lock_remove()
   stop('Unable to connect to ', site_config$ip)
 }
@@ -153,6 +154,7 @@ try({
     # Apply manual qaqc definitions in bad/site/instrument.csv
     nd <- bad_data_fix(nd)
     update_archive(nd, data_path(site, instrument, 'qaqc'))
+    update_archive(nd, data_path(site, instrument, 'calibrated'))
   }
 })
 
@@ -214,6 +216,7 @@ try({
     # Apply manual qaqc definitions in bad/site/instrument.csv
     nd <- bad_data_fix(nd)
     update_archive(nd, data_path(site, instrument, 'qaqc'))
+    update_archive(nd, data_path(site, instrument, 'calibrated'))
   }
 })
 

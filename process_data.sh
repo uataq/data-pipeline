@@ -26,7 +26,7 @@ echo
 for i in ${exec[@]}; do
   echo "Running: $i"
   lf=log/$(echo $i | cut -f 1 -d '.').log
-  nohup Rscript run/$i &> $lf &
+  nohup Rscript run/$i &>> $lf &
   pid=$!
   
   maxit=600
