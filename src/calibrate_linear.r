@@ -30,7 +30,7 @@ calibrate_linear <- function(time, meas, known, er_tol = 100, drift_tol = 100, d
   
   std_uniq <- unique(known[!is.na(known) & known >= 0])
   if (length(std_uniq) < 1) {
-    out <- data_frame(time = time,
+    out <- data.frame(time = time,
                       cal  = NA,
                       meas = meas,
                       m    = NA,
@@ -39,7 +39,8 @@ calibrate_linear <- function(time, meas, known, er_tol = 100, drift_tol = 100, d
                       rsq = NA,
                       rmse = NA,
                       id = known,
-                      qaqc = NA)
+                      qaqc = NA,
+                      stringsAsFactors = F)
     return(out)
   }
   
@@ -93,7 +94,7 @@ calibrate_linear <- function(time, meas, known, er_tol = 100, drift_tol = 100, d
   run <- data$known %>%
     rle %>%
     unclass %>%
-    as_data_frame()
+    as.data.frame(stringsAsFactors = F)
   
   data$idx <- run %>%
     mutate(values = 1:n()) %>%
@@ -205,7 +206,7 @@ calibrate_linear <- function(time, meas, known, er_tol = 100, drift_tol = 100, d
   }
   b[n1] <- 0
   
-  return(data_frame(time = data$time,
+  return(data.frame(time = data$time,
                     cal  = (data$meas - b) / m,
                     meas = data$meas,
                     m    = m,
@@ -214,5 +215,6 @@ calibrate_linear <- function(time, meas, known, er_tol = 100, drift_tol = 100, d
                     rsq  = rsq,
                     rmse = rmse,
                     id   = data$known,
-                    qaqc = qaqc))
+                    qaqc = qaqc,
+                    stringsAsFactors = F))
 }
