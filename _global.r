@@ -1,4 +1,3 @@
-#! /uufs/chpc.utah.edu/sys/installdir/R/3.4.1i/bin/R
 # Ben Fasoli
 
 # Data processing working directory
