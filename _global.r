@@ -3,7 +3,7 @@
 # Data processing working directory
 # Should contain subdirectories
 #   pipeline/ : containing data processing source code
-#   data/     : containing data archive in site/instrument/(raw,qaqc,calibrated)
+#   data/     : containing data archive in site/instrument/{raw,qaqc,calibrated}
 setwd('/uufs/chpc.utah.edu/common/home/lin-group2/measurements')
 
 # Set timezone

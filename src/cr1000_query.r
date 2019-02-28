@@ -13,7 +13,7 @@ cr1000_query <- function(ip, table, t_start) {
   
   message('Sending GET request to: ', uri)
   
-  response <- getURL(uri, timeout = 600)
+  response <- getURL(uri, timeout = 600)  # seconds
   response <- unlist(str_split(response, pattern = '\r\n'))
   header <- scan(text = response[2], what = character(), sep = ',', quiet = T)
   data <- read.table(text = response, sep = ',', skip = 4, stringsAsFactors = F)
