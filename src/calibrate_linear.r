@@ -12,15 +12,6 @@
 #' @param drift_tol tolerated drift between subsequent calibrations
 #' @param dt_tol maximum length of time to allow data outage and still calibrate data
 
-if (F) {
-  time <- nd$Time_UTC
-  meas <- nd$CO2d_ppm
-  known <- nd$ID_CO2
-  er_tol = 100
-  drift_tol = 100
-  dt_tol = 18000
-}
-
 calibrate_linear <- function(time, meas, known, er_tol = 100, drift_tol = 100, dt_tol = 18000) {
   
   require(dplyr)
