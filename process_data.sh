@@ -6,7 +6,7 @@ source /uufs/chpc.utah.edu/common/home/u0791983/.bashrc
 echo "Date: $(/usr/bin/date)"
 echo "R binary: $(which Rscript)"
 
-WD=/uufs/chpc.utah.edu/common/home/lin-group2/measurements/pipeline/
+WD=/uufs/chpc.utah.edu/common/home/lin-group9/measurements/pipeline/
 cd $WD
 echo "Path: $WD"
 echo
@@ -20,7 +20,7 @@ exec=$(ls run)
 for i in ${exec[@]}; do
   echo "Running: $i..."
   lf=log/$(echo $i | cut -f 1 -d '.').log
-  /usr/bin/nohup Rscript run/$i &>> $lf &
+  /usr/bin/nohup Rscript run/$i & #&>> $lf &
   pid=$!
 
   maxParallelWaitSeconds=600
