@@ -1,6 +1,6 @@
 stid, name, active, ip, port, reprocess, lati, long, zagl
 asb, Aline Wilmot Skaggs, FALSE, NA, NA, FALSE, 40.763226, -111.849278, NA
-csp, Castle Peak, FALSE, NA, NA, FALSE, 40.0509, -110.0194, 4
+csp, Castle Peak, TRUE, 69.55.97.78, 22, FALSE, 40.0509, -110.0194, 4
 dbk, Daybreak, TRUE, 166.130.22.212, 80, FALSE, 40.538497, -112.069528, 5
 fru, Fruitland, TRUE, 166.130.125.75, 22, FALSE, 40.208731, -110.8403, 4
 hdp, Hidden Peak, TRUE, 50.224.25.93, 22, FALSE, 40.560644, -111.645278, 15
@@ -10,7 +10,7 @@ imc, Intermountain Medical, TRUE, 67.128.146.28, 80, FALSE, 40.660395, -111.8907
 lgn, Logan, TRUE, 129.123.46.97, 80, FALSE, 41.761353, -111.822739, 5
 msa, Murray Satellite, FALSE, NA, NA, FALSE, 40.763226, -111.849278, NA
 mur, Murray, FALSE, NA, NA, FALSE, 40.763226, -111.849278, NA
-roo, Roosevelt, TRUE, 67.213.235.123, 22, FALSE, 40.294169, -110.009, 4
+roo, Roosevelt, FALSE, 67.213.235.123, 22, FALSE, 40.294169, -110.009, 4
 rpk, Rose Park, TRUE, 205.127.188.48, 80, FALSE, 40.794386, -111.931925, 7
 sug, Sugarhouse, TRUE, 166.130.89.167, 80, FALSE, 40.739906, -111.857831, 10
 sun, Suncrest, TRUE, 166.130.104.236, 80, FALSE, 40.480978, -111.837047, 5
