@@ -3,17 +3,22 @@ cr1000_init <- function() {
   if (site_config$reprocess) {
     # Read all historic raw data into memory as new data
     files <- dir(file.path('data', site, instrument, 'raw'), full.names = T)
-    if (length(files) == 0)
-      stop('No prior data found: ', file.path('data', site, instrument, 'raw'))
-    return(read_files(files))
+    if (length(files) == 0) {
+      warning('No prior data found for reset: ', file.path('data', site, instrument, 'raw'))
+    } else {
+      return(read_files(files))
+    }
   }
 
   # Query CR1000 for new records
   last_file <- tail(dir(file.path('data', site, instrument, 'raw'),
                     pattern = '.*\\.{1}dat', full.names = T), 1)
-  if (length(last_file) == 0)
-    stop('No prior data found: ', file.path('data', site, instrument, 'raw'))
-  last_time <- get_last_time(last_file)
+  if (length(last_file) == 0) {
+    warning('No prior data found: ', file.path('data', site, instrument, 'raw'))
+    last_time <- as.POSIXct('1970-01-01', tz = 'UTC')
+  } else {
+    last_time <- get_last_time(last_file)
+  }
 
   uri <- paste(site_config$ip, site_config$port, sep = ':')
   table <- switch(instrument,

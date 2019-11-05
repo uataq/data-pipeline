@@ -11,7 +11,7 @@ licor_6262_calibrate <- function() {
                       pattern = '.*\\.{1}dat', full.names = T), N)
     nd <- read_files(files)
   }
-  
+
   # Invalidate measured mole fraction for records that fail to pass qaqc
   invalid <- c('CO2d_ppm')
   nd[nd$QAQC_Flag < 0, invalid] <- NA

@@ -85,7 +85,6 @@ try({
     }
     nd$ID[nd$ID %in% c('-2', '-1')] <- '~-99~-99'
     nd$ID[nd$ID %in% '1'] <- '~-10~-10'
-    
     nd <- lgr_ugga_qaqc()
     update_archive(nd, data_path(site, instrument, 'qaqc'))
     nd <- lgr_ugga_calibrate()
