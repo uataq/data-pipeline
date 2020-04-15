@@ -33,3 +33,4 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2018-03-09T21:49:00Z,2018-03-09T22:08:00Z,all,NA,2018-08-13T21:27:14Z,Ryan,Bad cal on reboot
 2018-05-02T18:27:30Z,2018-05-02T18:30:00Z,all,NA,2018-08-13T21:27:14Z,Nick,First cal reads atmosphere and needs to be deleted
 2017-06-17T05:00:00Z,2017-06-17T05:14:00Z,all,NA,2018-10-01T17:15:00Z,Ryan,Bad ch4 data
+2020-01-13T13:05:00Z,2020-02-21T00:00:01Z,~375.53~1.77,~395.88~1.86,2020-15-04T14:40:08Z,Ryan,Bad MIU
