@@ -142,10 +142,10 @@ calibrate_linear <- function(time, meas, known, er_tol = 100, drift_tol = 100, d
   qaqc[rowSums(mask) > 0] <- -6
   
   # Reference tank measurements out of range.
-  mask <- abs(stdm - stdk) > er_tol
-  mask[is.na(mask)] <- F
-  stdk[mask] <- NA
-  qaqc[rowSums(mask) > 0] <- -7
+  # mask <- abs(stdm - stdk) > er_tol
+  # mask[is.na(mask)] <- F
+  # stdk[mask] <- NA
+  # qaqc[rowSums(mask) > 0] <- -7
   
   # Invalidate stdm for cases above.
   stdm[is.na(stdk)] <- NA
