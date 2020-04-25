@@ -64,5 +64,6 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2018-03-23T17:16:55Z,2018-03-23T17:17:10Z,all,NA,2018-08-13T21:27:13Z,Ryan,One bad cal point
 2018-03-23T17:23:10Z,2018-03-23T17:25:00Z,all,NA,2018-08-13T21:27:13Z,Ryan,left Atm port closed for a bit
 2018-04-07T21:49:00Z,2018-04-09T20:33:30Z,all,NA,2018-08-13T21:27:13Z,Ryan,Poweroutage
-2018-02-19T13:00:00Z,2018-02-19T17:15:00Z,all,NA,2020-04-24T18:00:00Z,Logan,Unknown large spikes
-2018-04-13T16:12:00Z,2018-04-13T16:48:00Z,all,NA,2020-04-24T18:00:00Z,Logan,Unknown large spikes
+2018-04-16T15:15:30Z,2018-04-19T00:00:00Z,all,NA,2020-04-24T18:00:00Z,Logan,Unknown large spikes
+2020-02-19T13:00:00Z,2020-02-19T17:15:00Z,all,NA,2020-04-24T18:00:00Z,Logan,Unknown large spikes
+2020-04-13T16:12:00Z,2020-04-13T16:48:00Z,all,NA,2020-04-24T18:00:00Z,Logan,Unknown large spikes
