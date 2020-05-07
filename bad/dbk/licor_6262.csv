@@ -67,3 +67,4 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2018-04-16T22:15:30Z,2018-04-19T06:00:00Z,all,NA,2020-04-24T18:00:00Z,Logan,Unknown large spikes
 2020-02-19T20:00:00Z,2020-02-20T00:15:00Z,all,NA,2020-04-24T18:00:00Z,Logan,Unknown large spikes
 2020-04-13T23:12:00Z,2020-04-13T23:48:00Z,all,NA,2020-04-24T18:00:00Z,Logan,Unknown large spikes
+2020-02-17T00:00:01Z,2020-05-07T18:00:00Z,523.74,489.59,2020-05-07T17:30:00Z,Ryan,Cal value was incorrectly assigned at cal facility
