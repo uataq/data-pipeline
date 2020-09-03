@@ -49,24 +49,24 @@ Flag  | Description
 Licor 6262 IRGA
 Column Name     | Description
 ----------------|-----------------
-Time_UTC        | 
-CO2d_ppm_cal    | 
-CO2d_ppm_meas   | 
+Time_UTC        | Time in UTC
+CO2d_ppm_cal    | The calibrated concenctration of DRY CO2 in parts per million
+CO2d_ppm_meas   | The uncalibrated concentraion of DRY CO2 in parts per million
 CO2d_m          | 
 CO2d_b          | 
 CO2d_n          | 
 CO2d_rsq        | 
 CO2d_rmse       | 
 ID_CO2          | ID of the CO2 being measured (-10, -99, STD_Value)
-QAQC_Flag       | Automated QC flagging.  See table above
+QAQC_Flag       | Automated QC flagging.  See table "QAQC flagging conventions"
      
 
 Los Gatos Research UGGA
 Column Name     | Description
 ----------------|-----------------
-Time_UTC        | 
-CO2d_ppm_cal    | 
-CO2d_ppm_meas   | 
+Time_UTC        | Time in UTC
+CO2d_ppm_cal    | The calibrated concenctration of DRY CO2 in parts per million
+CO2d_ppm_meas   | The uncalibrated concentraion of DRY CO2 in parts per million
 CO2d_m          | 
 CO2d_b          | 
 CO2d_n          | 
@@ -81,5 +81,5 @@ CH4d_n          |
 CH4d_rsq        | 
 CH4d_rmse       | 
 ID_CH4          | ID of the CH4 being measured (-10, -99, STD_Value)
-QAQC_Flag       |
+QAQC_Flag       | Automated QC flagging.  See table "QAQC flagging conventions"
 
