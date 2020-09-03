@@ -45,3 +45,24 @@ Flag  | Description
 -8    | Cavity humidity out of range
 
 
+# Column header naming conventions for calibrated data files
+Licor 6262 IRGA
+
+Column Name  | Description
+----------------|-----------------
+Time_UTC        | 
+CO2d_ppm_cal    | 
+CO2d_ppm_meas   | 
+CO2d_m          | 
+CO2d_b          | 
+CO2d_n          | 
+CO2d_rsq        | 
+CO2d_rmse       | 
+ID_CO2          | ID of the CO2 being measured (-10, -99, STD_Value)
+QAQC_Flag       | Automated QC flagging.  See table above
+     
+
+
+
+
+
