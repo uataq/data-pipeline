@@ -1,6 +1,6 @@
-![](assets/workflow.png)
-
 Link to repo home: https://github.com/uataq/data-pipeline
+
+![](assets/workflow.png)
 
 # Repository structure
 The trace gas processing tools are broken into five components  
