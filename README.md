@@ -52,12 +52,12 @@ Column Name     | Description
 Time_UTC        | Time in UTC
 CO2d_ppm_cal    | The calibrated concenctration of DRY CO2 in parts per million
 CO2d_ppm_meas   | The uncalibrated concentraion of DRY CO2 in parts per million
-CO2d_m          | 
-CO2d_b          | 
-CO2d_n          | 
-CO2d_rsq        | 
-CO2d_rmse       | 
-ID_CO2          | ID of the CO2 being measured (-10, -99, STD_Value)
+CO2d_m          | The slope of the calibration applied
+CO2d_b          | The y-intercept of the calibration applied
+CO2d_n          | The number of calibration tanks used in the calibration applied
+CO2d_rsq        | The R^2 value derived from the slope of the calibration applied
+CO2d_rmse       | The root mean squared error value derived from the slope of the calibration applied
+ID_CO2          | ID of the CO2 being measured (-10, -99, Standard tank concentration)
 QAQC_Flag       | Automated QC flagging.  See table "QAQC flagging conventions"
      
 
@@ -67,19 +67,19 @@ Column Name     | Description
 Time_UTC        | Time in UTC
 CO2d_ppm_cal    | The calibrated concenctration of DRY CO2 in parts per million
 CO2d_ppm_meas   | The uncalibrated concentraion of DRY CO2 in parts per million
-CO2d_m          | 
-CO2d_b          | 
-CO2d_n          | 
-CO2d_rsq        | 
-CO2d_rmse       | 
-ID_CO2          | ID of the CO2 being measured (-10, -99, STD_Value)
-CH4d_ppm_cal    | 
-CH4d_ppm_meas   | 
-CH4d_m          | 
-CH4d_b          | 
-CH4d_n          | 
-CH4d_rsq        | 
-CH4d_rmse       | 
-ID_CH4          | ID of the CH4 being measured (-10, -99, STD_Value)
+CO2d_m          | The slope of the calibration for CO2
+CO2d_b          | The y-intercept of the calibration for CO2
+CO2d_n          | The number of calibration tanks used in the calibration for CO2
+CO2d_rsq        | The R^2 value derived from the slope of the calibration for CO2
+CO2d_rmse       | The root mean squared error value derived from the slope of the calibration for CO2
+ID_CO2          | ID of the CO2 being measured (-10, -99, Standard tank concentration)
+CH4d_ppm_cal    | The calibrated concenctration of DRY CH4 in parts per million
+CH4d_ppm_meas   | The uncalibrated concentraion of DRY CH4 in parts per million
+CH4d_m          | The slope of the calibration for CH4
+CH4d_b          | The y-intercept of the calibration for CH4
+CH4d_n          | The number of calibration tanks used in the calibration for CH4
+CH4d_rsq        | The R^2 value derived from the slope of the calibration for CH4
+CH4d_rmse       | The root mean squared error value derived from the slope of the calibration for CH4
+ID_CH4          | ID of the CH4 being measured (-10, -99, Standard tank concentration)
 QAQC_Flag       | Automated QC flagging.  See table "QAQC flagging conventions"
 
