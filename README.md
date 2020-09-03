@@ -47,8 +47,7 @@ Flag  | Description
 
 # Column header naming conventions for calibrated data files
 Licor 6262 IRGA
-
-Column Name  | Description
+Column Name     | Description
 ----------------|-----------------
 Time_UTC        | 
 CO2d_ppm_cal    | 
@@ -62,7 +61,25 @@ ID_CO2          | ID of the CO2 being measured (-10, -99, STD_Value)
 QAQC_Flag       | Automated QC flagging.  See table above
      
 
-
-
-
+Los Gatos Research UGGA
+Column Name     | Description
+----------------|-----------------
+Time_UTC        | 
+CO2d_ppm_cal    | 
+CO2d_ppm_meas   | 
+CO2d_m          | 
+CO2d_b          | 
+CO2d_n          | 
+CO2d_rsq        | 
+CO2d_rmse       | 
+ID_CO2          | ID of the CO2 being measured (-10, -99, STD_Value)
+CH4d_ppm_cal    | 
+CH4d_ppm_meas   | 
+CH4d_m          | 
+CH4d_b          | 
+CH4d_n          | 
+CH4d_rsq        | 
+CH4d_rmse       | 
+ID_CH4          | ID of the CH4 being measured (-10, -99, STD_Value)
+QAQC_Flag       |
 
