@@ -1,5 +1,7 @@
 ![](assets/workflow.png)
 
+Link to repo home: https://github.com/uataq/data-pipeline
+
 # Repository structure
 The trace gas processing tools are broken into five components  
 1. `process_data.sh` is the shell scripting control layer called by cron that sets environment variables and executes necessary processing code.  
