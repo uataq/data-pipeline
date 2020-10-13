@@ -20,17 +20,17 @@ try({
   update_archive(nd, data_path(site, instrument, 'calibrated'))
 })
 
-try({
-  # MetOne ES642 ---------------------------------------------------------------
-  instrument <- 'metone_es642'
-  proc_init()
-  nd <- cr1000_init()
-  if (!site_config$reprocess)
-    update_archive(nd, data_path(site, instrument, 'raw'), check_header = F)
-  nd <- metone_es642_qaqc()
-  update_archive(nd, data_path(site, instrument, 'qaqc'))
-  nd <- metone_es642_calibrate()
-  update_archive(nd, data_path(site, instrument, 'calibrated'))
-})
+# try({
+#   # MetOne ES642 ---------------------------------------------------------------
+#   instrument <- 'metone_es642'
+#   proc_init()
+#   nd <- cr1000_init()
+#   if (!site_config$reprocess)
+#     update_archive(nd, data_path(site, instrument, 'raw'), check_header = F)
+#   nd <- metone_es642_qaqc()
+#   update_archive(nd, data_path(site, instrument, 'qaqc'))
+#   nd <- metone_es642_calibrate()
+#   update_archive(nd, data_path(site, instrument, 'calibrated'))
+# })
 
 lock_remove()

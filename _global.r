@@ -17,7 +17,7 @@ for (lib in c('data.table', 'fasttime', 'jsonlite', 'RCurl', 'tidyverse', 'uataq
   invisible(
     suppressPackageStartupMessages(
       library(lib, character.only = T,
-              lib.loc = '/uufs/chpc.utah.edu/common/home/u0791983/.Rpackages')
+              lib.loc = '/uufs/chpc.utah.edu/common/home/u0791983/software/lib64/R/library')
     )
   )
 }

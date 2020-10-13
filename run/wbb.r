@@ -23,7 +23,7 @@ try({
   # MetOne ES642 ---------------------------------------------------------------
   instrument <- 'metone_es642'
   proc_init()
-  remote <- 'uataq@uataq-brain.atmos.utah.edu:~/air-trend/log/data/metone-es642/'
+  remote <- file.path('pi@155.101.8.136:~/data', instrument, '')
   local <- file.path('data', site, instrument, 'raw/')
   if (!site_config$reprocess) {
     rsync(from = remote, to = local)
@@ -50,7 +50,7 @@ try({
   # Teledyne T200 --------------------------------------------------------------
   instrument <- 'teledyne_t200'
   proc_init()
-  remote <- 'uataq@uataq-brain.atmos.utah.edu:~/air-trend/log/data/teledyne-t200/'
+  remote <- file.path('pi@155.101.8.136:~/data', instrument, '')
   local <- file.path('data', site, instrument, 'raw/')
   # TODO: find workaround for reprocessing flag to still sync
   # if (!site_config$reprocess) {
@@ -62,7 +62,7 @@ try({
   # Teledyne T300 --------------------------------------------------------------
   instrument <- 'teledyne_t300'
   proc_init()
-  remote <- 'uataq@uataq-brain.atmos.utah.edu:~/air-trend/log/data/teledyne-t300/'
+  remote <- file.path('pi@155.101.8.136:~/data', instrument, '')
   local <- file.path('data', site, instrument, 'raw/')
   # if (!site_config$reprocess) {
     rsync(from = remote, to = local)
@@ -73,7 +73,7 @@ try({
   # Teledyne T400 --------------------------------------------------------------
   instrument <- 'teledyne_t400'
   proc_init()
-  remote <- 'uataq@uataq-brain.atmos.utah.edu:~/air-trend/log/data/teledyne-t400/'
+  remote <- file.path('pi@155.101.8.136:~/data', instrument, '')
   local <- file.path('data', site, instrument, 'raw/')
   # if (!site_config$reprocess) {
     rsync(from = remote, to = local)
@@ -81,14 +81,36 @@ try({
 })
 
 try({
-  # TEOM 1400ab --------------------------------------------------------------==
-  instrument <- 'teom_1400ab'
+  # Teledyne T500u -------------------------------------------------------------
+  instrument <- 'teledyne_t500u'
   proc_init()
-  remote <- 'uataq@uataq-brain.atmos.utah.edu:~/air-trend/log/data/teom-1400ab/'
+  remote <- file.path('pi@155.101.8.136:~/data', instrument, '')
   local <- file.path('data', site, instrument, 'raw/')
   # if (!site_config$reprocess) {
-    rsync(from = remote, to = local)
+  rsync(from = remote, to = local)
   # }
 })
+
+try({
+  # Magee AE33 -----------------------------------------------------------------
+  instrument <- 'magee_ae33'
+  proc_init()
+  remote <- file.path('pi@155.101.8.136:~/data', instrument, '')
+  local <- file.path('data', site, instrument, 'raw/')
+  # if (!site_config$reprocess) {
+  rsync(from = remote, to = local)
+  # }
+})
+
+# try({
+#   # TEOM 1400ab --------------------------------------------------------------
+#   instrument <- 'teom_1400ab'
+#   proc_init()
+#   remote <- 'uataq@uataq-brain.atmos.utah.edu:~/air-trend/log/data/teom-1400ab/'
+#   local <- file.path('data', site, instrument, 'raw/')
+#   # if (!site_config$reprocess) {
+#     rsync(from = remote, to = local)
+#   # }
+# })
 
 lock_remove()

@@ -1,7 +1,7 @@
 #!/bin/bash
 # Ben Fasoli
 
-source /uufs/chpc.utah.edu/common/home/u0791983/.bashrc
+source $HOME/.custom.sh
 
 echo "Date: $(/usr/bin/date)"
 echo "R binary: $(which Rscript)"
@@ -20,7 +20,7 @@ exec=$(ls run)
 for i in ${exec[@]}; do
   echo "Running: $i..."
   lf=log/$(echo $i | cut -f 1 -d '.').log
-  /usr/bin/nohup Rscript run/$i & #&>> $lf &
+  /usr/bin/nohup Rscript run/$i &>> $lf &
   pid=$!
 
   maxParallelWaitSeconds=600
@@ -51,6 +51,6 @@ echo "Building air.utah.edu static source code..."
 Rscript ../air.utah.edu/_render.r
 
 echo "Pushing database changes to webserver..."
-/usr/bin/rsync -aqvtz --delete -e \
+/usr/bin/rsync -aqvtzL --delete -e \
   '/usr/bin/ssh -i /uufs/chpc.utah.edu/common/home/u0791983/.ssh/id_rsa' \
   ../data/* benfasoli@air.utah.edu:/projects/data/

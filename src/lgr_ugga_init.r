@@ -37,6 +37,7 @@ lgr_ugga_init <- function() {
   files <- tail(files, N)
   
   nd <- lapply(files, function(file) {
+    print(paste('loading', file))
     # Catch change in number of columns in different model LGRs
     col_names <- data_config[[instrument]]$raw$col_names
     col_types <- data_config[[instrument]]$raw$col_types
