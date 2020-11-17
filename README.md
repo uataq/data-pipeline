@@ -3,13 +3,14 @@ Link to repo home: https://github.com/uataq/data-pipeline
 ![](assets/workflow.png)
 
 # Repository structure
-The trace gas processing tools are broken into five components  
+The trace gas processing pipeline is structured as follows. This is executed on the smaug interactive node of the University of Utah's CHPC. The following paths are relative to the base path `/uufs/chpc.utah.edu/common/home/lin-group9/measurements/pipeline` -
+
 1. `process_data.sh` is the shell scripting control layer called by cron that sets environment variables and executes necessary processing code.  
 1. `run/stid.r` called in parallel and executes site-specific processing code.
 1. `src/` contains the bulk of processing source code as R functions.  
 1. `bad/` contains site/instrument specific bad data files for manual correction or removal of data. Changes are reflected at the qaqc and calibrated data levels.  
 1. `config/` contains json configurations for data structure and site metadata.  
-1. `.lock/` contains lock files in the form of `site.lock` to indicate active site processing and prevent duplicate execution.  
+1. `.lock/` contains lock files in the form of `<site_id>.lock` to indicate active site processing and prevent duplicate execution.  
 
 
 # Revising historic data
