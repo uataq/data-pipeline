@@ -24,4 +24,16 @@ try({
   rsync(from = remote, to = local, port = site_config$port)
 })
 
+try({
+  # GPS
+  instrument <- 'gps'
+  proc_init()
+  
+  path <- file.path('data', site, instrument, 'raw') 
+  remote <- paste0('pi@', site_config$ip, ':/home/pi/data/gps/')
+  local <- file.path('data', site, instrument, 'raw/')
+  rsync(from = remote, to = local, port = site_config$port)
+})
+
+
 lock_remove()
