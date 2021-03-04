@@ -17,6 +17,7 @@ The U-ATAQ lab is located on the 8th floor of the William Browning Building (WBB
 **•	Address:**
 
 135 S 1460 E. Room 808 & 810
+
 Salt Lake City, UT 84102
 
 **•	Access:** 
@@ -31,11 +32,17 @@ Additional air quality instrumentation that is beyond the scope of this document
 **Sugarhouse (SUG)**
 This site is located in the garage of Dr. Dave Bowling’s home.  We are guests in their home so please be professional and courteous during your time at the site.
 •	Address:
+
 1154 E. Harrison Ave, 
+
 Salt Lake City, UT 84105
-•	Access: Prior to visiting the site email Dave at David.Bowling@utah.edu requesting permission for visiting the site and detail the time you intend to visit.  A key to open the garage door is located in the key box in the U-ATAQ lab.  
+•	Access: 
+
+Prior to visiting the site email Dave at David.Bowling@utah.edu requesting permission for visiting the site and detail the time you intend to visit.  A key to open the garage door is located in the key box in the U-ATAQ lab.  
 Be very considerate when visiting this site. 
+
 •	Instrumentation: Li-6262 & MetOne ES-642.  
+
 o	Li-6262 is in the garage
 o	MetOne is mounted to the fence on the North West side of the house, just outside of the entrance to the garage. 
 
