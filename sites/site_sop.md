@@ -1,4 +1,4 @@
-U-ATAQ Site Visit SOP
+# U-ATAQ Site Visit SOP
 Ryan Bares
 03/04/2021
 
@@ -8,9 +8,9 @@ IP addresses and Lat-Lon coordinates for all sites can be found at:
 https://github.com/uataq/data-pipeline/blob/master/config/site_config.csv
 
 
-**Utah Urban Carbon Dioxide Network (UUCON)**
+# **Utah Urban Carbon Dioxide Network (UUCON)**
 
-William Browning Building (WBB) / Utah Atmosphere Trace gas & Air Quality lab (UATAQ)
+**William Browning Building (WBB) / Utah Atmosphere Trace gas & Air Quality lab (UATAQ)**
 
 The U-ATAQ lab is located on the 8th floor of the William Browning Building (WBB) on the main campus of the University of Utah.  The lab serves as one of the measurement sites with in the UUCON network and doubles as the mother ship for all measurement operations with in the various networks. 
 
@@ -24,7 +24,7 @@ The lab has a keypad for access on the main door.  Key Code: 82827
 **•	Instrumentation:** LGR UP-GGA.  
 Additional air quality instrumentation that is beyond the scope of this document resides in the lab as well. 
 
-Sugarhouse (SUG)
+**Sugarhouse (SUG)**
 This site is located in the garage of Dr. Dave Bowling’s home.  We are guests in their home so please be professional and courteous during your time at the site.
 •	Address:
 1154 E. Harrison Ave, 
