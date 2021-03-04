@@ -15,10 +15,12 @@ https://github.com/uataq/data-pipeline/blob/master/config/site_config.csv
 The U-ATAQ lab is located on the 8th floor of the William Browning Building (WBB) on the main campus of the University of Utah.  The lab serves as one of the measurement sites with in the UUCON network and doubles as the mother ship for all measurement operations with in the various networks. 
 
 **•	Address:**
+
 135 S 1460 E. Room 808 & 810
 Salt Lake City, UT 84102
 
 **•	Access:** 
+
 The building is open to the public but key card access may be required during after hours or during other non-normal operational hours.  Contact Wil Mace at Wil.Mace@utah.edu if you need access. 
 The lab has a keypad for access on the main door.  Key Code: 82827
 
