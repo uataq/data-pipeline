@@ -8,9 +8,9 @@ IP addresses and Lat-Lon coordinates for all sites can be found at:
 https://github.com/uataq/data-pipeline/blob/master/config/site_config.csv
 
 
-#**Utah Urban Carbon Dioxide Network (UUCON)**
+**Utah Urban Carbon Dioxide Network (UUCON)**
 
-#William Browning Building (WBB) / Utah Atmosphere Trace gas & Air Quality lab (UATAQ)
+William Browning Building (WBB) / Utah Atmosphere Trace gas & Air Quality lab (UATAQ)
 The U-ATAQ lab is located on the 8th floor of the William Browning Building (WBB) on the main campus of the University of Utah.  The lab serves as one of the measurement sites with in the UUCON network and doubles as the mother ship for all measurement operations with in the various networks. 
 **•	Address:**
 135 S 1460 E. Room 808 & 810
@@ -20,7 +20,7 @@ The lab has a keypad for access on the main door.  Key Code: 82827
 **•	Instrumentation:** LGR UP-GGA.  
 Additional air quality instrumentation that is beyond the scope of this document resides in the lab as well. 
 
-#Sugarhouse (SUG)
+Sugarhouse (SUG)
 This site is located in the garage of Dr. Dave Bowling’s home.  We are guests in their home so please be professional and courteous during your time at the site.
 •	Address:
 1154 E. Harrison Ave, 
@@ -45,7 +45,7 @@ Bring all materials that you will need so you don’t have to make multiple trip
 •	Instrumentation: Li-6262
 o	The Li-6262 is located ~50 feet to the left of where you enter the Penthouse, just across from the large circulation fans. 
 
-#Suncrest (SUN)
+Suncrest (SUN)
 Suncrest is located in the secure equipment storage and communications room of the Draper Fire Station #23.  Draper city owns the building but Unified Fire Department operates it.  
 •	Address:
 14903 Deer Ridge Drive
@@ -57,7 +57,7 @@ Steve: 801-831-7382
 •	Instrumentation: EMPTY
 The instrumentation was removed from this site a while back.  An enclosure and some empty tanks are still there as we squat on the space incase there is ever the desire to get the site up and running again. 
 
-#Rose Park (RPK)
+Rose Park (RPK)
 The site is located in a small room in the school the Salt Lake Center for Science Education (SLCSE).  
 •	Address:
 1400 Goodwin Ave
@@ -66,7 +66,7 @@ Salt Lake City, UT 84116
 To gain access to the room housing the equipment enter the main office just to the left once you walk in through the main doors of the building and ask for the master key.  Go to the room and unlock the door, then immediately return the key to the front office.   The inlet is located in the courtyard just outside the room. The same master key used to open the door to the room storing the instrumentation will open the door to the courtyard.  
 •	Instrumentation: Li-6262 
 
-#Daybreak (DBK)
+Daybreak (DBK)
 Daybreak is one of the few sites that we mostly control access to the site.   The equipment is in an insulated Tuff Shed located on Rio Tinto property.  We lease the land from Rio Tinto.  You may be questioned by Rio Tinto security personal when at the site, remember we are guests on their property and their presence helps protect the site so please cooperate as much as you can during these encounters.   
 •	Address:
      Intersection of Bacchus Hwy (Hwy 111) and 11800 South
