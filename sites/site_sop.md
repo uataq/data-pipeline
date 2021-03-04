@@ -11,6 +11,7 @@ https://github.com/uataq/data-pipeline/blob/master/config/site_config.csv
 **Utah Urban Carbon Dioxide Network (UUCON)**
 
 William Browning Building (WBB) / Utah Atmosphere Trace gas & Air Quality lab (UATAQ)
+
 The U-ATAQ lab is located on the 8th floor of the William Browning Building (WBB) on the main campus of the University of Utah.  The lab serves as one of the measurement sites with in the UUCON network and doubles as the mother ship for all measurement operations with in the various networks. 
 
 **•	Address:**
@@ -19,6 +20,7 @@ Salt Lake City, UT 84102
 
 **•	Access:** The building is open to the public but key card access may be required during after hours or during other non-normal operational hours.  Contact Wil Mace at Wil.Mace@utah.edu if you need access. 
 The lab has a keypad for access on the main door.  Key Code: 82827
+
 **•	Instrumentation:** LGR UP-GGA.  
 Additional air quality instrumentation that is beyond the scope of this document resides in the lab as well. 
 
