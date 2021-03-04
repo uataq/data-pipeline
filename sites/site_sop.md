@@ -23,7 +23,7 @@ The lab has a keypad for access on the main door.  Key Code: 82827
 
 **•	Instrumentation:** LGR UP-GGA.  
 Additional air quality instrumentation that is beyond the scope of this document resides in the lab as well. 
-
+-----------------------
 **Sugarhouse (SUG)**
 This site is located in the garage of Dr. Dave Bowling’s home.  We are guests in their home so please be professional and courteous during your time at the site.
 •	Address:
