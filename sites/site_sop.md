@@ -18,7 +18,8 @@ The U-ATAQ lab is located on the 8th floor of the William Browning Building (WBB
 135 S 1460 E. Room 808 & 810
 Salt Lake City, UT 84102
 
-**•	Access:** The building is open to the public but key card access may be required during after hours or during other non-normal operational hours.  Contact Wil Mace at Wil.Mace@utah.edu if you need access. 
+**•	Access:** 
+The building is open to the public but key card access may be required during after hours or during other non-normal operational hours.  Contact Wil Mace at Wil.Mace@utah.edu if you need access. 
 The lab has a keypad for access on the main door.  Key Code: 82827
 
 **•	Instrumentation:** LGR UP-GGA.  
@@ -109,13 +110,16 @@ Once you get off the tram at the peak there is a small gate and set of metal sta
 
 
 
-Uintah Basin Greenhouse Gas Network
+# Uintah Basin Greenhouse Gas Network
 
 
 Fruitland (FRU)
+
 •	Address / Location:
+
  
 •	Access:  
+
 
 •	Instrumentation: LGR UP-GGA
 
@@ -132,5 +136,3 @@ Horsepool (HPL)
 •	Access:  
 
 •	Instrumentation: LGR UP-GGA
-
-![Uploading image.png…]()
