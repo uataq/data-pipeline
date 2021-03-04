@@ -1,4 +1,4 @@
-#U-ATAQ Site Visit SOP
+U-ATAQ Site Visit SOP
 Ryan Bares
 03/04/2021
 
