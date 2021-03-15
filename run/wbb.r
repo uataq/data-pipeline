@@ -23,7 +23,7 @@ try({
   # MetOne ES642 ---------------------------------------------------------------
   instrument <- 'metone_es642'
   proc_init()
-  remote <- file.path('pi@155.101.8.136:~/data', instrument, '')
+  remote <- file.path('pi@uataq-brain.atmos.utah.edu:~/data', instrument, '')
   local <- file.path('data', site, instrument, 'raw/')
   if (!site_config$reprocess) {
     rsync(from = remote, to = local)
@@ -50,7 +50,7 @@ try({
   # Teledyne T200 --------------------------------------------------------------
   instrument <- 'teledyne_t200'
   proc_init()
-  remote <- file.path('pi@155.101.8.136:~/data', instrument, '')
+  remote <- file.path('pi@uataq-brain.atmos.utah.edu:~/data', instrument, '')
   local <- file.path('data', site, instrument, 'raw/')
   # TODO: find workaround for reprocessing flag to still sync
   # if (!site_config$reprocess) {
@@ -62,7 +62,7 @@ try({
   # Teledyne T300 --------------------------------------------------------------
   instrument <- 'teledyne_t300'
   proc_init()
-  remote <- file.path('pi@155.101.8.136:~/data', instrument, '')
+  remote <- file.path('pi@uataq-brain.atmos.utah.edu:~/data', instrument, '')
   local <- file.path('data', site, instrument, 'raw/')
   # if (!site_config$reprocess) {
     rsync(from = remote, to = local)
@@ -73,7 +73,7 @@ try({
   # Teledyne T400 --------------------------------------------------------------
   instrument <- 'teledyne_t400'
   proc_init()
-  remote <- file.path('pi@155.101.8.136:~/data', instrument, '')
+  remote <- file.path('pi@uataq-brain.atmos.utah.edu:~/data', instrument, '')
   local <- file.path('data', site, instrument, 'raw/')
   # if (!site_config$reprocess) {
     rsync(from = remote, to = local)
@@ -84,7 +84,7 @@ try({
   # Teledyne T500u -------------------------------------------------------------
   instrument <- 'teledyne_t500u'
   proc_init()
-  remote <- file.path('pi@155.101.8.136:~/data', instrument, '')
+  remote <- file.path('pi@uataq-brain.atmos.utah.edu:~/data', instrument, '')
   local <- file.path('data', site, instrument, 'raw/')
   # if (!site_config$reprocess) {
   rsync(from = remote, to = local)
@@ -95,7 +95,7 @@ try({
   # Magee AE33 -----------------------------------------------------------------
   instrument <- 'magee_ae33'
   proc_init()
-  remote <- file.path('pi@155.101.8.136:~/data', instrument, '')
+  remote <- file.path('pi@uataq-brain.atmos.utah.edu:~/data', instrument, '')
   local <- file.path('data', site, instrument, 'raw/')
   # if (!site_config$reprocess) {
   rsync(from = remote, to = local)
