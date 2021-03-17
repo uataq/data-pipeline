@@ -44,8 +44,10 @@ Salt Lake City, UT 84105
 Prior to visiting the site email Dave at David.Bowling@utah.edu requesting permission for visiting the site and detail the time you intend to visit.  A key to open the garage door is located in the key box in the U-ATAQ lab.  
 Be very considerate when visiting this site. 
 
-•	Instrumentation: Li-6262 & MetOne ES-642.  
+•	Instrumentation: Li-6262 & MetOne ES-642.
+
 o	Li-6262 is in the garage
+
 o	MetOne is mounted to the fence on the North West side of the house, just outside of the entrance to the garage. 
 
 •	Networking: Cell Modem
@@ -69,6 +71,7 @@ If you need access to the roof where the inlet is located ask the security escor
 Bring all materials that you will need so you don’t have to make multiple trips requiring an escort each time.  
 
 •	Instrumentation: Li-6262
+
 o	The Li-6262 is located ~50 feet to the left of where you enter the Penthouse, just across from the large circulation fans. 
 
 •	Networking: IMC provides ethernet connectivity.  We are firewalled for outside connectivity though limiting what can be done remotely.  For IT questions contact Steven at the address above. 
@@ -91,6 +94,7 @@ Jake: 801-647-7831
 Steve: 801-831-7382
 
 •	Instrumentation: EMPTY
+
 The instrumentation was removed from this site a while back.  An enclosure and some empty tanks are still there as we squat on the space incase there is ever the desire to get the site up and running again. 
 
 •	Networking: Cell Modem.  The antenna needs to be located outside the room due to poor cell service
@@ -129,7 +133,9 @@ Riverton UT, 84096
 Keys to access the site are located in the key box in the U-ATAQ lab.  One key will open the gate at the barbed wire fence near the high way.  The same key will open the lock on the large chain-link gate that surrounds the site and tower.  The second key will open the Tuff Shed. 
 
 •	Instrumentation: Li-6262 & MetOne ES-642
+
 o	Li-6262 is located inside the shed
+
 o	MetOne is mounted to the South side of the shed. 
 
 •	Networking: Cell Modem.  Antenna is located outside the shed near the ES-642
