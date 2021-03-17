@@ -207,6 +207,7 @@ Once you get off the tram at the peak there is a small gate and set of metal sta
 Seth Lyman’s group at USU Vernal are been key partners in the ongoing operation of this network.  If you need assistance or if there is a small task that doesn’t warrant a full day trip out to the basin contact them to see if they can help.
 Seth Lyman: Seth.Lyman@usu.edu 
 Trevor O’Neil: Trevor.oneil@usu.edu  phone: (435) 790-3974
+-
 
 **Fruitland (FRU)**
 This site is located in the DAQ shed just past the Post Office in Fruitland.  Turn to head south onto 4500 West which is the one four way stop in Fruitland at the Big G gas station. Follow the road just past the Post Office and the white DAQ shed is just off the road.
