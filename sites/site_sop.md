@@ -208,7 +208,7 @@ Seth Lyman’s group at USU Vernal are been key partners in the ongoing operatio
 Seth Lyman: Seth.Lyman@usu.edu 
 Trevor O’Neil: Trevor.oneil@usu.edu  phone: (435) 790-3974
 
--
+--
 
 **Fruitland (FRU)**
 This site is located in the DAQ shed just past the Post Office in Fruitland.  Turn to head south onto 4500 West which is the one four way stop in Fruitland at the Big G gas station. Follow the road just past the Post Office and the white DAQ shed is just off the road.
