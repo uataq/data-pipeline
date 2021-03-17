@@ -259,5 +259,5 @@ Keys are stored on site in a magnetic key box hidden on the frame of the trailer
 
 •	Instrumentation: LGR UP-GGA
 
-•	Networking: We are on USU Vernal’s cell modem.  For IT questions contact Seth or Trevor at Seth.lyman@usu.edu or Trevor.Oneil@usu.com. 
+•	Networking: Cell Modem, but this should be moved over to USU Vernal’s cell modem soon.  For IT questions contact Seth or Trevor at Seth.lyman@usu.edu or Trevor.Oneil@usu.com. 
 
