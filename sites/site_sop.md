@@ -26,7 +26,8 @@ Additional air quality instrumentation that is beyond the scope of this document
 
 
 •	Networking: Ethernet
------------
+
+---------
 
 **Sugarhouse (SUG)**
 This site is located in the garage of Dr. Dave Bowling’s home.  We are guests in their home so please be professional and courteous during your time at the site.
