@@ -1,4 +1,4 @@
-## U-ATAQ Site SOP
+# U-ATAQ Site SOP
 
 This document overviews the location of measurement sites for the UUCON and Uintah Basin networks as well as how to access each location. 
 
@@ -6,7 +6,7 @@ IP addresses and Lat-Lon coordinates for all sites can be found at:
 https://github.com/uataq/data-pipeline/blob/master/config/site_config.csv
 
 
-# Utah Urban Carbon Dioxide Network (UUCON)
+## Utah Urban Carbon Dioxide Network (UUCON)
 
 **William Browning Building (WBB) / Utah Atmosphere Trace gas & Air Quality lab (UATAQ)**
 The U-ATAQ lab is located on the 8th floor of the William Browning Building (WBB) on the main campus of the University of Utah.  The lab serves as one of the measurement sites with in the UUCON network and doubles as the mother ship for all measurement operations with in the various networks. 
