@@ -1,3 +1,6 @@
+Ryan Bares
+03/18/2021
+
 # Overview
 The purpose of this file is to overview how to navigate the EPA's data API known as the Air Quality System (AQS).  This overview is specifically for downloading data from a single site (i.e. DAQ Hawthorne, or Rosepark).   
 
