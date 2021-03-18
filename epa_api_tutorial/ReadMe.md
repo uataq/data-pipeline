@@ -55,7 +55,7 @@ https://aqs.epa.gov/data/api/list/parametersByClass?email=ryan.bares@utah.edu&ke
 
 Don't forget to update the email and key! 
 
-# Common Sites Codes for SLV
+# Common Site Codes for SLV
 Site                         | Site Code
 -----------------------------|----------------------------------
 Hawthorne                    | 3006
