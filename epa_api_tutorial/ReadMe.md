@@ -34,7 +34,7 @@ site         | The site ID you want to download data from
 
 *Note: you can only download one year of data at a time
 
-In the address bar of a web browser, enter the desired variables into the appropriate spots of the request command. An example of a fully executable request is below: 
+In the address bar of a web browser, enter the desired variables, seperated by a "&" character, into the appropriate spots of the request command. An example of a fully executable request is below: 
 
 **Example:**
 https://aqs.epa.gov/data/api/sampleData/bySite?email=ryan.bares@utah.edu&key=tauperam28&param=42101&bdate=20180101&edate=20181231&state=49&county=035&site=3006
