@@ -74,7 +74,7 @@ Don't forget to update the email and key!
 
 
 # STEP 3: Saving Files From Web Browser
-Once you have executed the command the API will return data to the html browser formatted for a .json file.  Note that it can take a while to receive all the data so be patient with it. 
+Once you have executed the command the API will return data to the html browser formatted for a .json file.  Note that it can take a while to receive all the data, up to 30 minutes, so be patient with it. 
 
 To save the data from the html page to your local drive go to: 
 **File -> Save Page As...** 
