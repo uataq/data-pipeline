@@ -22,7 +22,8 @@ bad_log_check <- function(site = get('site', envir = globalenv()),
     bad_log_init()
   mtime_log <- readRDS(badf_log)
   
-  if (trunc(mtime) != trunc(mtime_log[badf])) {
+  if ((!badf %in% names(mtime_log)) || 
+      (trunc(mtime) != trunc(mtime_log[badf]))) {
     mtime_log[badf] <- mtime
     saveRDS(mtime_log, badf_log)
     site_config$reprocess <<- T
