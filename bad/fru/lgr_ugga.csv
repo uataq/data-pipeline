@@ -48,3 +48,5 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2019-09-23T18:20:00Z,2019-09-23T18:23:00Z,~417.61~1.97,NA,2021-04-25T23:56:00Z,JohnLin,Remove overly high values for a single tank
 2019-10-17T01:34:00Z,2019-10-17T17:45:00Z,~417.61~1.97,NA,2021-04-25T23:56:00Z,JohnLin,~417.61~1.97 should really be ~389.15~1.80?  Remove this cal tank to be safe
 2019-12-25T05:40:00Z,2020-01-06T19:03:00Z,all,NA,2021-04-25T23:56:00Z,JohnLin,Remove all ambient and cal tank values because of pump failure in LGR
+2020-05-26T21:38:00Z,2020-05-26T21:45:00Z,~60.48198~NA,NA,2021-04-25T23:56:00Z,JohnLin,Remove rogue cal tank value
+2020-05-27T09:54:40Z,2020-05-27T09:56:00Z,~450.5140~NA,NA,2021-04-25T23:56:00Z,JohnLin,Remove rogue cal tank value
