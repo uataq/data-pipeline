@@ -8,3 +8,4 @@
 log.txt
 bad/_log.rds
 .lock/*.lock
+.nfs*
