@@ -16,13 +16,14 @@ lgr_ugga_calibrate <- function() {
   invalid <- c('CO2d_ppm', 'CH4d_ppm')
   nd[nd$QAQC_Flag < 0, invalid] <- NA
 
-  cal_co2 <- nd %>%
-    group_by(yyyy = format(Time_UTC, '%Y', tz = 'UTC')) %>%
+  grouped <- nd %>%
+    group_by(yyyy = format(Time_UTC, '%Y', tz = 'UTC'))
+
+  cal_co2 <- grouped %>%
     do(with(., calibrate_linear(Time_UTC, CO2d_ppm, ID_CO2))) %>%
     ungroup() %>%
     select(-yyyy)
-  cal_ch4 <- nd %>%
-    group_by(yyyy = format(Time_UTC, '%Y', tz = 'UTC')) %>%
+  cal_ch4 <- grouped %>%
     do(with(., calibrate_linear(Time_UTC, CH4d_ppm, ID_CH4))) %>%
     ungroup() %>%
     select(-yyyy)
