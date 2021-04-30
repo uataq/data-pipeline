@@ -44,9 +44,11 @@ lgr_ugga_qaqc <- function() {
   
   # QAQC flagging
   # https://github.com/uataq/data-pipeline#qaqc-flagging-conventions
+  is_manual_qc <- nd$QAQC_Flag == -1
   nd$QAQC_Flag[with(nd, Cavity_P_torr < 135 | Cavity_P_torr > 145)] <- -4
   nd$QAQC_Flag[with(nd, ID_CO2 %in% c(-1, -2, -3, NA) | abs(ID_CO2) < 9)] <- -3
   nd$QAQC_Flag[with(nd, ID_CO2 == -99)] <- -2
+  nd$QAQC_Flag[is_manual_qc] <- -1
   
   nd
 }

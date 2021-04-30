@@ -18,6 +18,7 @@ licor_6262_qaqc <- function() {
 
   # QAQC flagging
   # https://github.com/uataq/data-pipeline#qaqc-flagging-conventions
+  is_manual_qc <- nd$QAQC_Flag == -1
   analog_mask <- with(nd, !is.na(CO2_Analog_ppm) &
                         abs(CO2_ppm - CO2_Analog_ppm) > 10 |
                         is.na(CO2_ppm))
@@ -26,6 +27,7 @@ licor_6262_qaqc <- function() {
   nd$QAQC_Flag[with(nd, Flow_mLmin < 395 | Flow_mLmin > 405)] <- -4
   nd$QAQC_Flag[with(nd, ID_CO2 %in% c(-1, -2, -3, NA))] <- -3
   nd$QAQC_Flag[with(nd, ID_CO2 == -99)] <- -2
+  nd$QAQC_Flag[is_manual_qc] <- -1
 
   # Compute H2O concentration in ppm
   nd$Cavity_RH_pct <- with(nd, -1.91e-9 * Cavity_RH_mV^3 +
