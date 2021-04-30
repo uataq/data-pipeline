@@ -18,9 +18,8 @@ try({
   instrument <- 'teledyne_t500u'
   proc_init()
   
-  path <- file.path('data', site, instrument, 'raw')
   remote <- paste0('pi@', site_config$ip, ':/home/pi/data/teledyne_t500u/')
-  local <- file.path('data', site, 'raw', instrument)
+  local <- file.path('data', site, instrument, 'raw/')
   rsync(from = remote, to = local, port = site_config$port)
 })
 
@@ -29,7 +28,6 @@ try({
   instrument <- 'gps'
   proc_init()
   
-  path <- file.path('data', site, instrument, 'raw') 
   remote <- paste0('pi@', site_config$ip, ':/home/pi/data/gps/')
   local <- file.path('data', site, instrument, 'raw/')
   rsync(from = remote, to = local, port = site_config$port)
