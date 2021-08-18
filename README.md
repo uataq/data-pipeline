@@ -1,5 +1,3 @@
-Additional documentation can be found in [`docs/`](./docs/)
-
 # Repository structure
 
 The trace gas processing pipeline is structured as follows. This is executed on the smaug interactive node of the University of Utah's CHPC. The following paths are relative to the base path `/uufs/chpc.utah.edu/common/home/lin-group9/measurements/pipeline` -
