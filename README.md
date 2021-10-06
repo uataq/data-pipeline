@@ -129,22 +129,22 @@ We see that `fru` and `wbb` are currently running. Note the timestamp - looks li
 
 Before delete the lock file to allow site processing to continue, we have to be sure there aren't any existing processes still attempting to connect to the site.
 
-You can list current processes with `ps -u u0791983 -f` (replacing with your username) -
+You can list current processes with `ps -u u0791084 -f` (replacing with your username) -
 
 ```bash
->  ps -u u0791983 -f
+>  ps -u u0791084 -f
 UID        PID  PPID  C STIME TTY          TIME CMD
-u0791983 41654 41648  0 20:15 ?        00:00:00 /bin/sh -c nice /uufs/chpc.utah.edu/common/home/lin-group9/measurements/pipeline/process_data.sh &> /uufs/chpc.utah.edu/common/home/lin-group9/measurements/pipeline/log.txt
-u0791983 43417 36600  4 20:15 ?        00:00:02 /uufs/chpc.utah.edu/common/home/lin-group12/software/local/R/4.0.3/lib64/R/bin/exec/R --no-echo --no-restore --file=run/wbb.r
-u0791983 43823 1      5 12:16 ?        00:12:35 /uufs/chpc.utah.edu/common/home/lin-group12/software/local/R/4.0.3/lib64/R/bin/exec/R --no-echo --no-restore --file=run/fru.r
+u0791084 41654 41648  0 20:15 ?        00:00:00 /bin/sh -c nice /uufs/chpc.utah.edu/common/home/lin-group9/measurements/pipeline/process_data.sh &> /uufs/chpc.utah.edu/common/home/lin-group9/measurements/pipeline/log.txt
+u0791084 43417 36600  4 20:15 ?        00:00:02 /uufs/chpc.utah.edu/common/home/lin-group12/software/local/R/4.0.3/lib64/R/bin/exec/R --no-echo --no-restore --file=run/wbb.r
+u0791983 43823 1      5 12:16 ?        00:12:35 /uufs/chpc.utah.edu/common/home/lin-group12/software/local/R/4.0.3/u0791084/R/bin/exec/R --no-echo --no-restore --file=run/fru.r
 ...
 ```
 
 This shows all of the processes running under our user account. We see the `process_data.sh` script running as expected, as well as the `run/fru.r` and `run/wbb.r` scripts that it spawned to update the datasets. Since we identified that we need to fix the `fru` site, we kill the `PID` from the `run/fru.r` process.
 
 ```bash
-> ps -u u0791983 -f | grep fru.r
-u0791983 54474 52478 58 20:26 ?        00:00:02 /uufs/chpc.utah.edu/common/home/lin-group12/software/local/R/4.0.3/lib64/R/bin/exec/R --no-echo --no-restore --file=run/fru.r
+> ps -u u0791084 -f | grep fru.r
+u0791084 54474 52478 58 20:26 ?        00:00:02 /uufs/chpc.utah.edu/common/home/lin-group12/software/local/R/4.0.3/lib64/R/bin/exec/R --no-echo --no-restore --file=run/fru.r
 
 > kill 54474
 ```
@@ -156,7 +156,7 @@ Confirm that the process is successfully stopped with `ps` again.
 Now that we're sure there won't be concurrency problems, we delete the old lock file to allow the processing to run again.
 
 ```bash
-> rm /uufs/chpc.utah.edu/common/home/u0791983/links/measurements/pipeline/.lock/fru.lock
+> rm /uufs/chpc.utah.edu/common/home/lin-group9/measurements/pipeline/.lock/fru.lock
 ```
 
 Problem solved! We can let the cronjob schedule future executions, or run the processing ourselves by executing the `run/fru.r` script directly.
