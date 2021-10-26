@@ -58,7 +58,7 @@ Numeric values are assigned to observations that meet certain automated or human
 | CO2d_n        | The number of calibration tanks used in the calibration applied                     |
 | CO2d_rsq      | The R^2 value derived from the slope of the calibration applied                     |
 | CO2d_rmse     | The root mean squared error value derived from the slope of the calibration applied |
-| ID_CO2        | ID of the CO2 being measured (-10, -99, Standard tank concentration)                |
+| ID_CO2        | ID of CO2 being measured (-10(ambient), -99(flushing), Standard tank concentration) |
 | QAQC_Flag     | Automated QC flagging. See table "QAQC flagging conventions"                        |
 
 #### Los Gatos Research UGGA
@@ -73,7 +73,7 @@ Numeric values are assigned to observations that meet certain automated or human
 | CO2d_n        | The number of calibration tanks used in the calibration for CO2                     |
 | CO2d_rsq      | The R^2 value derived from the slope of the calibration for CO2                     |
 | CO2d_rmse     | The root mean squared error value derived from the slope of the calibration for CO2 |
-| ID_CO2        | ID of the CO2 being measured (-10, -99, Standard tank concentration)                |
+| ID_CO2        | ID of CO2 being measured (-10(ambient), -99(flushing), Standard tank concentration) |
 | CH4d_ppm_cal  | The calibrated concenctration of DRY CH4 in parts per million                       |
 | CH4d_ppm_meas | The uncalibrated concentraion of DRY CH4 in parts per million                       |
 | CH4d_m        | The slope of the calibration for CH4                                                |
@@ -81,7 +81,7 @@ Numeric values are assigned to observations that meet certain automated or human
 | CH4d_n        | The number of calibration tanks used in the calibration for CH4                     |
 | CH4d_rsq      | The R^2 value derived from the slope of the calibration for CH4                     |
 | CH4d_rmse     | The root mean squared error value derived from the slope of the calibration for CH4 |
-| ID_CH4        | ID of the CH4 being measured (-10, -99, Standard tank concentration)                |
+| ID_CH4        | ID of CH4 being measured (-10(ambient), -99(flushing), Standard tank concentration) |
 | QAQC_Flag     | Automated QC flagging. See table "QAQC flagging conventions"                        |
 
 ## Workflows
