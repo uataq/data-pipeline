@@ -13,7 +13,7 @@ msa, Murray Satellite, FALSE, NA, NA, FALSE, 40.763226, -111.849278, NA
 mur, Murray, FALSE, NA, NA, FALSE, 40.763226, -111.849278, NA
 roo, Roosevelt, FALSE, 67.213.235.123, 22, FALSE, 40.294169, -110.009, 4
 rpk, Rose Park, TRUE, 205.127.188.48, 80, FALSE, 40.794386, -111.931925, 7
-sug, Sugarhouse, TRUE, uataq-sug.eairlink.com, 80, FALSE, 40.739906, -111.857831, 10
+sug, Sugarhouse, TRUE, uataq-sug.eairlink.com, 80, TRUE, 40.739906, -111.857831, 10
 sun, Suncrest, FALSE, NA, NA, FALSE, 40.480978, -111.837047, 5
 trx01, TRAX 1136, TRUE, 166.255.153.194, 8022, FALSE, NA, NA, 5
 trx02, TRAX 1104, TRUE, 166.241.147.189, 8022, FALSE, NA, NA, 5
