@@ -15,6 +15,12 @@ try({
   if (!site_config$reprocess)
     update_archive(nd, data_path(site, instrument, 'raw'), check_header = F)
   nd <- licor_6262_qaqc()
+
+  # Correct time stamp (erroneously set in MDT) to UTC in Oct 2021
+  mask <- nd$Time_UTC > as.POSIXct('2021-10-01 00:00:00', tz = 'UTC') &
+          nd$Time_UTC < as.POSIXct('2021-10-19 15:00:00' , tz = 'UTC')
+  nd$Time_UTC[mask] <- nd$Time_UTC[mask] + 6*3600 # UTC is 6 hours ahead of MDT
+
   update_archive(nd, data_path(site, instrument, 'qaqc'))
   nd <- licor_6262_calibrate()
   update_archive(nd, data_path(site, instrument, 'calibrated'))
