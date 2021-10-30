@@ -4,7 +4,7 @@ csp, Castle Peak, TRUE, 69.55.97.177, 22, FALSE, 40.0509, -110.0194, 4
 dbk, Daybreak, TRUE, uataq-dbk.eairlink.com, 8080, FALSE, 40.538497, -112.069528, 5
 fru, Fruitland, TRUE, 67.213.233.139, 22, FALSE, 40.208731, -110.8403, 4
 hdp, Hidden Peak, TRUE, 50.224.25.93, 22, FALSE, 40.560644, -111.645278, 15
-heb, Heber, TRUE, uataq-heb.eairlink.com, 80, FALSE, 40.506808, -111.403636, 7
+heb, Heber, TRUE, uataq-heb.eairlink.com, 8080, FALSE, 40.506808, -111.403636, 7
 hpl, Horsepool, TRUE, edfstar.eairlink.com, 22, FALSE, 40.143711, -109.4672, 4
 imc, Intermountain Medical, FALSE, 67.128.146.28, 80, FALSE, 40.660395, -111.89075, 35
 lgn, Logan, FALSE, NA, 80, FALSE, 41.761353, -111.822739, 5
