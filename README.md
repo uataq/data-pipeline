@@ -5,8 +5,8 @@ The trace gas processing pipeline is structured as follows. This is executed on 
 1. `process_data.sh` is the shell scripting control layer called by cron that sets environment variables and executes necessary processing code.
 1. `run/stid.r` called in parallel and executes site-specific processing code. By separating each site's initialization script, we can inject site specific processing code at strategic points in the data pipeline (e.g. after performing quality control but before calibrating measurements).
 1. `src/` contains the bulk of processing source code as R functions.
-1. `bad/` contains site/instrument specific bad data files for manual correction or removal of data. Changes are reflected at the qaqc and calibrated data levels.
-1. `config/` contains json configurations for data structure and site metadata.
+1. `bad/` contains site/instrument specific bad data files for manual correction or removal of data. Changes are reflected at the QAQC and calibrated data levels.
+1. `config/` contains JSON configurations for data structure and site metadata.
 1. `.lock/` contains lock files in the form of `<site_id>.lock` to indicate active site processing and prevent duplicate execution.
 
 ![](assets/workflow.png)
