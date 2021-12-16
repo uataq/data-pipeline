@@ -13,6 +13,7 @@ echo
 
 echo "Fetching remote updates..."
 git pull
+ssh-agent -k > /dev/null
 echo
 
 exec=$(ls run)
