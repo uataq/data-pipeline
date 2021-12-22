@@ -1,6 +1,6 @@
 stid, name, active, ip, port, reprocess, lati, long, zagl
 asb, Aline Wilmot Skaggs, FALSE, NA, NA, FALSE, 40.763226, -111.849278, NA
-csp, Castle Peak, TRUE, 69.55.97.177, 22, FALSE, 40.0509, -110.0194, 4
+csp, Castle Peak, TRUE, 69.55.104.137, 22, FALSE, 40.0509, -110.0194, 4
 dbk, Daybreak, TRUE, uataq-dbk.eairlink.com, 8080, FALSE, 40.538497, -112.069528, 5
 fru, Fruitland, TRUE, 67.213.233.139, 22, FALSE, 40.208731, -110.8403, 4
 hdp, Hidden Peak, TRUE, 50.224.25.93, 22, FALSE, 40.560644, -111.645278, 15
