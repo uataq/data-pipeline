@@ -49,4 +49,5 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2019-12-25T05:40:00Z,2020-01-06T19:03:00Z,all,NA,2021-04-25T23:56:00Z,JohnLin,Remove all ambient and cal tank values because of pump failure in LGR
 2020-05-26T21:38:00Z,2020-05-26T21:45:00Z,~60.48198~NA,NA,2021-04-25T23:56:00Z,JohnLin,Remove rogue cal tank value
 2020-05-27T09:54:40Z,2020-05-27T09:56:00Z,~450.5140~NA,NA,2021-04-25T23:56:00Z,JohnLin,Remove rogue cal tank value
+2021-12-21T20:50:00Z,2022-01-01T00:00:00Z,~397.51~1.90,~397.51~1.90,2021-12-23T14:03:00Z,JohnLin,Force this cal tank to show up
 2021-12-21T20:50:00Z,2022-01-01T00:00:00Z,~441.02~2.78,NA,2021-12-23T14:03:00Z,JohnLin,Calibrated CH4 values are too low; could cal tank be causing problems?
