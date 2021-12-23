@@ -39,5 +39,8 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2019-12-17T18:50:00Z,2019-12-17T18:55:00Z,all,NA,2021-04-27T21:28:00Z,Ben,Atmospheric observations reported as tank values
 2019-11-06T16:46:00Z,2019-11-06T22:00:00Z,~420.97~3.28,~451.71~3.64,2021-04-27T21:28:00Z,Ben,Tank value not updated for period following swap
 2020-02-01T16:50:00Z,2020-02-01T21:01:00Z,all,NA,2021-04-27T21:28:00Z,Ben,Significant CO2 calibration uncertainty following outage
+2021-02-06T08:00:00Z,2021-02-06T10:00:00Z,all,NA,2021-12-23T23:39:00Z,JohnLin,Contaminated calibration value
 2021-04-12T15:22:30Z,2021-04-12T15:23:00Z,all,NA,2021-04-27T21:28:00Z,Ben,Bad CO2 calibration during multiple instrument reboots
 2021-04-13T14:50:00Z,2021-04-13T15:05:00Z,all,NA,2021-04-27T21:28:00Z,Ben,Bad CO2 calibration during multiple instrument reboots
+2021-06-25T20:40:00Z,2021-06-26T05:59:00Z,all,NA,2021-12-23T23:39:00Z,JohnLin,Strange dip in CO2 cal values
+2021-09-18T16:13:00Z,2021-09-18T16:22:00Z,all,NA,2021-12-23T23:39:00Z,JohnLin,All of CH4 cal values went to 0 for a short period
