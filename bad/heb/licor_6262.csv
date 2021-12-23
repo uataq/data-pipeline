@@ -48,6 +48,7 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2020-08-02T00:00:00Z,2020-09-10T18:33:00Z,-3,489.39,2021-04-24T23:04:00Z,JohnLin,Missing cal tank values
 2020-08-02T00:00:00Z,2020-09-10T18:33:00Z,-2,460.42,2021-04-24T23:04:00Z,JohnLin,Missing cal tank values
 2020-08-02T00:00:00Z,2020-09-10T18:33:00Z,-1,396.72,2021-04-24T23:04:00Z,JohnLin,Missing cal tank values
+2021-08-16T03:00:00Z,2021-10-30T00:00:00Z,-10,NA,2021-12-23T14:40:00Z,JohnLin,Unstable cals; remove this time period
 2021-11-18T18:20:00Z,2021-12-10T22:00:00Z,-4,436.3,2021-12-20T03:13:00Z,JohnLin,Missing cal tank values
 2021-11-18T18:20:00Z,2021-12-10T22:00:00Z,-3,501.59,2021-12-20T03:13:00Z,JohnLin,Missing cal tank values
 2021-11-18T18:20:00Z,2021-12-10T22:00:00Z,-2,443.15,2021-12-20T03:13:00Z,JohnLin,Missing cal tank values
