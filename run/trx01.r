@@ -86,6 +86,11 @@ try({
     nd$ID[nd$ID %in% c('-2', '-1')] <- '~-99~-99'
     nd$ID[nd$ID %in% '1'] <- '~-10~-10'
     nd <- lgr_ugga_qaqc()
+    
+    # trx01 lgr ugga automated qaqc
+    nd$QAQC_Flag[with(nd, CO2d_ppm < 300 | CO2d_ppm > 5000)] <- -111
+    nd$QAQC_Flag[with(nd, CH4d_ppm < 1 | CH4d_ppm > 100)] <- -112
+    
     update_archive(nd, data_path(site, instrument, 'qaqc'))
     nd <- lgr_ugga_calibrate()
     update_archive(nd, data_path(site, instrument, 'calibrated'))
