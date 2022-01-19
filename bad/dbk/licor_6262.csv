@@ -131,6 +131,8 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2020-07-25T18:53:30Z,2020-07-26T03:43:10Z,all,NA,2020-10-08T10:28:00Z,Ryan,Battery voltage issue
 2020-07-26T18:33:00Z,2020-07-27T03:49:30Z,all,NA,2020-10-08T10:28:00Z,Ryan,Battery voltage issue
 2020-07-27T18:23:40Z,2020-07-27T20:45:20Z,all,NA,2020-10-08T10:28:00Z,Ryan,Battery voltage issue
+2020-09-15T18:14:00Z,2020-09-15T18:15:00Z,485.59,489.59,2022-01-19T21:27:05Z,MeganOstlie,Suspected typo on cal tank value
+2020-09-15T18:11:30Z,2020-09-15T18:12:40Z,440.17,440.71,2022-01-19T21:28:30Z,MeganOstlie,Suspected typo on cal tank value
 2021-12-15T06:00:00Z,2022-01-03T18:00:00Z,-1,394.52,2022-01-06T13:45:00Z,JohnLin,Missing cal tank values from power outage?
 2021-12-15T06:00:00Z,2022-01-03T18:00:00Z,-2,442.55,2022-01-06T13:45:00Z,JohnLin,Missing cal tank values from power outage?
 2021-12-15T06:00:00Z,2022-01-03T18:00:00Z,-3,493.51,2022-01-06T13:45:00Z,JohnLin,Missing cal tank values from power outage?
