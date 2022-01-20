@@ -39,7 +39,8 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2020-05-31T22:32:20Z,2020-06-29T21:16:00Z,all,NA,2020-10-07T11:09:00Z,Ryan,Power outage during COVID couldn't get to site
 2020-09-08T13:49:00Z,2020-09-08T14:15:00Z,all,NA,2020-10-07T11:12:00Z,Ryan,One atm flyer at start of power outage
 2021-05-07T00:07:00Z,2021-05-13T15:02:00Z,all,NA,2022-01-20T20:03:10Z,MeganOstlie,Large variations in cal tanks and ambient air ~ site notes indicate issue with pump
-2021-09-18T02:30:00Z,2021-09-20T04:33:00Z,-4,434.53,2022-01-20T19:54:40Z,MeganOstlie,Missing cal tank value
+2021-09-17T19:00:00Z,2021-09-17T19:06:00Z,all,NA,2022-01-20T23:12:40Z,MeganOstlie,Mid cal tank reading values between 24.9438 to 611.6447
+2021-09-17T19:00:00Z,2021-09-20T04:33:00Z,-4,434.53,2022-01-20T19:54:40Z,MeganOstlie,Missing cal tank value
 2021-09-17T19:00:00Z,2021-09-20T17:00:00Z,-3,499.42,2022-01-20T22:15:30Z,MeganOstlie,Missing cal tank value
 2021-09-17T19:00:00Z,2021-09-20T17:00:00Z,-2,441.56,2022-01-20T22:16:30Z,MeganOstlie,Missing cal tank value
 2021-09-17T19:00:00Z,2021-09-20T17:00:00Z,-1,394.95,2022-01-20T22:17:30Z,MeganOstlie,Missing cal tank value
