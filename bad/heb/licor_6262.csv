@@ -44,6 +44,9 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2019-08-20T20:08:00Z,2019-08-20T22:03:00Z,-10,NA,2021-04-24T23:04:00Z,JohnLin,Remove ambient CO2 in between sharp transition in cal values
 2020-02-25T21:36:00Z,2020-03-06T18:00:00Z,all,NA,2021-04-24T23:04:00Z,JohnLin,Remove ambient and cal tank measurements that are all 0
 2020-07-13T08:08:00Z,2020-07-31T20:00:00Z,all,NA,2021-04-24T23:04:00Z,JohnLin,Remove period with very low CO2 values in ambient and cal lines due to empty N2 tank
+2020-08-01T22:10:00Z,2020-08-01T23:30:00Z,-3,489.39,2022-02-16T22:12:00Z,MeganOstlie,Missing cal tank values
+2020-08-01T22:10:00Z,2020-08-01T23:30:00Z,-2,460.42,2022-02-16T22:13:00Z,MeganOstlie,Missing cal tank values
+2020-08-01T22:10:00Z,2020-08-01T23:30:00Z,-1,396.72,2022-02-16T22:13:00Z,MeganOstlie,Missing cal tank values
 2020-08-02T00:00:00Z,2020-09-10T18:33:00Z,-4,436.3,2021-04-24T23:04:00Z,JohnLin,Missing cal tank values
 2020-08-02T00:00:00Z,2020-09-10T18:33:00Z,-3,489.39,2021-04-24T23:04:00Z,JohnLin,Missing cal tank values
 2020-08-02T00:00:00Z,2020-09-10T18:33:00Z,-2,460.42,2021-04-24T23:04:00Z,JohnLin,Missing cal tank values
