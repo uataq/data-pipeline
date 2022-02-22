@@ -14,6 +14,10 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2020-12-14T18:00:00Z,2020-12-31T23:59:59Z,-3,619.37,2021-04-09T03:40:00Z,JohnLin,logger forgot tank value?  
 2020-12-14T18:00:00Z,2020-12-31T23:59:59Z,-4,427.79,2021-04-09T03:40:00Z,JohnLin,logger forgot tank value?  
 2021-03-13T10:00:00Z,2021-04-01T17:30:00Z,all,NA,2021-04-09T23:50:00Z,JohnLin,cal tank values track ambient CO2 values
+2021-04-28T22:30:00Z,2021-04-30T12:30:00Z,-4,427.79,2022-02-22T16:27:00Z,MeganOstlie,Missing cal tank value
+2021-04-28T22:30:00Z,2021-04-30T12:30:00Z,-3,619.37,2022-02-22T16:28:00Z,MeganOstlie,Missing cal tank value
+2021-04-28T22:30:00Z,2021-04-30T12:30:00Z,-2,462,2022-02-22T16:29:00Z,MeganOstlie,Missing cal tank value
+2021-04-28T22:30:00Z,2021-04-30T12:30:00Z,-1,395.95,2022-02-22T16:30:00Z,MeganOstlie,Missing cal tank value
 2021-05-04T18:00:00Z,2021-05-14T19:30:00Z,all,NA,2022-02-22T16:18:00Z,MeganOstlie,Unstable cal tank and ambient CO2 values
 2021-05-25T08:30:00Z,2021-06-02T20:00:00Z,all,NA,2022-02-22T16:08:00Z,MeganOstlie,Unstable cal tank and ambient CO2 values
 2021-06-02T22:00:00Z,2021-06-04T02:10:00Z,-4,427.79,2022-02-22T15:59:00Z,MeganOstlie,Missing cal tank value
