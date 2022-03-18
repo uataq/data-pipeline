@@ -35,3 +35,7 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2021-11-15T19:00:00Z,2021-11-15T20:30:00Z,-3,501.89,2022-02-18T17:21:00Z,MeganOstlie,Missing cal tank value
 2021-11-15T19:00:00Z,2021-11-15T20:30:00Z,-2,457.24,2022-02-18T17:22:00Z,MeganOstlie,Missing cal tank value
 2021-11-15T19:00:00Z,2021-11-15T20:30:00Z,-1,398.02,2022-02-18T17:23:30Z,MeganOstlie,Missing cal tank value
+2022-01-11T17:00:00Z,2022-02-09T01:00:00Z,-4,427.99,2022-03-18T15:38:00Z,MeganOstlie,Missing cal tank value
+2022-01-11T17:00:00Z,2022-02-09T01:00:00Z,-3,501.89,2022-03-18T15:38:00Z,MeganOstlie,Missing cal tank value
+2022-01-11T17:00:00Z,2022-02-09T01:00:00Z,-2,457.24,2022-03-18T15:40:00Z,MeganOstlie,Missing cal tank value
+2022-01-11T17:00:00Z,2022-02-09T01:00:00Z,-1,398.02,2022-03-18T15:40:00Z,MeganOstlie,Missing cal tank value
