@@ -17,5 +17,5 @@ sug, Sugarhouse, TRUE, uataq-sug.eairlink.com, 80, FALSE, 40.739906, -111.857831
 sun, Suncrest, FALSE, NA, NA, FALSE, 40.480978, -111.837047, 5
 trx01, TRAX 1136, TRUE, 166.255.153.194, 8022, FALSE, NA, NA, 5
 trx02, TRAX 1104, TRUE, 166.241.147.189, 8022, FALSE, NA, NA, 5
-wbb, William Browning, TRUE, GGA-13-0221.chpc.utah.edu, 22, FALSE, 40.766189, -111.847672, 35
+wbb, William Browning, TRUE, 155.101.15.76, 22, FALSE, 40.766189, -111.847672, 35
 wbb-brain, UATAQ pi Lab Brain, FALSE, uataq-brain.atmos.utah.edu, 22, FALSE, 40.766189, -111.847672, 35
