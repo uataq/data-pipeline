@@ -8,7 +8,7 @@ heb, Heber, TRUE, uataq-heb.eairlink.com, 8080, FALSE, 40.506808, -111.403636, 7
 hpl, Horsepool, TRUE, 69.55.104.135, 22, FALSE, 40.143711, -109.4672, 4
 imc, Intermountain Medical, FALSE, 67.128.146.28, 80, FALSE, 40.660395, -111.89075, 35
 lgn, Logan, FALSE, NA, 80, FALSE, 41.761353, -111.822739, 5
-lg2, Logan, TRUE, uataq-lg2.eairlink.com, 8080, FALSE, 41.758105, -111.813234, 5
+lg2, Logan, TRUE, 107.91.38.17, 8080, FALSE, 41.758105, -111.813234, 5
 msa, Murray Satellite, FALSE, NA, NA, FALSE, 40.763226, -111.849278, NA
 mur, Murray, FALSE, NA, NA, FALSE, 40.763226, -111.849278, NA
 roo, Roosevelt, FALSE, 67.213.235.123, 22, FALSE, 40.294169, -110.009, 4
