@@ -28,6 +28,7 @@ lgr_ugga_qaqc <- function() {
   # Parse ID column (~CO2~CH4) into ID_CO2 and ID_CH4
   nd$ID[nchar(nd$ID) == 0] <- '~-99~-99'
   nd$ID <- gsub('atmosphere', '-10', nd$ID, ignore.case = T)
+  nd$ID <- gsub('atmospher', '-10', nd$ID, ignore.case = T)   # deal with potential typo in MIU_DESC
   nd$ID <- gsub('flush', '-99', nd$ID, ignore.case = T)
   nd$ID <- gsub('V:{1}[0-9]', '', nd$ID)
   nd$ID <- gsub('\\s+', '', nd$ID)
