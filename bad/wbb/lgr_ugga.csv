@@ -93,6 +93,7 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2019-12-23T18:00:00Z,2020-01-02T15:00:00Z,all,NA,2022-02-22T19:35:00Z,MeganOstlie,All values reading 150 to 200ppm lower than they should be
 2021-08-02T00:00:00Z,2021-09-10T17:00:00Z,all,NA,2021-09-15T18:43:43Z,Nic H, uncapped tube from inlet caused lab air to be pulled into instruments for entire period
 2022-02-21T17:15:00Z,2022-02-21T17:35:00Z,all,NA,2022-02-28T16:50:00Z,MeganOstlie,Cal tanks reading below 120ppm
+2022-03-04T19:30:00Z,2022-03-07T20:00:00Z,all,NA,2022-04-12T20:52:00Z,MeganOstlie,CH4 values reading around 0
 2022-03-19T18:00:00Z,2022-04-11T16:28:00Z,~504.01~4.60,~447.00~2.00,2022-04-11T16:35:00Z,MeganOstlie,Mid and High cal tank values were swapped
 2022-03-19T18:00:00Z,2022-04-11T16:28:00Z,~447.88~2.99,~504.01~4.60,2022-04-11T16:37:00Z,MeganOstlie,Mid and High cal tank values were swapped
 2022-03-19T18:00:00Z,2022-04-11T16:28:00Z,~447.00~2.00,~447.88~2.99,2022-04-11T23:45:00Z,MeganOstlie,Mid and High cal tank values were swapped
