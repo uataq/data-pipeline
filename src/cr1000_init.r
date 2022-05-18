@@ -23,6 +23,7 @@ cr1000_init <- function() {
   uri <- paste(site_config$ip, site_config$port, sep = ':')
   table <- switch(instrument,
                   'licor_6262' = 'Dat',
+                  'licor_7000' = 'Dat',
                   'metone_es642' = 'PM')
   nd <- cr1000_query(uri, table, last_time + 5)
   nd$TIMESTAMP <- fastPOSIXct(nd$TIMESTAMP, tz = 'UTC')
