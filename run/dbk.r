@@ -9,13 +9,15 @@ lock_create()
 
 try({
   # Licor 6262 -----------------------------------------------------------------
-  instrument <- 'licor_6262'
+  # instrument <- 'licor_6262'
+  instrument <- 'licor_7000'   # switch to licor_7000 in May 2022
   proc_init()
   nd <- cr1000_init()
-  if (!site_config$reprocess)
+ if (!site_config$reprocess)
     update_archive(nd, data_path(site, instrument, 'raw'), check_header = F)
-  nd <- licor_6262_qaqc()
+  nd <- licor_7000_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
+  # calibration code for licor_7000 is the same as for licor_6262, so just call licor_6262_calibrate()
   nd <- licor_6262_calibrate()
   update_archive(nd, data_path(site, instrument, 'calibrated'))
 })
