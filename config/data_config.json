@@ -15,11 +15,11 @@
   },
   "licor_7000" : {
     "raw" : {
-      "col_names" : ["TIMESTAMP", "RECORD", "Year", "jDay", "HH", "MM", "SS", "batt_volt_Min", "PTemp_Avg", "IRGA_T_Avg", "IRGA_P_Avg", "MF_Controller_mLmin_Avg", "PressureVolt_Avg", "RH_voltage_Avg", "Gas_T_Avg", "rawCO2_Avg", "rawH2O_Avg", "ID", "CallLongSub", "Program"],
+      "col_names" : ["TIMESTAMP", "RECORD", "Year", "jDay", "HH", "MM", "SS", "batt_volt_Min", "PTemp_Avg", "IRGA_T_Avg", "IRGA_P_Avg", "MF_Controller_mLmin_Avg", "PressureVolt_Avg", "RH_voltage_Avg", "Gas_T_Avg", "rawCO2_Avg", "rawH2O_Avg", "ID", "Program"],
       "col_types" : "Tdddddddddddddddddddc"
     },
     "qaqc" : {
-      "col_names" : ["Time_UTC", "Battery_Voltage_V", "Panel_T_C", "Cavity_T_C_IRGA", "Cavity_P_kPa_IRGA", "Flow_mLmin", "Cavity_P_mV", "Cavity_RH_mV", "Cavity_T_C", "CO2_ppm", "H2O_ppth_IRGA", "ID", "CallLongSub", "Program", "QAQC_Flag", "ID_CO2", "Cavity_RH_pct", "Cavity_P_Pa", "H2O_ppm", "CO2d_ppm"],
+      "col_names" : ["Time_UTC", "Battery_Voltage_V", "Panel_T_C", "Cavity_T_C_IRGA", "Cavity_P_kPa_IRGA", "Flow_mLmin", "Cavity_P_mV", "Cavity_RH_mV", "Cavity_T_C", "CO2_ppm", "H2O_ppth_IRGA", "ID", "Program", "QAQC_Flag", "ID_CO2", "Cavity_RH_pct", "Cavity_P_Pa", "H2O_ppm", "CO2d_ppm"],
       "col_types" : "Tdddddddddddddcdddddd"
     },
     "calibrated" : {
