@@ -31,6 +31,7 @@ licor_7000_qaqc <- function() {
   nd$QAQC_Flag[is_manual_qc] <- -1
 
   # Compute H2O concentration in ppm
+  nd$Cavity_T_C[nd$Cavity_T_C=="NAN"] <- NA; nd$Cavity_T_C <- as.numeric(nd$Cavity_T_C)
   nd$Cavity_RH_pct <- with(nd, -1.91e-9 * Cavity_RH_mV^3 +
                              1.33e-5 * Cavity_RH_mV^2 +
                              9.56e-3 * Cavity_RH_mV +
