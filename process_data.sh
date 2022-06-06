@@ -1,7 +1,15 @@
 #!/bin/bash
 # Ben Fasoli
 
+#JCL: source Lmod if it's not already sourced - cron starts in clean environment
+if [ -z "$LMOD_VERSION" ]; then
+  source /etc/profile.d/chpc.sh
+fi
+
 source $HOME/.custom.sh
+
+#JCL: force needed version of R to be loaded
+module load R
 
 echo "Date: $(/usr/bin/date)"
 echo "R binary: $(which Rscript)"
