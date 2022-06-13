@@ -9,12 +9,15 @@ lock_create()
 
 try({
   # Licor 6262 -----------------------------------------------------------------
-  instrument <- 'licor_6262'
+  # instrument <- 'licor_6262'
+  instrument <- site_config$instrument.ghg   # 'licor_6262', 'licor_7000', or 'lgr_ugga'
+
   proc_init()
   nd <- cr1000_init()
   if (!site_config$reprocess)
     update_archive(nd, data_path(site, instrument, 'raw'), check_header = F)
-  nd <- licor_6262_qaqc()
+  if(instrument=='licor_6262') nd <- licor_6262_qaqc()
+  if(instrument=='licor_7000') nd <- licor_7000_qaqc()
 
   # Correct time stamp (erroneously set in MDT) to UTC in Oct 2021
   mask <- nd$Time_UTC > as.POSIXct('2021-10-01 00:00:00', tz = 'UTC') &
