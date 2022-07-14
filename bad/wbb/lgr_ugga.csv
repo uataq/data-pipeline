@@ -97,4 +97,4 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2022-03-19T18:00:00Z,2022-04-11T16:28:00Z,~504.01~4.60,~447.00~2.00,2022-04-11T16:35:00Z,MeganOstlie,Mid and High cal tank values were swapped
 2022-03-19T18:00:00Z,2022-04-11T16:28:00Z,~447.88~2.99,~504.01~4.60,2022-04-11T16:37:00Z,MeganOstlie,Mid and High cal tank values were swapped
 2022-03-19T18:00:00Z,2022-04-11T16:28:00Z,~447.00~2.00,~447.88~2.99,2022-04-11T23:45:00Z,MeganOstlie,Mid and High cal tank values were swapped
-2022-06-14T00:00:00Z,2022-07-12T:00:00:00Z,all,NA,2022-07-12T17:15:00Z,MeganOstlie,uncapped tube in lab caused room air to be pulled into all instruments
+2022-06-14T00:00:00Z,2022-07-12T00:00:00Z,all,NA,2022-07-12T17:15:00Z,MeganOstlie,uncapped tube in lab caused room air to be pulled into all instruments
