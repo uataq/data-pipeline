@@ -1,7 +1,7 @@
 stid, name, active, ip, port, reprocess, lati, long, zagl, instrument.ghg
 asb, Aline Wilmot Skaggs, FALSE, NA, NA, FALSE, 40.763226, -111.849278, NA, licor_6262
 csp, Castle Peak, TRUE, 69.55.104.137, 22, FALSE, 40.0509, -110.0194, 4, lgr_ugga
-dbk, Daybreak, TRUE, uataq-dbk.eairlink.com, 8080, FALSE, 40.538497, -112.069528, 5, licor_7000
+dbk, Daybreak, TRUE, 107.91.38.17, 8080, FALSE, 40.538497, -112.069528, 5, licor_7000
 fru, Fruitland, TRUE, 67.213.233.139, 22, FALSE, 40.208731, -110.8403, 4, lgr_ugga
 hdp, Hidden Peak, TRUE, 50.224.25.93, 22, FALSE, 40.560644, -111.645278, 15, lgr_ugga
 heb, Heber, TRUE, uataq-heb.eairlink.com, 8080, FALSE, 40.506808, -111.403636, 7, licor_6262
