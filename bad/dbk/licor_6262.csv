@@ -133,13 +133,16 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2020-07-27T18:23:40Z,2020-07-27T20:45:20Z,all,NA,2020-10-08T10:28:00Z,Ryan,Battery voltage issue
 2020-09-15T18:14:00Z,2020-09-15T18:15:00Z,485.59,489.59,2022-01-19T21:27:05Z,MeganOstlie,Suspected typo on cal tank value
 2020-09-15T18:11:30Z,2020-09-15T18:12:40Z,440.17,440.71,2022-01-19T21:28:30Z,MeganOstlie,Suspected typo on cal tank value
+2021-01-09T00:00:00Z,2021-03-10T19:00:00Z,400.03,NA,2022-08-01T18:47:00Z,MeganOstlie,Empty cal tank
+2021-03-26T11:36:20Z,2021-03-26T17:56:00Z,all,NA,2022-08-01T18:44:00Z,MeganOstlie,Ambient air values drop to 0
+2021-04-19T22:29:50Z,2021-04-20T07:30:00Z,all,NA,2022-08-01T18:41:00Z,MeganOstlie,Ambient air values drop to 0
 2021-04-29T17:54:30Z,2021-04-29T18:08:00Z,-3,493.51,2022-01-19T22:30:10Z,MeganOstlie,Missing cal tank values site notes indicate power outage
 2021-04-29T17:52:00Z,2021-04-29T18:04:50Z,-2,440.71,2022-01-19T22:33:20Z,MeganOstlie,Missing cal tank values site notes indicate power outage
 2021-04-29T17:50:20Z,2021-04-29T18:02:30Z,-1,402.75,2022-01-19T22:35:55Z,MeganOstlie,Missing cal tank values site notes indicate power outage
 2021-04-30T22:18:50Z,2021-05-01T01:11:00Z,all,NA,2022-01-19T23:30:00Z,MeganOstlie,Unknown drop in cal tanks and ambient air
 2021-05-06T23:44:00Z,2021-05-07T02:23:00Z,all,NA,2022-01-19T23:32:50Z,MeganOstlie,Unknown drop in cal tanks and ambient air
 2021-05-07T23:20:00Z,2021-05-07T23:42:00Z,all,NA,2022-01-19T23:35:40Z,MeganOstlie,Unknown drop in ambient air
-2021-05-13T19:37:00Z,2021-05-13T19:39:00Z,all,NA,2022-01-19T23:38:45Z,MeganOstlie,Unknown drop in ambient air
+2021-05-13T18:46:00Z,2021-05-13T19:39:00Z,all,NA,2022-01-19T23:38:45Z,MeganOstlie,Unknown drop in ambient air
 2021-05-13T22:54:00Z,2021-05-14T02:00:00Z,all,NA,2022-01-19T23:42:00Z,MeganOstlie,Unknown drop in cal tanks and ambient air
 2021-05-14T19:40:30Z,2021-05-15T01:22:00Z,all,NA,2022-01-19T23:44:40Z,MeganOstlie,Unknown drop in cal tanks and ambient air
 2021-05-19T22:09:00Z,2021-05-20T01:30:00Z,all,NA,2022-01-19T23:47:00Z,MeganOstlie,Unknown drop in ambient air
@@ -156,6 +159,8 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2021-06-12T17:04:20Z,2021-06-13T08:53:20Z,all,NA,2022-01-20T17:32:30Z,MeganOstlie,Unknown drop in cal tanks and ambient air
 2021-06-13T15:48:00Z,2021-06-14T12:00:00Z,all,NA,2022-01-20T17:34:40Z,MeganOstlie,Unknown drop in cal tanks and ambient air
 2021-06-14T13:50:00Z,2021-06-18T02:18:30Z,all,NA,2022-01-20T17:36:30Z,MeganOstlie,Unknown drop in cal tanks and ambient air
+2021-06-23T12:03:00Z,2021-08-19T17:00:00Z,402.75,NA,2022-08-01T18:35:00Z,MeganOstlie,Empty cal tank
+2021-06-25T18:00:00Z,2021-08-19T17:00:00Z,456.82,NA,2022-08-01T18:37:00Z,MeganOstlie,Empty cal tank
 2021-07-04T22:46:50Z,2021-07-04T23:44:00Z,all,NA,2022-01-20T17:40:20Z,MeganOstlie,Unknown drop in ambient air
 2021-07-08T21:16:00Z,2021-07-09T01:15:00Z,all,NA,2022-01-20T17:42:50Z,MeganOstlie,Unknown drop in cal tanks and ambient air
 2021-07-09T21:11:40Z,2021-07-09T22:12:00Z,all,NA,2022-01-20T17:45:20Z,MeganOstlie,Unknown drop in cal tanks and ambient air
@@ -182,6 +187,7 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2021-09-09T19:59:40Z,2021-09-09T23:28:20Z,all,NA,2022-01-20T18:25:30Z,MeganOstlie,Unknown drop in cal tanks and ambient air
 2021-09-10T23:28:50Z,2021-09-11T00:00:00Z,all,NA,2022-01-20T18:27:10Z,MeganOstlie,Unknown drop in ambient air
 2021-09-15T23:51:10Z,2021-09-16T00:10:20Z,all,NA,2022-01-20T18:29:00Z,MeganOstlie,Unknown drop in ambient air
+2021-10-10T20:00:00Z,2022-01-04T19:00:00Z,394.52,NA,2022-08-01T18:28:00Z,MeganOstlie,Empty cal tank
 2021-12-15T06:00:00Z,2022-01-03T18:00:00Z,-1,394.52,2022-01-06T13:45:00Z,JohnLin,Missing cal tank values from power outage?
 2021-12-15T06:00:00Z,2022-01-03T18:00:00Z,-2,442.55,2022-01-06T13:45:00Z,JohnLin,Missing cal tank values from power outage?
 2021-12-15T06:00:00Z,2022-01-03T18:00:00Z,-3,493.51,2022-01-06T13:45:00Z,JohnLin,Missing cal tank values from power outage?
@@ -195,10 +201,11 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2022-04-18T21:16:30Z,2022-04-19T02:03:00Z,all,NA,2022-04-21T16:52:00Z,MeganOstlie,Unknown drop in cal tanks and ambient air ~ possible power outage
 2022-04-21T00:15:00Z,2022-04-21T01:40:00Z,all,NA,2022-04-21T16:53:00Z,MeganOstlie,Unknown drop in ambient air ~ possible power outage
 2022-04-21T19:45:00Z,2022-04-22T01:27:00Z,all,NA,2022-05-13T16:18:00Z,MeganOstlie,Unknown drop in cal tanks and ambient air ~ possible power outage
-2022-04-26T22:50:00Z,2022-04-27T01:45:00Z,all,NA,2022-05-13T16:20:00Z,MeganOstlie,Unknown drop in cal tanks and ambient air ~ possible power outage
+2022-04-26T22:28:30Z,2022-04-27T01:45:00Z,all,NA,2022-05-13T16:20:00Z,MeganOstlie,Unknown drop in cal tanks and ambient air ~ possible power outage
 2022-04-27T19:32:30Z,2022-04-28T01:22:00Z,all,NA,2022-05-13T16:21:00Z,MeganOstlie,Unknown drop in cal tanks and ambient air ~ possible power outage
 2022-04-28T22:40:00Z,2022-04-28T23:10:00Z,all,NA,2022-05-13T16:23:00Z,MeganOstlie,Unknown drop in ambient air ~ possible power outage
 2022-04-30T21:59:00Z,2022-05-01T00:40:00Z,all,NA,2022-05-13T16:25:00Z,MeganOstlie,Unknown drop in cal tanks and ambient air ~ possible power outage
+2022-05-02T06:03:00Z,2022-05-13T16:00:00Z,427.78,NA,2022-08-01T18:11:00Z,MeganOstlie,Empty cal tank
 2022-05-03T00:10:10Z,2022-05-03T02:17:00Z,all,NA,2022-05-13T16:27:00Z,MeganOstlie,Unknown drop in cal tanks and ambient air ~ possible power outage
 2022-05-05T21:56:00Z,2022-05-06T01:52:00Z,all,NA,2022-05-13T16:29:00Z,MeganOstlie,Unknown drop in cal tanks and ambient air ~ possible power outage
 2022-05-06T19:00:00Z,2022-05-07T03:00:00Z,all,NA,2022-05-13T16:31:00Z,MeganOstlie,Unknown drop in cal tanks and ambient air ~ possible power outage
