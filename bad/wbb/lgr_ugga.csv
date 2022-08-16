@@ -97,5 +97,15 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2022-03-19T18:00:00Z,2022-04-11T16:28:00Z,~504.01~4.60,~447.00~2.00,2022-04-11T16:35:00Z,MeganOstlie,Mid and High cal tank values were swapped
 2022-03-19T18:00:00Z,2022-04-11T16:28:00Z,~447.88~2.99,~504.01~4.60,2022-04-11T16:37:00Z,MeganOstlie,Mid and High cal tank values were swapped
 2022-03-19T18:00:00Z,2022-04-11T16:28:00Z,~447.00~2.00,~447.88~2.99,2022-04-11T23:45:00Z,MeganOstlie,Mid and High cal tank values were swapped
+2022-04-11T17:48:47Z,2022-04-11T17:49:07Z,all,NA,2022-08-16T18:32:00Z,MeganOstlie,Missing flush period after high tank caused invalid values
+2022-04-11T20:57:49Z,2022-04-11T20:57:59Z,all,NA,2022-08-16T18:33:00Z,MeganOstlie,Missing flush period after high tank caused invalid values
+2022-04-12T00:06:41Z,2022-04-12T00:07:11Z,all,NA,2022-08-16T18:36:00Z,MeganOstlie,Missing flush period after high tank caused invalid values
+2022-04-12T03:15:43Z,2022-04-12T03:16:03Z,all,NA,2022-08-16T18:37:00Z,MeganOstlie,Missing flush period after high tank caused invalid values
+2022-04-12T06:24:45Z,2022-04-12T06:25:05Z,all,NA,2022-08-16T18:38:00Z,MeganOstlie,Missing flush period after high tank caused invalid values
+2022-04-12T09:33:47Z,2022-04-12T09:34:07Z,all,NA,2022-08-16T18:40:00Z,MeganOstlie,Missing flush period after high tank caused invalid values
+2022-04-12T12:42:40Z,2022-04-12T12:42:59Z,all,NA,2022-08-16T18:43:00Z,MeganOstlie,Missing flush period after high tank caused invalid values
+2022-04-12T15:51:42Z,2022-04-12T15:51:52Z,all,NA,2022-08-16T18:45:00Z,MeganOstlie,Missing flush period after high tank caused invalid values
+2022-04-12T19:00:44Z,2022-04-12T19:01:04Z,all,NA,2022-08-16T18:46:00Z,MeganOstlie,Missing flush period after high tank caused invalid values
+2022-04-12T22:09:46Z,2022-04-12T22:10:06Z,all,NA,2022-08-16T18:48:00Z,MeganOstlie,Missing flush period after high tank caused invalid values
 2022-06-14T00:00:00Z,2022-07-12T00:00:00Z,all,NA,2022-07-12T17:15:00Z,MeganOstlie,uncapped tube in lab caused room air to be pulled into all instruments
 2022-07-12T00:00:00Z,2022-07-13T16:00:00Z,all,NA,2022-07-14T12:56:00Z,MeganOstlie,connected cal tank to atmosphere line for troubleshooting
