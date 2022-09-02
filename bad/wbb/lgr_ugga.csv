@@ -585,6 +585,6 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2022-06-03T12:07:20Z,2022-06-03T12:07:59Z,all,NA,2022-09-02T17:44:00Z,MeganOstlie,Missing flush period after high tank caused invalid values
 2022-06-03T15:16:23Z,2022-06-03T15:16:52Z,all,NA,2022-09-02T17:46:00Z,MeganOstlie,Missing flush period after high tank caused invalid values
 2022-06-03T18:25:15Z,2022-06-03T18:25:54Z,all,NA,2022-09-02T17:47:00Z,MeganOstlie,Missing flush period after high tank caused invalid values
-2022-06-03T21:34:18Z,2022-06-03T21:34:47Z,all,NA,2022-09-02T17:48:00Z.MeganOstlie,Missing flush period after high tank caused invalid values
+2022-06-03T21:34:18Z,2022-06-03T21:34:47Z,all,NA,2022-09-02T17:48:00Z,MeganOstlie,Missing flush period after high tank caused invalid values
 2022-06-14T00:00:00Z,2022-07-12T00:00:00Z,all,NA,2022-07-12T17:15:00Z,MeganOstlie,uncapped tube in lab caused room air to be pulled into all instruments
 2022-07-12T00:00:00Z,2022-07-13T16:00:00Z,all,NA,2022-07-14T12:56:00Z,MeganOstlie,connected cal tank to atmosphere line for troubleshooting
