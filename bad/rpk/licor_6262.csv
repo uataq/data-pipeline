@@ -46,3 +46,7 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2021-09-17T19:00:00Z,2021-09-20T17:00:00Z,-2,441.56,2022-01-20T22:16:30Z,MeganOstlie,Missing cal tank value
 2021-09-17T19:00:00Z,2021-09-20T17:00:00Z,-1,394.95,2022-01-20T22:17:30Z,MeganOstlie,Missing cal tank value
 2022-06-16T16:15:00Z,2022-06-16T16:30:00Z,all,NA,2022-06-17T14:19:00Z,MeganOstlie,Swapped N2 tank
+2022-10-24T18:00:00Z,2022-10-26T18:10:00Z,-4,434.73,2022-10-31T18:22:00Z,MeganOstlie,Missing cal tank value
+2022-10-24T18:00:00Z,2022-10-26T18:10:00Z,-3,473.86,2022-10-31T18:22:00Z,MeganOstlie,Missing cal tank value
+2022-10-24T18:00:00Z,2022-10-26T18:10:00Z,-2,445.12,2022-10-31T18:23:00Z,MeganOstlie,Missing cal tank value
+2022-10-24T18:00:00Z,2022-10-26T18:10:00Z,-1,401.69,2022-10-31T18:24:00Z,MeganOstlie,Missing cal tank value
