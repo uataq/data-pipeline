@@ -8,6 +8,9 @@ fi
 
 source $HOME/.custom.sh
 
+#JCL: need to manually load the correct version of R
+module load R/4.2.2
+
 echo "Date: $(/usr/bin/date)"
 echo "R binary: $(which Rscript)"
 
