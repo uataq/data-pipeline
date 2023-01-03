@@ -1,5 +1,7 @@
 t_start,t_end,miu_old,miu_new,t_added,name,comment
+2022-05-16T23:00:00Z,2022-05-31T20:30:00Z,all,NA,2023-01-03T14:58:00Z,MeganOstlie,Had issues getting new licor running - data during this time is suspect
 2022-05-17T23:00:00Z,2022-08-03T00:00:00Z,427.99,428.19,2022-08-16T17:56:00Z,MeganOstlie,LTS value updated to x2019
+2022-06-13T20:30:00Z,2022-06-13T21:00:00Z,all,NA,2023-01-03T15:02:00Z,MeganOstlie,CO2 spike corresponding to site visit where filter was changed
 2022-07-15T04:00:00Z,2022-07-15T20:30:00Z,-4,428.19,2022-08-15T16:40:00Z,MeganOstlie,Missing cal tank value
 2022-07-15T04:00:00Z,2022-07-15T20:30:00Z,-3,493.11,2022-08-15T16:41:00Z,MeganOstlie,Missing cal tank value
 2022-07-15T04:00:00Z,2022-07-15T20:30:00Z,-2,442.66,2022-08-15T16:42:00Z,MeganOstlie,Missing cal tank value
