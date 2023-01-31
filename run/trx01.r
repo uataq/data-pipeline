@@ -88,8 +88,8 @@ try({
     nd <- lgr_ugga_qaqc()
     
     # trx01 lgr ugga automated qaqc
-    nd$QAQC_Flag[with(nd, CO2d_ppm < 300 | CO2d_ppm > 5000)] <- -111
-    nd$QAQC_Flag[with(nd, CH4d_ppm < 1 | CH4d_ppm > 100)] <- -112
+    nd$QAQC_Flag[with(nd, CO2d_ppm < 300 | CO2d_ppm > 5000)] <- -1
+    nd$QAQC_Flag[with(nd, CH4d_ppm < 1 | CH4d_ppm > 100)] <- -1
     
     update_archive(nd, data_path(site, instrument, 'qaqc'))
     nd <- lgr_ugga_calibrate()
