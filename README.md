@@ -43,6 +43,7 @@ Numeric values are assigned to observations that meet certain automated or human
 | -6   | Time elapsed between reference tank measurements out of range   |
 | -7   | Reference tank measurements out of range                        |
 | -8   | Cavity humidity out of range                                    |
+| -9   | Reference tank valve                                            |
 
 ### Column naming conventions for calibrated data files
 
