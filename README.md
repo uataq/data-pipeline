@@ -87,6 +87,18 @@ Numeric values are assigned to observations that meet certain automated or human
 
 ## Workflows
 
+### Reading calibrated data
+
+Calibrated, QAQC'd data can be read in from the calibrated directory using the following filters for the respective instrument:
+
+#### Licor 6262 IRGA
+
+`(QAQC_Flag >= 0) & (ID_CO2 == -10)`
+
+#### Los Gatos Research UGGA
+
+`QAQC_Flag >= 0`
+
 ### Revising historic data
 
 Changes in the historic datasets can be made using the `bad/` data text files. When a new commit is made, the historic record for the given site is reprocessed on the next run (every 10 minutes).
