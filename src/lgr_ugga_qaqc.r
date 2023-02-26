@@ -25,30 +25,37 @@ lgr_ugga_qaqc <- function() {
   # Apply manual qaqc definitions in bad/site/instrument.csv
   nd <- bad_data_fix(nd)
   
-  # Parse ID column (~CO2~CH4) into ID_CO2 and ID_CH4
-  nd$ID[nchar(nd$ID) == 0] <- '~-99~-99'
-  nd$ID <- gsub('atmosphere', '-10', nd$ID, ignore.case = T)
-  nd$ID <- gsub('atmospher', '-10', nd$ID, ignore.case = T)   # deal with potential typo in MIU_DESC
-  nd$ID <- gsub('flush', '-99', nd$ID, ignore.case = T)
-  nd$ID <- gsub('V:{1}[0-9]', '', nd$ID)
-  nd$ID <- gsub('\\s+', '', nd$ID)
-  nd$ID <- gsub('^~', '', nd$ID)
+  # Filter IDs
+  atmos_regex <- '^(?=.{5,25}$)(?:V:\\d{1,2}\\s)?~?atmos'  # IDs with "atmos" between 5 & 25 chars
+  flush_regex <- '^(?=.{5,15}$)(?:V:\\d{1,2}\\s)?~?flush'  # IDs with "flush" between 5 & 15 chars
+  ref_regex <- '^(?:V:\\d{1,2}\\s)?~?(\\d{3}(?:\\.\\d{0,3})?)\\s?(?:~(\\d{1,2}(?:\\.\\d{0,4})?))?'  # regexr.com/7912r
   
-  # Remove CO2 only references below threshold
-  mask_no_ch4_ref <- !grepl('~', nd$ID, fixed = T)
-  nd$ID[mask_no_ch4_ref] <- paste0(nd$ID[mask_no_ch4_ref], '~NA')
+  is.atmos <- grepl(atmos_regex, nd$ID, ignore.case = T, perl = T)
+  is.flush <- grepl(flush_regex, nd$ID, ignore.case = T, perl = T)
+  is.ref <- grepl(ref_regex, nd$ID) 
   
-  ID_split <- stringr::str_split_fixed(nd$ID, '~', 2)
+  is.bad <- !is.atmos & !is.flush & !is.ref
+  
+  # Split CO2 & CH4 IDs
+  ID_split <- stringr::str_match(nd$ID, ref_regex)  # Captures CO2 & CH4 groups, returning NA if not found
   suppressWarnings(class(ID_split) <- 'numeric')
-  nd$ID_CO2 <- round(ID_split[, 1], 2)
-  nd$ID_CH4 <- round(ID_split[, 2], 3)
   
-  # QAQC flagging
-  # https://github.com/uataq/data-pipeline#qaqc-flagging-conventions
+  ID_split[is.atmos] <- -10
+  ID_split[is.flush] <- -99
+  
+  nd$ID_CO2 <- round(ID_split[, 2], 2)
+  nd$ID_CH4 <- round(ID_split[, 3], 3)
+  
+  # Set QAQC Flags
   is_manual_qc <- nd$QAQC_Flag == -1
+  
+  nd$QAQC_Flag[is.flush] <- -2
+  nd$QAQC_Flag[is.ref] <- -9
   nd$QAQC_Flag[with(nd, Cavity_P_torr < 135 | Cavity_P_torr > 145)] <- -4
+  nd$QAQC_Flag[is.bad] <- -3
+  # Not sure the below line is still needed, but keeping just in case - JM
   nd$QAQC_Flag[with(nd, ID_CO2 %in% c(-1, -2, -3, NA) | abs(ID_CO2) < 9)] <- -3
-  nd$QAQC_Flag[with(nd, ID_CO2 == -99)] <- -2
+  
   nd$QAQC_Flag[is_manual_qc] <- -1
   
   nd

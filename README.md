@@ -43,6 +43,7 @@ Numeric values are assigned to observations that meet certain automated or human
 | -6   | Time elapsed between reference tank measurements out of range   |
 | -7   | Reference tank measurements out of range                        |
 | -8   | Cavity humidity out of range                                    |
+| -9   | Reference tank valve                                            |
 
 ### Column naming conventions for calibrated data files
 
@@ -85,6 +86,18 @@ Numeric values are assigned to observations that meet certain automated or human
 | QAQC_Flag     | Automated QC flagging. See table "QAQC flagging conventions"                        |
 
 ## Workflows
+
+### Reading calibrated data
+
+Calibrated, QAQC'd data can be read in from the calibrated directory using the following filters for the respective instrument:
+
+#### Licor 6262 IRGA
+
+`(QAQC_Flag >= 0) & (ID_CO2 == -10)`
+
+#### Los Gatos Research UGGA
+
+`QAQC_Flag >= 0`
 
 ### Revising historic data
 
