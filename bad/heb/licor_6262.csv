@@ -89,3 +89,7 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2022-12-31T12:00:00Z,2023-01-16T16:10:00Z,-3,504.73,2023-02-14T18:10:00Z,MeganOstlie,Missing cal tank values
 2022-12-31T12:00:00Z,2023-01-16T16:10:00Z,-2,454.34,2023-02-14T18:10:00Z,MeganOstlie,Missing cal tank values
 2022-12-31T12:00:00Z,2023-01-16T16:10:00Z,-1,400.98,2023-02-14T18:10:00Z,MeganOstlie,Missing cal tank values
+2023-04-17T13:40:00Z,2023-04-19T14:10:00Z,-4,436.50,2023-04-21T17:19:00Z,MeganOstlie,Missing cal tank values
+2023-04-17T13:40:00Z,2023-04-19T14:10:00Z,-3,504.46,2023-04-21T17:20:00Z,MeganOstlie,Missing cal tank values
+2023-04-17T13:40:00Z,2023-04-19T14:10:00Z,-2,454.34,2023-04-21T17:21:00Z,MeganOstlie,Missing cal tank values
+2023-04-17T13:40:00Z,2023-04-19T14:10:00Z,-1,400.98,2023-04-21T17:22:00Z,MeganOstlie,Missing cal tank values
