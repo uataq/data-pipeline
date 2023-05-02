@@ -13,7 +13,7 @@ msa, Murray Satellite, FALSE, NA, NA, FALSE, 40.763226, -111.849278, NA, licor_6
 mur, Murray, FALSE, NA, NA, FALSE, 40.763226, -111.849278, NA, licor_6262
 roo, Roosevelt, FALSE, 67.213.235.123, 22, FALSE, 40.294169, -110.009, 4, lgr_ugga
 rpk, Rose Park, TRUE, 205.127.188.48, 80, FALSE, 40.794386, -111.931925, 7, licor_6262
-sug, Sugarhouse, TRUE, 65.130.180.51, 80, FALSE, 40.739906, -111.857831, 10, licor_7000
+sug, Sugarhouse, TRUE, 107.90.24.245, 80, FALSE, 40.739906, -111.857831, 10, licor_7000
 sun, Suncrest, FALSE, NA, NA, FALSE, 40.480978, -111.837047, 5, licor_6262
 trx01, TRAX 1136, TRUE, 166.255.153.194, 8022, FALSE, NA, NA, 5, lgr_ugga
 trx02, TRAX 1104, TRUE, 166.241.147.189, 8022, FALSE, NA, NA, 5, lgr_ugga
