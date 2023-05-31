@@ -89,13 +89,7 @@ Numeric values are assigned to observations that meet certain automated or human
 
 ### Reading calibrated data
 
-Calibrated, QAQC'd data can be read in from the calibrated directory using the following filters for the respective instrument:
-
-#### Licor 6262 IRGA
-
-`(QAQC_Flag >= 0) & (ID_CO2 == -10)`
-
-#### Los Gatos Research UGGA
+Calibrated, QAQC'd data can be read in from the calibrated directory using the following filter:
 
 `QAQC_Flag >= 0`
 

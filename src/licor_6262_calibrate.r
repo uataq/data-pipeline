@@ -12,9 +12,10 @@ licor_6262_calibrate <- function() {
     nd <- read_files(files)
   }
 
-  # Invalidate measured mole fraction for records that fail to pass qaqc
+  # Invalidate measured mole fraction for records that fail to pass qaqc,
+  #   excluding cal tank references (QAQC_Flag == -9)
   invalid <- c('CO2d_ppm')
-  nd[nd$QAQC_Flag < 0, invalid] <- NA
+  nd[with(nd, QAQC_Flag < 0 & QAQC_Flag != -9), invalid] <- NA
   
   # Batch calibrate data by year to reduce matrix sizes
   cal <- nd %>%
