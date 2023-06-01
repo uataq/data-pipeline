@@ -28,6 +28,7 @@ licor_7000_qaqc <- function() {
   nd$QAQC_Flag[with(nd, Flow_mLmin < 395 | Flow_mLmin > 405)] <- -4
   nd$QAQC_Flag[with(nd, ID_CO2 %in% c(-1, -2, -3, NA))] <- -3
   nd$QAQC_Flag[with(nd, ID_CO2 == -99)] <- -2
+  nd$QAQC_Flag[with(nd, ID_CO2 > 0)] <- -9
   nd$QAQC_Flag[is_manual_qc] <- -1
 
   # Compute H2O concentration in ppm
