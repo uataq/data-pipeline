@@ -26,7 +26,8 @@ licor_6262_calibrate <- function() {
   colnames(cal) <- data_config[[instrument]]$calibrated$col_names
   
   # Set QAQC flag giving priority to calibration QAQC then initial QAQC
-  cal$QAQC_Flag[cal$QAQC_Flag == 0] <- nd$QAQC_Flag[cal$QAQC_Flag == 0]
+  mask <- cal$QAQC_Flag == 0 | is.na(cal$QAQC_Flag)
+  cal$QAQC_Flag[mask] <- nd$QAQC_Flag[mask]
   
   if (nrow(cal) != nrow(nd))
     stop('Calibration script returned wrong number of records at: ', site)
