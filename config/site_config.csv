@@ -7,6 +7,7 @@ hdp, Hidden Peak, TRUE, 50.224.25.93, 22, FALSE, 40.560644, -111.645278, 15, lgr
 heb, Heber, TRUE, uataq-heb.eairlink.com, 8080, FALSE, 40.506808, -111.403636, 7, licor_6262
 hpl, Horsepool, TRUE, 69.55.104.135, 22, FALSE, 40.143711, -109.4672, 4, lgr_ugga
 imc, Intermountain Medical, FALSE, 67.128.146.28, 80, FALSE, 40.660395, -111.89075, 35, licor_6262
+ldf, SLV Landfill, FALSE, NA, NA, FALSE, NA, NA, NA, lgr_ugga
 lgn, Logan, FALSE, NA, 80, FALSE, 41.761353, -111.822739, 5, licor_6262
 lg2, Logan, FALSE, NA, 8080, FALSE, 41.758105, -111.813234, 5, licor_6262
 msa, Murray Satellite, FALSE, NA, NA, FALSE, 40.763226, -111.849278, NA, licor_6262
