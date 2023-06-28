@@ -1,6 +1,7 @@
 lgr_ugga_qaqc <- function() {
-  
-  if (!grepl('trx'|'ldf', site)) {  # if not a raspberry pi site
+
+  pi_sites <- c('trx01', 'ldf')
+  if (!(site %in% pi_sites)) {
     # Standardize field names
     colnames(nd) <- data_config[[instrument]]$qaqc$col_names[1:ncol(nd)]
     
