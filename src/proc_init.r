@@ -21,7 +21,11 @@ proc_init <- function() {
   if (site_config$reprocess) {
     message('Reprocessing data archive for: ', site, '/', instrument)
     for (path in file.path(wd, c('qaqc', 'calibrated'))) {
-      system(paste('rm -r', path))
+      if (file.exists(path)) {
+            system(paste('rm -r', path))
+      } else {
+        message('Path does not exist:', path)
+      }
     }
   }
 
