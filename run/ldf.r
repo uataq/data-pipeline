@@ -36,7 +36,7 @@ try({
     selector <- file.path(path, paste0(batch, '*'))
     # 1s LGR data contains 0 for al l standard deviation columns (intended for 
     # longer-term averaged measurements) - drop the extra columns
-    colnums <- '1,2,4,6,8,10,12,14,16,18,20,22'
+    colnums <- '1,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24'
     # Pattern matching passed as command args to grep
     # / : date separator in LGR datetime syntax
     # e : exponent notation in LGR output
@@ -44,9 +44,11 @@ try({
     
     nd <- read_pattern(selector, colnums, pattern)
     if (nrow(nd) < 1) next
-    colnames(nd) <- c('Time_UTC', 'ID', 'CH4_ppm', 'H2O_ppm', 'CO2_ppm',
-                      'CH4d_ppm', 'CO2d_ppm', 'Cavity_P_torr', 'Cavity_T_C',
-                      'Ambient_T_C', 'RD0_us', 'RD1_us')
+    colnames(nd) <- c('Time_UTC', 'ID', 'CH4_ppm', 'CH4_ppm_sd',
+                      'H2O_ppm', 'H2O_ppm_sd', 'CO2_ppm', 'CO2_ppm_sd', 'CH4d_ppm',
+                      'CH4d_ppm_sd', 'CO2d_ppm', 'CO2d_ppm_sd', 'Cavity_P_torr',
+                      'Cavity_P_torr_sd', 'Cavity_T_C', 'Cavity_T_C_sd', 'Ambient_T_C', 
+                      'Ambient_T_C_sd', 'RD0_us', 'RD0_us_sd', 'RD1_us', 'RD1_us_sd', 'Fit_Flag')
     
     nd$Time_UTC <- fastPOSIXct(nd$Time_UTC, tz = 'UTC')
     attributes(nd$Time_UTC)$tzone <- 'UTC'
@@ -64,6 +66,9 @@ try({
       arrange(Time_UTC)
     
     if (nrow(nd) < 1) next
+    
+  # Arrange columns to match non-pi sites
+  nd <- nd[,data_config[[instrument]]$qaqc$col_names[1:ncol(nd)]]
     
   nd <- lgr_ugga_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
