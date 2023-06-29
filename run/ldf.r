@@ -51,6 +51,9 @@ try({
     nd$Time_UTC <- fastPOSIXct(nd$Time_UTC, tz = 'UTC')
     attributes(nd$Time_UTC)$tzone <- 'UTC'
     
+    # Remove whitespace from padded IDs
+    nd$ID < str_trim(nd$ID)
+    
     for (i in 3:ncol(nd)) {
       nd[[i]] <- suppressWarnings(as.numeric(nd[[i]]))
     }
