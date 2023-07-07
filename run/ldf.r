@@ -31,7 +31,7 @@ try({
     batches <- unique(substring(dir(path), 1, 11))
   }
   
-  for (batch in batches) {
+  nd <- lapply(batches, function(batch) {
     # Define file grouping to expand with unix cat
     selector <- file.path(path, paste0(batch, '*'))
     # 1s LGR data contains 0 for al l standard deviation columns (intended for 
@@ -43,7 +43,7 @@ try({
     pattern <- c('/', 'e')
     
     nd <- read_pattern(selector, colnums, pattern)
-    if (nrow(nd) < 1) next
+    if (nrow(nd) < 1) return(NULL)
     colnames(nd) <- c('Time_UTC', 'ID', 'CH4_ppm', 'CH4_ppm_sd',
                       'H2O_ppm', 'H2O_ppm_sd', 'CO2_ppm', 'CO2_ppm_sd', 'CH4d_ppm',
                       'CH4d_ppm_sd', 'CO2d_ppm', 'CO2d_ppm_sd', 'Cavity_P_torr',
@@ -62,10 +62,15 @@ try({
     
     nd <- nd %>%
       dplyr::filter(!is.na(Time_UTC), !is.na(ID),
-                    !is.na(CO2d_ppm), !is.na(CH4d_ppm)) %>%
-      arrange(Time_UTC)
+                    !is.na(CO2d_ppm), !is.na(CH4d_ppm)) 
     
-    if (nrow(nd) < 1) next
+    if (nrow(nd) < 1) return(NULL)
+  }) %>%
+    bind_rows()
+
+  # Sort by time
+  nd <- nd %>%
+      arrange(Time_UTC)
     
   # Arrange columns to match non-pi sites
   nd <- nd[,data_config[[instrument]]$qaqc$col_names[1:ncol(nd)]]
@@ -74,7 +79,7 @@ try({
   update_archive(nd, data_path(site, instrument, 'qaqc'))
   nd <- lgr_ugga_calibrate()
   update_archive(nd, data_path(site, instrument, 'calibrated'))
-  }
+  
 })
 
 
