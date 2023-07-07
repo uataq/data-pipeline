@@ -65,6 +65,8 @@ try({
                     !is.na(CO2d_ppm), !is.na(CH4d_ppm)) 
     
     if (nrow(nd) < 1) return(NULL)
+    
+    return(nd)
   }) %>%
     bind_rows()
 
