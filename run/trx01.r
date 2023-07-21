@@ -46,8 +46,13 @@ try({
     # / : date separator in LGR datetime syntax
     # e : exponent notation in LGR output
     pattern <- c('/', 'e')
-    
-    nd <- read_pattern(selector, colnums, pattern)
+
+    # Read batch if it exists
+    tryCatch({
+      nd <- read_pattern(selector, colnums, pattern)
+        }, error = function(e) e)
+    if (inherits(nd, 'error')) next
+             
     if (nrow(nd) < 1) next
     colnames(nd) <- c('Time_UTC', 'ID', 'CH4_ppm', 'H2O_ppm', 'CO2_ppm', 
                       'CH4d_ppm', 'CO2d_ppm', 'Cavity_P_torr', 'Cavity_T_C', 
