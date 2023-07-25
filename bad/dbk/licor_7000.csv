@@ -9,4 +9,8 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2023-04-26T15:00:00Z,2023-05-03T16:00:00Z,all,NA,2023-05-05T15:53:00Z,MeganOstlie,Empty N2 caused low readings
 2023-05-15T05:46:00Z,2023-05-15T05:48:00Z,all,NA,2023-06-05T18:17:00Z,MeganOstlie,Ambient air reading 0
 2023-05-16T19:04:00Z,2023-05-16T19:06:00Z,all,NA,2023-06-05T18:19:00Z,MeganOstlie,CO2 spike corresponding to site visit where inlet was moved
+2023-06-02T18:50:00Z,2023-06-02T18:56:30Z,-3,500.29,2023-07-25T19:26:00Z,MeganOstlie,Missing cal tank value
+2023-06-02T18:50:00Z,2023-06-02T18:56:30Z,-2,443.00,2023-07-25T19:27:00Z,MeganOstlie,Missing cal tank value
+2023-06-02T18:50:00Z,2023-06-02T18:56:30Z,-1,406.10,2023-07-25T19:28:00Z,MeganOstlie,Missing cal tank value
+2023-06-11T23:15:50Z,2023-06-12T00:25:00Z,all,NA,2023-07-25T19:29:00Z,MeganOstlie,Ambient and cal values suddenly drop below 300
 2023-07-21T14:45:00Z,2023-07-21T15:05:00Z,all,NA,2023-07-25T17:35:00Z,MeganOstlie,CO2 spike corresponding to site visit where anemometer was installed on inlet tower
