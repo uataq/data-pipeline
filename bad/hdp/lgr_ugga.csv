@@ -36,3 +36,4 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2022-09-14T21:02:15Z,2022-09-14T21:31:04Z,all,NA,2023-03-02T20:56:00Z,JamesMineau,Huge spike in H20 causes CO2 & CH4 dry ppm to spike
 2022-10-13T16:00:00Z,2022-10-13T16:07:26Z,all,NA,2023-02-28T22:31:00Z,JamesMineau,Measured CH4 is negative causing huge calibration spikes
 2022-10-13T16:39:00Z,2022-10-13T16:46:40Z,all,NA,2022-10-18T15:42:00Z,MeganOstlie,All tanks and ambient air values at 0
+2023-07-11T17:00:00Z,2023-07-11T18:30:00Z,all,NA,2023-08-01T21:14:00Z,MeganOstlie,Invalid values due to site visit
