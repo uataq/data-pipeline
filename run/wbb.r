@@ -33,7 +33,9 @@ try({
   }
   colnums <- c(1:6, 8)
   pattern <- '[*]'
-  nd <- read_pattern(selector, colnums, pattern) %>%
+  nd <- read_pattern(selector, colnums, pattern) 
+  if (is.null(nd) || nrow(nd) < 1) return(NULL)
+  nd <- nd %>%
     add_column(RECORD = NA, batt_volt_Min = NA, PTemp_Avg = NA, .after = 'V1') %>%
     setNames(data_config$metone_es642$raw$col_names) %>%
     mutate_at(vars(PM_25_Avg:BP_Avg), funs(suppressWarnings(as.numeric(.)))) %>%

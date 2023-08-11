@@ -47,13 +47,9 @@ try({
     # e : exponent notation in LGR output
     pattern <- c('/', 'e')
 
-    # Read batch if it exists
-    tryCatch({
-      nd <- read_pattern(selector, colnums, pattern)
-        }, error = function(e) e)
-    if (inherits(nd, 'error')) next
+    nd <- read_pattern(selector, colnums, pattern)
              
-    if (nrow(nd) < 1) next
+    if (is.null(nd) || nrow(nd) < 1) next
     colnames(nd) <- c('Time_UTC', 'ID', 'CH4_ppm', 'H2O_ppm', 'CO2_ppm', 
                       'CH4d_ppm', 'CO2d_ppm', 'Cavity_P_torr', 'Cavity_T_C', 
                       'Ambient_T_C', 'RD0_us', 'RD1_us')
@@ -136,7 +132,7 @@ try({
     pattern <- c('GPGGA', '[*]')
     
     nd <- read_pattern(selector, colnums, pattern)
-    if (nrow(nd) < 1) next
+    if (is.null(nd) || nrow(nd) < 1) next
     nd <- nd %>%
       setNames(c('Time_UTC', 'GPS_Time_UTC', 'Lati_deg', 'Long_deg',
                  'Fix_Quality', 'NSat', 'Location_Uncertainty_m',
@@ -202,7 +198,7 @@ try({
     pattern <- c('/', '-v e')
     
     nd <- read_pattern(selector, colnums, pattern)
-    if (nrow(nd) < 1) next
+    if (is.null(nd) || nrow(nd) < 1) next
     nd <- nd %>%
       setNames(c('Time_UTC', 'O3_ppb', 'Cavity_T_C', 'Cavity_P_hPa', 
                  'Flow_ccmin'))

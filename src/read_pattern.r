@@ -34,5 +34,8 @@ read_pattern <- function(selector, colnums = NULL, pattern = NULL, ...) {
   cmd <- paste('cat', selector, sed_cmd, iconv_cmd, grep_cmd, cut_cmd)
   con <- pipe(cmd, 'r')
   on.exit(close(con))
-  breakstr(readLines(con, skipNul = T))
+  
+  strings <-readLines(con, skipNul = T)
+  if (length(strings) == 0) return(NULL)
+  breakstr(strings)
 }

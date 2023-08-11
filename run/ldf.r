@@ -43,7 +43,7 @@ try({
     pattern <- c('/', 'e')
     
     nd <- read_pattern(selector, colnums, pattern)
-    if (nrow(nd) < 1) return(NULL)
+    if (is.null(nd) || nrow(nd) < 1) return(NULL)
     colnames(nd) <- c('Time_UTC', 'ID', 'CH4_ppm', 'CH4_ppm_sd',
                       'H2O_ppm', 'H2O_ppm_sd', 'CO2_ppm', 'CO2_ppm_sd', 'CH4d_ppm',
                       'CH4d_ppm_sd', 'CO2d_ppm', 'CO2d_ppm_sd', 'Cavity_P_torr',
