@@ -72,7 +72,7 @@ lgr_ugga_init <- function() {
     arrange(Time_UTC)
   
   message('New data:')
-  str(nd)
+  str(as.data.frame(nd))
   
   nd
 }
