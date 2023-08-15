@@ -15,3 +15,4 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2023-06-11T23:15:50Z,2023-06-12T00:25:00Z,all,NA,2023-07-25T19:29:00Z,MeganOstlie,Ambient and cal values suddenly drop below 300
 2023-07-21T14:45:00Z,2023-07-21T15:05:00Z,all,NA,2023-07-25T17:35:00Z,MeganOstlie,CO2 spike corresponding to site visit where anemometer was installed on inlet tower
 2023-07-25T15:00:00Z,2023-07-25T15:30:00Z,all,NA,2023-08-01T21:09:00Z,MeganOstlie,CO2 spike corresponding to site visit where inlet tower was briefly taken down
+2023-08-11T20:45:00Z,2023-08-11T21:00:00Z,all,NA,2023-08-15T15:07:00Z,MeganOstlie,CO2 spike corresponding to site visit where inlet tower was briefly taken down
