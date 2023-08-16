@@ -72,7 +72,7 @@ lgr_ugga_init <- function() {
     arrange(Time_UTC)
   
   prev_run <- lubridate::floor_date(Sys.time(), unit = "15 mins") - lubridate::minutes(15)
-  new_data <- nd[nd$Time_UTC > prev_run]
+  new_data <- nd[nd$Time_UTC > prev_run, ]
   if (nrow(new_data) > 0) {
     message('New data:')
     str(as.data.frame(new_data))
