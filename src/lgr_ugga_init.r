@@ -71,8 +71,12 @@ lgr_ugga_init <- function() {
     dplyr::filter(!is.na(Time_UTC)) %>%
     arrange(Time_UTC)
   
-  message('New data:')
-  str(as.data.frame(nd))
+  prev_run <- lubridate::floor_date(Sys.time(), unit = "15 mins") - lubridate::minutes(15)
+  new_data <- nd[nd$Time_UTC > prev_run]
+  if (nrow(new_data) > 0) {
+    message('New data:')
+    str(as.data.frame(new_data))
+  }
   
   nd
 }
