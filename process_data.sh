@@ -28,7 +28,7 @@ exec=$(ls run)
 for i in ${exec[@]}; do
   echo "Running: $i..."
   lf=log/$(echo $i | cut -f 1 -d '.').log
-  /usr/bin/nohup Rscript run/$i &>>$lf &
+  /usr/bin/nohup Rscript --no-restore run/$i &>>$lf &
   pid=$!
 
   maxParallelWaitSeconds=600
@@ -56,7 +56,7 @@ done
 
 # Build air.utah.edu
 echo "Building air.utah.edu static source code..."
-Rscript ../air.utah.edu/_render.r
+Rscript --no-restore ../air.utah.edu/_render.r
 
 echo "Pushing database changes to webserver..."
  /usr/bin/rsync -aqvtzL --delete -e \
