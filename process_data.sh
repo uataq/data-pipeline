@@ -14,7 +14,7 @@ module load R/4.2.2
 echo "Date: $(/usr/bin/date)"
 echo "R binary: $(which Rscript)"
 
-WD=/uufs/chpc.utah.edu/common/home/lin-group9/measurements/pipeline/
+WD=/uufs/chpc.utah.edu/common/home/lin-group20/measurements/pipeline/
 cd $WD
 echo "Path: $WD"
 echo
