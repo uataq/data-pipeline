@@ -749,3 +749,4 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2022-07-14T10:53:07Z,2022-07-14T10:54:37Z,all,NA,2022-09-06T17:28:00Z,MeganOstlie,Missing flush period after high tank caused invalid values
 2022-07-14T14:02:01Z,2022-07-14T14:03:31Z,all,NA,2022-09-06T17:29:00Z,MeganOstlie,Missing flush period after high tank caused invalid values
 2023-10-16T19:12:00Z,2023-10-16T19:12:00Z,all,NA,2023-10-17T15:31:00Z,MeganOstlie,Cal tank reading low right after LGR restarted
+2023-10-18T12:40:00Z,2023-10-31T23:59:59Z,all,NA,2023-11-08T18:18:00Z,MeganOstlie,Pump needed to be rebuilt
