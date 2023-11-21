@@ -3,7 +3,7 @@
 site   <- 'lgn'
 
 # Load settings and initialize lock file
-source('/uufs/chpc.utah.edu/common/home/lin-group9/measurements/pipeline/_global.r')
+source('/uufs/chpc.utah.edu/common/home/lin-group20/measurements/pipeline/_global.r')
 site_config <- site_config[site_config$stid == site, ]
 lock_create()
 

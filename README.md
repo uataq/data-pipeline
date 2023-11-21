@@ -1,6 +1,6 @@
 # Repository structure
 
-The trace gas processing pipeline is structured as follows. This is executed on the smaug interactive node of the University of Utah's CHPC. The following paths are relative to the base path `/uufs/chpc.utah.edu/common/home/lin-group9/measurements/pipeline` -
+The trace gas processing pipeline is structured as follows. This is executed on the smaug interactive node of the University of Utah's CHPC. The following paths are relative to the base path `/uufs/chpc.utah.edu/common/home/lin-group20/measurements/pipeline` -
 
 1. `process_data.sh` is the shell scripting control layer called by cron that sets environment variables and executes necessary processing code.
 1. `run/stid.r` called in parallel and executes site-specific processing code. By separating each site's initialization script, we can inject site specific processing code at strategic points in the data pipeline (e.g. after performing quality control but before calibrating measurements).
@@ -148,7 +148,7 @@ You can list current processes with `ps -u u0791084 -f` (replacing with your use
 ```bash
 >  ps -u u0791084 -f
 UID        PID  PPID  C STIME TTY          TIME CMD
-u0791084 41654 41648  0 20:15 ?        00:00:00 /bin/sh -c nice /uufs/chpc.utah.edu/common/home/lin-group9/measurements/pipeline/process_data.sh &> /uufs/chpc.utah.edu/common/home/lin-group9/measurements/pipeline/log.txt
+u0791084 41654 41648  0 20:15 ?        00:00:00 /bin/sh -c nice /uufs/chpc.utah.edu/common/home/lin-group20/measurements/pipeline/process_data.sh &> /uufs/chpc.utah.edu/common/home/lin-group20/measurements/pipeline/log.txt
 u0791084 43417 36600  4 20:15 ?        00:00:02 /uufs/chpc.utah.edu/common/home/lin-group12/software/local/R/4.0.3/lib64/R/bin/exec/R --no-echo --no-restore --file=run/wbb.r
 u0791983 43823 1      5 12:16 ?        00:12:35 /uufs/chpc.utah.edu/common/home/lin-group12/software/local/R/4.0.3/u0791084/R/bin/exec/R --no-echo --no-restore --file=run/fru.r
 ...
@@ -170,7 +170,7 @@ Confirm that the process is successfully stopped with `ps` again.
 Now that we're sure there won't be concurrency problems, we delete the old lock file to allow the processing to run again.
 
 ```bash
-> rm /uufs/chpc.utah.edu/common/home/lin-group9/measurements/pipeline/.lock/fru.lock
+> rm /uufs/chpc.utah.edu/common/home/lin-group20/measurements/pipeline/.lock/fru.lock
 ```
 
 Problem solved! We can let the cronjob schedule future executions, or run the processing ourselves by executing the `run/fru.r` script directly.
