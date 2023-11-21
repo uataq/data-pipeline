@@ -8,12 +8,6 @@ site_config <- site_config[site_config$stid == site, ]
 
 lock_create()
 
-if (!site_config$reprocess && 
-    !cr1000_is_online(paste(sep=':', site_config$ip, 9191))) {
-  lock_remove()
-  stop('Unable to connect to ', site_config$ip)
-}
-
 # try({
 #   # LGR UGGA
 #   instrument <- 'lgr_ugga'
@@ -224,74 +218,5 @@ try({
   }
 })
 
-# try({
-#   # 2B Ozone
-#   instrument <- '2bo3'
-#   proc_init()
-#   
-#   path <- file.path('data', site, instrument, 'raw')
-#   
-#   if (!site_config$reprocess) {
-#     stop('2b data up to date - nothing to be done.')
-#     # remote <- paste0('pi@', site_config$ip, ':/home/pi/data/2bo3/')
-#     # local <- file.path('data', site, instrument, 'raw/')
-#     # rsync(from = remote, to = local, port = site_config$port)
-#     # 
-#     # lt <- dir(file.path('data', site, instrument, 'qaqc'), full.names = T) %>%
-#     #   tail(1) %>%
-#     #   get_last_time(format = '%Y-%m-%d') %>%
-#     #   as.Date()
-#     # batches <- format(seq(lt, Sys.Date(), by = 1), '*%Y_%m_%d*')
-#   } else {
-#     # Reprocess monthly batches
-#     batches <- unique(substring(dir(path), 1, 10))
-#   }
-#   
-#   for (batch in batches) {
-#     # Define file grouping to expand with unix cat
-#     selector <- file.path(path, paste0(batch, '*'))
-#     # 1s LGR data contains 0 for al l standard deviation columns (intended for 
-#     # longer-term averaged measurements) - drop the extra columns
-#     colnums <- 1:5
-#     # Pattern matching passed as command args to grep
-#     # / : date separator in 2b datetime syntax
-#     # -v e : invert matching any lines containing exponential notation
-#     pattern <- c('/', '-v e')
-#     
-#     nd <- read_pattern(selector, colnums, pattern)
-#     if (is.null(nd) || nrow(nd) < 1) next
-#     nd <- nd %>%
-#       setNames(c('Time_UTC', 'O3_ppb', 'Cavity_T_C', 'Cavity_P_hPa', 
-#                  'Flow_ccmin'))
-#     
-#     nd$Time_UTC <- fastPOSIXct(nd$Time_UTC, tz = 'UTC')
-#     attributes(nd$Time_UTC)$tzone <- 'UTC'
-#     
-#     for (i in 2:ncol(nd)) {
-#       nd[[i]] <- suppressWarnings(as.numeric(nd[[i]]))
-#     }
-#     
-#     nd <- nd %>%
-#       dplyr::filter(!is.na(Time_UTC), !is.na(O3_ppb)) %>%
-#       arrange(Time_UTC)
-#     
-#     if (nrow(nd) < 1) next
-#     
-#     # Initialize qaqc flag
-#     nd$QAQC_Flag <- 0
-#     
-#     # Apply manual qaqc definitions in bad/site/instrument.csv
-#     nd <- bad_data_fix(nd)
-#     update_archive(nd, data_path(site, instrument, 'qaqc'))
-#     update_archive(nd, data_path(site, instrument, 'calibrated'))
-#   }
-# })
- 
-# try({
-#   # Tank pressure photos
-#   remote <- paste0('pi@', site_config$ip, ':/home/pi/data/img/')
-#   local <- file.path('data', site, 'img')
-#   rsync(from = remote, to = local, port = site_config$port)
-# })
 
 lock_remove()

@@ -1,7 +1,7 @@
 proc_init <- function() {
 
   invisible(gc())
-  
+
   message('Run: ', site, '/', instrument, ' ', Sys.time())
 
   # Working directory defined as ./site/instrument/(raw,qaqc,calibrated)
@@ -9,12 +9,9 @@ proc_init <- function() {
 
   # Check if bad data file has been modified since last run
   bad_log_check()
-  
-  # Ensure that past processed data exists and set reprocess flag as needed
-  for (path in file.path(wd, c('qaqc', 'calibrated'))) {
-    if (!file.exists(path) || length(dir(path)) == 0)
-      site_config$reprocess <<- T
-  }
+
+  # Check for reprocess file in data/site directory
+  reprocess_check()
 
   # Check if reprocess flag is TRUE. If site/instrument archive needs to be
   # reprocessed, remove parsed and calibrated data levels
@@ -22,9 +19,8 @@ proc_init <- function() {
     message('Reprocessing data archive for: ', site, '/', instrument)
     for (path in file.path(wd, c('qaqc', 'calibrated'))) {
       if (file.exists(path)) {
+            message('Removing:', path)
             system(paste('rm -r', path))
-      } else {
-        message('Path does not exist:', path)
       }
     }
   }
