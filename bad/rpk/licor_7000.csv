@@ -4,5 +4,5 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2023-09-12T05:30:00Z,2023-09-12T05:32:35Z,all,NA,2023-09-18T20:15:00Z,MeganOstlie,CO2 values drop to around 300 ppm
 2023-09-13T05:29:40Z,2023-09-13T05:32:35Z,all,NA,2023-09-26T20:32:00Z,MeganOstlie,CO2 values drop to around 300 ppm
 2023-11-02T18:26:00Z,2023-11-02T18:26:50Z,all,NA,2023-11-07T17:14:00Z,MeganOstlie,CO2 values drop to around 300 ppm
-2023-11-20T18:00:00Z,2023-11-20T18:44:00Z,406.53,401.64,2023-11-20T18:45:00Z,MeganOstlie,Swapped out tank but was unable to change value in logger
-2023-11-20T18:00:00Z,2023-11-20T18:44:00Z,625.71,492.20,2023-11-20T18:46:00Z,MeganOstlie,Swapped out tank but was unable to change value in logger
+2023-11-20T18:00:00Z,2023-11-21T16:34:00Z,406.53,401.64,2023-11-21T16:34:00Z,MeganOstlie,Swapped out tank but was unable to change value in logger
+2023-11-20T18:00:00Z,2023-11-21T16:34:00Z,625.71,492.20,2023-11-21T16:34:00Z,MeganOstlie,Swapped out tank but was unable to change value in logger
