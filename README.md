@@ -104,6 +104,13 @@ Changes in the historic datasets can be made using the `bad/` data text files. W
 
 > The MIU abbreviation is a reference to LGR's Multi Inlet Units, but it is used universally across our datasets for calibration valve systems.
 
+### Reprocessing raw data
+
+Ocassionally, raw data may need to be reprocessed (ex. applying new QAQC routine). A site can be reprocessed via two methods:
+
+1. Set `reprocess=TRUE` in [`config/site_config.csv`](config/site_config.csv)
+2. `touch reprocess` within the site's data directory
+
 ### Site not updating
 
 Sites on air.utah.edu can be offline for several reasons, including
