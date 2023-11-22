@@ -11,13 +11,13 @@ The trace gas processing pipeline is structured as follows. This is executed on 
 
 ![](assets/workflow.png)
 
-## Dataset details
+# Dataset details
 
-### Site metadata
+## Site metadata
 
 Site metadata can be found in [`config/site_config.csv`](config/site_config.csv) and at [air.utah.edu](http://air.utah.edu).
 
-### Instrument naming conventions
+## Instrument naming conventions
 
 Additional instrument metadata can be found in [`config/data_config.json`](config/data_config.json).
 
@@ -27,7 +27,7 @@ Additional instrument metadata can be found in [`config/data_config.json`](confi
 | Los Gatos Research UGGA | lgr_ugga     |
 | MetOne ES642            | metone_es642 |
 
-### QC flagging conventions
+## QC flagging conventions
 
 Numeric values are assigned to observations that meet certain automated or human identified criterion. The meaning of these identifiers are as follows.
 
@@ -45,9 +45,9 @@ Numeric values are assigned to observations that meet certain automated or human
 | -8   | Cavity humidity out of range                                    |
 | -9   | Reference tank valve                                            |
 
-### Column naming conventions for calibrated data files
+## Column naming conventions for calibrated data files
 
-#### Licor 6262 IRGA
+### Licor 6262 IRGA
 
 | Column Name   | Description                                                                         |
 | ------------- | ----------------------------------------------------------------------------------- |
@@ -62,7 +62,7 @@ Numeric values are assigned to observations that meet certain automated or human
 | ID_CO2        | ID of CO2 being measured (-10(ambient), -99(flushing), Standard tank concentration) |
 | QAQC_Flag     | Automated QC flagging. See table "QAQC flagging conventions"                        |
 
-#### Los Gatos Research UGGA
+### Los Gatos Research UGGA
 
 | Column Name   | Description                                                                         |
 | ------------- | ----------------------------------------------------------------------------------- |
@@ -85,15 +85,15 @@ Numeric values are assigned to observations that meet certain automated or human
 | ID_CH4        | ID of CH4 being measured (-10(ambient), -99(flushing), Standard tank concentration) |
 | QAQC_Flag     | Automated QC flagging. See table "QAQC flagging conventions"                        |
 
-## Workflows
+# Workflows
 
-### Reading calibrated data
+## Reading calibrated data
 
 Calibrated, QAQC'd data can be read in from the calibrated directory using the following filter:
 
 `QAQC_Flag >= 0`
 
-### Revising historic data
+## Revising historic data
 
 Changes in the historic datasets can be made using the `bad/` data text files. When a new commit is made, the historic record for the given site is reprocessed on the next run (every 10 minutes).
 
@@ -104,14 +104,14 @@ Changes in the historic datasets can be made using the `bad/` data text files. W
 
 > The MIU abbreviation is a reference to LGR's Multi Inlet Units, but it is used universally across our datasets for calibration valve systems.
 
-### Reprocessing raw data
+## Reprocessing raw data
 
 Ocassionally, raw data may need to be reprocessed (ex. applying new QAQC routine). A site can be reprocessed via two methods:
 
 1. Set `reprocess=TRUE` in [`config/site_config.csv`](config/site_config.csv)
 2. `touch reprocess` within the site's data directory
 
-### Site not updating
+## Site not updating
 
 Sites on air.utah.edu can be offline for several reasons, including
 
@@ -119,7 +119,7 @@ Sites on air.utah.edu can be offline for several reasons, including
 1. Networking issues
 1. CHPC pipeline locks
 
-#### Fixing CHPC pipeline locks
+### Fixing CHPC pipeline locks
 
 To prevent concurrency issues (e.g. two processes attempting to write to the same raw data file at the same time), we use lock files to signify when a site is currently being processed. These files are created at `.lock/<site_id>.lock` when a site begins updating and are removed when the site update successfully completes.
 
@@ -127,7 +127,7 @@ However, many issues (some out of our control) can prevent site processing from 
 
 There are many potential causes of these issues - fortunately, the fix is usually the same.
 
-##### 1. Check for existing lock files.
+#### 1. Check for existing lock files.
 
 List existing files in the `.lock` directory:
 
@@ -139,7 +139,7 @@ List existing files in the `.lock` directory:
 
 We see that `fru` and `wbb` are currently running. Note the timestamp - looks like `fru` started running 8 hours earlier and never completed. Let's fix it.
 
-##### 2. Kill the process that failed to update a given site (if it exists).
+#### 2. Kill the process that failed to update a given site (if it exists).
 
 Before delete the lock file to allow site processing to continue, we have to be sure there aren't any existing processes still attempting to connect to the site.
 
@@ -165,7 +165,7 @@ u0791084 54474 52478 58 20:26 ?        00:00:02 /uufs/chpc.utah.edu/common/home/
 
 Confirm that the process is successfully stopped with `ps` again.
 
-##### 3. Remove the old lock file
+#### 3. Remove the old lock file
 
 Now that we're sure there won't be concurrency problems, we delete the old lock file to allow the processing to run again.
 
