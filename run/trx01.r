@@ -8,6 +8,12 @@ site_config <- site_config[site_config$stid == site, ]
 
 lock_create()
 
+if (!site_config$reprocess && 
+    !cr1000_is_online(paste(sep=':', site_config$ip, 9191))) {
+  lock_remove()
+  stop('Unable to connect to ', site_config$ip)
+}
+
 if (site_config$reprocess) {
 # no new calibrated lgr data, so only reprocess
 
