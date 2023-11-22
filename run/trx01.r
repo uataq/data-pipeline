@@ -8,30 +8,33 @@ site_config <- site_config[site_config$stid == site, ]
 
 lock_create()
 
+if (site_config$reprocess) {
+# no new calibrated lgr data, so only reprocess
+
 try({
   # LGR UGGA
   instrument <- 'lgr_ugga'
   proc_init()
-  
-  path <- file.path('data', site, instrument, 'raw')
-  
-  if (!site_config$reprocess) {
-    # remote <- paste0('pi@', site_config$ip, ':/home/pi/data/lgr/')
-    # local <- file.path('data', site, instrument, 'raw/')
-    # rsync(from = remote, to = local, port = site_config$port)
-    
-    # lt <- dir(file.path('data', site, instrument, 'qaqc'), full.names = T) %>%
-    #   tail(1) %>%
-    #   get_last_time(format = '%Y-%m-%d') %>%
-    #   as.Date()
-    # batches <- format(seq(lt, Sys.Date(), by = 1), '*%Y_%m_%d*')
 
-    return()  # No new data to process
-  } else {
-    # Reprocess monthly batches
-    batches <- unique(substring(dir(path), 1, 11))
-  }
-  
+  path <- file.path('data', site, instrument, 'raw')
+
+  # if (!site_config$reprocess) {
+  #   remote <- paste0('pi@', site_config$ip, ':/home/pi/data/lgr/')
+  #   local <- file.path('data', site, instrument, 'raw/')
+  #   rsync(from = remote, to = local, port = site_config$port)
+
+  #   lt <- dir(file.path('data', site, instrument, 'qaqc'), full.names = T) %>%
+  #     tail(1) %>%
+  #     get_last_time(format = '%Y-%m-%d') %>%
+  #     as.Date()
+  #   batches <- format(seq(lt, Sys.Date(), by = 1), '*%Y_%m_%d*')
+  # } else {
+  #   # Reprocess monthly batches
+  #   batches <- unique(substring(dir(path), 1, 11))
+  # }
+
+  batches <- unique(substring(dir(path), 1, 11))
+
   for (batch in batches) {
     # Define file grouping to expand with unix cat
     selector <- file.path(path, paste0(batch, '*'))
@@ -44,28 +47,28 @@ try({
     pattern <- c('/', 'e')
 
     nd <- read_pattern(selector, colnums, pattern)
-             
+
     if (is.null(nd) || nrow(nd) < 1) next
     colnames(nd) <- c('Time_UTC', 'ID', 'CH4_ppm', 'H2O_ppm', 'CO2_ppm', 
                       'CH4d_ppm', 'CO2d_ppm', 'Cavity_P_torr', 'Cavity_T_C', 
                       'Ambient_T_C', 'RD0_us', 'RD1_us')
-    
+
     nd$Time_UTC <- fastPOSIXct(nd$Time_UTC, tz = 'UTC')
     attributes(nd$Time_UTC)$tzone <- 'UTC'
-    
+
     for (i in 2:ncol(nd)) {
       nd[[i]] <- suppressWarnings(as.numeric(nd[[i]]))
     }
-    
+
     nd <- nd %>%
       dplyr::filter(!is.na(Time_UTC), !is.na(ID),
                     !is.na(CO2d_ppm), !is.na(CH4d_ppm)) %>%
       dplyr::filter(Time_UTC >= as.POSIXct('2014-12-01', tz = 'UTC'),
                     Time_UTC <= Sys.time()) %>%
       arrange(Time_UTC)
-    
+
     if (nrow(nd) < 1) next
-    
+
     # Apply tank reference values from pipeline/config
     tank_vals <- read_csv('pipeline/config/trx01_tanks.csv',
                           locale = locale(tz = 'UTC', date_format = '%m/%d/%Y'),
@@ -83,24 +86,25 @@ try({
     nd$ID[nd$ID %in% c('-2', '-1')] <- 'flush'
     nd$ID[nd$ID %in% '1'] <- 'atmosphere'
     nd <- lgr_ugga_qaqc()
-    
+
     # trx01 lgr ugga automated qaqc
     nd$QAQC_Flag[with(nd, CO2d_ppm < 300 | CO2d_ppm > 5000)] <- -1
     nd$QAQC_Flag[with(nd, CH4d_ppm < 1 | CH4d_ppm > 100)] <- -1
-    
+
     update_archive(nd, data_path(site, instrument, 'qaqc'))
     nd <- lgr_ugga_calibrate()
     update_archive(nd, data_path(site, instrument, 'calibrated'))
   }
 })
+}
 
 try({
   # LGR UGGA Manual Calibration
   instrument <- 'lgr_ugga_manual_cal'
   proc_init()
-  
+
   path <- file.path('data', site, instrument, 'raw')
-  
+
   if (!site_config$reprocess) {
     remote <- paste0('pi@', site_config$ip, ':/home/pi/data/lgr_ugga/')
     local <- file.path('data', site, instrument, 'raw/')
@@ -110,13 +114,13 @@ try({
       tail(1) %>%
       get_last_time(format = '%Y-%m-%d') %>%
       as.Date()
-    batches <- format(seq(lt, Sys.Date(), by = 1), '*%Y_%m_%d*')
+    batches <- format(seq(lt, Sys.Date(), by = 1), '*%Y-%m-%d*')
   } else {
     # Reprocess monthly batches
-    batches <- unique(substring(dir(path), 1, 11))
+    batches <- unique(substring(dir(path), 1, 10))
   }
 
-    for (batch in batches) {
+  for (batch in batches) {
     # Define file grouping to expand with unix cat
     selector <- file.path(path, paste0(batch, '*'))
     # 1s LGR data contains 0 for al l standard deviation columns (intended for 
@@ -137,7 +141,7 @@ try({
     nd$Time_UTC <- fastPOSIXct(nd$Time_UTC, tz = 'UTC')
     attributes(nd$Time_UTC)$tzone <- 'UTC'
 
-    for (i in 2:ncol(nd)) {
+    for (i in 3:ncol(nd)) {
       nd[[i]] <- suppressWarnings(as.numeric(nd[[i]]))
     }
 
@@ -150,6 +154,7 @@ try({
 
     if (nrow(nd) < 1) next
 
+    nd <- lgr_ugga_qaqc()
     update_archive(nd, data_path(site, instrument, 'qaqc'))
   }
 })
@@ -159,26 +164,29 @@ try({
   # GPS
   instrument <- 'gps'
   proc_init()
-  
+
   path <- file.path('data', site, instrument, 'raw')
-  
+
   if (!site_config$reprocess) {
     remote <- paste0('pi@', site_config$ip, ':/home/pi/data/gps/')
     local <- file.path('data', site, instrument, 'raw/')
     rsync(from = remote, to = local, port = site_config$port)
-    
-    lt <- dir(file.path('data', site, instrument, 'qaqc'), full.names = T) %>%
-      tail(1) %>%
-      get_last_time(format = '%Y-%m-%d') %>%
-      as.Date()
-    batches <- format(seq(lt, Sys.Date(), by = 1), '*%Y_%m_%d*')
+
+    # lt <- dir(file.path('data', site, instrument, 'qaqc'), full.names = T) %>%
+    #   tail(1) %>%
+    #   get_last_time(format = '%Y-%m-%d') %>%
+    #   as.Date()
+    # batches <- format(seq(lt, Sys.Date(), by = 1), '*%Y_%m_%d*')
+
+    # JM 2023-11-21: I changed the format of the gps files, but havent gotten around to fixing this yet
+    batches <- NULL
   } else {
     # Reprocess monthly batches
     batches <- unique(substring(dir(path), 1, 11))
   }
-  
+
   for (batch in batches) {
-    
+
     # Define file grouping to expand with unix cat
     selector <- file.path(path, paste0(batch, '*'))
     # 1s GPGGA strings contain several unused columns (DGPS ref id, etc.)
@@ -187,7 +195,7 @@ try({
     # GPGGA : prefix of location and fix data strings
     # [*] : match literal asterisk found in GPGGA checksum
     pattern <- c('GPGGA', '[*]')
-    
+
     nd <- read_pattern(selector, colnums, pattern)
     if (is.null(nd) || nrow(nd) < 1) next
     nd <- nd %>%
@@ -195,28 +203,27 @@ try({
                  'Fix_Quality', 'NSat', 'Location_Uncertainty_m',
                  'Altitude_m')) %>%
       mutate_at(c('Lati_deg', 'Long_deg'), funs(suppressWarnings(gps_dm2dd(.))))
-    
+
     nd$Long_deg <- -nd$Long_deg
     nd$Time_UTC <- fastPOSIXct(nd$Time_UTC, tz = 'UTC')
     attributes(nd$Time_UTC)$tzone <- 'UTC'
-    
+
     for (i in 2:ncol(nd)) {
       nd[[i]] <- suppressWarnings(as.numeric(nd[[i]]))
     }
-    
+
     nd <- nd %>%
       dplyr::filter(!is.na(Time_UTC), !is.na(NSat)) %>%
       arrange(Time_UTC)
-    
+
     if (nrow(nd) < 1) next
-    
+
     # Initialize qaqc flag
     nd$QAQC_Flag <- 0
-    
+
     # Apply manual qaqc definitions in bad/site/instrument.csv
     nd <- bad_data_fix(nd)
     update_archive(nd, data_path(site, instrument, 'qaqc'))
-    update_archive(nd, data_path(site, instrument, 'calibrated'))
   }
 })
 
