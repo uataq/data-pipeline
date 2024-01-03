@@ -98,7 +98,7 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2023-06-06T16:50:00Z,2023-06-12T21:00:00Z,-2,454.34,2023-06-12T21:19:00Z,MeganOstlie,Missing cal tank values
 2023-06-06T16:50:00Z,2023-06-12T21:00:00Z,-1,400.98,2023-06-12T21:20:00Z,MeganOstlie,Missing cal tank values
 2023-06-28T17:00:00Z,2023-06-28T17:30:00Z,all,NA,2023-06-29T16:59:00Z,MeganOstlie,Bad CO2 values corresponding to site visit
-2023-07-04T17:17:30Z,2023-07-04T17:17:30Z,all,NA,2023-08-01T21:17:00Z,MeganOstlie,One CO2 value at 350 while all surrounding values at 430
+2023-07-04T17:17:30Z,2023-07-04T17:17:40Z,all,NA,2023-08-01T21:17:00Z,MeganOstlie,One CO2 value at 350 while all surrounding values at 430
 2023-08-21T20:30:00Z,2023-09-07T20:30:00Z,-4,436.50,2023-09-13T17:54:00Z,MeganOstlie,Missing cal tank values
 2023-08-21T20:30:00Z,2023-09-07T20:30:00Z,-3,504.46,2023-09-13T17:54:00Z,MeganOstlie,Missing cal tank values
 2023-08-21T20:30:00Z,2023-09-07T20:30:00Z,-2,445.97,2023-09-13T17:54:00Z,MeganOstlie,Missing cal tank values
