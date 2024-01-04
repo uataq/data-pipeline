@@ -52,4 +52,5 @@ t_start,t_end,miu_old,miu_new,t_added,name,comment
 2022-10-24T18:00:00Z,2022-10-26T18:10:00Z,-1,401.69,2022-10-31T18:24:00Z,MeganOstlie,Missing cal tank value
 2023-04-28T18:48:30Z,2023-04-28T18:49:10Z,all,NA,2023-05-05T16:01:00Z,MeganOstlie,Sharp drop in ambient air for two data points
 2023-06-08T19:53:00Z,2023-06-08T19:53:00Z,all,NA,2023-07-25T19:38:00Z,MeganOstlie,One value at 728 while all values around it are around 420
+2023-08-22T17:27:00Z,2023-08-22T17:28:00Z,all,NA,2024-01-04T21:07:00Z,MeganOstlie,Ambient air reading around 0 for one minute
 2023-09-01T13:06:45Z,2023-09-01T13:07:45Z,all,NA,2023-09-05T15:50:00Z,MeganOstlie,Ambient air reading around 0 for one minute
