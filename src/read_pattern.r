@@ -1,7 +1,7 @@
 read_pattern <- function(selector, colnums = NULL, pattern = NULL, ...) {
-  
+
   message('Reading: ', selector)
-  
+
   # Parse colnums into format compatible with `cut -f`
   # colnums examples:
   # colnums <- NULL
@@ -16,7 +16,7 @@ read_pattern <- function(selector, colnums = NULL, pattern = NULL, ...) {
     }
     cut_cmd <- paste('| cut -d \',\' -f', colnums)
   }
-  
+
   # Parse pattern into format compatible with `grep`
   # pattern <- NULL
   # pattern <- ','
@@ -26,15 +26,16 @@ read_pattern <- function(selector, colnums = NULL, pattern = NULL, ...) {
   } else {
     grep_cmd <- paste('| grep', pattern, collapse = ' ')
   }
-  
+
   # Remove null bytes and quotes
   sed_cmd <- "| sed 's/\\x0/ /g;s/\"/ /g'"
+  tr_cmd <- "| tr -d '\\000'"
   iconv_cmd <- '| iconv -c'
-  
-  cmd <- paste('cat', selector, sed_cmd, iconv_cmd, grep_cmd, cut_cmd)
+
+  cmd <- paste('cat', selector, sed_cmd, tr_cmd, iconv_cmd, grep_cmd, cut_cmd)
   con <- pipe(cmd, 'r')
   on.exit(close(con))
-  
+
   strings <-readLines(con, skipNul = T)
   if (length(strings) == 0) return(NULL)
   breakstr(strings)
