@@ -1,6 +1,12 @@
 read_pattern <- function(selector, colnums = NULL, pattern = NULL, ...) {
 
-  message('Reading: ', selector)
+  # Parse selector into format compatible with `cat`
+  # selector examples:
+  # selector <- "data/site/instrument/raw/2024-01-01.csv"
+  # selector <- "data/site/instrument/raw/*"
+  # selector <- c("data/site/instrument/raw/2024-01-01.csv", "data/site/instrument/raw/2024-01-02.csv")
+  message('Reading: ', paste(selector, collapse = '\n  '))
+  selector <- paste(selector, collapse = ' ')
 
   # Parse colnums into format compatible with `cut -f`
   # colnums examples:
@@ -18,6 +24,7 @@ read_pattern <- function(selector, colnums = NULL, pattern = NULL, ...) {
   }
 
   # Parse pattern into format compatible with `grep`
+  # pattern examples:
   # pattern <- NULL
   # pattern <- ','
   # pattern <- '$GPGGA'
