@@ -11,15 +11,6 @@ cr1000_init <- function() {
   }
 
   # Query CR1000 for new records
-  last_file <- tail(dir(file.path('data', site, instrument, 'raw'),
-                    pattern = '.*\\.{1}dat', full.names = T), 1)
-  if (length(last_file) == 0) {
-    warning('No prior data found: ', file.path('data', site, instrument, 'raw'))
-    last_time <- as.POSIXct('1970-01-01', tz = 'UTC')
-  } else {
-    last_time <- get_last_time(last_file)
-  }
-
   uri <- paste(site_config$ip, site_config$port, sep = ':')
   table <- switch(instrument,
                   'licor_6262' = 'Dat',
@@ -41,5 +32,5 @@ cr1000_init <- function() {
   message('New data:')
   str(nd)
 
-  nd
+  return(nd)
 }

@@ -5,7 +5,7 @@ lgr_ugga_init <- function() {
     local <- file.path('data', site, instrument, 'raw/')
     rsync(from = remote, to = local, port = site_config$port)
   }
-  
+
   # Unzip necessary compressed archives
   dir(file.path('data', site, instrument, 'raw'), '\\.{1}txt\\.{1}zip',
       full.names = T, recursive = T) %>%
@@ -26,16 +26,16 @@ lgr_ugga_init <- function() {
       }
     }) %>%
     invisible()
-  
+
   # Sort by file modification time since older versions of LGR's software
   # are named non-sequentially
   files <- dir(file.path('data', site, instrument, 'raw'), 'f....\\.{1}txt$',
                full.names = T, recursive = T)
   files <- files[order(file.mtime(files))]
-  
+
   N <- ifelse(site_config$reprocess, Inf, 2)
   files <- tail(files, N)
-  
+
   nd <- lapply(files, function(file) {
     print(paste('loading', file))
     # Catch change in number of columns in different model LGRs
@@ -45,7 +45,7 @@ lgr_ugga_init <- function() {
                                intern = T), ',')
     if (length(ndelim) == 0) return()
     if (ndelim == 23) {
-      col_names <- append(col_names, 'fillvalue', after = 22)
+      col_names <- append(col_names, 'MIU_Valve', after = 22)
       col_types <- paste0(col_types, 'c')
     }
     df <- tryCatch(suppressWarnings({
@@ -53,30 +53,37 @@ lgr_ugga_init <- function() {
                na = c('TO', '', 'NA'), progress = F)
     }),
     error = function(e) NULL)
-    
+
     if (is.null(df) || ncol(df) < 23 || ncol(df) > 24) return(NULL)
-    
+
     # Adapt column names depending on LGR software version.
     #  2013-2014 version has 23 columns
     #  2014+ version has 24 columns (MIU split into valve and description)
     if (ncol(df) == 24)
-      df[[23]] <- NULL
+      df[[23]] <- NULL  # remove MIU_Valve column 
     setNames(df, data_config[[instrument]]$raw$col_names)
   }) %>%
     bind_rows()
-  
+
   nd$Time_UTC <- as.POSIXct(nd$Time_UTC, tz = 'UTC',
                             format = '%m/%d/%Y %H:%M:%S')
+
+  # Format time
   nd <- nd %>%
-    dplyr::filter(!is.na(Time_UTC)) %>%
+    dplyr::filter(!is.na(Time_UTC),
+           # Timezone America/Denver to UTC shift
+           # Data during 12-29-2015 to 12-30-2015 invalid due to shift on day
+           Time_UTC < as.POSIXct('2015-12-29', tz = 'UTC') |
+             Time_UTC > as.POSIXct('2015-12-30', tz = 'UTC')) %>%
+    mutate(Time_UTC = ifelse(Time_UTC < as.POSIXct('2015-12-30', tz = 'UTC'),
+                             as.POSIXct(format(Time_UTC, tz = 'UTC'),
+                                        tz = 'America/Denver'),
+                             Time_UTC))
+  attributes(nd$Time_UTC) <- list(class = c('POSIXct', 'POSIXt'),
+                                  tzone = 'UTC')
+  nd <- nd %>%
     arrange(Time_UTC)
-  
-  prev_run <- lubridate::floor_date(Sys.time(), unit = "15 mins") - lubridate::minutes(15)
-  new_data <- nd[nd$Time_UTC > prev_run, ]
-  if (nrow(new_data) > 0) {
-    message('New data:')
-    str(as.data.frame(new_data))
-  }
-  
-  nd
+
+  print_nd()
+  return(nd)
 }

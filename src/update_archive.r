@@ -8,13 +8,13 @@ update_archive <- function(nd, path = '%Y_%m.dat', tz = 'UTC', check_header = T)
 
   time_col <- grep('time', names(nd), ignore.case = T, value = T)[1]
   if (is.na(time_col)) time_col <- 1
-  
+
   nd <- nd[!is.na(nd[[time_col]]), ]
   nd <- nd[order(nd[[time_col]]), ]
   nd <- nd[!duplicated(nd[[time_col]]), ]
   files <- format(nd[[time_col]], tz = tz, format = path)
   ufiles <- unique(files)
-  
+
   for (file in (ufiles)) {
     mask <- file == files
     out <- nd[mask, ]

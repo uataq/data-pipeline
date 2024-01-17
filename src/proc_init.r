@@ -19,8 +19,8 @@ proc_init <- function() {
     message('Reprocessing data archive for: ', site, '/', instrument)
     for (path in file.path(wd, c('qaqc', 'calibrated'))) {
       if (file.exists(path)) {
-            message('Removing:', path)
-            system(paste('rm -r', path))
+        message('Removing:', path)
+        system(paste('rm -r', path))
       }
     }
   }
@@ -30,4 +30,20 @@ proc_init <- function() {
     stop(site, ' data already up to date.')
   }
 
+  # Return last time of data in site/instrument/raw directory
+  last_file <- tail(list.files(file.path(wd, 'raw'), full.names = T,
+                               pattern = 'dat|csv'), 1)
+  if (length(last_file) == 0) {
+    last_time <- as.POSIXct('1970-01-01', tz = 'UTC')
+  } else {
+    # Datetime format changes depending on logger
+    #   dat files are logged by CR1000
+    #   csv files are logged by air-trend
+    datetime_format <- switch(tools::file_ext(last_file),
+                              'dat' = '%Y-%m-%d %H:%M:%S',
+                              'csv' = '%Y-%m-%dT%H:%M:%S')
+    last_time <- get_last_time(last_file, format = datetime_format)
+  }
+
+  return(last_time)
 }

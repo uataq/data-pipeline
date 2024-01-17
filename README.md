@@ -21,11 +21,23 @@ Site metadata can be found in [`config/site_config.csv`](config/site_config.csv)
 
 Additional instrument metadata can be found in [`config/data_config.json`](config/data_config.json).
 
-| Instrument              | Abbreviation |
-| ----------------------- | ------------ |
-| Licor 6262 IRGA         | licor_6262   |
-| Los Gatos Research UGGA | lgr_ugga     |
-| MetOne ES642            | metone_es642 |
+| Instrument              | Abbreviation   |
+| ----------------------- | -------------- |
+| 2B 205                  | 2b_205         |
+| GPS                     | gps            |
+| Licor 6262 IRGA         | licor_6262     |
+| Licor 7000 IRGA         | licor_7000     |
+| Los Gatos Research NO2  | lgr_no2        |
+| Los Gatos Research UGGA | lgr_ugga       |
+| Magee AE33              | magee_ae33     |
+| MetOne ES642            | metone_es642   |
+| Teledyne T200           | teledyne_t200  |
+| Teledyne T300           | teledyne_t300  |
+| Teledyne T400           | teledyne_t400  |
+| Teldyne T500u           | teledyne_t500u |
+| TEOM 1400ab             | teom_1400ab    |
+
+Raw files with a dat extension are recorded via a CR1000 datalogger, while raw files with a csv extension are recorded via a raspberry pi running [air-trend](https://github.com/jmineau/air-trend).
 
 ## QC flagging conventions
 
@@ -44,6 +56,7 @@ Numeric values are assigned to observations that meet certain automated or human
 | -7   | Reference tank measurements out of range                        |
 | -8   | Cavity humidity out of range                                    |
 | -9   | Reference tank valve                                            |
+| -11  | Bad GPS fix quality                                             |
 
 ## Column naming conventions for calibrated data files
 

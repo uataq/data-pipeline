@@ -10,7 +10,7 @@ lock_create()
 try({
   # LGR UGGA -------------------------------------------------------------------
   instrument <- 'lgr_ugga'
-  proc_init()
+  last_time <- proc_init()
   nd <- lgr_ugga_init()
   nd <- lgr_ugga_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))

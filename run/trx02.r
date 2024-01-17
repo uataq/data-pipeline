@@ -14,24 +14,59 @@ if (!site_config$reprocess &&
   stop('Unable to connect to ', site_config$ip)
 }
 
-try({
-  instrument <- 'teledyne_t500u'
-  proc_init()
-  
-  remote <- paste0('pi@', site_config$ip, ':/home/pi/data/teledyne_t500u/')
-  local <- file.path('data', site, instrument, 'raw/')
-  rsync(from = remote, to = local, port = site_config$port)
-})
+
+### ACTIVE INSTRUMENTS ###
 
 try({
-  # GPS
+  # GPS ------------------------------------------------------------------------
   instrument <- 'gps'
-  proc_init()
-  
-  remote <- paste0('pi@', site_config$ip, ':/home/pi/data/gps/')
-  local <- file.path('data', site, instrument, 'raw/')
-  rsync(from = remote, to = local, port = site_config$port)
+  last_time <- proc_init()
+  nd <- gps_init()
+  nd <- gps_qaqc()
+  update_archive(nd, data_path(site, instrument, 'qaqc'))
 })
 
+try({
+  # Teledyne T500u -------------------------------------------------------------
+  instrument <- 'teledyne_t500u'
+  last_time <- proc_init()
+  nd <- air_trend_init()
+  nd <- air_trend_qaqc()
+  update_archive(nd, data_path(site, instrument, 'qaqc'))
+})
+
+
+### INACTIVE INSTRUMENTS ###
+
+if (site_config$reprocess) {
+  # Only reprocess data if site_config$reprocess is TRUE
+
+try({
+  # 2B 205 ---------------------------------------------------------------------
+  instrument <- '2b_205'
+  last_time <- proc_init()
+  nd <- air_trend_init()
+  nd <- bb_205_qaqc()
+  update_archive(nd, data_path(site, instrument, 'qaqc'))
+})
+
+try({
+  # LGR NO2 --------------------------------------------------------------------
+  instrument <- 'lgr_no2'
+  last_time <- proc_init()
+  nd <- air_trend_init()
+  nd <- air_trend_qaqc()
+  update_archive(nd, data_path(site, instrument, 'qaqc'))
+})
+
+try({
+  # MetOne ES642 ---------------------------------------------------------------
+  instrument <- 'metone_es642'
+  last_time <- proc_init()
+  nd <- air_trend_init()
+  nd <- metone_es642_qaqc(logger = 'air_trend')
+  update_archive(nd, data_path(site, instrument, 'qaqc'))
+})
+}
 
 lock_remove()
