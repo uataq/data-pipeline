@@ -22,9 +22,7 @@ for (lib in c('data.table', 'fasttime', 'jsonlite', 'RCurl', 'tidyverse', 'uataq
 }
 
 # Load functions contained in pipeline/src
-# for (fun in dir('pipeline/src', full.names = T)) {
-  # FIXME !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-for (fun in dir('/uufs/chpc.utah.edu/common/home/u6036966/wkspace/pipeline/src', full.names = T)) {
+for (fun in dir('pipeline/src', full.names = T)) {
   source(fun)
 }
 
