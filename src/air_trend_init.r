@@ -40,7 +40,7 @@ air_trend_init <- function(hostname = site_config$ip, name = NULL) {
   col_types <- data_config[[name]][['air_trend']]$col_types
 
   # Read in data
-  nd <- read_pattern(selector, colnums = seq_along(length(col_names)),
+  nd <- read_pattern(selector, colnums = seq_along(col_names),
                      pattern = 'T')  # match T in air-trend isoformat time col
 
   if (is.null(nd) || nrow(nd) == 0) {
