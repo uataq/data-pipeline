@@ -1,13 +1,24 @@
 cr1000_init <- function() {
 
+  wd <- file.path('data', site, instrument, 'raw')
+  files <- list.files(wd, pattern = '\\.dat', full.names = T)
+
   if (site_config$reprocess) {
     # Read all historic raw data into memory as new data
-    files <- dir(file.path('data', site, instrument, 'raw'), full.names = T)
     if (length(files) == 0) {
-      warning('No prior data found for reset: ', file.path('data', site, instrument, 'raw'))
+      warning('No prior data found for reset: ', wd)
     } else {
       return(read_files(files))
     }
+  }
+
+  # Get last time of data in site/instrument/raw directory
+  last_file <- tail(files, 1)
+  if (length(last_file) == 0) {
+    warning('No prior data found: ', wd)
+    last_time <- as.POSIXct('1970-01-01', tz = 'UTC')
+  } else {
+    last_time <- get_last_time(last_file)
   }
 
   # Query CR1000 for new records

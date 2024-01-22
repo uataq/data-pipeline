@@ -13,7 +13,7 @@ lock_create()
 try({
   # Licor 7000 -----------------------------------------------------------------
   instrument <- 'licor_7000'   # switch to licor_7000 in May 2022
-  last_time <- proc_init()
+  proc_init()
   nd <- cr1000_init()
   if (!site_config$reprocess)
      update_archive(nd, data_path(site, instrument, 'raw'), check_header = F)
@@ -27,7 +27,7 @@ try({
 try({
   # MetOne ES642 ---------------------------------------------------------------
   instrument <- 'metone_es642'
-  last_time <- proc_init()
+  proc_init()
   nd <- cr1000_init()
   if (!site_config$reprocess)
     update_archive(nd, data_path(site, instrument, 'raw'), check_header = F)
@@ -44,7 +44,7 @@ if (site_config$reprocess) {
 try({
   # Licor 6262 -----------------------------------------------------------------
   instrument <- 'licor_6262'  # switch to licor_7000 in May 2022
-  last_time <- proc_init()
+  proc_init()
   nd <- cr1000_init()
   # if (!site_config$reprocess)
   #     update_archive(nd, data_path(site, instrument, 'raw'), check_header = F)

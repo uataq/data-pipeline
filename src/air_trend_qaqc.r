@@ -3,7 +3,7 @@
 air_trend_qaqc <- function() {
 
   # Standardize column names
-  colnames(nd) <- data_config[[instrument]]$qaqc$col_names
+  colnames(nd) <- data_config[[instrument]]$qaqc$col_names[1:ncol(nd)]
 
   # Initialize qaqc flag
   nd$QAQC_Flag <- 0

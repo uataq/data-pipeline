@@ -10,7 +10,7 @@ lock_create()
 try({
   # Licor 6262 -----------------------------------------------------------------
   instrument <- 'licor_6262'
-  last_time <- proc_init()
+  proc_init()
   nd <- cr1000_init()
   if (!site_config$reprocess)
     update_archive(nd, data_path(site, instrument, 'raw'), check_header = F)

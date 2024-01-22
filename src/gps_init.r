@@ -8,7 +8,7 @@ gps_init <- function() {
     local <- file.path('data', site, instrument, 'raw/')
     rsync(from = remote, to = local, port = site_config$port)
 
-    n_files <- length(seq(last_time, as.POSIXct(Sys.Date()), by = 'day'))
+    n_files <- length(seq(as.Date(last_time), Sys.Date(), by = 'day'))
   }
 
   read_nmea <- function(nmea) {

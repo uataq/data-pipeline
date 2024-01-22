@@ -12,7 +12,7 @@ lock_create()
 try({
   # LGR UGGA -------------------------------------------------------------------
   instrument <- 'lgr_ugga'
-  last_time <- proc_init()
+  proc_init()
   nd <- air_trend_init()
   nd <- lgr_ugga_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))

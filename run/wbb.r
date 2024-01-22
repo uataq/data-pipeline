@@ -16,7 +16,7 @@ lock_create()
 try({
   # LGR UGGA -------------------------------------------------------------------
   instrument <- 'lgr_ugga'
-  last_time <- proc_init()
+  proc_init()
   nd <- lgr_ugga_init()
   nd <- lgr_ugga_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
@@ -27,7 +27,7 @@ try({
 try({
   # Magee AE33 -----------------------------------------------------------------
   instrument <- 'magee_ae33'
-  last_time <- proc_init()
+  proc_init()
   nd <- air_trend_init(hostname = uataq_brain)
   nd <- air_trend_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
@@ -36,7 +36,7 @@ try({
 try({
   # Teledyne T200 --------------------------------------------------------------
   instrument <- 'teledyne_t200'
-  last_time <- proc_init()
+  proc_init()
   nd <- air_trend_init(hostname = uataq_brain)
   nd <- air_trend_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
@@ -45,7 +45,7 @@ try({
 try({
   # Teledyne T300 --------------------------------------------------------------
   instrument <- 'teledyne_t300'
-  last_time <- proc_init()
+  proc_init()
   nd <- air_trend_init(hostname = uataq_brain)
   nd <- air_trend_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
@@ -54,7 +54,7 @@ try({
 try({
   # Teledyne T400 --------------------------------------------------------------
   instrument <- 'teledyne_t400'
-  last_time <- proc_init()
+  proc_init()
   nd <- air_trend_init(hostname = uataq_brain)
   nd <- air_trend_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
@@ -69,7 +69,7 @@ if (site_config$reprocess) {
 try({
   # MetOne ES642 ---------------------------------------------------------------
   instrument <- 'metone_es642'
-  last_time <- proc_init()
+  proc_init()
   nd <- air_trend_init(hostname = uataq_brain)
   nd <- metone_es642_qaqc(logger = 'air_trend')
   update_archive(nd, data_path(site, instrument, 'qaqc'))
@@ -78,7 +78,7 @@ try({
 try({
   # Teledyne T500u -------------------------------------------------------------
   instrument <- 'teledyne_t500u'
-  last_time <- proc_init()
+  proc_init()
   nd <- air_trend_init(hostname = uataq_brain)
   nd <- air_trend_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
@@ -87,7 +87,7 @@ try({
 try({
   # TEOM 1400ab --------------------------------------------------------------
   instrument <- 'teom_1400ab'
-  last_time <- proc_init()
+  proc_init()
   nd <- air_trend_init(hostname = uataq_brain)
   nd <- air_trend_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))

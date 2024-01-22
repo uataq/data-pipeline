@@ -20,7 +20,7 @@ if (!site_config$reprocess &&
 try({
   # GPS ------------------------------------------------------------------------
   instrument <- 'gps'
-  last_time <- proc_init()
+  proc_init()
   nd <- gps_init()
   nd <- gps_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
@@ -29,7 +29,7 @@ try({
 try({
   # Teledyne T500u -------------------------------------------------------------
   instrument <- 'teledyne_t500u'
-  last_time <- proc_init()
+  proc_init()
   nd <- air_trend_init()
   nd <- air_trend_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
@@ -44,7 +44,7 @@ if (site_config$reprocess) {
 try({
   # 2B 205 ---------------------------------------------------------------------
   instrument <- '2b_205'
-  last_time <- proc_init()
+  proc_init()
   nd <- air_trend_init()
   nd <- bb_205_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
@@ -53,7 +53,7 @@ try({
 try({
   # LGR NO2 --------------------------------------------------------------------
   instrument <- 'lgr_no2'
-  last_time <- proc_init()
+  proc_init()
   nd <- air_trend_init()
   nd <- air_trend_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
@@ -62,7 +62,7 @@ try({
 try({
   # MetOne ES642 ---------------------------------------------------------------
   instrument <- 'metone_es642'
-  last_time <- proc_init()
+  proc_init()
   nd <- air_trend_init()
   nd <- metone_es642_qaqc(logger = 'air_trend')
   update_archive(nd, data_path(site, instrument, 'qaqc'))

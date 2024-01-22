@@ -20,7 +20,7 @@ if (!site_config$reprocess &&
 try({
   # GPS ------------------------------------------------------------------------
   instrument <- 'gps'
-  last_time <- proc_init()
+  proc_init()
   nd <- gps_init()
   nd <- gps_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
@@ -30,7 +30,7 @@ try({
 try({
   # LGR UGGA Manual Calibration ------------------------------------------------
   instrument <- 'lgr_ugga_manual_cal'
-  last_time <- proc_init()
+  proc_init()
   nd <- air_trend_init(name = 'lgr_ugga')
   nd <- lgr_ugga_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
@@ -45,7 +45,7 @@ if (site_config$reprocess) {
 try({
   # 2B 205 ---------------------------------------------------------------------
   instrument <- '2b_205'
-  last_time <- proc_init()
+  proc_init()
   nd <- air_trend_init()
   nd <- bb_205_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
@@ -54,7 +54,7 @@ try({
 try({
   # LGR UGGA -------------------------------------------------------------------
   instrument <- 'lgr_ugga'
-  last_time <- proc_init()
+  proc_init()
   nd <- air_trend_init()
 
   # Apply tank reference values from pipeline/config
