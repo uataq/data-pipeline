@@ -2,10 +2,24 @@
 
 gps_init <- function() {
 
+  wd <- file.path('data', site, instrument, 'raw')
+
   if (!site_config$reprocess) {
+
+    files <- list.files(wd, pattern = '\\.csv', full.names = T)
+
+    # Get last time of data in site/instrument/raw directory
+    last_file <- tail(files, 1)
+    if (length(last_file) == 0) {
+      warning('No prior data found: ', wd)
+      last_time <- as.POSIXct('1970-01-01', tz = 'UTC')
+    } else {
+      last_time <- get_last_time(last_file, format = '%Y-%m-%dT%H:%M:%S')
+    }
+
     # Rsync data from remote
     remote <- paste0('pi@', site_config$ip, ':/home/pi/data/', instrument, '/')
-    local <- file.path('data', site, instrument, 'raw/')
+    local <- file.path(wd, '')
     rsync(from = remote, to = local, port = site_config$port)
 
     n_files <- length(seq(as.Date(last_time), Sys.Date(), by = 'day'))
@@ -14,20 +28,17 @@ gps_init <- function() {
   read_nmea <- function(nmea) {
 
     if (!site_config$reprocess) {
-      selector <- list.files(file.path('data', site, instrument, 'raw'),
-                             pattern = nmea, full.names = T) %>%
-        tail(n_files)
+      selector <- tail(files, n_files)
     } else {
       # TODO: at some point we need to process in batches to avoid memory issues
-      selector <- file.path('data', site, instrument, 'raw',
-                            paste0('*_', nmea, '.csv'))
+      selector <- file.path(wd, paste0('*_', nmea, '.csv'))
     }
 
     lvl <- paste0('air_trend_', nmea)
     col_names <- data_config$gps[[lvl]]$col_names
     col_types <- data_config$gps[[lvl]]$col_types
 
-    nd <- read_pattern(selector, colnums = seq(length(col_names)),
+    nd <- read_pattern(selector, colnums = seq_along(col_names),
                        # match T in air-trend isoformat time col
                        pattern = 'T')
 
