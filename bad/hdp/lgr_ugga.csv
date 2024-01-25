@@ -1,4 +1,4 @@
-t_start,t_end,miu_old,miu_new,t_added,name,comment
+t_start,t_end,ID_old,ID_new,t_added,name,comment
 2016-01-01T00:00:00Z,2016-07-25T00:00:00Z,all,NA,2018-08-13T21:27:14Z,Ben,Data from before analyzer was installed
 2016-07-30T14:57:00Z,2016-08-02T22:23:00Z,all,NA,2018-08-13T21:27:14Z,Ben,MIU failure and lost intensity calibration
 2016-08-03T20:29:30Z,2016-08-05T19:30:00Z,all,NA,2018-08-13T21:27:14Z,Ben,MIU failure

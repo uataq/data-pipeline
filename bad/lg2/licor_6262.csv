@@ -1,4 +1,4 @@
-t_start,t_end,miu_old,miu_new,t_added,name,comment
+t_start,t_end,ID_old,ID_new,t_added,name,comment
 2019-10-26T12:00:00Z,2019-11-07T20:00:00Z,all,NA,2021-04-10T00:02:00Z,JohnLin,measured CO2 (ambient + cal tanks) near 0 ppm; measuring N2 tank instead?
 2020-03-07T04:00:00Z,2020-06-14T18:00:00Z,all,NA,2021-04-08T02:03:00Z,JohnLin,missing accurate tank values and tank valves not opening properly
 2020-07-30T15:55:00Z,2020-09-21T20:00:00Z,-1,393.85,2021-04-09T03:40:00Z,JohnLin,logger forgot tank value?  

@@ -110,12 +110,12 @@ Calibrated, QAQC'd data can be read in from the calibrated directory using the f
 
 Changes in the historic datasets can be made using the `bad/` data text files. When a new commit is made, the historic record for the given site is reprocessed on the next run (every 10 minutes).
 
-- To remove data, set `miu_new=NA`.
-- To update the known concentration of a measured tank, set the new concentration in `miu_new` and the old concentration in `miu_old`.
-- To match a subset of the data, match the `miu_old` configuration with the valve identification stored in the datasets. For example, to remove a particular tank with a concentration of 499.89 ppm CO2 from the record, set `miu_old=499.89`.
-- To match all of the data over a given time interval, set `miu_old=all`.
+- To remove data, set `ID_new=NA`.
+- To update the known concentration of a measured tank, set the new concentration in `ID_new` and the old concentration in `ID_old`.
+- To match a subset of the data, match the `ID_old` configuration with the valve identification stored in the datasets. For example, to remove a particular tank with a concentration of 499.89 ppm CO2 from the record, set `ID_old=499.89`.
+- To match all of the data over a given time interval, set `ID_old=all`.
 
-> The MIU abbreviation is a reference to LGR's Multi Inlet Units, but it is used universally across our datasets for calibration valve systems.
+> ID is synonymous with the MIU description from the LGR's Multi Inlet Units, but encompasses all instruments.
 
 ## Reprocessing raw data
 

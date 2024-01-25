@@ -1,3 +1,3 @@
-t_start,t_end,miu_old,miu_new,t_added,name,comment
+t_start,t_end,ID_old,ID_new,t_added,name,comment
 2023-06-01T00:00:00Z,2023-06-26T20:30:00Z,all,NA,2023-06-26T23:24:00Z,JamesM,Setting up LGR for install
 2023-09-12T15:00:00Z,2023-09-28T21:00:00Z,all,NA,2023-09-29T15:47:00Z,JamesM,cal tank empty

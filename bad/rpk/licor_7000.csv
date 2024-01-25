@@ -1,4 +1,4 @@
-t_start,t_end,miu_old,miu_new,t_added,name,comment
+t_start,t_end,ID_old,ID_new,t_added,name,comment
 2023-09-06T18:00:00Z,2023-09-06T20:00:00Z,all,NA,2023-09-11T15:00:00Z,JohnLin,swap out LI6262 and install LI7000 at RPK
 2023-09-12T00:53:45Z,2023-09-12T00:54:55Z,all,NA,2023-09-18T20:13:00Z,MeganOstlie,CO2 values drop to around 300 ppm
 2023-09-12T05:30:00Z,2023-09-12T05:32:35Z,all,NA,2023-09-18T20:15:00Z,MeganOstlie,CO2 values drop to around 300 ppm

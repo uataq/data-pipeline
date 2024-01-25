@@ -1,4 +1,4 @@
-t_start,t_end,miu_old,miu_new,t_added,name,comment
+t_start,t_end,ID_old,ID_new,t_added,name,comment
 2015-09-25T00:00:00Z,2015-09-30T17:00:00Z,-1,406.58,2018-08-13T21:27:14Z,Ryan,replace std values
 2015-10-01T00:00:00Z,2016-07-11T18:00:00Z,0,NA,2018-08-13T21:27:14Z,Ryan,Removing zeros from cal data
 2015-10-26T19:00:00Z,2015-10-27T23:59:50Z,all,NA,2018-08-13T21:27:14Z,Nick,Data is nonsense.

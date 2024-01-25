@@ -1,4 +1,4 @@
-t_start,t_end,miu_old,miu_new,t_added,name,comment
+t_start,t_end,ID_old,ID_new,t_added,name,comment
 2015-01-01T00:00:00Z,2015-04-10T16:00:00Z,all,NA,2018-08-13T21:27:13Z,Ben,Data from before instrument was installed.
 2015-04-17T14:00:00Z,2015-04-18T12:01:00Z,all,NA,2018-08-13T21:27:13Z,Ben,On site maintenance. Tanks installed. MIU later corrected.
 2015-04-23T02:00:00Z,2015-04-23T18:06:30Z,~438.55~1.889,NA,2018-08-13T21:27:13Z,Ben,Flush valve was not changed on site. Fixed remotely.

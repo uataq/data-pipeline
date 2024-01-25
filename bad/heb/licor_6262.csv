@@ -1,4 +1,4 @@
-t_start,t_end,miu_old,miu_new,t_added,name,comment
+t_start,t_end,ID_old,ID_new,t_added,name,comment
 2015-06-01T00:00:00Z,2016-07-14T18:00:00Z,0,NA,2018-08-13T21:27:14Z,Ryan,Removing all zeros
 2015-07-01T00:00:00Z,2015-07-07T11:02:00Z,-1,364.58,2018-08-13T21:27:14Z,Ben,Known inputs forgotten
 2015-08-03T08:24:39Z,2015-08-03T08:24:41Z,all,NA,2018-08-13T21:27:14Z,Ben,Single suspect data point

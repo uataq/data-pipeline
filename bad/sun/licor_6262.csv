@@ -1,4 +1,4 @@
-t_start,t_end,miu_old,miu_new,t_added,name,comment
+t_start,t_end,ID_old,ID_new,t_added,name,comment
 2015-05-01T00:00:00Z,2015-09-01T00:00:00Z,all,NA,2018-08-13T21:27:14Z,Ben,Interference from nearby vent. Moved inlet.
 2015-08-31T00:00:00Z,2015-11-05T00:00:00Z,-999,-999,2019-02-28T18:49:00Z,Ben,Correction in sun.r for loose RH sensor wire.
 2015-06-01T00:00:00Z,2016-07-09T18:00:00Z,0,NA,2018-08-13T21:27:14Z,Ryan,Removing all zeros

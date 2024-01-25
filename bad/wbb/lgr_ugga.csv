@@ -1,4 +1,4 @@
-t_start,t_end,miu_old,miu_new,t_added,name,comment
+t_start,t_end,ID_old,ID_new,t_added,name,comment
 2014-01-01T00:00:00Z,2014-09-10T15:19:00Z,all,NA,2018-08-13T21:27:14Z,Rayn,All data prior to this is junk
 2014-12-01T00:00:00Z,2014-12-19T00:00:00Z,V:3 639.48,NA,2018-08-13T21:27:14Z,Ben,Empty cal tank
 2014-08-10T15:19:00Z,2015-01-12T19:11:30Z,V:5 0.00,NA,2018-08-13T21:27:14Z,Ryan,Removing all zeros in the dataset due to the problems lgr have measring zero with their autoscan feature

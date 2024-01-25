@@ -1,4 +1,4 @@
-t_start,t_end,miu_old,miu_new,t_added,name,comment
+t_start,t_end,ID_old,ID_new,t_added,name,comment
 2022-06-17T08:30:00Z,2022-06-30T15:00:00Z,450.69,NA,2022-08-16T18:05:00Z,MeganOstlie,Empty cal tank
 2022-06-17T15:00:00Z,2022-06-30T15:00:00Z,393.57,NA,2022-08-16T18:07:00Z,MeganOstlie,Empty cal tank
 2022-06-19T00:00:00Z,2022-06-30T15:00:00Z,440.00,NA,2022-08-16T18:11:00Z,MeganOstlie,Empty cal tank

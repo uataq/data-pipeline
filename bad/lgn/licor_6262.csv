@@ -1,4 +1,4 @@
-t_start,t_end,miu_old,miu_new,t_added,name,comment
+t_start,t_end,ID_old,ID_new,t_added,name,comment
 2015-05-01T00:00:00Z,2015-07-28T00:00:00Z,all,NA,2018-08-13T21:27:14Z,Ben,Start of proper data.
 2015-06-01T00:00:00Z,2016-07-13T18:00:00Z,0,NA,2018-08-13T21:27:14Z,Ryan,Removing all zeros
 2015-08-29T20:11:00Z,2015-08-30T03:59:50Z,all,NA,2018-08-13T21:27:14Z,Nick,Jump in cals.
