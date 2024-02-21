@@ -8,6 +8,7 @@ cr1000_init <- function() {
     if (length(files) == 0) {
       warning('No prior data found for reset: ', wd)
     } else {
+      message('Reading: ', file.path(wd, '*'))
       return(read_files(files))
     }
   }
