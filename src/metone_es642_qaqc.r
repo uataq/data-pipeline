@@ -9,7 +9,7 @@ metone_es642_qaqc <- function(logger = 'cr1000') {
     # Add cr1000 columns
     nd <- nd %>%
       add_column(batt_volt_Min = NA, PTemp_Avg = NA,
-                 .after = 'time') %>%
+                 .after = 'Time_UTC') %>%
       mutate(pm25_ugm3 = pm25_mgm3 * 1000) %>%
       select(-pm25_mgm3) %>%
       add_column(Program = 'air-trend')
