@@ -21,6 +21,10 @@ lgr_ugga_init <- function() {
       last_time <- as.POSIXct('1970-01-01', tz = 'UTC')
     } else {
       last_time <- get_last_time(last_txt_file, format = datetime_format)
+      if (is.null(last_time)) {
+        # If last_time is NULL, read in last two days of data
+        last_time <- Sys.Date() - 1
+      }
     }
 
     # Rsync data from remote
@@ -65,7 +69,7 @@ lgr_ugga_init <- function() {
 
   # Read in data
   nd <- lapply(tail(files, n_files), function(file) {
-    print(paste('loading', file))
+    print(paste('Reading:', file))
     # Catch change in number of columns in different model LGRs
     col_names <- data_config[[instrument]]$raw$col_names
     col_types <- data_config[[instrument]]$raw$col_types
