@@ -1,0 +1,50 @@
+t_start,t_end,ID_old,ID_new,t_added,name,comment
+2014-12-20T13:53:28,2014-12-20T13:53:29,all,drop,now,JamesM,bad inst_date
+2015-01-11T14:00:01,2015-01-11T14:00:02,all,drop,now,JamesM,bad inst_time
+2015-03-04T19:00:00,2015-03-04T19:00:01,all,drop,now,JamesM,bad inst_date
+2015-03-13T20:00:00,2015-03-13T20:00:01,all,drop,now,JamesM,bad inst_time
+2015-04-24T12:00:01,2015-04-24T12:00:02,all,drop,now,JamesM,bad inst_date
+2015-05-21T12:13:21,2015-05-21T12:13:22,all,drop,now,JamesM,bad inst_date
+2015-07-01T00:00:00,2015-07-01T00:00:01,all,drop,now,JamesM,duplicate inst_time near day change
+2015-07-13T18:36:37,2017-07-13T18:38:38,all,drop,now,JamesM,large jump in gps time
+2015-09-21T20:38:13,2015-09-21T20:38:14,all,drop,now,JamesM,bad inst_date
+2015-11-22T22:30:56,2015-11-24T01:41:52,all,NA,now,JamesM,cant say for sure if the correct day
+2015-11-24T07:02:59,2015-11-24T07:03:01,all,drop,now,JamesM,hour 27 is not possible
+2015-12-14T15:39:11,2015-12-29T21:34:10,all,NA,now,JamesM,probably only off by 1 day near day changes but cant be sure
+2016-01-04T20:00:29,2016-01-07T17:55:29,all,behind,now,JamesM,pi time is behind
+2016-01-10T06:22:31,2016-01-14T13:01:24,all,behind,now,JamesM,pi time is behind
+2016-01-21T05:22:27,2016-01-28T00:36:08,all,behind,now,JamesM,pi time is behind
+2016-01-31T04:17:31,2016-02-01T10:33:05,all,behind,now,JamesM,pi time is behind
+2016-02-15T18:27:53,2016-02-16T07:50:23,all,behind,now,JamesM,pi time is behind
+2016-02-21T10:17:31,2016-02-24T09:32:53,all,behind,now,JamesM,pi time is behind
+2016-03-07T03:19:08,2016-03-09T20:16:38,all,behind,now,JamesM,pi time is behind
+2016-05-20T00:00:00,2016-05-20T23:59:59,all,NA,now,JamesM,not sure what is going on here but the train had power issues
+2016-05-31T07:28:05,2016-06-01T07:56:53,all,behind,now,JamesM,pi time is behind
+2016-06-25T19:59:40,2016-06-26T04:02:05,all,behind,now,JamesM,pi time is behind
+2016-07-05T21:18:39,2016-07-06T00:48:43,all,ahead,now,JamesM,pi time is ahead
+2016-07-13T21:29:58,2016-07-14T00:27:44,all,behind,now,JamesM,pi time is behind
+2016-08-18T21:25:53,2016-08-19T03:31:55,all,behind,now,JamesM,pi time is behind
+2016-09-07T17:55:08,2016-09-07T17:56:08,all,drop,now,JamesM,large jump in gps time
+2016-11-09T13:00:13,2016-11-10T13:15:17,all,behind,now,JamesM,pi time is behind
+2016-11-10T19:22:49,2016-11-11T04:58:14,all,behind,now,JamesM,pi time is behind
+2016-11-15T17:38:06,2016-11-16T03:03:31,all,NA,now,JamesM,16th data is probably for the 17th
+2016-12-26T16:56:02,2017-01-09T07:03:17,all,ahead,now,JamesM,pi time is ahead
+2017-01-01T00:00:02,2017-01-01T00:00:03,all,drop,now,JamesM,duplicate inst_time near day change
+2017-03-25T23:18:00,2017-03-26T00:08:36,all,behind,now,JamesM,pi time is behind
+2017-07-11T14:20:06,2017-09-06T16:53:51,all,NA,now,JamesM,cant ntp sync due to bad modem
+2017-09-23T11:07:03,2017-09-23T11:07:04,all,drop,now,JamesM,bad character
+2017-11-10T22:17:31,2017-11-11T18:51:07,all,behind,now,JamesM,pi time is behind
+2017-11-11T23:25:15,2017-11-12T00:00:00,all,behind,now,JamesM,11th data is actually slightly ahead but some 12th data is present on the 11th
+2017-11-13T20:27:18,2017-11-14T01:57:14,all,behind,now,JamesM,pi time is behind
+2017-11-19T21:17:45,2017-11-20T03:13:37,all,behind,now,JamesM,pi time is behind
+2017-12-07T01:21:34,2017-12-07T01:28:17,all,NA,now,JamesM,not sure which day this belongs to
+2017-12-18T23:58:34,2017-12-19T00:03:37,all,behind,now,JamesM,pi time is behind
+2017-12-19T23:17:33,2017-12-20T00:00:00,all,behind,now,JamesM,19th data is actually slightly ahead but some 20th data is present on the 19th
+2017-12-23T23:48:23,2017-12-24T00:08:37,all,behind,now,JamesM,pi time is behind
+2018-02-03T19:18:04,2018-02-03T19:53:37,all,drop,now,JamesM,large jump in gps time
+2018-04-19T17:20:06,2018-04-19T17:20:07,all,drop,now,JamesM,bad inst_date
+2018-05-01T07:38:52,2018-05-01T07:38:53,all,drop,now,JamesM,bad inst_date
+2018-05-21T16:36:21,2018-05-21T16:37:13,all,drop,now,JamesM,bad characters & inst_dates
+2023-07-27T07:06:39,2023-07-27T07:06:40,all,drop,now,JamesM,bad inst_date
+2023-09-08T00:59:50,2023-09-08T00:59:51,all,drop,now,JamesM,bad inst_date
+2023-09-17t05:05:26,2023-09-17T05:05:27,all,drop,now,JamesM,bad inst_date

@@ -21,9 +21,7 @@ try({
   # GPS ------------------------------------------------------------------------
   instrument <- 'gps'
   proc_init()
-  nd <- gps_init()
-  nd <- gps_qaqc()
-  update_archive(nd, data_path(site, instrument, 'qaqc'))
+  nd <- proc_gps()
 })
 
 try({
