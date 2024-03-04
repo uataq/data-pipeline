@@ -2,7 +2,7 @@ lgr_ugga_calibrate <- function() {
 
   if (!site_config$reprocess && !grepl('trx', site)) {
     # Exit if currently sampling reference gases
-    if (tail(nd$ID_CO2, 1) != -10) 
+    if (tail(nd$ID_CO2, 1) != -10)
       stop('Calibrations disabled. Sampling reference tank at: ', site)
     
     # Import recent data to ensure bracketing reference measurements
@@ -13,9 +13,12 @@ lgr_ugga_calibrate <- function() {
   }
 
   # Invalidate measured mole fraction for records that fail to pass qaqc,
-  #   excluding cal tank references (QAQC_Flag == -9)
+  #   excluding out of range CH4 values (QAQC_Flag == -60)
+  #   excluding out of range CO2 values (QAQC_Flag == -61)
   invalid <- c('CO2d_ppm', 'CH4d_ppm')
-  nd[with(nd, QAQC_Flag < 0 & QAQC_Flag != -9), invalid] <- NA
+  valid_flags <- c(-60, -61)
+  nd[with(nd, QAQC_Flag < 0 & !(QAQC_Flag %in% valid_flags)),
+     invalid] <- NA
 
   grouped <- nd %>%
     group_by(yyyy = format(Time_UTC, '%Y', tz = 'UTC'))

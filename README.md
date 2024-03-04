@@ -17,9 +17,7 @@ The trace gas processing pipeline is structured as follows. This is executed on 
 
 Site metadata can be found in [`config/site_config.csv`](config/site_config.csv) and at [air.utah.edu](http://air.utah.edu).
 
-## Instrument naming conventions
-
-Additional instrument metadata can be found in [`config/data_config.json`](config/data_config.json).
+## Instruments
 
 | Instrument              | Abbreviation   |
 | ----------------------- | -------------- |
@@ -37,79 +35,45 @@ Additional instrument metadata can be found in [`config/data_config.json`](confi
 | Teldyne T500u           | teledyne_t500u |
 | TEOM 1400ab             | teom_1400ab    |
 
-Raw files with a dat extension are recorded via a CR1000 datalogger, while raw files with a csv extension are recorded via a raspberry pi running [air-trend](https://github.com/jmineau/air-trend).
+## Processing Levels
 
-## QC flagging conventions
+Data is archived into different levels within each `measurements/data/<site_id>/<instrument>` directory. Instrument column names and data types are defined for each processing level in [`config/data_config.json`](config/data_config.json).
 
-Numeric values are assigned to observations that meet certain automated or human identified criterion. The meaning of these identifiers are as follows.
+### Raw
 
-| Flag | Description                                                     |
-| ---- | --------------------------------------------------------------- |
-| 1    | Measurement data filled from backup data recording source       |
-| 0    | Data passes all QC metrics                                      |
-| -1   | Data manually removed                                           |
-| -2   | System flush                                                    |
-| -3   | Invalid valve identifier                                        |
-| -4   | Flow rate or cavity pressure out of range                       |
-| -5   | Drift between adjacent reference tank measurements out of range |
-| -6   | Time elapsed between reference tank measurements out of range   |
-| -7   | Reference tank measurements out of range                        |
-| -8   | Cavity humidity out of range                                    |
-| -9   | Reference tank valve                                            |
-| -11  | Bad GPS fix quality                                             |
+Data received from instruments are archived to the `raw` directory. The intention is that these files should never be touched.
 
-## Column naming conventions for calibrated data files
+> In extreme cases, this data has been altered such as when files were erroneously copied, to add missing column headers, and to split gps data by nmea sentence.
 
-### Licor 6262 IRGA
+Raw files with a `dat` extension are recorded via a CR1000 datalogger, while raw files with a `csv` extension are recorded via a raspberry pi running [air-trend](https://github.com/jmineau/air-trend).
 
-| Column Name   | Description                                                                         |
-| ------------- | ----------------------------------------------------------------------------------- |
-| Time_UTC      | Time in UTC                                                                         |
-| CO2d_ppm_cal  | The calibrated concenctration of DRY CO2 in parts per million                       |
-| CO2d_ppm_meas | The uncalibrated concentraion of DRY CO2 in parts per million                       |
-| CO2d_m        | The slope of the calibration applied                                                |
-| CO2d_b        | The y-intercept of the calibration applied                                          |
-| CO2d_n        | The number of calibration tanks used in the calibration applied                     |
-| CO2d_rsq      | The R^2 value derived from the slope of the calibration applied                     |
-| CO2d_rmse     | The root mean squared error value derived from the slope of the calibration applied |
-| ID_CO2        | ID of CO2 being measured (-10(ambient), -99(flushing), Standard tank concentration) |
-| QAQC_Flag     | Automated QC flagging. See table "QAQC flagging conventions"                        |
+### QAQC
 
-### Los Gatos Research UGGA
+After archiving raw data, [QAQC flags](QAQC_Flags.md) are applied to each dataset and written to the `qaqc` archive.
 
-| Column Name   | Description                                                                         |
-| ------------- | ----------------------------------------------------------------------------------- |
-| Time_UTC      | Time in UTC                                                                         |
-| CO2d_ppm_cal  | The calibrated concenctration of DRY CO2 in parts per million                       |
-| CO2d_ppm_meas | The uncalibrated concentraion of DRY CO2 in parts per million                       |
-| CO2d_m        | The slope of the calibration for CO2                                                |
-| CO2d_b        | The y-intercept of the calibration for CO2                                          |
-| CO2d_n        | The number of calibration tanks used in the calibration for CO2                     |
-| CO2d_rsq      | The R^2 value derived from the slope of the calibration for CO2                     |
-| CO2d_rmse     | The root mean squared error value derived from the slope of the calibration for CO2 |
-| ID_CO2        | ID of CO2 being measured (-10(ambient), -99(flushing), Standard tank concentration) |
-| CH4d_ppm_cal  | The calibrated concenctration of DRY CH4 in parts per million                       |
-| CH4d_ppm_meas | The uncalibrated concentraion of DRY CH4 in parts per million                       |
-| CH4d_m        | The slope of the calibration for CH4                                                |
-| CH4d_b        | The y-intercept of the calibration for CH4                                          |
-| CH4d_n        | The number of calibration tanks used in the calibration for CH4                     |
-| CH4d_rsq      | The R^2 value derived from the slope of the calibration for CH4                     |
-| CH4d_rmse     | The root mean squared error value derived from the slope of the calibration for CH4 |
-| ID_CH4        | ID of CH4 being measured (-10(ambient), -99(flushing), Standard tank concentration) |
-| QAQC_Flag     | Automated QC flagging. See table "QAQC flagging conventions"                        |
+To filter QAQC'd data, use `QAQC_Flag >= 0`
+
+For instructions on how to manually flag data or remove automatic flags, see [Revising historic data](#revising-historic-data).
+
+### Calibrated
+
+This level exists only for instruments which receive calibration during post-processing. This would include the greenhouse gas instruments: `licor_6262`, `licor_7000`, and `lgr_ugga`. More information for this level is in [Calibration](Calibration).
+
+Other instruments like the teledynes which receive manual, asynchronous calibrations do not have a `calibrated` level, as the raw data is already calibrated. Other instruments like the `gps` do not receive calibrations.
+
+### Final
+
+All instruments are finalized by removing rows with `QAQC_Flag < 0` and reducing to the essentials columns before writing to the `final` archive. Any reference gas measurement rows (`ID` >= 0) are also removed.
+
+This level is intended to be the go-to level for most purposes, including sharing with third parties, with the exception of diagnostics.
 
 # Workflows
 
-## Reading calibrated data
-
-Calibrated, QAQC'd data can be read in from the calibrated directory using the following filter:
-
-`QAQC_Flag >= 0`
-
 ## Revising historic data
 
-Changes in the historic datasets can be made using the `bad/` data text files. When a new commit is made, the historic record for the given site is reprocessed on the next run (every 10 minutes).
+Changes in the historic datasets can be made using the `bad/` data text files. When a new commit is made, the historic record for the given site is reprocessed on the next run (every 15 minutes).
 
+- To pass data which has automatically been flagged, set `ID_new='ok'`. This will not replace the ID in the data.
 - To remove data, set `ID_new=NA`.
 - To update the known concentration of a measured tank, set the new concentration in `ID_new` and the old concentration in `ID_old`.
 - To match a subset of the data, match the `ID_old` configuration with the valve identification stored in the datasets. For example, to remove a particular tank with a concentration of 499.89 ppm CO2 from the record, set `ID_old=499.89`.

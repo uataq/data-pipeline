@@ -29,8 +29,10 @@ try({
   instrument <- 'teledyne_t500u'
   proc_init()
   nd <- air_trend_init()
-  nd <- air_trend_qaqc()
+  nd <- teledyne_t500u_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
+  nd <- finalize()
+  update_archive(nd, data_path(site, instrument, 'final'))
 })
 
 
@@ -46,6 +48,8 @@ try({
   nd <- air_trend_init()
   nd <- bb_205_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
+  nd <- finalize()
+  update_archive(nd, data_path(site, instrument, 'final'))
 })
 
 try({
@@ -53,8 +57,23 @@ try({
   instrument <- 'lgr_no2'
   proc_init()
   nd <- air_trend_init()
-  nd <- air_trend_qaqc()
+  nd <- lgr_no2_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
+  nd <- nd[nd$ID == -10, ]  # drop reference measurements
+  nd <- finalize()
+  update_archive(nd, data_path(site, instrument, 'final'))
+})
+
+try({
+  # Met -------------------------------------------------------------------------
+  instrument <- 'met'  # not really sure which instrument(s) this is
+  proc_init()
+  nd <- air_trend_init()
+  colnames(nd) <- data_config[[instrument]]$final$col_names
+  nd$QAQC_Flag <- 0  # no qaqc flags for met
+  nd <- bad_data_fix(nd)
+  nd <- finalize()
+  update_archive(nd, data_path(site, instrument, 'final'))
 })
 
 try({
@@ -64,6 +83,8 @@ try({
   nd <- air_trend_init()
   nd <- metone_es642_qaqc(logger = 'air_trend')
   update_archive(nd, data_path(site, instrument, 'qaqc'))
+  nd <- finalize()
+  update_archive(nd, data_path(site, instrument, 'final'))
 })
 }
 

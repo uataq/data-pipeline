@@ -2,38 +2,22 @@ licor_7000_qaqc <- function() {
 
   # Invalidate columns containing record number and redundant datetime fields
   nd[, 2:7] <- NULL
-  colnames(nd) <- data_config[[instrument]]$qaqc$col_names[1:ncol(nd)]
-  
-  # Sort dataframe by time
-  nd <- nd[order(nd$Time_UTC), ]
+  colnames(nd) <- data_config[['licor_7000']]$qaqc$col_names[1:ncol(nd)]
+
+  # Filter and sort by time
+  nd <- nd %>%
+    dplyr::filter(!is.na(Time_UTC)) %>%
+    arrange(Time_UTC)
 
   # Initialize qaqc flag
   nd$QAQC_Flag <- 0
 
-  # Extract numeric valve identifier and round result to eliminate precision
-  # errors reported by the cr1000
-  nd$ID <- suppressWarnings(round(as.numeric(nd$ID), 2))
-
   # Apply manual qaqc definitions in bad/site/instrument.csv
   nd <- bad_data_fix(nd)
 
+  # Extract numeric valve identifier and round result to eliminate precision
+  # errors reported by the cr1000
   nd$ID_CO2 <- suppressWarnings(round(as.numeric(nd$ID), 2))
-
-  # QAQC flagging
-  # https://github.com/uataq/data-pipeline#qaqc-flagging-conventions
-  is_manual_qc <- nd$QAQC_Flag == -1
-  # no CO2_Analog_ppm in licor_7000, so comment out following lines
-  #analog_mask <- with(nd, !is.na(CO2_Analog_ppm) &
-  #                      abs(CO2_ppm - CO2_Analog_ppm) > 10 |
-  #                      is.na(CO2_ppm))
-  #nd$CO2_ppm[analog_mask] <- nd$CO2_Analog_ppm[analog_mask]
-  #nd$QAQC_Flag[analog_mask] <- 1
-  nd$QAQC_Flag[with(nd, Flow_mLmin < 395 | Flow_mLmin > 405)] <- -4
-  nd$QAQC_Flag[with(nd, ID_CO2 %in% c(-1, -2, -3, NA))] <- -3
-  nd$QAQC_Flag[with(nd, ID_CO2 != -99 & ID_CO2 != -10 & ID_CO2 < 0)] <- -3
-  nd$QAQC_Flag[with(nd, ID_CO2 == -99)] <- -2
-  nd$QAQC_Flag[with(nd, ID_CO2 >= 0)] <- -9
-  nd$QAQC_Flag[is_manual_qc] <- -1
 
   # Compute H2O concentration in ppm
   nd$Cavity_T_C[nd$Cavity_T_C=="NAN"] <- NA; nd$Cavity_T_C <- as.numeric(nd$Cavity_T_C)
@@ -58,5 +42,25 @@ licor_7000_qaqc <- function() {
   dry_mask <- is.na(nd$Cavity_RH_pct)
   nd$CO2d_ppm[dry_mask] <- nd$CO2_ppm[dry_mask]
 
-  nd
+  # QAQC flagging
+  # https://github.com/uataq/data-pipeline#qaqc-flagging-conventions
+  is_manual_pass <- nd$QAQC_Flag == 1
+  is_manual_removal <- nd$QAQC_Flag == -1
+
+  nd$QAQC_Flag[with(nd, ID_CO2 == -99)] <- -2
+  nd$QAQC_Flag[with(nd, ID_CO2 %in% c(-1, -2, -3, NA))] <- -3
+  nd$QAQC_Flag[with(nd, ID_CO2 != -99 & ID_CO2 != -10 & ID_CO2 < 0)] <- -3
+  nd$QAQC_Flag[with(nd, CO2d_ppm < 0 | CO2d_ppm > 3000 | is.na(CO2d_ppm))] <- -40
+  nd$QAQC_Flag[with(nd, Flow_mLmin < 395 | Flow_mLmin > 405)] <- -41
+  nd$QAQC_Flag[with(nd, Cavity_T_C_IRGA < 0 | Cavity_T_C_IRGA > 55)] <- -42
+  nd$QAQC_Flag[with(nd, Cavity_P_kPa_IRGA < 75 | Cavity_P_kPa_IRGA > 95)] <- -43
+  nd$QAQC_Flag[filter_warmup(nd, warmup = '2M')] <- -44
+
+  nd$QAQC_Flag[is_manual_pass] <- 1
+  nd$QAQC_Flag[is_manual_removal] <- -1
+
+  # Reorder columns
+  nd <- nd[, data_config[['licor_7000']]$qaqc$col_names]
+
+  return(nd)
 }

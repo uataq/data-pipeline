@@ -22,6 +22,8 @@ try({
   update_archive(nd, data_path(site, instrument, 'qaqc'))
   nd <- lgr_ugga_calibrate()
   update_archive(nd, data_path(site, instrument, 'calibrated'))
+  nd <- finalize_ghg()
+  update_archive(nd, data_path(site, instrument, 'final'))
 })
 
 try({
@@ -29,8 +31,10 @@ try({
   instrument <- 'magee_ae33'
   proc_init()
   nd <- air_trend_init(hostname = brain)
-  nd <- air_trend_qaqc()
+  nd <- magee_ae33_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
+  nd <- finalize()
+  update_archive(nd, data_path(site, instrument, 'final'))
 })
 
 try({
@@ -38,8 +42,10 @@ try({
   instrument <- 'teledyne_t200'
   proc_init()
   nd <- air_trend_init(hostname = brain)
-  nd <- air_trend_qaqc()
+  nd <- teledyne_t200_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
+  nd <- finalize()
+  update_archive(nd, data_path(site, instrument, 'final'))
 })
 
 try({
@@ -47,8 +53,10 @@ try({
   instrument <- 'teledyne_t300'
   proc_init()
   nd <- air_trend_init(hostname = brain)
-  nd <- air_trend_qaqc()
+  nd <- teledyne_t300_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
+  nd <- finalize()
+  update_archive(nd, data_path(site, instrument, 'final'))
 })
 
 try({
@@ -56,8 +64,10 @@ try({
   instrument <- 'teledyne_t400'
   proc_init()
   nd <- air_trend_init(hostname = brain)
-  nd <- air_trend_qaqc()
+  nd <- teledyne_t400_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
+  nd <- finalize()
+  update_archive(nd, data_path(site, instrument, 'final'))
 })
 
 
@@ -73,6 +83,8 @@ try({
   nd <- air_trend_init(hostname = brain)
   nd <- metone_es642_qaqc(logger = 'air_trend')
   update_archive(nd, data_path(site, instrument, 'qaqc'))
+  nd <- finalize()
+  update_archive(nd, data_path(site, instrument, 'final'))
 })
 
 try({
@@ -80,8 +92,10 @@ try({
   instrument <- 'teledyne_t500u'
   proc_init()
   nd <- air_trend_init(hostname = brain)
-  nd <- air_trend_qaqc()
+  nd <- teledyne_t500u_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
+  nd <- finalize()
+  update_archive(nd, data_path(site, instrument, 'final'))
 })
 
 try({
@@ -89,8 +103,10 @@ try({
   instrument <- 'teom_1400ab'
   proc_init()
   nd <- air_trend_init(hostname = brain)
-  nd <- air_trend_qaqc()
+  nd <- teom_1400ab_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
+  nd <- finalize()
+  update_archive(nd, data_path(site, instrument, 'final'))
 })
 }
 

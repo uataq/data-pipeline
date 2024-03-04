@@ -1,9 +1,8 @@
 # James Mineau
 
-bb_205_qaqc <- function() {
-
+teom_1400ab <- function() {
   # Standardize field names
-  colnames(nd) <- data_config[['2b_205']]$qaqc$col_names[1:ncol(nd)]
+  colnames(nd) <- data_config[['teom_1400ab']]$qaqc$col_names[1:ncol(nd)]
 
   # Initialize qaqc flag
   nd$QAQC_Flag <- 0
@@ -16,10 +15,8 @@ bb_205_qaqc <- function() {
   is_manual_pass <- nd$QAQC_Flag == 1
   is_manual_removal <- nd$QAQC_Flag == -1
 
-  nd$QAQC_Flag[with(nd, O3_ppb < 0 | O3_ppb > 250 | is.na(O3_ppb))] <- -10
-  nd$QAQC_Flag[with(nd, Flow_CCmin < 1800 | Flow_CCmin > 3000)] <- -11
-  nd$QAQC_Flag[with(nd, Cavity_T_C < 0 | Cavity_T_C > 50)] <- -12
-  nd$QAQC_Flag[filter_warmup(nd)] <- -13
+  nd$QAQC_Flag[with(nd, PM2.5_ugm3 < 0 | PM2.5_ugm3 > 300000 | is.na(PM2.5_ugm3))] <- -130
+  nd$QAQC_Flag[filter_warmup(nd)] <- -131
 
   nd$QAQC_Flag[is_manual_pass] <- 1
   nd$QAQC_Flag[is_manual_removal] <- -1

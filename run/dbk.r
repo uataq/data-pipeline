@@ -22,6 +22,8 @@ try({
   # calibration code for licor_7000 is the same as for licor_6262, so just call licor_6262_calibrate()
   nd <- licor_6262_calibrate()
   update_archive(nd, data_path(site, instrument, 'calibrated'))
+  nd <- finalize_ghg()
+  update_archive(nd, data_path(site, instrument, 'final'))
 })
 
 try({
@@ -33,6 +35,8 @@ try({
     update_archive(nd, data_path(site, instrument, 'raw'), check_header = F)
   nd <- metone_es642_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
+  nd <- finalize()
+  update_archive(nd, data_path(site, instrument, 'final'))
 })
 
 
@@ -52,6 +56,8 @@ try({
   update_archive(nd, data_path(site, instrument, 'qaqc'))
   nd <- licor_6262_calibrate()
   update_archive(nd, data_path(site, instrument, 'calibrated'))
+  nd <- finalize_ghg()
+  update_archive(nd, data_path(site, instrument, 'final'))
 })
 }
 

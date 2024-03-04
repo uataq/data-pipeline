@@ -26,15 +26,24 @@ bad_data_fix <- function(data,
                      data$ID == ID_old)
     }
 
-    if ('ID' %in% colnames(data)) {
-      # Not all instruments have an ID column (ex: teledynes)
-      # For these instruments, the only valid option is ID_old=all & ID_new=NA
-      # For instruments with an ID column, replace the ID with the new ID
-      data$ID[mask] <- bad_tbl$ID_new[i]
+    # Set the QAQC_Flag to 1 if ID_new is 'ok'
+    # - Data failed automatic QAQC but manually passed
+    if (bad_tbl$ID_new[i] == 'ok') {
+      data$QAQC_Flag[mask] <- 1
+    } else {  # dont replace ID if ID_new is 'ok'
+
+      if ('ID' %in% colnames(data)) {
+        # Not all instruments have an ID column (ex: teledynes)
+        # For these instruments, the only valid option is ID_old=all & ID_new=NA
+        # For instruments with an ID column, replace the ID with the new ID
+        data$ID[mask] <- bad_tbl$ID_new[i]
+      }
+
+      # Set the QAQC_Flag to -1 if ID_new is NA (bad data)
+      if (is.na(bad_tbl$ID_new[i])) data$QAQC_Flag[mask] <- -1
     }
 
-    # Set the QAQC_Flag to -1 if ID_new is NA (bad data)
-    if (is.na(bad_tbl$ID_new[i])) data$QAQC_Flag[mask] <- -1
   }
+
   return(data)
 }

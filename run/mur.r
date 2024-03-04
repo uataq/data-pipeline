@@ -18,6 +18,8 @@ try({
   update_archive(nd, data_path(site, instrument, 'qaqc'))
   nd <- licor_6262_calibrate()
   update_archive(nd, data_path(site, instrument, 'calibrated'))
+  nd <- finalize_ghg()
+  update_archive(nd, data_path(site, instrument, 'final'))
 })
 
 lock_remove()

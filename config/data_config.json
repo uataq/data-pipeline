@@ -7,6 +7,10 @@
     "qaqc" : {
       "col_names" : ["Time_UTC", "O3_ppb", "Cavity_T_C", "Cavity_P_hPa", "Flow_CCmin", "QAQC_Flag"],
       "col_types" : "Tddddd"
+    },
+    "final" : {
+      "col_names" : ["Time_UTC", "O3_ppb"],
+      "col_types" : "Td"
     }
   },
   "gps" : {
@@ -19,8 +23,12 @@
       "col_types" : "Tccdcdcddc"
     },
     "qaqc" : {
-      "col_names" : ["Time_UTC", "Latitude_deg", "Longitude_deg", "Altitude_msl", "Speed_kmh", "Course_deg", "N_Sat", "QAQC_Flag"],
-      "col_types" : "Tddddddd"
+      "col_names" : ["Time_UTC", "Pi_Time", "Latitude_deg", "Longitude_deg", "Altitude_msl", "Speed_kmh", "Course_deg", "N_Sat", "Fix_Quality", "Status", "QAQC_Flag"],
+      "col_types" : "TTddddddd"
+    },
+    "final" : {
+      "col_names" : ["Time_UTC", "Pi_Time", "Latitude_deg", "Longitude_deg", "Altitude_msl", "Speed_kmh", "Course_deg"],
+      "col_types" : "TTddddd"
     }
   },
   "licor_6262" : {
@@ -29,12 +37,16 @@
       "col_types" : "Tdddddddddddddddddddc"
     },
     "qaqc" : {
-      "col_names" : ["Time_UTC", "Battery_Voltage_V", "Panel_T_C", "Ambient_T_C", "Cavity_T_C_IRGA", "Cavity_P_kPa_IRGA", "Flow_mLmin", "Cavity_P_mV", "Cavity_RH_mV", "Cavity_T_C", "CO2_Analog_ppm", "CO2_ppm", "H2O_ppth_IRGA", "ID", "Program", "QAQC_Flag", "ID_CO2", "Cavity_RH_pct", "Cavity_P_Pa", "H2O_ppm", "CO2d_ppm"],
+      "col_names" : ["Time_UTC", "Battery_Voltage_V", "Panel_T_C", "Ambient_T_C", "Cavity_T_C_IRGA", "Cavity_P_kPa_IRGA", "Flow_mLmin", "Cavity_P_mV", "Cavity_RH_mV", "Cavity_T_C", "CO2_Analog_ppm", "CO2_ppm", "H2O_ppth_IRGA", "ID", "Program", "ID_CO2", "Cavity_RH_pct", "Cavity_P_Pa", "H2O_ppm", "CO2d_ppm", "QAQC_Flag"],
       "col_types" : "Tdddddddddddddcdddddd"
     },
     "calibrated" : {
       "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_meas", "CO2d_m", "CO2d_b", "CO2d_n", "CO2d_rsq", "CO2d_rmse", "ID_CO2", "QAQC_Flag"],
       "col_types" : "Tddddddddd"
+    },
+    "final" : {
+      "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_meas"],
+      "col_types" : "Tdd"
     }
   },
   "licor_7000" : {
@@ -43,22 +55,30 @@
       "col_types" : "Tdddddddddddddddddddc"
     },
     "qaqc" : {
-      "col_names" : ["Time_UTC", "Battery_Voltage_V", "Panel_T_C", "Cavity_T_C_IRGA", "Cavity_P_kPa_IRGA", "Flow_mLmin", "Cavity_P_mV", "Cavity_RH_mV", "Cavity_T_C", "CO2_ppm", "H2O_ppth_IRGA", "ID", "Program", "QAQC_Flag", "ID_CO2", "Cavity_RH_pct", "Cavity_P_Pa", "H2O_ppm", "CO2d_ppm"],
+      "col_names" : ["Time_UTC", "Battery_Voltage_V", "Panel_T_C", "Cavity_T_C_IRGA", "Cavity_P_kPa_IRGA", "Flow_mLmin", "Cavity_P_mV", "Cavity_RH_mV", "Cavity_T_C", "CO2_ppm", "H2O_ppth_IRGA", "ID", "Program", "ID_CO2", "Cavity_RH_pct", "Cavity_P_Pa", "H2O_ppm", "CO2d_ppm", "QAQC_Flag"],
       "col_types" : "Tdddddddddddddcdddddd"
     },
     "calibrated" : {
       "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_meas", "CO2d_m", "CO2d_b", "CO2d_n", "CO2d_rsq", "CO2d_rmse", "ID_CO2", "QAQC_Flag"],
       "col_types" : "Tddddddddd"
+    },
+    "final" : {
+      "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_meas"],
+      "col_types" : "Tdd"
     }
   },
   "lgr_no2" : {
     "air_trend" : {
-      "col_names" : ["time", "inst_time", "Relative_Time_s", "NO2_ppb", "NO2_ppb_SE", "Pressue_torr", "Temperature_C", "LED_T_V", "Instrument_T_C", "Tau_s", "BG_Subtracted_Tau_s", "Tau_SE_s", "Loss_ppm_cm-1", "BG_Subtracted_Loss_ppm_cm-1", "Loss_SE_ppm_cm-1", "Num_Good_Fits", "Fit_Amplitude_V", "Fit_Amplitude_SE_V", "Fit_Offset_V", "Fit_Offset_SE_V", "Valve_Number", "Valve_Description", "Collection_State", "Checksum"],
+      "col_names" : ["time", "inst_time", "Relative_Time_s", "NO2_ppb", "NO2_ppb_SE", "Pressure_torr", "Temperature_C", "LED_T_V", "Instrument_T_C", "Tau_s", "BG_Subtracted_Tau_s", "Tau_SE_s", "Loss_ppm_cm-1", "BG_Subtracted_Loss_ppm_cm-1", "Loss_SE_ppm_cm-1", "Num_Good_Fits", "Fit_Amplitude_V", "Fit_Amplitude_SE_V", "Fit_Offset_V", "Fit_Offset_SE_V", "Valve_Number", "Valve_Description", "Collection_State", "Checksum"],
       "col_types" : "TTdddddddddddddddddddccc"
     },
     "qaqc" : {
       "col_names" : ["Time_UTC", "NO2_ppb", "NO2_ppb_se", "Cavity_P_torr", "Cavity_T_C", "LED_T_V", "Instrument_T_C", "Tau_s", "BG_Subtracted_Tau_s", "Tau_SE_s", "Loss_ppm_cm-1", "BG_Subtracted_Loss_ppm_cm-1", "Loss_SE_ppm_cm-1", "Num_Good_Fits", "Fit_Amplitude_V", "Fit_Amplitude_SE_V", "Fit_Offset_V", "Fit_Offset_SE_V", "ID", "QAQC_Flag"],
       "col_types" : "Tddddddddddddddddddd"
+    },
+    "final" : {
+      "col_names" : ["Time_UTC", "NO2_ppb"],
+      "col_types" : "Td"
     }
   },
   "lgr_ugga" : {
@@ -77,6 +97,10 @@
     "calibrated" : {
       "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_meas", "CO2d_m", "CO2d_b", "CO2d_n", "CO2d_rsq", "CO2d_rmse", "ID_CO2", "CH4d_ppm_cal", "CH4d_ppm_meas", "CH4d_m", "CH4d_b", "CH4d_n", "CH4d_rsq", "CH4d_rmse", "ID_CH4", "QAQC_Flag"],
       "col_types" : "Tddddddddddddddddd"
+    },
+    "final" : {
+      "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_meas", "CH4d_ppm_cal", "CH4d_ppm_meas"],
+      "col_types" : "Tdddd"
     }
   },
   "magee_ae33" : {
@@ -87,6 +111,10 @@
     "qaqc" : {
       "col_names" : ["Time_UTC", "BC1_ngm3", "BC2_ngm3", "BC3_ngm3", "BC4_ngm3", "BC5_ngm3", "BC6_ngm3", "BC7_ngm3", "Flow_Lmin", "QAQC_Flag"],
       "col_types" : "Tddddddddd"
+    },
+    "final" : {
+      "col_names" : ["Time_UTC", "BC1_ngm3", "BC2_ngm3", "BC3_ngm3", "BC4_ngm3", "BC5_ngm3", "BC6_ngm3", "BC7_ngm3"],
+      "col_types" : "Tddddddd"
     }
   },
   "met" : {
@@ -94,9 +122,9 @@
       "col_names" : ["time", "case_t_c", "case_rh_pct", "case_t2_c", "case_p_hpa", "amb_t_c", "amb_rh_pct", "box_t_c"],
       "col_types" : "Tddddddd"
     },
-    "qaqc" : {
-      "col_names" : ["Time_UTC", "Case_T_C", "Case_RH_pct", "Case_T2_C", "Case_P_hPa", "Ambient_T_C", "Ambient_RH_pct", "Box_T_C", "QAQC_Flag"],
-      "col_types" : "Tdddddddd"
+    "final" : {
+      "col_names" : ["Time_UTC", "Case_T_C", "Case_RH_pct", "Case_T2_C", "Case_P_hPa", "Ambient_T_C", "Ambient_RH_pct", "Box_T_C"],
+      "col_types" : "Tddddddd"
     }
   },
   "metone_es642" : {
@@ -109,8 +137,12 @@
       "col_types" : "Tdddddddc"
     },
     "qaqc" : {
-      "col_names" : ["Time_UTC", "Battery_Voltage_V", "Panel_T_C", "PM2.5_ugm3", "Flow_Lmin", "Ambient_T_C", "Cavity_RH_pct", "Ambient_P_hPa", "Program", "QAQC_Flag"],
-      "col_types" : "Tdddddddcd"
+      "col_names" : ["Time_UTC", "PM2.5_ugm3", "Flow_Lmin", "Ambient_T_C", "Cavity_RH_pct", "Ambient_P_hPa", "Status", "QAQC_Flag"],
+      "col_types" : "Tddddddd"
+    },
+    "final" : {
+      "col_names" : ["Time_UTC", "PM2.5_ugm3", "Ambient_T_C", "Ambient_P_hPa"],
+      "col_types" : "Tddd"
     }
   },
   "teledyne_t200" : {
@@ -121,6 +153,10 @@
     "qaqc" : {
       "col_names" : ["Time_UTC", "NOx_ppb_std", "Flow_CCmin", "O3_Flow_CCmin", "PMT_mV", "PMT_Norm_mV", "Azero_mV", "HVPS_V", "RCel_T_C", "Box_T_C", "PMT_T_C", "Moly_T_C", "RCel_Pres_inHgA", "Samp_Pres_inHgA", "NOx_Slope", "NOx_Offset_mV", "NO_Slope", "NO_Offset_mV", "NO2_ppb", "NOx_ppb", "NO_ppb", "Test_mV", "QAQC_Flag"],
       "col_types" : "Tdddddddddddddddddddddd"
+    },
+    "final" : {
+      "col_names" : ["Time_UTC", "NO_ppb", "NO2_ppb", "NOx_ppb"],
+      "col_types" : "Tddd"
     }
   },
   "teledyne_t300" : {
@@ -129,8 +165,12 @@
       "col_types" : "Tddddddddddddddddddd"
     },
     "qaqc" : {
-      "col_names" : ["Time", "CO_std_ppb", "CO_Meas_mV", "CO_Ref_mV", "MR_Ratio", "Samp_Pres_inHgA", "Flow_CCmin", "Samp_T_C", "Bench_T_C", "Wheel_T_C", "Box_T_C", "PHT_Drive_mV", "Slope", "Slope1", "Slope2", "Offset", "Offset1", "Offset2", "CO_ppb", "Test_mV", "QAQC_Flag"],
+      "col_names" : ["Time_UTC", "CO_std_ppb", "CO_Meas_mV", "CO_Ref_mV", "MR_Ratio", "Samp_Pres_inHgA", "Flow_CCmin", "Samp_T_C", "Bench_T_C", "Wheel_T_C", "Box_T_C", "PHT_Drive_mV", "Slope", "Slope1", "Slope2", "Offset", "Offset1", "Offset2", "CO_ppb", "Test_mV", "QAQC_Flag"],
       "col_types" : "Tdddddddddddddddddddd"
+    },
+    "final" : {
+      "col_names" : ["Time_UTC", "CO_ppb"],
+      "col_types" : "Td"
     }
   },
   "teledyne_t400" : {
@@ -141,6 +181,10 @@
     "qaqc" : {
       "col_names" : ["Time_UTC", "O3_std_ppb", "O3_Meas_mV", "O3_Ref_mV", "O3_Gen_mV", "O3_Drive_mV", "Photo_Power_mV", "Samp_Pres_inHgA", "Flow_CCmin", "Samp_T_C", "Photo_Lamp_T_C", "O3_Scrub_T_C", "O3_Gen_T_C", "Box_T_C", "Slope", "Offset", "O3_ppb", "Test_mV", "QAQC_Flag"],
       "col_types" : "Tdddddddddddddddddd"
+    },
+    "final" : {
+      "col_names" : ["Time_UTC", "O3_ppb"],
+      "col_types" : "Td"
     }
   },
   "teledyne_t500u" : {
@@ -151,6 +195,10 @@
     "qaqc" :{
       "col_names" : ["Time_UTC", "Phase_T_C", "Bench_Phase_s", "Meas_L_mm", "ARef_L_mm", "Samp_Pres_inHgA", "Samp_T_C", "Bench_T_C", "Box_T_C", "NO2_Slope", "NO2_Offset_mV", "NO2_ppb", "NO2_std_ppb", "MF_T_C", "Test_mV", "QAQC_Flag"],
       "col_types" : "Tddddddddddddddd"
+    },
+    "final" : {
+      "col_names" : ["Time_UTC", "NO2_ppb"],
+      "col_types" : "Td"
     }
   },
   "teom_1400ab" : {
@@ -161,6 +209,10 @@
     "qaqc" : {
       "col_names" : ["Time_UTC", "PM2.5_ugm3", "PM2.5_ugm3_30min", "PM2.5_ugm3_1hr", "QAQC_Flag"],
       "col_types" : "Tdddd"
+    },
+    "final" : {
+      "col_names" : ["Time_UTC", "PM2.5_ugm3", "PM2.5_ugm3_30min", "PM2.5_ugm3_1hr"],
+      "col_types" : "Tddd"
     }
   }
 }

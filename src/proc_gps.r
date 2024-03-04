@@ -1,3 +1,5 @@
+# James Mineau
+
 proc_gps <- function() {
 
   library(dtplyr)
@@ -7,6 +9,16 @@ proc_gps <- function() {
   # - we want to drop rows with only gga data after this date
   rmc_start_date <- list('trx01' = '2018-01-19',
                          'trx02' = '2023-10-04')
+
+  # Storage location of vehicles
+  # - Jordan River Rail Service Center
+  JRRSC <- list(xmin = -111.9221, ymin = 40.7210,
+                xmax = -111.9177, ymax = 40.7234)
+
+  storage <- switch(site,
+                    'trx01' = JRRSC,
+                    'trx02' = JRRSC,
+                    NULL)
 
   wd <- file.path('data', site, instrument, 'raw')
 
@@ -191,13 +203,24 @@ proc_gps <- function() {
     nd <- nd %>% dplyr::filter(ID != 'drop')
 
     # Set QAQC Flags
-    is_manual_qc <- nd$QAQC_Flag == -1
+    # https://github.com/uataq/data-pipeline#qaqc-flagging-conventions
+    is_manual_pass <- nd$QAQC_Flag == 1
+    is_manual_removal <- nd$QAQC_Flag == -1
 
-    nd$QAQC_Flag[with(nd, !(Fix_Quality %in% c(1, 2)))] <- -11
-    nd$QAQC_Flag[with(nd, N_Sat < 3)] <- -11
-    nd$QAQC_Flag[with(nd, !is.na(Time_UTC) & Status != 'A')] <- -11
+    if (!is.null(storage)) {
+      nd$QAQC_Flag[with(nd, Latitude_deg > storage$ymin &
+                          Latitude_deg < storage$ymax &
+                          Longitude_deg > storage$xmin &
+                          Longitude_deg < storgae$xmax)] <- 20
+    }
 
-    nd$QAQC_Flag[is_manual_qc] <- -1
+    nd$QAQC_Flag[with(nd, !(Fix_Quality %in% c(1, 2)))] <- -21
+    nd$QAQC_Flag[with(nd, N_Sat < 4)] <- -22
+    nd$QAQC_Flag[with(nd, !is.na(Time_UTC) & Status != 'A')] <- -23
+    nd$QAQC_Flag[filter_warmup(nd, cooldown = '5M', warmup = '1M')] <- -24
+
+    nd$QAQC_Flag[is_manual_pass] <- 1
+    nd$QAQC_Flag[is_manual_removal] <- -1
 
     # Apply time adjustments
     ahead <- nd$ID == 'ahead'
@@ -226,6 +249,9 @@ proc_gps <- function() {
              Speed_kmh, Course_deg, N_Sat, Fix_Quality, Status, QAQC_Flag)
 
     update_archive(nd, data_path(site, instrument, 'qaqc'))
+
+    nd <- finalize()
+    update_archive(nd, data_path(site, instrument, 'final'))
 
     return(nd)
   }
