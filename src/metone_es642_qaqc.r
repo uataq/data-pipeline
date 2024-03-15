@@ -10,8 +10,9 @@ metone_es642_qaqc <- function(logger = 'cr1000') {
   } else if (logger == 'air_trend') {
     # Add cr1000 columns
     nd <- nd %>%
-      mutate(pm25_ugm3 = pm25_mgm3 * 1000) %>%
-      select(-pm25_mgm3, -checksum)
+      # convert mg/m3 -> ug/m3, but keep col in same position
+      mutate(pm25_mgm3 = pm25_mgm3 * 1000) %>% rename(pm25_ugm3 = pm25_mgm3) %>%
+      select(-checksum)
   }
   colnames(nd) <- data_config[[instrument]]$qaqc$col_names[1:ncol(nd)]
 

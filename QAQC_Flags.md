@@ -30,13 +30,13 @@ Numeric values are assigned to observations that meet certain automated or human
 | -30  | `CO2d_ppm` measurement out of range (0, 3000)                                     |
 | -31  | `Flow_mLmin` flow rate out of range (395, 405)                                    |
 | -32  | `Cavity_T_C_IRGA` cavity temperature out of range (0, 50)                         |
-| -33  | `Cavity_P_kPa_IRGA` cavity pressure out of range (75, 115)                        |
+| -33  | `Cavity_P_kPa_IRGA` cavity pressure out of range (50, 115)                        |
 | -34  | `Time_UTC` recent outage > 1 hour -- warmup period of 5 mins                      |
 | ↓    | **Licor 7000 IRGA**                                                               |
 | -40  | `CO2d_ppm` measurement out of range  (0, 3000)                                    |
 | -41  | `Flow_mLmin` flow rate out of range (395, 405)                                    |
 | -42  | `Cavity_T_C_IRGA` cavity temperature out of range (0, 55)                         |
-| -43  | `Cavity_P_kPa_IRGA` cavity pressure out of range (75, 115)                        |
+| -43  | `Cavity_P_kPa_IRGA` cavity pressure out of range (50, 115)                        |
 | -44  | `Time_UTC` recent outage > 1 hour -- warmup period of 2 mins                      |
 | ↓    | **Los Gatos Research NO2**                                                        |
 | -50  | `NO2_ppb` measurement out of range (0, 1000)                                      |

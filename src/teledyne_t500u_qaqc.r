@@ -1,6 +1,6 @@
 # James Mineau
 
-teledyne_t500u <- function() {
+teledyne_t500u_qaqc <- function() {
   # Standardize field names
   colnames(nd) <- data_config[['teledyne_t500u']]$qaqc$col_names[1:ncol(nd)]
 

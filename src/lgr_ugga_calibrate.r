@@ -15,8 +15,9 @@ lgr_ugga_calibrate <- function() {
   # Invalidate measured mole fraction for records that fail to pass qaqc,
   #   excluding out of range CH4 values (QAQC_Flag == -60)
   #   excluding out of range CO2 values (QAQC_Flag == -61)
+  #   excluding out of range H2O values (QAQC_Flag == -62)
   invalid <- c('CO2d_ppm', 'CH4d_ppm')
-  valid_flags <- c(-60, -61)
+  valid_flags <- c(-60, -61, -62)
   nd[with(nd, QAQC_Flag < 0 & !(QAQC_Flag %in% valid_flags)),
      invalid] <- NA
 

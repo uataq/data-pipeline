@@ -171,9 +171,9 @@ proc_gps <- function() {
     nd <- nd %>%
       # Convert latitude and longitude to decimal degrees
       mutate(Latitude_deg = (ifelse(n_s == 'N', 1, -1)
-                             * round(gps_dm2dd(latitude_dm), 6)),
+                             * gps_dm2dd(latitude_dm)),
              Longitude_deg = (ifelse(e_w == 'E', 1, -1)
-                              * round(gps_dm2dd(longitude_dm), 6)))  %>%
+                              * gps_dm2dd(longitude_dm)))  %>%
       select(-latitude_dm, -longitude_dm, -n_s, -e_w) %>%
 
       # Rename columns
@@ -200,7 +200,7 @@ proc_gps <- function() {
              Time_UTC = time_gps)
 
     # Drop specified rows due to bad characters, duplicates, etc.
-    nd <- nd %>% dplyr::filter(ID != 'drop')
+    nd <- nd[nd$ID != 'drop', ]
 
     # Set QAQC Flags
     # https://github.com/uataq/data-pipeline#qaqc-flagging-conventions
@@ -211,13 +211,13 @@ proc_gps <- function() {
       nd$QAQC_Flag[with(nd, Latitude_deg > storage$ymin &
                           Latitude_deg < storage$ymax &
                           Longitude_deg > storage$xmin &
-                          Longitude_deg < storgae$xmax)] <- 20
+                          Longitude_deg < storage$xmax)] <- 20
     }
 
     nd$QAQC_Flag[with(nd, !(Fix_Quality %in% c(1, 2)))] <- -21
     nd$QAQC_Flag[with(nd, N_Sat < 4)] <- -22
     nd$QAQC_Flag[with(nd, !is.na(Time_UTC) & Status != 'A')] <- -23
-    nd$QAQC_Flag[filter_warmup(nd, cooldown = '5M', warmup = '1M')] <- -24
+    # nd$QAQC_Flag[filter_warmup(nd, cooldown = '5M', warmup = '1M')] <- -24  # takes a really long time - not worth it
 
     nd$QAQC_Flag[is_manual_pass] <- 1
     nd$QAQC_Flag[is_manual_removal] <- -1
@@ -240,18 +240,14 @@ proc_gps <- function() {
                                            nd$inst_time[mask]),
                                     format = '%Y-%m-%d%H%M%OS', tz = 'UTC')
 
+    # Format Pi Time
     nd <- nd %>%
-      # Reformat Pi_Time
       mutate(Pi_Time = format(Pi_Time, tz = 'UTC',
-                              format = '%Y-%m-%d %H:%M:%OS2')) %>%
-      # Reduce to QAQC columns
-      select(Time_UTC, Pi_Time, Latitude_deg, Longitude_deg, Altitude_msl,
-             Speed_kmh, Course_deg, N_Sat, Fix_Quality, Status, QAQC_Flag)
+                              format = '%Y-%m-%d %H:%M:%OS2'))
 
-    update_archive(nd, data_path(site, instrument, 'qaqc'))
-
-    nd <- finalize()
-    update_archive(nd, data_path(site, instrument, 'final'))
+    # Reduce to QAQC columns
+    qaqc_cols <- data_config[['gps']]$qaqc$col_names
+    nd <- nd[, qaqc_cols]
 
     return(nd)
   }
@@ -283,12 +279,14 @@ proc_gps <- function() {
     print_nd()
 
   } else {
-    # Reprocess raw data in yearly batches to avoid memory issues
-    batches <- as.numeric(substr(basename(files[1]), 1, 4)):year(Sys.Date())
-    nd <- lapply(batches, proc_batch) %>%
-      bind_rows() %>%
-      arrange(Time_UTC)
+    # Reprocess raw data in yearly batches
+    batches <- unique(substr(basename(files), 1, 4))
+    nd <- mclapply(batches, proc_batch, mc.cores = 10) %>%
+      bind_rows()
   }
+
+  # Sort by Time_UTC
+  nd <- nd[order(nd[['Time_UTC']]), ]
 
   return(nd)
 }

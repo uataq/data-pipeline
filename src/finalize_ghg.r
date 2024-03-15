@@ -19,15 +19,14 @@ finalize_ghg <- function() {
   qaqc_dir <- file.path('data', site, instrument, 'qaqc')
 
   # Determine files to read
-  n <- length(unique(month(nd$Time_UTC)))
+  months <- unique(format(nd$Time_UTC, '%Y_%m', tz = 'UTC')) %>%
+    paste0('.*\\.{1}dat', collapse = '|')
 
-  qaqc_files <- list.files(qaqc_dir, pattern = '.*\\.{1}dat',
-                           full.names = TRUE) %>% tail(n)
+  qaqc_files <- list.files(qaqc_dir, pattern = months, full.names = TRUE)
 
   if (dir.exists(cal_dir)) {
     # If we have a cal directory, we want the _cal & _meas cols from cal files
-    cal_files <- list.files(cal_dir, pattern = '.*\\.{1}dat',
-                            full.names = TRUE) %>% tail(n)
+    cal_files <- list.files(cal_dir, pattern = months, full.names = TRUE)
     cal <- read_files(cal_files, select = cal_cols)
 
     # also want the H20_ppm from qaqc files
@@ -35,7 +34,7 @@ finalize_ghg <- function() {
     # - cal$QAQC_Flag inherited from qaqc$QAQC_Flag
     qaqc <- read_files(qaqc_files, select = c('Time_UTC', 'H2O_ppm'))
 
-    nd <- merge(cal, qaqc, by = 'Time_UTC', all = TRUE)
+    nd <- merge(cal, qaqc, by = 'Time_UTC')
   } else {
     # If we dont have a cal directory, we want the ghg cols from qaqc files
     nd <- read_files(qaqc_files, select = qaqc_cols)
@@ -55,7 +54,20 @@ finalize_ghg <- function() {
   nd <- nd[nd$QAQC_Flag >= 0 & nd$ID_CO2 == -10, ]
 
   # Set order of columns
+  if (grepl('manual_cal', instrument)) {
+    # drop _manual_cal from instrument name
+    instrument <- gsub('_manual_cal', '', instrument)
+  }
   nd <- nd[, data_config[[instrument]]$final$col_names]
+
+  # Round ppms columns
+  if (grepl('licor', instrument)) {
+    # licors are only good to 1 ppm at best, round to integer
+    nd <- nd %>% mutate_at(vars(contains('ppm')), round)
+  } else if (grepl('lgr_ugga', instrument)) {
+    # lgr ugga is good to 0.5 ppb (4 decimal places) with a 10s measurement
+    nd <- nd %>% mutate_at(vars(contains('ppm')), function(x) round(x, 5))
+  }
 
   return(nd)
 }

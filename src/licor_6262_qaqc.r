@@ -59,7 +59,7 @@ licor_6262_qaqc <- function() {
   nd$QAQC_Flag[with(nd, CO2d_ppm < 0 | CO2d_ppm > 3000 | is.na(CO2d_ppm))] <- -30
   nd$QAQC_Flag[with(nd, Flow_mLmin < 395 | Flow_mLmin > 405)] <- -31
   nd$QAQC_Flag[with(nd, Cavity_T_C_IRGA < 0 | Cavity_T_C_IRGA > 50)] <- -32
-  nd$QAQC_Flag[with(nd, Cavity_P_kPa_IRGA < 75 | Cavity_P_kPa_IRGA > 95)] <- -33
+  nd$QAQC_Flag[with(nd, Cavity_P_kPa_IRGA < 50 | Cavity_P_kPa_IRGA > 115)] <- -33
   nd$QAQC_Flag[filter_warmup(nd)] <- -34
 
   nd$QAQC_Flag[is_manual_pass] <- 1

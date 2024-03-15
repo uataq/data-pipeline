@@ -1,6 +1,6 @@
 # James Mineau
 
-teom_1400ab <- function() {
+teom_1400ab_qaqc <- function() {
   # Standardize field names
   colnames(nd) <- data_config[['teom_1400ab']]$qaqc$col_names[1:ncol(nd)]
 

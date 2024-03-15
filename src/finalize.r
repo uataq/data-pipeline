@@ -1,5 +1,5 @@
 finalize <- function() {
-  # Reduce dataframe to essential columns and drop QAQC'd rows
+  # Drop QAQC'd rows and reduce dataframe to essential columns
 
   # Drop QAQC'd rows
   nd <- nd[nd$QAQC_Flag >= 0, ]
