@@ -57,7 +57,7 @@ For instructions on how to manually flag data or remove automatic flags, see [Re
 
 ### Calibrated
 
-This level exists only for instruments which receive calibration during post-processing. This would include the greenhouse gas instruments: `licor_6262`, `licor_7000`, and `lgr_ugga`. More information for this level is in [Calibration.md](Calibration).
+This level exists only for instruments which receive calibration during post-processing. This would include the greenhouse gas instruments: `licor_6262`, `licor_7000`, and `lgr_ugga`. More information for this level is in [Calibration](Calibration.md).
 
 Other instruments like the teledynes which receive manual, asynchronous calibrations do not have a `calibrated` level, as the raw data is already calibrated. Other instruments like the `gps` do not receive calibrations.
 

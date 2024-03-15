@@ -19,4 +19,4 @@ sun, Suncrest, FALSE, NA, NA, FALSE, 40.480978, -111.837047, 5, licor_6262
 trx01, TRAX 1136, TRUE, 166.255.153.194, 8022, FALSE, NA, NA, 5, lgr_ugga
 trx02, TRAX 1104, TRUE, 166.241.147.189, 8022, FALSE, NA, NA, 5, NA
 wbb, William Browning, TRUE, 155.101.15.76, 22, FALSE, 40.766189, -111.847672, 35, lgr_ugga
-wbb-brain, UATAQ pi Lab Brain, FALSE, uataq-brain.atmos.utah.edu, 22, FALSE, 40.766189, -111.847672, 35, NA
+wbb-brain, UATAQ pi Lab Brain, FALSE, uataq-brain.atmosci.utah.edu, 22, FALSE, 40.766189, -111.847672, 35, NA
