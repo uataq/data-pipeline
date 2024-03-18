@@ -15,8 +15,8 @@ teledyne_t200_qaqc <- function() {
   is_manual_pass <- nd$QAQC_Flag == 1
   is_manual_removal <- nd$QAQC_Flag == -1
 
-  nd$QAQC_Flag[with(nd, NO_ppb < 0 | NO_ppb > 20000 | is.na(NO_ppb))] <- -90
-  nd$QAQC_Flag[with(nd, NO2_ppb < 0 | NO2_ppb > 20000 | is.na(NO2_ppb))] <- -91
+  nd$QAQC_Flag[with(nd, NO_ppb < -3 | NO_ppb > 20000 | is.na(NO_ppb))] <- -90
+  nd$QAQC_Flag[with(nd, NO2_ppb < -3 | NO2_ppb > 20000 | is.na(NO2_ppb))] <- -91
   nd$QAQC_Flag[with(nd, Flow_CCmin < 350 | Flow_CCmin > 600)] <- -92
   nd$QAQC_Flag[with(nd, O3_Flow_CCmin < 50 | O3_Flow_CCmin > 150)] <- -93
   nd$QAQC_Flag[with(nd, RCel_Pres_inHgA < 3 | RCel_Pres_inHgA > 6)] <- -94

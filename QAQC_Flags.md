@@ -61,8 +61,8 @@ Numeric values are assigned to observations that meet certain automated or human
 | -83  | `Status` alarm status > 0                                                         |
 | -84  | `Time_UTC` recent outage > 1 hour -- warmup period of 5 mins                      |
 | ↓    | **Teledyne T200**                                                                 |
-| -90  | `NO_ppb` measurement out of range (0, 20000)                                      |
-| -91  | `NO2_ppb` measurement out of range (0, 20000)                                     |
+| -90  | `NO_ppb` measurement out of range (-3, 20000)                                     |
+| -91  | `NO2_ppb` measurement out of range (-3, 20000)                                    |
 | -92  | `Flow_CCmin` flow rate out of range (350, 600)                                    |
 | -93  | `O3_Flow_CCmin` ozone flow rate out of range (50, 150)                            |
 | -94  | `RCel_Pres_inHgA` reaction cell pressure out of range (3, 6)                      |
