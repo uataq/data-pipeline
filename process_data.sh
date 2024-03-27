@@ -60,12 +60,12 @@ echo "Building air.utah.edu static source code..."
 Rscript ../air.utah.edu/_render.r
 echo
 
+echo "Pushing static webpages to VM..."
+/usr/bin/rsync -aqvtzL -e '/usr/bin/ssh -i /uufs/chpc.utah.edu/common/home/u0791084/.ssh/id_rsa' \
+  ../air.utah.edu/_site/* u0791084@air.chpc.utah.edu:/var/www/html/
+echo
+
 echo "Pushing database changes to webserver..."
 /usr/bin/rsync -aqvtzL --delete -e \
   '/usr/bin/ssh -i /uufs/chpc.utah.edu/common/home/u0791084/.ssh/id_rsa' \
   ../data/* u0791084@air.chpc.utah.edu:/data/
-echo
-
-echo "Pushing static webpages to VM..."
-/usr/bin/rsync -aqvtzL -e '/usr/bin/ssh -i /uufs/chpc.utah.edu/common/home/u0791084/.ssh/id_rsa' \
-  ../air.utah.edu/_site/* u0791084@air.chpc.utah.edu:/var/www/html/
