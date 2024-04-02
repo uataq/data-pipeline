@@ -749,4 +749,8 @@ t_start,t_end,ID_old,ID_new,t_added,name,comment
 2022-07-14T10:53:07Z,2022-07-14T10:54:37Z,all,NA,2022-09-06T17:28:00Z,MeganOstlie,Missing flush period after high tank caused invalid values
 2022-07-14T14:02:01Z,2022-07-14T14:03:31Z,all,NA,2022-09-06T17:29:00Z,MeganOstlie,Missing flush period after high tank caused invalid values
 2023-10-16T19:12:00Z,2023-10-16T19:12:00Z,all,NA,2023-10-17T15:31:00Z,MeganOstlie,Cal tank reading low right after LGR restarted
-2023-10-18T12:40:00Z,2023-10-31T23:59:59Z,all,NA,2023-11-08T18:18:00Z,MeganOstlie,Pump needed to be rebuilt
+2023-10-18T12:40:00Z,2023-10-31T23:59:59Z,all,NA,2023-11-08T18:18:00Z,MeganOstlie,Pump needed to be rebuilt 
+2024-01-24T14:00:00Z,2024-01-25T07:00:00Z,~504.01~4.60,~492.29~4.28,2024-04-02T17:31:00Z,MeganOstlie,Wrong tank value entered
+2024-01-24T14:00:00Z,2024-01-25T07:00:00Z,~447.85~2.99,~442.39~3.00,2024-04-02T17:32:00Z,MeganOstlie,Wrong tank value entered
+2024-01-24T14:00:00Z,2024-01-25T07:00:00Z,~398.65~1.89,~398.16~1.87,2024-04-02T17:33:00Z,MeganOstlie,Wrong tank value entered
+2024-02-22T01:00:00Z,2024-02-23T00:00:00Z,all,NA,2024-04-02T17:28:00Z,MeganOstlie,Spare LGR started reading all tank and ambient air values around zero
