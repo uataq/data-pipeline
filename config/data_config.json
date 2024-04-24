@@ -23,11 +23,11 @@
       "col_types" : "Tccdcdcddc"
     },
     "qaqc" : {
-      "col_names" : ["Time_UTC", "Pi_Time", "Latitude_deg", "Longitude_deg", "Altitude_msl", "Speed_kmh", "Course_deg", "N_Sat", "Fix_Quality", "Status", "QAQC_Flag"],
+      "col_names" : ["Time_UTC", "Pi_Time", "Latitude_deg", "Longitude_deg", "Altitude_msl", "Speed_m_s", "Course_deg", "N_Sat", "Fix_Quality", "Status", "QAQC_Flag"],
       "col_types" : "TTddddddd"
     },
     "final" : {
-      "col_names" : ["Time_UTC", "Pi_Time", "Latitude_deg", "Longitude_deg", "Altitude_msl", "Speed_kmh", "Course_deg"],
+      "col_names" : ["Time_UTC", "Pi_Time", "Latitude_deg", "Longitude_deg", "Altitude_msl", "Speed_m_s", "Course_deg"],
       "col_types" : "TTddddd"
     }
   },

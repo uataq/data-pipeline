@@ -119,7 +119,7 @@ proc_gps <- function() {
         mutate(inst_date = sprintf('%06d', inst_date),
                Time_UTC = as.POSIXct(paste(inst_date, inst_time),
                                      format = '%d%m%y %H%M%OS', tz = 'UTC'),
-               Speed_kmh = speed_kt * 1.852) %>%
+               Speed_m_s = speed_kt * 0.514444) %>%
         select(-inst_date, -speed_kt)
 
       # Merge the two dataframes
@@ -161,7 +161,7 @@ proc_gps <- function() {
       # Add rmc columns to gga data
       nd <- gga %>%
         mutate(Time_UTC = as.POSIXct(NA),
-               Speed_kmh = NA, true_course = NA, status = NA)
+               Speed_m_s = NA, true_course = NA, status = NA)
     }
 
     # Memory management
