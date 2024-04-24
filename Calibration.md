@@ -19,7 +19,7 @@ To differentiate data between atmospheric air and reference gas measurements, we
 | --------------- | ----------------------------------------------------------------------------------- |
 | `Time_UTC`      | Time in UTC                                                                         |
 | `CO2d_ppm_cal`  | The calibrated concenctration of DRY CO2 in parts per million                       |
-| `CO2d_ppm_meas` | The uncalibrated concentraion of DRY CO2 in parts per million                       |
+| `CO2d_ppm_raw` | The uncalibrated concentraion of DRY CO2 in parts per million                       |
 | `CO2d_m`        | The slope of the calibration applied                                                |
 | `CO2d_b`        | The y-intercept of the calibration applied                                          |
 | `CO2d_n`        | The number of calibration tanks used in the calibration applied                     |
@@ -34,7 +34,7 @@ To differentiate data between atmospheric air and reference gas measurements, we
 | --------------- | ----------------------------------------------------------------------------------- |
 | `Time_UTC`      | Time in UTC                                                                         |
 | `CO2d_ppm_cal`  | The calibrated concenctration of DRY CO2 in parts per million                       |
-| `CO2d_ppm_meas` | The uncalibrated concentraion of DRY CO2 in parts per million                       |
+| `CO2d_ppm_raw` | The uncalibrated concentraion of DRY CO2 in parts per million                       |
 | `CO2d_m`        | The slope of the calibration for CO2                                                |
 | `CO2d_b`        | The y-intercept of the calibration for CO2                                          |
 | `CO2d_n`        | The number of calibration tanks used in the calibration for CO2                     |
@@ -42,7 +42,7 @@ To differentiate data between atmospheric air and reference gas measurements, we
 | `CO2d_rmse`     | The root mean squared error value derived from the slope of the calibration for CO2 |
 | `ID_CO2`        | ID of CO2 being measured (-10(ambient), -99(flushing), Standard tank concentration) |
 | `CH4d_ppm_cal`  | The calibrated concenctration of DRY CH4 in parts per million                       |
-| `CH4d_ppm_meas` | The uncalibrated concentraion of DRY CH4 in parts per million                       |
+| `CH4d_ppm_raw` | The uncalibrated concentraion of DRY CH4 in parts per million                       |
 | `CH4d_m`        | The slope of the calibration for CH4                                                |
 | `CH4d_b`        | The y-intercept of the calibration for CH4                                          |
 | `CH4d_n`        | The number of calibration tanks used in the calibration for CH4                     |

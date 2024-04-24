@@ -41,11 +41,11 @@
       "col_types" : "Tdddddddddddddcdddddd"
     },
     "calibrated" : {
-      "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_meas", "CO2d_m", "CO2d_b", "CO2d_n", "CO2d_rsq", "CO2d_rmse", "ID_CO2", "QAQC_Flag"],
+      "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_raw", "CO2d_m", "CO2d_b", "CO2d_n", "CO2d_rsq", "CO2d_rmse", "ID_CO2", "QAQC_Flag"],
       "col_types" : "Tddddddddd"
     },
     "final" : {
-      "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_meas"],
+      "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_raw"],
       "col_types" : "Tdd"
     }
   },
@@ -59,11 +59,11 @@
       "col_types" : "Tdddddddddddddcdddddd"
     },
     "calibrated" : {
-      "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_meas", "CO2d_m", "CO2d_b", "CO2d_n", "CO2d_rsq", "CO2d_rmse", "ID_CO2", "QAQC_Flag"],
+      "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_raw", "CO2d_m", "CO2d_b", "CO2d_n", "CO2d_rsq", "CO2d_rmse", "ID_CO2", "QAQC_Flag"],
       "col_types" : "Tddddddddd"
     },
     "final" : {
-      "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_meas"],
+      "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_raw"],
       "col_types" : "Tdd"
     }
   },
@@ -95,11 +95,11 @@
       "col_types" : "Tdddddddddddddddddddddcddd"
     },
     "calibrated" : {
-      "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_meas", "CO2d_m", "CO2d_b", "CO2d_n", "CO2d_rsq", "CO2d_rmse", "ID_CO2", "CH4d_ppm_cal", "CH4d_ppm_meas", "CH4d_m", "CH4d_b", "CH4d_n", "CH4d_rsq", "CH4d_rmse", "ID_CH4", "QAQC_Flag"],
+      "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_raw", "CO2d_m", "CO2d_b", "CO2d_n", "CO2d_rsq", "CO2d_rmse", "ID_CO2", "CH4d_ppm_cal", "CH4d_ppm_raw", "CH4d_m", "CH4d_b", "CH4d_n", "CH4d_rsq", "CH4d_rmse", "ID_CH4", "QAQC_Flag"],
       "col_types" : "Tddddddddddddddddd"
     },
     "final" : {
-      "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_meas", "CH4d_ppm_cal", "CH4d_ppm_meas"],
+      "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_raw", "CH4d_ppm_cal", "CH4d_ppm_raw"],
       "col_types" : "Tdddd"
     }
   },

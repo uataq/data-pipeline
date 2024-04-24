@@ -4,7 +4,7 @@
 #' atmospheric trace gas data using reference tanks.
 #'
 #' @param time POSIXct timestamp, length n
-#' @param meas numeric measured values, length n
+#' @param raw numeric raw measured values, length n
 #' @param known numeric gas concentration flag, length n. -10 for atmospheric
 #'   observations, -99 for flush periods, or a positive value if sampling a known
 #'   concentration
@@ -12,7 +12,7 @@
 #' @param drift_tol tolerated drift between subsequent calibrations
 #' @param dt_tol maximum length of time to allow data outage and still calibrate data
 
-calibrate_linear <- function(time, meas, known, er_tol = 100, drift_tol = 100, dt_tol = 18000) {
+calibrate_linear <- function(time, raw, known, er_tol = 100, drift_tol = 100, dt_tol = 18000) {
   
   require(dplyr)
   
@@ -23,7 +23,7 @@ calibrate_linear <- function(time, meas, known, er_tol = 100, drift_tol = 100, d
   if (length(std_uniq) < 1) {
     out <- data.frame(time = time,
                       cal  = NA,
-                      meas = meas,
+                      raw = raw,
                       m    = NA,
                       b    = NA,
                       n    = 0,
@@ -36,29 +36,29 @@ calibrate_linear <- function(time, meas, known, er_tol = 100, drift_tol = 100, d
   }
   
   # Input coersion
-  data <- data.frame(time = time, meas = as.numeric(meas), known = as.numeric(known))
+  data <- data.frame(time = time, raw = as.numeric(raw), known = as.numeric(known))
   
   # Memory management
-  rm('meas', 'known', 'time')
+  rm('raw', 'known', 'time')
   invisible(gc())
   
   data <- data[order(data$time), ]
   data$dt <- with(data, c(NA, time[2:N] - time[1:(N-1)]))
   
   
-  # Populate known and measured matrices -------------------------------------------------
+  # Populate known and raw matrices -------------------------------------------------
   n_std <- length(std_uniq)
   n_obs <- nrow(data)
   
   stdk     <- matrix(std_uniq, nrow = n_obs, ncol = n_std, byrow = T)
   std_flag <- matrix(data$known, nrow = n_obs, ncol = n_std)
-  std_flag[is.na(data$meas), ] <- NA
+  std_flag[is.na(data$raw), ] <- NA
   
   # Mask for times when sampling any of the unique reference gases. Then, set atmospheric
   # sampling periods to NA. stdm then becomes a matrix with columns of known
-  # concentrations, NA for atmosphere, and numeric values representing the measured
+  # concentrations, NA for atmosphere, and numeric values representing the raw
   # concentrations of the reference gas.
-  stdm <- matrix(data$meas, nrow = n_obs, ncol = n_std)
+  stdm <- matrix(data$raw, nrow = n_obs, ncol = n_std)
   stdm[stdk != std_flag | is.na(std_flag)] <- NA
   
   # Determine elapsed time between reference sampling in same matrix format
@@ -95,7 +95,7 @@ calibrate_linear <- function(time, meas, known, er_tol = 100, drift_tol = 100, d
     group_by(idx)
   
   data$per_mean <- data_grp %>%
-    summarize(values = mean(meas, na.rm = T)) %>%
+    summarize(values = mean(raw, na.rm = T)) %>%
     mutate(lengths = run$lengths) %>%
     inverse.rle()
   
@@ -198,8 +198,8 @@ calibrate_linear <- function(time, meas, known, er_tol = 100, drift_tol = 100, d
   b[n1] <- 0
   
   return(data.frame(time = data$time,
-                    cal  = (data$meas - b) / m,
-                    meas = data$meas,
+                    cal  = (data$raw - b) / m,
+                    raw = data$raw,
                     m    = m,
                     b    = b,
                     n    = n_cal,

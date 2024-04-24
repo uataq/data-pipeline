@@ -2,8 +2,8 @@ finalize_ghg <- function() {
   # Reduce dataframe to essential columns and drop QAQC'd rows
 
   # Define essential columns
-  cal_cols <- c('Time_UTC', 'CO2d_ppm_cal', 'CO2d_ppm_meas',
-                'CH4d_ppm_cal', 'CH4d_ppm_meas', 'QAQC_Flag', 'ID_CO2')
+  cal_cols <- c('Time_UTC', 'CO2d_ppm_cal', 'CO2d_ppm_raw',
+                'CH4d_ppm_cal', 'CH4d_ppm_raw', 'QAQC_Flag', 'ID_CO2')
   qaqc_cols <- c('Time_UTC', 'CH4d_ppm', 'CO2d_ppm', 'H2O_ppm',
                  'QAQC_Flag', 'ID_CO2')
 
@@ -25,12 +25,12 @@ finalize_ghg <- function() {
   qaqc_files <- list.files(qaqc_dir, pattern = months, full.names = TRUE)
 
   if (dir.exists(cal_dir)) {
-    # If we have a cal directory, we want the _cal & _meas cols from cal files
+    # If we have a cal directory, we want the _cal & _raw cols from cal files
     cal_files <- list.files(cal_dir, pattern = months, full.names = TRUE)
     cal <- read_files(cal_files, select = cal_cols)
 
     # also want the H20_ppm from qaqc files
-    # - cal$_meas is the same as qaqc$d_ppm
+    # - cal$_raw is the same as qaqc$d_ppm
     # - cal$QAQC_Flag inherited from qaqc$QAQC_Flag
     qaqc <- read_files(qaqc_files, select = c('Time_UTC', 'H2O_ppm'))
 
@@ -39,8 +39,8 @@ finalize_ghg <- function() {
     # If we dont have a cal directory, we want the ghg cols from qaqc files
     nd <- read_files(qaqc_files, select = qaqc_cols)
 
-    # Rename to include the _meas suffix
-    nd <- nd %>% rename_at(vars(contains('d_ppm')), ~ paste0(., '_meas'))
+    # Rename to include the _raw suffix
+    nd <- nd %>% rename_at(vars(contains('d_ppm')), ~ paste0(., '_raw'))
 
     # Add _cal columns with NA
     if (has_ch4) {

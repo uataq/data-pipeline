@@ -33,8 +33,8 @@ lgr_ugga_calibrate <- function() {
     ungroup() %>%
     select(-yyyy)
   cal <- bind_cols(
-    cal_co2 %>% select(time, cal, meas, m, b, n, rsq, rmse, id),
-    cal_ch4 %>% select(cal, meas, m, b, n, rsq, rmse, id),
+    cal_co2 %>% select(time, cal, raw, m, b, n, rsq, rmse, id),
+    cal_ch4 %>% select(cal, raw, m, b, n, rsq, rmse, id),
     .name_repair = ~ vctrs::vec_as_names(..., repair = "unique", quiet = TRUE)
   )
   colnames(cal) <- data_config[[instrument]]$calibrated$col_names[1:ncol(cal)]
