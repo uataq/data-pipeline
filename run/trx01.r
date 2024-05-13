@@ -36,35 +36,6 @@ try({
   update_archive(nd, data_path(site, instrument, 'final'))
 })
 
-
-try({
-  # LGR UGGA Manual Calibration ------------------------------------------------
-  instrument <- 'lgr_ugga_manual_cal'
-  proc_init()
-  nd <- air_trend_init(name = 'lgr_ugga')
-  nd <- lgr_ugga_qaqc()
-  update_archive(nd, data_path(site, instrument, 'qaqc'))
-  nd <- finalize_ghg()
-  update_archive(nd, data_path(site, instrument, 'final'))
-})
-
-
-### INACTIVE INSTRUMENTS ###
-
-if (site_config$reprocess) {
-  # Only reprocess data if site_config$reprocess is TRUE
-
-try({
-  # 2B 205 ---------------------------------------------------------------------
-  instrument <- '2b_205'
-  proc_init()
-  nd <- air_trend_init()
-  nd <- bb_205_qaqc()
-  update_archive(nd, data_path(site, instrument, 'qaqc'))
-  nd <- finalize()
-  update_archive(nd, data_path(site, instrument, 'final'))
-})
-
 try({
   # LGR UGGA -------------------------------------------------------------------
   instrument <- 'lgr_ugga'
@@ -92,6 +63,34 @@ try({
   update_archive(nd, data_path(site, instrument, 'qaqc'))
   nd <- lgr_ugga_calibrate()
   update_archive(nd, data_path(site, instrument, 'calibrated'))
+  nd <- finalize_ghg()
+  update_archive(nd, data_path(site, instrument, 'final'))
+})
+
+
+### INACTIVE INSTRUMENTS ###
+
+if (site_config$reprocess) {
+  # Only reprocess data if site_config$reprocess is TRUE
+
+try({
+  # 2B 205 ---------------------------------------------------------------------
+  instrument <- '2b_205'
+  proc_init()
+  nd <- air_trend_init()
+  nd <- bb_205_qaqc()
+  update_archive(nd, data_path(site, instrument, 'qaqc'))
+  nd <- finalize()
+  update_archive(nd, data_path(site, instrument, 'final'))
+})
+
+try({
+  # LGR UGGA Manual Calibration ------------------------------------------------
+  instrument <- 'lgr_ugga_manual_cal'
+  proc_init()
+  nd <- air_trend_init(name = 'lgr_ugga')
+  nd <- lgr_ugga_qaqc()
+  update_archive(nd, data_path(site, instrument, 'qaqc'))
   nd <- finalize_ghg()
   update_archive(nd, data_path(site, instrument, 'final'))
 })
