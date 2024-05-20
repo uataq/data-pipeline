@@ -60,14 +60,5 @@ finalize_ghg <- function() {
   }
   nd <- nd[, data_config[[instrument]]$final$col_names]
 
-  # Round ppms columns
-  if (grepl('licor', instrument)) {
-    # licors are only good to 1 ppm at best, round to integer
-    nd <- nd %>% mutate_at(vars(contains('ppm')), round)
-  } else if (grepl('lgr_ugga', instrument)) {
-    # lgr ugga is good to 0.5 ppb (4 decimal places) with a 10s measurement
-    nd <- nd %>% mutate_at(vars(contains('ppm')), function(x) round(x, 5))
-  }
-
   return(nd)
 }
