@@ -9,10 +9,10 @@ proc_init <- function(site = get('site', envir = globalenv()),
   if (bad_file_updated()) {
     # Add instrument to reprocess list
     if (site_config$reprocess == 'FALSE') {
-      site_config$reprocess <- c(instrument)
+      site_config$reprocess <<- c(instrument)
     } else if (site_config$reprocess != 'TRUE'
                && !instrument %in% unlist(site_config$reprocess)){
-      site_config$reprocess <- c(site_config$reprocess, instrument)
+      site_config$reprocess <<- c(site_config$reprocess, instrument)
     }
   }
 
