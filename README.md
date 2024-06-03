@@ -3,11 +3,11 @@
 The trace gas processing pipeline is structured as follows. This is executed on the smaug interactive node of the University of Utah's CHPC. The following paths are relative to the base path `/uufs/chpc.utah.edu/common/home/lin-group20/measurements/pipeline` -
 
 1. `process_data.sh` is the shell scripting control layer called by cron that sets environment variables and executes necessary processing code.
-1. `run/stid.r` called in parallel and executes site-specific processing code. By separating each site's initialization script, we can inject site specific processing code at strategic points in the data pipeline (e.g. after performing quality control but before calibrating measurements).
+1. `run/<stid>.r` called in parallel and executes site-specific processing code. By separating each site's initialization script, we can inject site specific processing code at strategic points in the data pipeline (e.g. after performing quality control but before calibrating measurements).
 1. `src/` contains the bulk of processing source code as R functions.
 1. `bad/` contains site/instrument specific bad data files for manual correction or removal of data. Changes are reflected at the QAQC and calibrated data levels.
 1. `config/` contains JSON configurations for data structure and site metadata.
-1. `.lock/` contains lock files in the form of `<site_id>.lock` to indicate active site processing and prevent duplicate execution.
+1. `.lock/` contains lock files in the form of `<stid>.lock` to indicate active site processing and prevent duplicate execution.
 
 ![](assets/workflow.png)
 
@@ -19,25 +19,25 @@ Site metadata can be found in [`config/site_config.csv`](config/site_config.csv)
 
 ## Instruments
 
-| Instrument              | Abbreviation   |
-| ----------------------- | -------------- |
-| 2B 205                  | 2b_205         |
-| GPS                     | gps            |
-| Licor 6262 IRGA         | licor_6262     |
-| Licor 7000 IRGA         | licor_7000     |
-| Los Gatos Research NO2  | lgr_no2        |
-| Los Gatos Research UGGA | lgr_ugga       |
-| Magee AE33              | magee_ae33     |
-| MetOne ES642            | metone_es642   |
-| Teledyne T200           | teledyne_t200  |
-| Teledyne T300           | teledyne_t300  |
-| Teledyne T400           | teledyne_t400  |
-| Teldyne T500u           | teledyne_t500u |
-| TEOM 1400ab             | teom_1400ab    |
+| Instrument              | Abbreviation   | Pollutants                     |
+| ----------------------- | -------------- | ------------------------------ |
+| 2B 205                  | 2b_205         | O<sub>3</sub>                  |
+| GPS                     | gps            | &mdash;                        |
+| Licor 6262 IRGA         | licor_6262     | CO<sub>2</sub>                 |
+| Licor 7000 IRGA         | licor_7000     | CO<sub>2</sub>                 |
+| Los Gatos Research NO2  | lgr_no2        | NO<sub>2</sub>                 |
+| Los Gatos Research UGGA | lgr_ugga       | CH<sub>4</sub>, CO<sub>2</sub> |
+| Magee AE33              | magee_ae33     | BC                             |
+| MetOne ES642            | metone_es642   | PM<sub>2.5</sub>               |
+| Teledyne T200           | teledyne_t200  | NO, NO<sub>2</sub>             |
+| Teledyne T300           | teledyne_t300  | CO                             |
+| Teledyne T400           | teledyne_t400  | O<sub>3</sub>                  |
+| Teledyne T500u          | teledyne_t500u | NO<sub>2</sub>                 |
+| TEOM 1400ab             | teom_1400ab    | PM<sub>2.5</sub>               |
 
 ## Processing Levels
 
-Data is archived into different levels within each `measurements/data/<site_id>/<instrument>` directory. Instrument column names and data types are defined for each processing level in [`config/data_config.json`](config/data_config.json).
+Data is archived into different levels within each `measurements/data/<stid>/<instrument>` directory. Instrument column names and data types are defined for each processing level in [`config/data_config.json`](config/data_config.json).
 
 ### Raw
 
@@ -69,9 +69,13 @@ This level is intended to be the go-to level for most purposes, including sharin
 
 # Workflows
 
+## Declaring active instruments
+
+A site's instrument ensemble can change over time. Active instruments are declared in the `instruments` column of [`config/site_config.csv`](config/site_config.csv). This column is a space-separated list of instrument abbreviations. Processing code for instruments not declared in this column will only be executed if [reprocessing is enabled](#reprocessing-raw-data).
+
 ## Revising historic data
 
-Changes in the historic datasets can be made using the `bad/` data text files. When a new commit is made, the historic record for the given site is reprocessed on the next run (every 15 minutes).
+Changes in the historic datasets can be made using the `bad/` data text files. When a new commit is made, the historic record for the given instrument is reprocessed on the next run (every 15 minutes).
 
 - To pass data which has automatically been flagged, set `ID_new='ok'`. This will not replace the ID in the data.
 - To remove data, set `ID_new=NA`.
@@ -83,10 +87,10 @@ Changes in the historic datasets can be made using the `bad/` data text files. W
 
 ## Reprocessing raw data
 
-Ocassionally, raw data may need to be reprocessed (ex. applying new QAQC routine). A site can be reprocessed via two methods:
-
-1. Set `reprocess=TRUE` in [`config/site_config.csv`](config/site_config.csv)
-2. `touch reprocess` within the site's data directory
+Ocassionally, raw data may need to be reprocessed (ex. applying new QAQC routine). Instrument data can be reprocessed via the `reprocess` column in [`config/site_config.csv`](config/site_config.csv).
+- Reprocess all the instruments (active or not) at a site by setting `reprocess=TRUE`.
+- Reprocess a specific instrument at a site by setting `reprocess=<instrument_abbreviation>`.
+- Specify multiple instruments by seperating their abbreviation with a space.
 
 ## Site not updating
 
@@ -98,7 +102,7 @@ Sites on air.utah.edu can be offline for several reasons, including
 
 ### Fixing CHPC pipeline locks
 
-To prevent concurrency issues (e.g. two processes attempting to write to the same raw data file at the same time), we use lock files to signify when a site is currently being processed. These files are created at `.lock/<site_id>.lock` when a site begins updating and are removed when the site update successfully completes.
+To prevent concurrency issues (e.g. two processes attempting to write to the same raw data file at the same time), we use lock files to signify when a site is currently being processed. These files are created at `.lock/<stid>.lock` when a site begins updating and are removed when the site update successfully completes.
 
 However, many issues (some out of our control) can prevent site processing from completing successfully. A user on CHPC can consume all of the available memory on the same node, causing the operating system to kill running processes. Connection outages during transfers can cause timeouts.
 

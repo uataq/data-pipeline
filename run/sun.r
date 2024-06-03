@@ -2,20 +2,23 @@
 
 site   <- 'sun'
 
+message('Run: ', site, ' | ', format(Sys.time(), "%Y-%m-%d %H:%M MTN"))
+
 # Load settings and initialize lock file
 source('/uufs/chpc.utah.edu/common/home/lin-group20/measurements/pipeline/_global.r')
 site_config <- site_config[site_config$stid == site, ]
 lock_create()
 
-try({
-  # Licor 6262 -----------------------------------------------------------------
-  instrument <- 'licor_6262'
-  proc_init()
+### Process data for each instrument ###
+
+# Licor 6262 -------------------------------------------------------------------
+instrument <- 'licor_6262'
+proc_instrument({
   nd <- cr1000_init()
-  if (!site_config$reprocess)
+  if (site_config$reprocess == 'FALSE')
     update_archive(nd, data_path(site, instrument, 'raw'), check_header = F)
   nd <- licor_6262_qaqc()
-  
+
   # Recalculate dry air CO2 and H2O mole fractions for period with loose RH
   # sensor wire
   mask <- nd$Time_UTC > as.POSIXct('2015-08-31', tz = 'UTC') &
@@ -26,7 +29,7 @@ try({
   nd$CO2d_ppm <- with(nd, calc_h2o_dilution(CO2d_ppm, H2O_ppm))
   ref_mask <- !is.na(nd$ID_CO2) & nd$ID_CO2 >= 0
   nd$CO2d_ppm[ref_mask] <- nd$CO2_ppm[ref_mask]
-  
+
   update_archive(nd, data_path(site, instrument, 'qaqc'))
   nd <- licor_6262_calibrate()
   update_archive(nd, data_path(site, instrument, 'calibrated'))

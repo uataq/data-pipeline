@@ -2,42 +2,21 @@
 
 site   <- 'sug'
 
+message('Run: ', site, ' | ', format(Sys.time(), "%Y-%m-%d %H:%M MTN"))
+
 # Load settings and initialize lock file
 source('/uufs/chpc.utah.edu/common/home/lin-group20/measurements/pipeline/_global.r')
 site_config <- site_config[site_config$stid == site, ]
 lock_create()
 
+### Process data for each instrument ###
 
-### ACTIVE INSTRUMENTS ###
-
-try({
-  # Licor 7000 -----------------------------------------------------------------
-  instrument <- 'licor_7000'
-  proc_init()
+# Licor 6262 -------------------------------------------------------------------
+instrument <- 'licor_6262'
+proc_instrument({
   nd <- cr1000_init()
-  if (!site_config$reprocess)
+  if (site_config$reprocess == 'FALSE')
     update_archive(nd, data_path(site, instrument, 'raw'), check_header = F)
-  nd <- licor_7000_qaqc()
-  update_archive(nd, data_path(site, instrument, 'qaqc'))
-  nd <- licor_6262_calibrate()
-  update_archive(nd, data_path(site, instrument, 'calibrated'))
-  nd <- finalize_ghg()
-  update_archive(nd, data_path(site, instrument, 'final'))
-})
-
-
-### INACTIVE INSTRUMENTS ###
-
-if (site_config$reprocess) {
-  # Only reprocess data if site_config$reprocess is TRUE
-
-try({
-  # Licor 6262 -----------------------------------------------------------------
-  instrument <- 'licor_6262'
-  proc_init()
-  nd <- cr1000_init()
-  # if (!site_config$reprocess)
-  #   update_archive(nd, data_path(site, instrument, 'raw'), check_header = F)
   nd <- licor_6262_qaqc()
 
   # Correct time stamp (erroneously set in MDT) to UTC in Oct 2021
@@ -52,18 +31,30 @@ try({
   update_archive(nd, data_path(site, instrument, 'final'))
 })
 
-try({
-  # MetOne ES642 ---------------------------------------------------------------
-  instrument <- 'metone_es642'
-  proc_init()
+# Licor 7000 -------------------------------------------------------------------
+instrument <- 'licor_7000'
+proc_instrument({
   nd <- cr1000_init()
-  # if (!site_config$reprocess)
-  #   update_archive(nd, data_path(site, instrument, 'raw'), check_header = F)
+  if (site_config$reprocess == 'FALSE')
+    update_archive(nd, data_path(site, instrument, 'raw'), check_header = F)
+  nd <- licor_7000_qaqc()
+  update_archive(nd, data_path(site, instrument, 'qaqc'))
+  nd <- licor_6262_calibrate()
+  update_archive(nd, data_path(site, instrument, 'calibrated'))
+  nd <- finalize_ghg()
+  update_archive(nd, data_path(site, instrument, 'final'))
+})
+
+# MetOne ES642 -----------------------------------------------------------------
+instrument <- 'metone_es642'
+proc_instrument({
+  nd <- cr1000_init()
+  if (site_config$reprocess == 'FALSE')
+    update_archive(nd, data_path(site, instrument, 'raw'), check_header = F)
   nd <- metone_es642_qaqc()
   update_archive(nd, data_path(site, instrument, 'qaqc'))
   nd <- finalize()
   update_archive(nd, data_path(site, instrument, 'final'))
 })
-}
 
 lock_remove()

@@ -1,10 +1,10 @@
 lgr_ugga_calibrate <- function() {
 
-  if (!site_config$reprocess && !grepl('trx', site)) {
+  if (site_config$reprocess == 'FALSE' && !grepl('trx', site)) {
     # Exit if currently sampling reference gases
     if (tail(nd$ID_CO2, 1) != -10)
       stop('Calibrations disabled. Sampling reference tank at: ', site)
-    
+
     # Import recent data to ensure bracketing reference measurements
     N <- 1 + (as.numeric(format(nd$Time_UTC[1], tz = 'UTC', '%d')) == 1)
     files <- tail(dir(file.path('data', site, instrument, 'qaqc'),

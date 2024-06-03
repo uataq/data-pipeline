@@ -3,7 +3,7 @@ cr1000_init <- function() {
   wd <- file.path('data', site, instrument, 'raw')
   files <- list.files(wd, pattern = '\\.dat', full.names = T)
 
-  if (site_config$reprocess) {
+  if (site_config$reprocess != 'FALSE') {
     # Read all historic raw data into memory as new data
     if (length(files) == 0) {
       warning('No prior data found for reset: ', wd)

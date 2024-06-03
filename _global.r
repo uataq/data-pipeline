@@ -27,9 +27,13 @@ for (fun in dir('pipeline/src', full.names = T)) {
 }
 
 # Load configurations contained in pipeline/config
-site_config <- fread('pipeline/config/site_config.csv')
+site_config <- fread('pipeline/config/site_config.csv') %>%
+  mutate(reprocess = gsub('^F$', 'FALSE',
+                     gsub('^T$', 'TRUE', as.character(reprocess))) %>%
+           strsplit(' '),
+         instruments = as.character(instruments) %>%
+           strsplit(' '))
 data_config <- fromJSON('pipeline/config/data_config.json')
 
 # Force global reprocess
-# site_config$reprocess <- T
-
+# site_config$reprocess <- "TRUE"

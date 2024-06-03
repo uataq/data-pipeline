@@ -1,6 +1,6 @@
 # James Mineau
 
-air_trend_init <- function(hostname = site_config$ip, name = NULL) {
+air_trend_init <- function(hostname = site_config$ip, port = site_config$port, name = NULL) {
 
   wd <- file.path('data', site, instrument, 'raw')
 
@@ -15,7 +15,7 @@ air_trend_init <- function(hostname = site_config$ip, name = NULL) {
   col_names <- data_config[[name]][['air_trend']]$col_names
   col_types <- data_config[[name]][['air_trend']]$col_types
 
-  if (!site_config$reprocess) {
+  if (site_config$reprocess == 'FALSE') {
 
     # Get last time of data in site/instrument/raw directory
     last_file <- tail(files, 1)
@@ -33,7 +33,7 @@ air_trend_init <- function(hostname = site_config$ip, name = NULL) {
     # Rsync data from remote
     remote <- paste0('pi@', hostname, ':/home/pi/data/', name, '/')
     local <- file.path(wd, '')
-    rsync(from = remote, to = local, port = site_config$port)
+    rsync(from = remote, to = local, port = port)
 
     # Process daily files as one batch
     batches <- list(seq(as.Date(last_time), Sys.Date(), by = 'day'))
