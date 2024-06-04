@@ -1,6 +1,6 @@
 licor_6262_calibrate <- function() {
 
-  if (site_config$reprocess == 'FALSE') {
+  if (!should_reprocess()) {
     # Exit if currently sampling reference gases
     if (tail(nd$ID_CO2, 1) != -10)
       stop('Calibrations disabled. Sampling reference tank at: ', site)

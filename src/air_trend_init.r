@@ -15,7 +15,7 @@ air_trend_init <- function(hostname = site_config$ip, port = site_config$port, n
   col_names <- data_config[[name]][['air_trend']]$col_names
   col_types <- data_config[[name]][['air_trend']]$col_types
 
-  if (site_config$reprocess == 'FALSE') {
+  if (!should_reprocess()) {
 
     # Get last time of data in site/instrument/raw directory
     last_file <- tail(files, 1)

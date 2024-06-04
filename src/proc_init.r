@@ -8,7 +8,7 @@ proc_init <- function(site = get('site', envir = globalenv()),
   # Check if bad data file has been updated since last run
   if (bad_file_updated()) {
     # Add instrument to reprocess list
-    if (site_config$reprocess == 'FALSE') {
+    if (!should_reprocess()) {
       site_config$reprocess <<- c(instrument)
     } else if (site_config$reprocess != 'TRUE'
                && !instrument %in% unlist(site_config$reprocess)){
@@ -17,7 +17,7 @@ proc_init <- function(site = get('site', envir = globalenv()),
   }
 
   # Check if processing is disabled
-  if (site_config$reprocess == 'FALSE') {
+  if (!should_reprocess()) {
     if (!site_config$active) {
       # inactive site
       stop(site_inst, ' data already up to date.')
@@ -39,8 +39,7 @@ proc_init <- function(site = get('site', envir = globalenv()),
 
   # Check if reprocess flag is TRUE. If site/instrument archive needs to be
   # reprocessed, remove processed levels
-  if (site_config$reprocess == 'TRUE'
-      || instrument %in% unlist(site_config$reprocess)) {
+  if (should_reprocess()) {
     message('Reprocessing data archive for: ', site_inst)
     for (path in file.path(wd, c('qaqc', 'calibrated', 'final'))) {
       if (file.exists(path)) {

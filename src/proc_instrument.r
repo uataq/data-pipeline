@@ -4,7 +4,7 @@
 #' Typically, the expression should follow this structure:
 #'
 #' nd <- init_func()
-#' if (site_config$reprocess == 'FALSE')
+#' if (!should_reprocess())
 #'   update_archive(nd, data_path(site, instrument, 'raw'), check_header = F)
 #' nd <- qaqc_func(nd)
 #' update_archive(nd, data_path(site, instrument, 'qaqc'))

@@ -1,6 +1,6 @@
 lgr_ugga_calibrate <- function() {
 
-  if (site_config$reprocess == 'FALSE' && !grepl('trx', site)) {
+  if (!should_reprocess() && !grepl('trx', site)) {
     # Exit if currently sampling reference gases
     if (tail(nd$ID_CO2, 1) != -10)
       stop('Calibrations disabled. Sampling reference tank at: ', site)

@@ -253,7 +253,7 @@ proc_gps <- function() {
   }
 
 
-  if (site_config$reprocess == 'FALSE') {
+  if (!should_reprocess()) {
 
     # Get last time of data in site/instrument/raw directory
     last_file <- tail(files, 1)

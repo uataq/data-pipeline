@@ -13,7 +13,7 @@ lgr_ugga_init <- function() {
   # are named non-sequentially
   files <- files[order(file.mtime(files))]
 
-  if (site_config$reprocess == 'FALSE') {
+  if (!should_reprocess()) {
     # Get last time of data in site/instrument/raw directory
     last_txt_file <- tail(grep('\\.txt$', files, value = T), 1)
     if (length(last_txt_file) == 0) {
