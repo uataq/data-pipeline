@@ -46,3 +46,4 @@ t_start,t_end,ID_old,ID_new,t_added,name,comment
 2023-07-11T17:00:00Z,2023-07-11T18:30:00Z,all,NA,2023-08-01T21:14:00Z,MeganOstlie,Invalid values due to site visit
 2023-09-15T08:00:00Z,2023-09-22T16:30:00Z,~504.91~4.43,NA,2023-09-26T20:28:00Z,MeganOstlie,Empty cal tank
 2023-09-22T16:18:00Z,2023-12-11T18:00:00Z,all,NA,2023-12-18T20:32:00Z,MeganOstlie,Room air was being sampled after replacing pump
+2024-05-30T18:00:00Z,2024-05-30T20:00:00Z,all,NA,2024-06-04T19:30:00Z,JamesM,measured -0.01 co2 for low and mid tank
