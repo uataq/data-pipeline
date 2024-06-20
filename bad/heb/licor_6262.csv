@@ -106,3 +106,4 @@ t_start,t_end,ID_old,ID_new,t_added,name,comment
 2024-02-22T23:30:00Z,2024-02-23T16:10:00Z,399.61,403.25,2024-02-23T18:52:00Z,MeganOstlie,Wrong cal tank value
 2024-02-22T23:30:00Z,2024-02-23T16:10:00Z,445.97,450.16,2024-02-23T18:53:00Z,MeganOstlie,Wrong cal tank value
 2024-02-22T23:30:00Z,2024-02-23T16:10:00Z,504.46,490.12,2024-02-23T18:53:00Z,MeganOstlie,Wrong cal tank value
+2024-06-13T17:20:40Z,2024-06-13T17:35:30Z,all,NA,2024-06-20T18:36:00Z,MeganOstlie,Maintenance on the inlet caused high CO2 values
