@@ -48,7 +48,7 @@ Numeric values are assigned to observations that meet certain automated or human
 | -61  | `CO2d_ppm` measurement out of range  (0, 3000)                                    |
 | -62  | `H2O_ppm` measurement out of range   (0, 30000)                                   |
 | -63  | `Cavity_P_torr` cavity pressure out of range (135, 145)                           |
-| -64  | `Ambient_T_C` ambient temperature out of range (5, 45)                            |
+| -64  | `Cavity_T_C` cavity temperature out of range (5, 45)                              |
 | -65  | `Time_UTC` recent outage > 1 hour -- warmup period of 5 mins                      |
 | ↓    | **Magee AE33**                                                                    |
 | -70  | `BC6_ngm3` measurement out of range (0, 100000)                                   |

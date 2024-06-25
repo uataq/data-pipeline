@@ -41,7 +41,7 @@ lgr_ugga_qaqc <- function() {
   nd$QAQC_Flag[with(nd, CO2d_ppm < 0 | CO2d_ppm > 3000 | is.na(CO2d_ppm))] <- -61
   nd$QAQC_Flag[with(nd, H2O_ppm < 0 | H2O_ppm > 30000)] <- -62
   nd$QAQC_Flag[with(nd, Cavity_P_torr < 135 | Cavity_P_torr > 145)] <- -63
-  nd$QAQC_Flag[with(nd, Ambient_T_C < 5 | Ambient_T_C > 45)] <- -64
+  nd$QAQC_Flag[with(nd, Cavity_T_C < 5 | Cavity_T_C > 45)] <- -64
   nd$QAQC_Flag[filter_warmup(nd)] <- -65
 
   # Not sure the below line is still needed, but keeping just in case - JM
