@@ -238,3 +238,4 @@ t_start,t_end,ID_old,ID_new,t_added,name,comment
 2022-05-06T19:00:00Z,2022-05-07T03:00:00Z,all,NA,2022-05-13T16:31:00Z,MeganOstlie,Unknown drop in cal tanks and ambient air ~ possible power outage
 2022-05-08T00:30:00Z,2022-05-08T01:00:00Z,all,NA,2022-05-13T16:33:00Z,MeganOstlie,Unknown drop in cal tanks and ambient air ~ possible power outage
 2022-05-11T21:18:30Z,2022-05-11T23:30:00Z,all,NA,2022-05-13T16:37:00Z,MeganOstlie,Unknown drop in cal tanks and ambient air ~ possible power outage
+2005-04-14T00:00:00Z,2005-04-29T17:21:00Z,all,NA,2024-06-25T21:50:00Z,JamesMineau,licor stuck at very low values - maybe stuck on 0 tank
