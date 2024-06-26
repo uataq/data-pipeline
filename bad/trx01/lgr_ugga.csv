@@ -66,3 +66,4 @@ t_start,t_end,ID_old,ID_new,t_added,name,comment
 2024-05-22T00:00:00Z,2024-05-23Z15:50:00Z,all,NA,2024-06-03T22:30:00,JamesM,air-trend flow not passing ID
 2024-05-23T15:50:00Z,2024-05-23T20:32:00Z,all,NA,2024-06-03T22:30:00,JamesM,lgr reading too high despite recent calibration
 2024-05-29T19:00:00Z,2024-05-30T20:23:00Z,all,NA,2024-06-03T22:30:00,JamesM,co2 has insane spike then stuck as -0.01
+2024-06-22T16:37:50Z,2024-06-25T16:50:00Z,all,NA,2024-06-26T16:58:00,JamesM,co2 laser off but reset after cycling power
