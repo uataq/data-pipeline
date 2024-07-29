@@ -50,3 +50,7 @@ t_start,t_end,ID_old,ID_new,t_added,name,comment
 2024-07-01T12:30:00Z,2024-07-14T04:00:00Z,-1,404.28,2024-07-17T17:59:00Z,MeganOstlie,Missing cal tank value
 2024-07-12T13:00:00Z,2024-07-15T18:00:00Z,all,NA,2024-07-17T18:01:00Z,MeganOstlie,Empty N2 tank
 2024-07-16T22:00:00Z,2024-07-17T17:00:00Z,448.2,NA,2024-07-17T18:03:00Z,MeganOstlie,Relay valve for tank was left closed
+2024-07-19T18:20:00Z,2024-07-22T14:30:00Z,-4,415.96,2024-07-29T16:50:00Z,MeganOstlie,Missing cal tank value
+2024-07-19T18:20:00Z,2024-07-22T14:30:00Z,-3,499.77,2024-07-29T16:50:00Z,MeganOstlie,Missing cal tank value
+2024-07-19T18:20:00Z,2024-07-22T14:30:00Z,-2,448.2,2024-07-29T16:50:00Z,MeganOstlie,Missing cal tank value
+2024-07-19T18:20:00Z,2024-07-22T14:30:00Z,-1,402.69,2024-07-29T16:50:00Z,MeganOstlie,Missing cal tank value
