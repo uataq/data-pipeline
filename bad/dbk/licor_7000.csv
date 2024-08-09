@@ -59,3 +59,9 @@ t_start,t_end,ID_old,ID_new,t_added,name,comment
 2024-07-29T22:10:00Z,2024-07-30T20:10:00Z,-2,448.2,2024-08-07T21:15:00Z,MeganOstlie,Missing cal tank value
 2024-07-29T22:10:00Z,2024-07-30T20:10:00Z,-1,402.69,2024-08-07T21:15:00Z,MeganOstlie,Missing cal tank value
 2024-07-30T17:00:00Z,2024-07-30T17:05:30Z,all,NA,2024-08-07T21:18:00Z,MeganOstlie,CO2 values suddenly drop then spike
+2024-08-04T13:03:20Z,2024-08-04T14:00:00Z,all,NA,2024-08-09T16:15:00Z,MeganOstlie,CO2 values drop to below 300
+2024-08-06T00:11:00Z,2024-08-06T00:12:30Z,all,NA,2024-08-09T16:22:00Z,MeganOstlie,Power bump
+2024-08-05T17:00:00Z,2024-08-09T16:24:00Z,-4,415.96,2024-08-09T16:25:00Z,MeganOstlie,Missing cal tank value
+2024-08-05T17:00:00Z,2024-08-09T16:24:00Z,-3,499.77,2024-08-09T16:25:00Z,MeganOstlie,Missing cal tank value
+2024-08-05T17:00:00Z,2024-08-09T16:24:00Z,-2,448.2,2024-08-09T16:25:00Z,MeganOstlie,Missing cal tank value
+2024-08-05T17:00:00Z,2024-08-09T16:24:00Z,-1,402.69,2024-08-09T16:25:00Z,MeganOstlie,Missing cal tank value
