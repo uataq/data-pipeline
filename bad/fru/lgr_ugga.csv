@@ -54,3 +54,6 @@ t_start,t_end,ID_old,ID_new,t_added,name,comment
 2021-12-21T20:50:00Z,2022-03-01T00:00:00Z,~397..51~1.90,~397.51~1.90,2022-01-01T21:22:00Z,JohnLin,Typo (397..51) so force this cal tank to show up
 2022-10-15T15:05:17Z,2022-10-20T18:22:00Z,all,NA,2022-10-25T15:21:00Z,MeganOstlie,Pump in LGR failed causing invalid values
 2024-03-22T16:30:00Z,2024-03-22T17:00:00Z,all,NA,2024-03-26T17:39:00Z,MeganOstlie,LGR was sampling room air
+2024-08-08T01:00:00Z,2024-08-12T21:36:00Z,~449.04~3.02,NA,2024-08-14T16:25:00Z,MeganOstlie,Empty cal tank
+2024-08-10T10:00:00Z,2024-08-12T21:36:00Z,~496.15~4.17,NA,2024-08-14T16:26:00Z,MeganOstlie,Empty cal tank
+2024-08-12T06:00:00Z,2024-08-12T21:36:00Z,all,NA,2024-08-14T16:26:00Z,MeganOstlie,All cal tanks empty
