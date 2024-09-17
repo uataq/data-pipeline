@@ -108,3 +108,4 @@ t_start,t_end,ID_old,ID_new,t_added,name,comment
 2024-02-22T23:30:00Z,2024-02-23T16:10:00Z,504.46,490.12,2024-02-23T18:53:00Z,MeganOstlie,Wrong cal tank value
 2024-06-13T17:20:40Z,2024-06-13T17:35:30Z,all,NA,2024-06-20T18:36:00Z,MeganOstlie,Maintenance on the inlet caused high CO2 values
 2024-07-01T18:04:00Z,2024-07-01T18:05:00Z,450.16,NA,2024-08-09T15:09:00Z,MeganOstlie,Mid cal tank was disconnected
+2024-09-16T20:30:00Z,2024-09-16T20:30:30Z,all,NA,2024-09-17T15:42:00Z,MeganOstlie,Quick CO2 drop to below 300
