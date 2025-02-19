@@ -3,11 +3,11 @@ asb, Aline Wilmot Skaggs, FALSE, NA, NA, FALSE, 40.763226, -111.849278, NA, NA
 csp, Castle Peak, TRUE, 69.55.104.137, 22, FALSE, 40.0509, -110.0194, 4, lgr_ugga
 dbk, Daybreak, TRUE, 166.140.123.172, 8080, FALSE, 40.538497, -112.069528, 5, licor_7000 metone_es642
 fru, Fruitland, TRUE, 67.213.233.139, 22, FALSE, 40.208731, -110.8403, 4, lgr_ugga
-hdp, Hidden Peak, TRUE, 50.224.25.93, 22, FALSE, 40.560644, -111.645278, 15, lgr_ugga
+hdp, Hidden Peak, FALSE, NA, NA, FALSE, 40.560644, -111.645278, 15, NA
 heb, Heber, TRUE, 166.140.8.161, 8080, FALSE, 40.506808, -111.403636, 7, licor_6262
 hpl, Horsepool, TRUE, 69.55.104.135, 22, FALSE, 40.143711, -109.4672, 4, lgr_ugga
 imc, Intermountain Medical, FALSE, 67.128.146.28, 80, FALSE, 40.660395, -111.89075, 35, NA
-ldf, SLV Landfill, FALSE, 107.90.24.243, 22, FALSE, 40.748783, -112.033941, 2, NA
+ldf, SLV Landfill, FALSE, NA, NA, FALSE, 40.748783, -112.033941, 2, NA
 lgn, Logan, FALSE, NA, 80, FALSE, 41.761353, -111.822739, 5, NA
 lg2, Logan, FALSE, NA, 8080, FALSE, 41.758105, -111.813234, 5, NA
 msa, Murray Satellite, FALSE, NA, NA, FALSE, 40.763226, -111.849278, NA, NA
