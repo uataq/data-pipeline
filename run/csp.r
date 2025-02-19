@@ -4,7 +4,7 @@ site   <- 'csp'
 
 # Load settings and initialize lock file
 local_time <- format(Sys.time(), '%Y-%m-%d %H:%M %Z')
-source('/uufs/chpc.utah.edu/common/home/lin-group20/measurements/pipeline/_global.r')
+source('/uufs/chpc.utah.edu/common/home/lin-group25/measurements/pipeline/_global.r')
 site_config <- site_config[site_config$stid == site, ]
 lock_create()
 

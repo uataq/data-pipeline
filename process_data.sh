@@ -7,7 +7,7 @@ module load R/4.4 > /dev/null 2>&1
 echo "Date: $(/usr/bin/date)"
 echo "R binary: $(which Rscript)"
 
-WD=/uufs/chpc.utah.edu/common/home/lin-group20/measurements/pipeline/
+WD=/uufs/chpc.utah.edu/common/home/lin-group25/measurements/pipeline/
 cd $WD
 echo "Working Directory: $WD"
 echo

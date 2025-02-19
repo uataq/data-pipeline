@@ -4,7 +4,7 @@
 # Should contain subdirectories
 #   pipeline/ : containing data processing source code
 #   data/     : containing data archive in site/instrument/{raw,qaqc,calibrated}
-setwd('/uufs/chpc.utah.edu/common/home/lin-group20/measurements')
+setwd('/uufs/chpc.utah.edu/common/home/lin-group25/measurements')
 
 # Set timezone
 Sys.setenv(TZ = 'UTC')
