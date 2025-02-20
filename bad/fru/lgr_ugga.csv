@@ -63,3 +63,4 @@ t_start,t_end,ID_old,ID_new,t_added,name,comment
 2024-10-08T22:00:00Z,2024-10-23T15:00:00Z,~484.84~4.56,~519.31~6.07,2024-10-23T22:08:00Z,MeganOstlie,Wrong cal tank value
 2024-10-08T22:00:00Z,2024-10-23T15:00:00Z,~456.91~3.09,~461.17~3.26,2024-10-23T22:08:00Z,MeganOstlie,Wrong cal tank value
 2024-10-08T22:00:00Z,2024-10-23T15:00:00Z,~403.73~1.90,~399.18~1.88,2024-10-23T22:08:00Z,MeganOstlie,Wrong cal tank value
+2025-02-13T18:15:00Z,2025-02-13T19:15:00Z,all,NA,2025-02-20T17:00:00Z,MeganOstlie,Calibrated LGR
