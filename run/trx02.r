@@ -30,21 +30,7 @@ proc_instrument({
 
 # GPS --------------------------------------------------------------------------
 instrument <- 'gps'
-proc_instrument({
-  nd <- proc_gps()
-  update_archive(nd, data_path(site, instrument, 'qaqc'))
-
-  # Drop QAQC'd rows and reduce dataframe to essential columns
-  final_cols <- data_config[['gps']]$final$col_names
-  nd <- nd[nd$QAQC_Flag >= 0, final_cols]
-
-  # Round latitude and longitude to 6 decimal places
-  nd <- nd %>%
-    mutate(Latitude_deg = round(Latitude_deg, 6),
-           Longitude_deg = round(Longitude_deg, 6))
-
-  update_archive(nd, data_path(site, instrument, 'final'))
-})
+proc_instrument(proc_gps())  # GPS processing contained within proc_gps()
 
 # LGR NO2 ----------------------------------------------------------------------
 instrument <- 'lgr_no2'

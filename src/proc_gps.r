@@ -1,6 +1,7 @@
 # James Mineau
 
-proc_gps <- function() {
+proc_gps <- function(qaqc_func = NULL,
+                     finalize_func = NULL) {
 
   library(dtplyr)
   library(parallel)
@@ -244,13 +245,42 @@ proc_gps <- function() {
     nd <- nd %>%
       mutate(Pi_Time = format_time(Pi_Time))
 
-    # Reduce to QAQC columns
-    qaqc_cols <- data_config[['gps']]$qaqc$col_names
-    nd <- nd[, qaqc_cols]
-
     return(nd)
   }
 
+  qaqc_cols <- data_config[['gps']]$qaqc$col_names
+  qaqc_batch <- function(nd, custom_func = NULL) {
+
+    # Apply custom function if provided
+    if (!is.null(custom_func)) {
+      nd <- custom_func(nd)
+    }
+
+    # Reduce to QAQC columns
+    nd <- nd[, qaqc_cols]
+
+    update_archive(nd, data_path(site, instrument, 'qaqc'))
+    return(nd)
+  }
+
+  final_cols <- data_config[['gps']]$final$col_names
+  finalize_batch <- function(nd, custom_func = NULL) {
+    # Apply custom function if provided
+    if (!is.null(custom_func)) {
+      nd <- custom_func(nd)
+    }
+
+    # Drop QAQC'd rows and reduce dataframe to essential columns
+    nd <- nd[nd$QAQC_Flag >= 0, final_cols]
+
+    # Round latitude and longitude to 6 decimal places
+    nd <- nd %>%
+      mutate(Latitude_deg = round(Latitude_deg, 6),
+            Longitude_deg = round(Longitude_deg, 6))
+    
+    update_archive(nd, data_path(site, instrument, 'final'))
+    return(nd)
+  }
 
   if (!should_reprocess()) {
 
@@ -277,15 +307,26 @@ proc_gps <- function() {
     nd <- proc_batch(batch)
     print_nd()
 
+    nd <- qaqc_batch(nd, qaqc_func)
+    nd <- finalize_batch(nd, finalize_func)
+
   } else {
     # Reprocess raw data in yearly batches
     batches <- unique(substr(basename(files), 1, 4))
-    nd <- mclapply(batches, proc_batch, mc.cores = 10) %>%
-      bind_rows()
+    for (batch in batches) {
+      nd <- proc_batch(batch)
+
+      # Write QAQC results to disk immediately
+      nd <- qaqc_batch(nd, qaqc_func)
+
+      # Write final results to disk immediately
+      nd <- finalize_batch(nd, finalize_func)
+
+      # Free memory after processing each batch
+      rm(nd)
+      invisible(gc())
+    }
   }
 
-  # Sort by Time_UTC
-  nd <- nd[order(nd[['Time_UTC']]), ]
-
-  return(nd)
+  return(NULL)  # Avoid returning large dataframes
 }
