@@ -45,8 +45,8 @@
       "col_types" : "Tddddddddd"
     },
     "final" : {
-      "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_raw"],
-      "col_types" : "Tdd"
+      "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_raw", "H2O_ppm"],
+      "col_types" : "Tddd"
     }
   },
   "licor_7000" : {
@@ -63,8 +63,8 @@
       "col_types" : "Tddddddddd"
     },
     "final" : {
-      "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_raw"],
-      "col_types" : "Tdd"
+      "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_raw", "H2O_ppm"],
+      "col_types" : "Tddd"
     }
   },
   "lgr_no2" : {
@@ -99,8 +99,8 @@
       "col_types" : "Tddddddddddddddddd"
     },
     "final" : {
-      "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_raw", "CH4d_ppm_cal", "CH4d_ppm_raw"],
-      "col_types" : "Tdddd"
+      "col_names" : ["Time_UTC", "CO2d_ppm_cal", "CO2d_ppm_raw", "CH4d_ppm_cal", "CH4d_ppm_raw", "H2O_ppm"],
+      "col_types" : "Tddddd"
     }
   },
   "magee_ae33" : {
