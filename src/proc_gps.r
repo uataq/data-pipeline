@@ -242,8 +242,7 @@ proc_gps <- function() {
 
     # Format Pi Time
     nd <- nd %>%
-      mutate(Pi_Time = format(Pi_Time, tz = 'UTC',
-                              format = '%Y-%m-%d %H:%M:%OS2'))
+      mutate(Pi_Time = format_time(Pi_Time))
 
     # Reduce to QAQC columns
     qaqc_cols <- data_config[['gps']]$qaqc$col_names
