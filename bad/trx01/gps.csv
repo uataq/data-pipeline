@@ -6,7 +6,7 @@ t_start,t_end,ID_old,ID_new,t_added,name,comment
 2015-04-24T12:00:01,2015-04-24T12:00:02,all,drop,2024-02-27T00:00:00,JamesM,bad inst_date
 2015-05-21T12:13:21,2015-05-21T12:13:22,all,drop,2024-02-27T00:00:00,JamesM,bad inst_date
 2015-07-01T00:00:00,2015-07-01T00:00:01,all,drop,2024-02-27T00:00:00,JamesM,duplicate inst_time near day change
-2015-07-13T18:36:37,2017-07-13T18:38:38,all,drop,2024-02-27T00:00:00,JamesM,large jump in gps time
+2015-07-13T18:36:37,2015-07-13T18:38:38,all,drop,2024-02-27T00:00:00,JamesM,large jump in gps time
 2015-09-21T20:38:13,2015-09-21T20:38:14,all,drop,2024-02-27T00:00:00,JamesM,bad inst_date
 2015-11-22T22:30:56,2015-11-24T01:41:52,all,NA,2024-02-27T00:00:00,JamesM,cant say for sure if the correct day
 2015-11-24T07:02:59,2015-11-24T07:03:01,all,drop,2024-02-27T00:00:00,JamesM,hour 27 is not possible
