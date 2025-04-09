@@ -1,6 +1,7 @@
 lgr_ugga_calibrate <- function() {
+  is_trax <- grepl('trx', site)
 
-  if (!should_reprocess() && !grepl('trx', site)) {
+  if (!should_reprocess() && !is_trax) {
     # Exit if currently sampling reference gases
     if (tail(nd$ID_CO2, 1) != -10)
       stop('Calibrations disabled. Sampling reference tank at: ', site)
@@ -24,12 +25,16 @@ lgr_ugga_calibrate <- function() {
   grouped <- nd %>%
     group_by(yyyy = format(Time_UTC, '%Y', tz = 'UTC'))
 
+  dt_tol <- ifelse(is_trax,  # maximum length of time to allow data outage and still calibrate data
+    60 * 60 * 12,  # 12 hours for TRAX (set longer to not lose data before/after TRAX shuts down for the night)
+    60 * 60 * 5)  # 5 hours for fixed sites
+
   cal_co2 <- grouped %>%
-    do(with(., calibrate_linear(Time_UTC, CO2d_ppm, ID_CO2))) %>%
+    do(with(., calibrate_linear(Time_UTC, CO2d_ppm, ID_CO2, dt_tol=dt_tol))) %>%
     ungroup() %>%
     select(-yyyy)
   cal_ch4 <- grouped %>%
-    do(with(., calibrate_linear(Time_UTC, CH4d_ppm, ID_CH4))) %>%
+    do(with(., calibrate_linear(Time_UTC, CH4d_ppm, ID_CH4, dt_tol=dt_tol))) %>%
     ungroup() %>%
     select(-yyyy)
   cal <- bind_cols(
