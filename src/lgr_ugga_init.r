@@ -97,6 +97,10 @@ lgr_ugga_init <- function() {
   }) %>%
     bind_rows()
 
+  # Remove rows with too many columns (probably due to power outages)
+  nd <- nd %>%
+    dplyr::filter(!str_detect(nd[[ncol(nd)]], ','))  # check for extra commas
+
   nd$Time_UTC <- as.POSIXct(nd$Time_UTC, tz = 'UTC',
                             format = datetime_format)
 
