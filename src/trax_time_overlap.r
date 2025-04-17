@@ -17,9 +17,10 @@
 # rarely happens and has not resulted in overlap.
 
 trax_time_overlap <- function(time) {
-  max_so_far <- cummax(time)
+  epochtime <- as.numeric(time)  # convert to epoch time as cummax cant be used on POSIXlt
+  max_so_far <- cummax(epochtime)
   prev_max <- dplyr::lag(max_so_far)
-  overlap <- time < prev_max
+  overlap <- epochtime < prev_max
   overlap[is.na(overlap)] <- FALSE  # First value should be FALSE
   return(overlap)
 }
