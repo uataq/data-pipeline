@@ -37,7 +37,7 @@ bad_data_fix <- function(data,
 
     # Sort bad_masks by the original order of bad_tbl
     bad_masks <- bad_masks[order(sapply(bad_masks, function(bad_mask) bad_mask$index))]
-  else {
+  } else {
     # Sequentially compute masks
     bad_masks <- lapply(seq_len(nrow(bad_tbl)), function(i) compute_mask(bad_tbl[i, ], i))
   }
