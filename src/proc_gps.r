@@ -229,7 +229,7 @@ proc_gps <- function(qaqc_func = NULL,
     nd$QAQC_Flag[with(nd, N_Sat < 4)] <- -22
     nd$QAQC_Flag[with(nd, !is.na(Time_UTC) & Status != 'A')] <- -23
     # nd$QAQC_Flag[filter_warmup(nd, cooldown = '5M', warmup = '1M')] <- -24  # takes a really long time - not worth it
-    nd$QAQC_Flag[trax_time_overlap(nd$Time_UTC)] <- 200  # Remove overlap from pi forgeting time
+    nd$QAQC_Flag[trax_time_overlap(nd$Time_UTC)] <- -200  # Remove overlap from pi forgeting time
 
     nd$QAQC_Flag[is_manual_pass] <- 1
     nd$QAQC_Flag[is_manual_removal] <- -1
