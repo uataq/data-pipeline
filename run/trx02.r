@@ -23,6 +23,7 @@ instrument <- '2b_205'
 proc_instrument({
   nd <- air_trend_init()
   nd <- bb_205_qaqc()
+  nd$QAQC_Flag[trax_time_overlap(nd$Time_UTC)] <- 200  # Remove overlap from pi forgeting time
   update_archive(nd, data_path(site, instrument, 'qaqc'))
   nd <- finalize()
   update_archive(nd, data_path(site, instrument, 'final'))
@@ -37,6 +38,7 @@ instrument <- 'lgr_no2'
 proc_instrument({
   nd <- air_trend_init()
   nd <- lgr_no2_qaqc()
+  nd$QAQC_Flag[trax_time_overlap(nd$Time_UTC)] <- 200  # Remove overlap from pi forgeting time
   update_archive(nd, data_path(site, instrument, 'qaqc'))
   nd <- nd[nd$ID == -10, ]  # drop reference measurements
   nd <- finalize()
@@ -49,6 +51,7 @@ proc_instrument({
   nd <- air_trend_init()
   colnames(nd) <- data_config[[instrument]]$final$col_names
   nd$QAQC_Flag <- 0  # no qaqc flags for met
+  nd$QAQC_Flag[trax_time_overlap(nd$Time_UTC)] <- 200  # Remove overlap from pi forgeting time
   nd <- bad_data_fix(nd)
   nd <- finalize()
   update_archive(nd, data_path(site, instrument, 'final'))
@@ -59,6 +62,7 @@ instrument <- 'metone_es642'
 proc_instrument({
   nd <- air_trend_init()
   nd <- metone_es642_qaqc(logger = 'air_trend')
+  nd$QAQC_Flag[trax_time_overlap(nd$Time_UTC)] <- 200  # Remove overlap from pi forgeting time
   update_archive(nd, data_path(site, instrument, 'qaqc'))
   nd <- finalize()
   update_archive(nd, data_path(site, instrument, 'final'))
@@ -69,6 +73,7 @@ instrument <- 'teledyne_t500u'
 proc_instrument({
   nd <- air_trend_init()
   nd <- teledyne_t500u_qaqc()
+  nd$QAQC_Flag[trax_time_overlap(nd$Time_UTC)] <- 200  # Remove overlap from pi forgeting time
   update_archive(nd, data_path(site, instrument, 'qaqc'))
   nd <- finalize()
   update_archive(nd, data_path(site, instrument, 'final'))

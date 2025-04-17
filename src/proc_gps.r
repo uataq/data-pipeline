@@ -26,7 +26,7 @@ proc_gps <- function(qaqc_func = NULL,
   files <- list.files(wd, pattern = '\\.csv', full.names = T)
 
 
-  proc_batch <- function(batch) {
+  init_batch <- function(batch) {
     read_nmea_batch <- function(nmea) {
 
       selector <- file.path(wd, paste0(batch, '*_', nmea, '.csv'))
@@ -184,6 +184,15 @@ proc_gps <- function(qaqc_func = NULL,
              N_Sat = n_sat,
              Status = status)
 
+    # Format Pi Time
+    nd <- nd %>%
+      mutate(Pi_Time = format_time(Pi_Time))
+
+    return(nd)
+  }
+
+  qaqc_cols <- data_config[['gps']]$qaqc$col_names
+  qaqc_batch <- function(nd, custom_func = NULL) {
     # Initialize QAQC_Flag
     nd$QAQC_Flag <- 0
 
@@ -219,6 +228,7 @@ proc_gps <- function(qaqc_func = NULL,
     nd$QAQC_Flag[with(nd, N_Sat < 4)] <- -22
     nd$QAQC_Flag[with(nd, !is.na(Time_UTC) & Status != 'A')] <- -23
     # nd$QAQC_Flag[filter_warmup(nd, cooldown = '5M', warmup = '1M')] <- -24  # takes a really long time - not worth it
+    nd$QAQC_Flag[trax_time_overlap(nd$Time_UTC)] <- 200  # Remove overlap from pi forgeting time
 
     nd$QAQC_Flag[is_manual_pass] <- 1
     nd$QAQC_Flag[is_manual_removal] <- -1
@@ -241,16 +251,6 @@ proc_gps <- function(qaqc_func = NULL,
                                            nd$inst_time[mask]),
                                     format = '%Y-%m-%d%H%M%OS', tz = 'UTC')
 
-    # Format Pi Time
-    nd <- nd %>%
-      mutate(Pi_Time = format_time(Pi_Time))
-
-    return(nd)
-  }
-
-  qaqc_cols <- data_config[['gps']]$qaqc$col_names
-  qaqc_batch <- function(nd, custom_func = NULL) {
-
     # Apply custom function if provided
     if (!is.null(custom_func)) {
       nd <- custom_func(nd)
@@ -259,7 +259,6 @@ proc_gps <- function(qaqc_func = NULL,
     # Reduce to QAQC columns
     nd <- nd[, qaqc_cols]
 
-    update_archive(nd, data_path(site, instrument, 'qaqc'))
     return(nd)
   }
 
@@ -277,8 +276,7 @@ proc_gps <- function(qaqc_func = NULL,
     nd <- nd %>%
       mutate(Latitude_deg = round(Latitude_deg, 6),
             Longitude_deg = round(Longitude_deg, 6))
-    
-    update_archive(nd, data_path(site, instrument, 'final'))
+
     return(nd)
   }
 
@@ -304,23 +302,27 @@ proc_gps <- function(qaqc_func = NULL,
 
     # Process daily files as one batch
     batch <- seq(as.Date(last_time), Sys.Date(), by = 'day')
-    nd <- proc_batch(batch)
+    nd <- init_batch(batch)
     print_nd()
 
     nd <- qaqc_batch(nd, qaqc_func)
+    update_archive(nd, data_path(site, instrument, 'qaqc'))
     nd <- finalize_batch(nd, finalize_func)
+    update_archive(nd, data_path(site, instrument, 'final'))
 
   } else {
     # Reprocess raw data in yearly batches
     batches <- unique(substr(basename(files), 1, 4))
     for (batch in batches) {
-      nd <- proc_batch(batch)
+      nd <- init_batch(batch)
 
       # Write QAQC results to disk immediately
       nd <- qaqc_batch(nd, qaqc_func)
+      update_archive(nd, data_path(site, instrument, 'qaqc'))
 
       # Write final results to disk immediately
       nd <- finalize_batch(nd, finalize_func)
+      update_archive(nd, data_path(site, instrument, 'final'))
 
       # Free memory after processing each batch
       rm(nd)

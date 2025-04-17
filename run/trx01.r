@@ -23,6 +23,7 @@ instrument <- '2b_205'
 proc_instrument({
   nd <- air_trend_init()
   nd <- bb_205_qaqc()
+  nd$QAQC_Flag[trax_time_overlap(nd$Time_UTC)] <- 200  # Remove overlap from pi forgeting time
   update_archive(nd, data_path(site, instrument, 'qaqc'))
   nd <- finalize()
   update_archive(nd, data_path(site, instrument, 'final'))
@@ -54,7 +55,7 @@ proc_instrument({
   }
 
   nd <- lgr_ugga_qaqc()
-
+  nd$QAQC_Flag[trax_time_overlap(nd$Time_UTC)] <- 200  # Remove overlap from pi forgeting time
   update_archive(nd, data_path(site, instrument, 'qaqc'))
   nd <- lgr_ugga_calibrate()
   update_archive(nd, data_path(site, instrument, 'calibrated'))
@@ -67,6 +68,7 @@ instrument <- 'lgr_ugga_manual_cal'
 proc_instrument({
   nd <- air_trend_init(name = 'lgr_ugga')
   nd <- lgr_ugga_qaqc()
+  nd$QAQC_Flag[trax_time_overlap(nd$Time_UTC)] <- 200  # Remove overlap from pi forgeting time
   update_archive(nd, data_path(site, instrument, 'qaqc'))
   nd <- finalize_ghg()
   update_archive(nd, data_path(site, instrument, 'final'))

@@ -95,4 +95,6 @@ Numeric values are assigned to observations that meet certain automated or human
 | -125 | `Time_UTC` recent outage > 2 hours -- warmup period of 1 hour                     |
 | ↓    | **TEOM 1400ab**                                                                   |
 | -130 | `PM2.5_ugm3` measurement out of range (0, 300000)                                 |
-| -131 | `Time_UTC` recent outage > 1 hour -- warmup period of 5 mins                      | 
+| -131 | `Time_UTC` recent outage > 1 hour -- warmup period of 5 mins                      |
+| ↓    | **TRAX**                                                                          |
+| -200 | Overlap in time recorded by Raspberry Pi logger due to pi forgetting its time     |
