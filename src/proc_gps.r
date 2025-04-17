@@ -186,7 +186,7 @@ proc_gps <- function(qaqc_func = NULL,
 
     # Format Pi Time
     nd <- nd %>%
-      mutate(Pi_Time = format_time(Pi_Time))
+      mutate(time = format_time(time))
 
     return(nd)
   }
@@ -199,7 +199,8 @@ proc_gps <- function(qaqc_func = NULL,
     # Apply manual qaqc definitions in bad/site/instrument.csv
     nd <- nd %>%
       # bad_data_fix operates on Time_UTC, but we don't always have it from gps
-      # - Need to reference pi's time in bad gps files
+      # - Need to reference pi's time in bad gps files (this can be tricky if using the air.utah
+      #   diagnostic page which will use the gps time)
       # - Temporarily rename time columns
       rename(Time_UTC = time,
              time_gps = Time_UTC) %>%
