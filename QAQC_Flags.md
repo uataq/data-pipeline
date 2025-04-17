@@ -91,8 +91,9 @@ Numeric values are assigned to observations that meet certain automated or human
 | -121 | `Samp_Pres_inHgA` sample pressure out of range (15, 35)                           |
 | -122 | `Phase_T_C` gas phase chemiluminescence chamber temperature out of range (15, 35) |
 | -123 | `Box_T_C` operating temperature out of range (5, 50)                              |
-| -124 | `ARef_L_mm` auto reference loss out of range (400, 1100)                          |
-| -125 | `Time_UTC` recent outage > 2 hours -- warmup period of 1 hour                     |
+| -124 | `Samp_T_C` sample temperature out of range (42, 48)                               |
+| -125 | `ARef_L_mm` auto reference loss out of range (400, 1100)                          |
+| -126 | `Time_UTC` recent outage > 2 hours -- warmup period of 1 hour                     |
 | ↓    | **TEOM 1400ab**                                                                   |
 | -130 | `PM2.5_ugm3` measurement out of range (0, 300000)                                 |
 | -131 | `Time_UTC` recent outage > 1 hour -- warmup period of 5 mins                      |
