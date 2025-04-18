@@ -84,12 +84,6 @@ proc_gps <- function(qaqc_func = NULL,
           abs_diff = abs(gps_seconds - pi_seconds)) %>%
 
         # Handle duplicate inst_time's for the same pi_date
-
-        # Sort by pi_date, inst_time, and time for efficient grouping
-        # - script doesn't care about the order of the rows
-        # - reverse the sort order to keep the last row in the group
-        arrange(pi_date, inst_time, -time) %>%
-
         # Drop duplicate rows where the pi's time is within 60s of the prev row
         # - keep the last row in the group (more likely to be post sync)
         # - duplicate rows within 10s are likely due to gps syncing with sats

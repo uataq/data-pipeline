@@ -64,8 +64,7 @@ air_trend_init <- function(hostname = site_config$ip, port = site_config$port, n
 
     return(nd)
   }) %>%
-    bind_rows() %>%
-    arrange(Time_UTC)
+    bind_rows()
 
   print_nd()
   return(nd)

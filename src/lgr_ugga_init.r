@@ -117,8 +117,6 @@ lgr_ugga_init <- function() {
                              Time_UTC))
   attributes(nd$Time_UTC) <- list(class = c('POSIXct', 'POSIXt'),
                                   tzone = 'UTC')
-  nd <- nd %>%
-    arrange(Time_UTC)
 
   print_nd()
   return(nd)
