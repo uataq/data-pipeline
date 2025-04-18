@@ -133,19 +133,19 @@ calibrate_linear <- function(time, raw, known, er_tol = 100, drift_tol = 100, dt
                  abs(as.matrix(stdm[2:N, ] - stdm[1:(N-1), ])))
   mask <- delta > (drift_tol / stdtelap)
   stdk[mask] <- NA
-  qaqc[rowSums(mask) > 0] <- -4
+  qaqc[rowSums(mask, na.rm = T) > 0] <- -4
   
   # Invalidate periods with longer than dt_tol seconds between calibrations.
   mask <- stdtelap > dt_tol
   mask[is.na(mask)] <- F
   stdk[mask] <- NA
-  qaqc[rowSums(mask) > 0] <- -5
+  qaqc[rowSums(mask, na.rm = T) > 0] <- -5
   
   # Reference tank measurements out of range.
-  # mask <- abs(stdm - stdk) > er_tol
-  # mask[is.na(mask)] <- F
-  # stdk[mask] <- NA
-  # qaqc[rowSums(mask) > 0] <- -6
+  mask <- abs(stdm - stdk) > er_tol
+  mask[is.na(mask)] <- F
+  stdk[mask] <- NA
+  qaqc[rowSums(mask, na.rm = T) > 0] <- -6
   
   # Invalidate stdm for cases above.
   stdm[is.na(stdk)] <- NA
