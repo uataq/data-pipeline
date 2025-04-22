@@ -35,8 +35,6 @@ proc_gps <- function(qaqc_func = NULL,
       col_names <- data_config$gps[[lvl]]$col_names
       col_types <- data_config$gps[[lvl]]$col_types
 
-      time_regex <- '^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?$'
-
       df <- read_pattern(selector, colnums = seq_along(col_names),
                          # match T in air-trend isoformat time col
                          pattern = 'T')
@@ -48,14 +46,14 @@ proc_gps <- function(qaqc_func = NULL,
       df <- df %>%
         lazy_dt() %>%  # data.table speed with dplyr syntax
 
+        # Drop rows with times that don't match ISO 8601 format
+        validate_iso_times() %>%
+
         # Drop rows with invalid directions (bad parsing)
         dplyr::filter(n_s %in% c('N', 'S') & e_w %in% c('E', 'W')) %>%
 
         # Remove duplicates
         distinct() %>%
-
-        # Drop rows where time does not match the format %Y-%m-%dT%H:%M:%OS
-        dplyr::filter(grepl(time_regex, time)) %>%
 
         # Coerce column types
         mutate(time = fastPOSIXct(time, tz = 'UTC')) %>%
@@ -63,8 +61,8 @@ proc_gps <- function(qaqc_func = NULL,
                       as.numeric)) %>% suppressWarnings() %>%
         mutate(inst_time = as.numeric(inst_time)) %>%
 
-        # Drop rows where time, latitude, or longitude is NA
-        dplyr::filter(!is.na(time) & !is.na(inst_time) &
+        # Drop rows where inst_time, latitude, or longitude is NA
+        dplyr::filter(!is.na(inst_time) &
                       !is.na(latitude_dm) & !is.na(longitude_dm)) %>%
 
         mutate(
@@ -221,9 +219,9 @@ proc_gps <- function(qaqc_func = NULL,
 
     nd$QAQC_Flag[with(nd, !(Fix_Quality %in% c(1, 2)))] <- -21
     nd$QAQC_Flag[with(nd, N_Sat < 4)] <- -22
-    nd$QAQC_Flag[with(nd, !is.na(Time_UTC) & Status != 'A')] <- -23
+    nd$QAQC_Flag[with(nd, Status != 'A')] <- -23
     # nd$QAQC_Flag[filter_warmup(nd, cooldown = '5M', warmup = '1M')] <- -24  # takes a really long time - not worth it
-    nd$QAQC_Flag[trax_time_overlap(nd$Time_UTC)] <- -200  # Remove overlap from pi forgeting time
+    nd$QAQC_Flag[trax_time_overlap(nd$Pi_Time)] <- -200  # Remove overlap from pi forgetting time
 
     nd$QAQC_Flag[is_manual_pass] <- 1
     nd$QAQC_Flag[is_manual_removal] <- -1

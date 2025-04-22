@@ -54,13 +54,12 @@ air_trend_init <- function(hostname = site_config$ip, port = site_config$port, n
     colnames(nd) <- col_names
 
     nd <- nd %>%
+      # Validate times
+      validate_iso_times() %>%
       # Coerce column types
       mutate(time = fastPOSIXct(time, tz = 'UTC')) %>%
       mutate(across(which(unlist(strsplit(col_types, '')) == 'd'),
-                    as.numeric)) %>% suppressWarnings() %>%
-      # Filter and sort by time
-      rename(Time_UTC = time) %>%
-      dplyr::filter(!is.na(Time_UTC))
+                    as.numeric)) %>% suppressWarnings()
 
     return(nd)
   }) %>%
