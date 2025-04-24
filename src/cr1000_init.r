@@ -40,9 +40,7 @@ cr1000_init <- function() {
   if (!all.equal(colnames(nd), data_config[[instrument]]$raw$col_names))
     stop('Invalid column structure returned by CR1000 query for: ', site,
          '/', instrument)
-  
-  message('New data:')
-  str(nd)
 
+  print_nd()
   return(nd)
 }

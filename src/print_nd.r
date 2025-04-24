@@ -16,11 +16,13 @@ print_nd <- function() {
     return()
   }
 
+  time_col <- get_time_col(nd)
+
   # Print new data
-  new_data <- nd[nd$Time_UTC > last_time, ]
+  new_data <- nd[nd[[time_col]] > last_time, ]
   if (nrow(new_data) > 0) {
     # Reserve order so newest data prints first
-    new_data <- new_data[order(new_data$Time_UTC, decreasing = T), ]
+    new_data <- new_data[order(new_data[[time_col]], decreasing = T), ]
     message('New data:')
     str(as.data.frame(new_data))
   } else {

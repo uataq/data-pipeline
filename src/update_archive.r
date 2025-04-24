@@ -6,8 +6,7 @@ update_archive <- function(nd, path = '%Y_%m.dat', tz = 'UTC', check_header = T)
   if (!dir.exists(dirname(path)))
     dir.create(dirname(path), recursive = T, mode = '0755')
 
-  time_col <- grep('time', names(nd), ignore.case = T, value = T)[1]
-  if (is.na(time_col)) time_col <- 1
+  time_col <- get_time_col(nd)
 
   nd <- nd[!is.na(nd[[time_col]]), ]
   nd <- nd[order(nd[[time_col]]), ]
