@@ -43,6 +43,12 @@ proc_gps <- function(qaqc_func = NULL,
 
       colnames(df) <- col_names
 
+      if (nmea == 'gpgga') {
+        # Store original row order for sorting later
+        df <- df %>%
+          mutate(original_order = row_number())
+      }
+
       df <- df %>%
         lazy_dt() %>%  # data.table speed with dplyr syntax
 
@@ -162,6 +168,10 @@ proc_gps <- function(qaqc_func = NULL,
     invisible(gc())
 
     nd <- nd %>%
+      # Sort on the original order of the gga data
+      arrange(original_order) %>%
+      select(-original_order) %>%
+
       # Convert latitude and longitude to decimal degrees
       mutate(Latitude_deg = (ifelse(n_s == 'N', 1, -1)
                              * gps_dm2dd(latitude_dm)),
@@ -175,10 +185,6 @@ proc_gps <- function(qaqc_func = NULL,
              Fix_Quality = fix_quality,
              N_Sat = n_sat,
              Status = status)
-
-    # Format Pi Time
-    nd <- nd %>%
-      mutate(time = format_time(time))
 
     return(nd)
   }
@@ -249,6 +255,10 @@ proc_gps <- function(qaqc_func = NULL,
       nd <- custom_func(nd)
     }
 
+    # Format Pi Time
+    nd <- nd %>%
+      mutate(Pi_Time = format_time(Pi_Time))
+
     # Reduce to QAQC columns
     nd <- nd[, qaqc_cols]
 
@@ -296,9 +306,8 @@ proc_gps <- function(qaqc_func = NULL,
     # Process daily files as one batch
     batch <- seq(as.Date(last_time), Sys.Date(), by = 'day')
     nd <- init_batch(batch)
-    print_nd()
-
     nd <- qaqc_batch(nd, qaqc_func)
+    print_nd()  # print new data after qaqc to print proper columns
     update_archive(nd, data_path(site, instrument, 'qaqc'))
     nd <- finalize_batch(nd, finalize_func)
     update_archive(nd, data_path(site, instrument, 'final'))
