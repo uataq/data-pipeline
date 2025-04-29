@@ -47,8 +47,8 @@ proc_instrument({
 
   for (i in c('t1', 't2')) attributes(tank_vals[[i]])$tzone <- 'UTC'
   for (i in 1:nrow(tank_vals)) {
-    mask <- nd$Time_UTC >= tank_vals$t1[i] &
-      nd$Time_UTC < tank_vals$t2[i] &
+    mask <- nd$time >= tank_vals$t1[i] &
+      nd$time < tank_vals$t2[i] &
       nd$ID == 'reference'
     nd$ID[mask] <- paste0('~', tank_vals$CO2_ref[i],
                           '~', tank_vals$CH4_ref[i])
