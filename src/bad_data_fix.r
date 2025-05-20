@@ -1,7 +1,7 @@
 bad_data_fix <- function(data,
                          instrument = get('instrument', envir = globalenv()),
                          site = get('site', envir = globalenv())) {
-  library(dtplyr)
+  library(data.table)
 
   bf <- file.path('pipeline', 'bad', site, paste0(instrument, '.csv'))
   if (!file.exists(bf)) {
@@ -13,7 +13,7 @@ bad_data_fix <- function(data,
   # Check if the bad data table is empty
   if (nrow(bad_tbl) == 0) return(data)
 
-  data <- lazy_dt(data)  # data.table speed with dplyr syntax
+  data <- as.data.table(data)  # utilize data.table speed for repeated comparisons
 
   for (i in 1:nrow(bad_tbl)) {
     # Get the mask for the bad data
