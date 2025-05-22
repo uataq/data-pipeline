@@ -61,11 +61,11 @@ t_start,t_end,ID_old,ID_new,t_added,name,comment
 2021-04-30T15:51:21Z,2021-04-30T19:06:33Z,all,NA,2022-01-04T22:38:26Z,Logan,Cal gas leakage
 2021-05-19T19:00:11Z,2021-05-19T20:01:58Z,all,NA,2022-01-04T22:41:44Z,Logan,Low CH4 spike
 2021-06-22T21:00:01Z,2021-06-22T23:05:50Z,all,NA,2022-01-04T22:46:56Z,Logan,CO2 spike
-2022-10-28T00:00:00Z,2023-01-23T22:25:00Z,all,NA,2023-02-07T22:00:00,JamesM,RPi GPIO pins not set correctly~ only measuring atm
-2023-06-08T00:00:00Z,2023-07-21T16:55:00Z,all,NA,2023-07-21T21:30:00,JamesM,LGR off site to test
-2024-05-22T00:00:00Z,2024-05-23T15:50:00Z,all,NA,2024-06-03T22:30:00,JamesM,air-trend flow not passing ID
-2024-05-23T15:50:00Z,2024-05-23T20:32:00Z,all,NA,2024-06-03T22:30:00,JamesM,lgr reading too high despite recent calibration
-2024-05-29T19:00:00Z,2024-05-30T20:23:00Z,all,NA,2024-06-03T22:30:00,JamesM,co2 has insane spike then stuck as -0.01
-2024-06-22T16:37:50Z,2024-06-25T16:50:00Z,all,NA,2024-06-26T16:58:00,JamesM,co2 laser off but reset after cycling power
-2024-06-27T15:43:19Z,2024-06-28T16:15:20Z,all,NA,2024-07-08T19:34:00,JamesM,ch4 laser off but reset after cycling power
+2022-10-28T00:00:00Z,2023-01-23T22:25:00Z,all,NA,2023-02-07T22:00:00Z,JamesM,RPi GPIO pins not set correctly~ only measuring atm
+2023-06-08T00:00:00Z,2023-07-21T16:55:00Z,all,NA,2023-07-21T21:30:00Z,JamesM,LGR off site to test
+2024-05-22T00:00:00Z,2024-05-23T15:50:00Z,all,NA,2024-06-03T22:30:00Z,JamesM,air-trend flow not passing ID
+2024-05-23T15:50:00Z,2024-05-23T20:32:00Z,all,NA,2024-06-03T22:30:00Z,JamesM,lgr reading too high despite recent calibration
+2024-05-29T19:00:00Z,2024-05-30T20:23:00Z,all,NA,2024-06-03T22:30:00Z,JamesM,co2 has insane spike then stuck as -0.01
+2024-06-22T16:37:50Z,2024-06-25T16:50:00Z,all,NA,2024-06-26T16:58:00Z,JamesM,co2 laser off but reset after cycling power
+2024-06-27T15:43:19Z,2024-06-28T16:15:20Z,all,NA,2024-07-08T19:34:00Z,JamesM,ch4 laser off but reset after cycling power
 2024-08-02T17:00:00Z,2024-08-04T19:00:00Z,~446.33~2.66,NA,2024-08-05T02:09:00Z,JamesM,tank valve closed
