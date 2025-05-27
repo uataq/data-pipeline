@@ -755,3 +755,4 @@ t_start,t_end,ID_old,ID_new,t_added,name,comment
 2024-01-24T14:00:00Z,2024-01-25T07:00:00Z,~398.65~1.89,~398.16~1.87,2024-04-02T17:33:00Z,MeganOstlie,Wrong tank value entered
 2024-02-22T01:00:00Z,2024-02-23T00:00:00Z,all,NA,2024-04-02T17:28:00Z,MeganOstlie,Spare LGR started reading all tank and ambient air values around zero
 2024-10-21T17:15:00Z,2024-10-21T17:33:00Z,all,NA,2024-10-23T22:18:00Z,MeganOstlie,Site maintenance
+2025-05-19T16:24:00Z,2025-05-19T17:30:00Z,all,NA,2025-05-27T14:44:00Z,MeganOstlie,Calibration
