@@ -103,4 +103,4 @@ t_start,t_end,ID_old,ID_new,t_added,name,comment
 2024-10-14T21:00:00Z,2024-10-21T21:30:00Z,-1,402.69,2024-10-23T22:01:00Z,MeganOstlie,Missing cal tank value
 2025-02-04T16:55:00Z,2025-02-04T16:57:00Z,all,NA,2025-02-04T19:59:00Z,MeganOstlie,Power bump
 2025-03-27T05:00:00Z,2025-04-01T20:00:00Z,all,NA,2025-04-01T21:17:00Z,MeganOstlie,Empty N2 tank
-2025-04-05T15:00:00Z,2025-04-28T17:00:00Z,all,NA,2025-05-05T20:55:00Z,MeganOstlie,Failed pressure transducer
+2025-04-01T20:00:00Z,2025-05-22T00:05:00Z,all,NA,2025-06-02T19:46:00Z,MeganOstlie,Unstable readings due to high temps in shed
