@@ -21,3 +21,4 @@ t_start,t_end,ID_old,ID_new,t_added,name,comment
 2023-09-06T19:30:00Z,2023-09-11T18:45:00Z,all,NA,2023-09-13T17:50:00Z,MeganOstlie,Cal tanks were not open
 2023-10-26T16:30:00Z,2023-11-10T16:00:00Z,~405.32~1.91,NA,2023-11-14T16:25:00Z,MeganOstlie,Cal tank empty
 2023-11-10T18:15:00Z,2023-11-10T19:17:00Z,all,NA,2023-11-14T16:26:00Z,MeganOstlie,Room air was getting into instrument during site visit causing high CO2 values
+2025-06-18T17:17:00Z,2025-06-18T17:20:30Z,all,NA,2025-06-24T19:51:00Z,MeganOstlie,Changed inlet
