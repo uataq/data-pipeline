@@ -14,3 +14,4 @@ t_start,t_end,ID_old,ID_new,t_added,name,comment
 2025-02-09T09:59:00Z,2025-02-09T16:05:00Z,all,NA,2025-02-12T20:54:00Z,MeganOstlie,CO2 and tank values are unreasonalbe-unsure what caused this
 2025-05-12T21:24:30Z,2025-05-12T23:23:00Z,all,NA,2025-05-14T19:48:00Z,MeganOstlie,CO2 values drop then spike-likely a power bump
 2025-06-16T14:23:30Z,2025-06-16T14:25:00Z,all,NA,2025-06-24T20:10:00Z,MeganOstlie,CO2 values drop then spike-likely a power bump
+2025-07-07T23:24:50Z,2025-07-07T23:25:50Z,all,NA,2025-07-09T16:39:00Z,MeganOstlie,CO2 values drop then spike-likely a power bump
