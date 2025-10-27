@@ -52,3 +52,5 @@ t_start,t_end,ID_old,ID_new,t_added,name,comment
 2024-06-18T16:40:00Z,2024-06-20T00:20:00Z,~401.89~1.86,~414.95~1.94,2024-06-20T14:42:00Z,MeganOstlie,Wrong tank value
 2024-06-11T03:11:00Z,2024-06-18T07:24:58Z,all,NA,2024-06-26T17:26:00Z,JamesM,CO2 measured 300 after recovering from reading -0.01 for several days
 2024-09-25T15:48:00Z,2024-09-25T16:15:00Z,all,NA,2024-10-01T15:22:00Z,MeganOstlie,On site maintenance caused spike in values
+2025-01-24T16:00:00Z,2025-02-09T00:00:00Z,~401.31~1.88,NA,2025-10-27T18:00:00Z,JamesM,bad cal gas
+2025-02-01T22:00:00Z,2025-02-09T00:00:00Z,~511.99~5.25,NA,2025-10-27T18:00:00Z,JamesM,bad cal gas
