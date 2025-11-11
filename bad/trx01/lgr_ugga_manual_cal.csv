@@ -14,3 +14,4 @@ t_start,t_end,ID_old,ID_new,t_added,name,comment
 2024-12-15T04:46:00Z,2024-12-15T04:51:00Z,all,NA,2025-10-02T08:23:00Z,JamesM,zeros
 2024-12-22T22:03:00Z,2024-12-22T22:08:00Z,all,NA,2025-10-02T08:26:00Z,JamesM,zeros
 2025-08-28T15:50:00Z,2025-09-02T19:25:00Z,all,NA,2025-09-02T23:11:00Z,JamesM,LGR 15-0077 is providing junk measurements up to -14 Billion
+2025-11-07T09:00:00Z,2025-11-08T08:00:00Z,all,NA,2025-11-11T17:30:00Z,JamesM,massive H20 spike
