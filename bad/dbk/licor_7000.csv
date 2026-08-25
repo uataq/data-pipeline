@@ -116,3 +116,4 @@ t_start,t_end,ID_old,ID_new,t_added,name,comment
 2026-08-04T20:40:00Z,2026-08-04T20:50:00Z,-1,414.11,2026-08-11T15:47:00Z,MeganOstlie,Missing cal tank value
 2026-08-04T20:40:00Z,2026-08-04T20:50:00Z,-2,449.47,2026-08-11T15:48:00Z,MeganOstlie,Missing cal tank value
 2026-08-04T20:40:00Z,2026-08-04T20:50:00Z,-3,519.69,2026-08-11T15:50:00Z,MeganOstlie,Missing cal tank value
+2026-08-19T03:00:00Z,2026-08-19T03:20:00Z,all,NA,2026-08-25T16:57:00Z,MeganOstlie,Instrument restarted
