@@ -9,6 +9,12 @@ rsync <- function(from, to, port = 22, stats = F, return.files = F, quiet = F) {
             '-e', shQuote(paste('/usr/bin/ssh',
                                 '-i /uufs/chpc.utah.edu/common/home/u0791084/.ssh/id_rsa',
                                 '-o ConnectTimeout=5',
+                                # Legacy SHA-1 algorithms for old LGR onboard computers,
+                                # disabled system-wide by CHPC's NOSHA1-SSH crypto policy
+                                # (2026-08-28)
+                                '-o HostKeyAlgorithms=+ssh-rsa',
+                                '-o PubkeyAcceptedKeyTypes=+ssh-rsa',
+                                '-o KexAlgorithms=+diffie-hellman-group14-sha1,diffie-hellman-group-exchange-sha1',
                                 '-p', port)),
             from, to,
             ifelse(quiet, '> /dev/null', ''))
