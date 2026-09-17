@@ -74,4 +74,15 @@ t_start,t_end,ID_old,ID_new,t_added,name,comment
 2024-06-29T05:57:00Z,2024-06-29T06:00:00Z,all,NA,2025-10-02T18:00:00Z,JamesM,zeros
 2024-08-02T17:00:00Z,2024-08-04T19:00:00Z,~446.33~2.66,NA,2024-08-05T02:09:00Z,JamesM,tank valve closed
 2024-08-21T00:00:00Z,2024-08-28T00:00:00Z,~446.33~2.66,NA,2026-09-15T20:00:00Z,JamesM,empty tank - flag only the reference ID (atm rows stay uncalibrated)
-
+2015-10-11T00:00:00Z,2015-10-11T16:00:00Z,~457.9~2.9,NA,2026-09-17T00:00:00Z,JamesM,old tank still flowing until the swap; new tank value in config from midnight
+2015-11-11T22:00:00Z,2015-11-15T00:00:00Z,~457.9~2.9,NA,2026-09-17T00:00:00Z,JamesM,tank running empty; reference reads atmosphere
+2016-11-15T00:00:00Z,2016-11-17T00:00:00Z,~417.93~2.372,NA,2026-09-17T00:00:00Z,JamesM,tank running low; reference reads atmosphere for two days then recovers
+2016-11-25T00:00:00Z,2017-01-10T00:00:00Z,~417.93~2.372,NA,2026-09-17T00:00:00Z,JamesM,tank empty; reference reads atmosphere
+2017-01-09T00:00:00Z,2017-01-10T00:00:00Z,~438.95~2.595,NA,2026-09-17T00:00:00Z,JamesM,old tank still empty until the swap; new tank value in config from midnight
+2018-04-06T00:00:00Z,2018-04-06T20:00:00Z,~420.69~3.48,NA,2026-09-17T00:00:00Z,JamesM,old tank still flowing until the swap; new tank value in config from midnight
+2018-05-20T20:00:00Z,2018-06-04T03:00:00Z,~420.69~3.48,NA,2026-09-17T00:00:00Z,JamesM,tank leaked empty; reference reads atmosphere or -0.01
+2019-03-01T00:00:00Z,2019-03-01T23:00:00Z,~479.93~1.973,NA,2026-09-17T00:00:00Z,JamesM,old tank still flowing until the swap; new tank value in config from midnight
+2019-09-23T02:30:00Z,2019-09-23T03:05:00Z,all,NA,2026-09-17T00:00:00Z,JamesM,residual tank gas in the line after a restart; flat at the tank value until the first reference
+2019-10-01T00:00:00Z,2019-10-02T00:00:00Z,~390.19~1.84,NA,2026-09-17T00:00:00Z,JamesM,old tank still flowing until the swap; new tank value in config from midnight
+2020-09-22T00:00:00Z,2020-09-23T03:00:00Z,~423.6~3.83,NA,2026-09-17T00:00:00Z,JamesM,old tank still flowing until the swap; first reference after the restart on 09-23 is atmosphere
+2021-05-19T20:00:00Z,2021-07-20T00:00:00Z,all,NA,2026-09-17T00:00:00Z,JamesM,LGR reading 42% low on everything (retrieval broken); CO2 flag already catches it
