@@ -86,3 +86,5 @@ t_start,t_end,ID_old,ID_new,t_added,name,comment
 2019-10-01T00:00:00Z,2019-10-02T00:00:00Z,~390.19~1.84,NA,2026-09-17T00:00:00Z,JamesM,old tank still flowing until the swap; new tank value in config from midnight
 2020-09-22T00:00:00Z,2020-09-23T03:00:00Z,~423.6~3.83,NA,2026-09-17T00:00:00Z,JamesM,old tank still flowing until the swap; first reference after the restart on 09-23 is atmosphere
 2021-05-19T20:00:00Z,2021-07-20T00:00:00Z,all,NA,2026-09-17T00:00:00Z,JamesM,LGR reading 42% low on everything (retrieval broken); CO2 flag already catches it
+2019-09-23T21:10:00Z,2019-09-23T22:01:00Z,all,~437.51~2.85,2026-09-22T20:00:00Z,JamesM,tank gas labelled atmosphere after the 21:01-21:03 reference cycle left the valve stuck open (CH4 flat at 2.78 ppm with H2O ~400 ppm vs 1.88 / 7000 either side); relabel as the reference ID
+2019-09-23T21:10:00Z,2019-09-23T22:01:00Z,~437.51~2.85,NA,2026-09-22T20:00:00Z,JamesM,and flag that reference - the stuck-valve gas reads 2.78 against 2.838 for the healthy references that month - so it cannot calibrate anything
