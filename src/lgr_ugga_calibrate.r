@@ -6,8 +6,16 @@ lgr_ugga_calibrate <- function() {
     if (tail(nd$ID_CO2, 1) != -10)
       stop('Calibrations disabled. Sampling reference tank at: ', site)
 
-    # Import recent data to ensure bracketing reference measurements
-    N <- 1 + (as.numeric(format(nd$Time_UTC[1], tz = 'UTC', '%d')) == 1)
+    # Import recent data to ensure bracketing reference measurements.
+    # Read the previous month too while nd reaches back into it or starts on
+    # the 1st. nd holds whole LGR daily files, which start partway through a
+    # UTC day, so in the first hours of a month nd starts on the previous
+    # month's last day; reading only the new month would leave its first rows
+    # with no reference before them, and update_archive() never recalibrates
+    # rows it has already written.
+    span <- range(nd$Time_UTC, na.rm = T)
+    N <- 1 + (format(span[1], '%Y_%m', tz = 'UTC') != format(span[2], '%Y_%m', tz = 'UTC') ||
+                format(span[1], '%d', tz = 'UTC') == '01')
     files <- tail(dir(file.path('data', site, instrument, 'qaqc'),
                       pattern = '.*\\.{1}dat', full.names = T), N)
     nd <- read_files(files)
