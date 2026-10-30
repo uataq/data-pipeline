@@ -2,7 +2,7 @@ stid, name, active, ip, port, reprocess, lati, long, zagl, instruments
 asb, Aline Wilmot Skaggs, FALSE, NA, NA, FALSE, 40.763226, -111.849278, NA, NA
 csp, Castle Peak, TRUE, 69.55.104.137, 22, FALSE, 40.0509, -110.0194, 4, lgr_ugga
 dbk, Daybreak, TRUE, 166.140.123.172, 8080, FALSE, 40.538497, -112.069528, 5, licor_7000 metone_es642
-fru, Fruitland, TRUE, 67.213.233.139, 22, FALSE, 40.208731, -110.8403, 4, lgr_ugga
+fru, Fruitland, FALSE, NA, NA, FALSE, 40.208731, -110.8403, 4, NA
 hdp, Hidden Peak, FALSE, NA, NA, FALSE, 40.560644, -111.645278, 15, NA
 heb, Heber, FALSE, 166.140.8.161, 8080, FALSE, 40.506808, -111.403636, 7, NA
 hpl, Horsepool, TRUE, 69.55.104.135, 22, FALSE, 40.143711, -109.4672, 4, lgr_ugga
