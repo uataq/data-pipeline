@@ -37,12 +37,16 @@ lgr_ugga_calibrate <- function() {
     60 * 60 * 12,  # 12 hours for TRAX (set longer to not lose data before/after TRAX shuts down for the night)
     60 * 60 * 5)  # 5 hours for fixed sites
 
+  # Reference tolerances (ppm), the same for every instrument: jump_tol is the largest
+  # jump between subsequent measurements of a tank, er_tol the largest deviation of a
+  # measured tank from its known value (CO2 keeps the default 100).
   cal_co2 <- grouped %>%
-    do(with(., calibrate_linear(Time_UTC, CO2d_ppm, ID_CO2, dt_tol=dt_tol))) %>%
+    do(with(., calibrate_linear(Time_UTC, CO2d_ppm, ID_CO2, jump_tol=10, dt_tol=dt_tol))) %>%
     ungroup() %>%
     select(-yyyy)
   cal_ch4 <- grouped %>%
-    do(with(., calibrate_linear(Time_UTC, CH4d_ppm, ID_CH4, dt_tol=dt_tol))) %>%
+    do(with(., calibrate_linear(Time_UTC, CH4d_ppm, ID_CH4, er_tol=0.2, jump_tol=0.1,
+                                dt_tol=dt_tol))) %>%
     ungroup() %>%
     select(-yyyy)
   cal <- bind_cols(
