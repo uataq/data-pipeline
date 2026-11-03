@@ -45,7 +45,7 @@ lgr_ugga_calibrate <- function() {
     ungroup() %>%
     select(-yyyy)
   cal_ch4 <- grouped %>%
-    do(with(., calibrate_linear(Time_UTC, CH4d_ppm, ID_CH4, er_tol=0.2, jump_tol=0.1,
+    do(with(., calibrate_linear(Time_UTC, CH4d_ppm, ID_CH4, er_tol=0.3, jump_tol=0.1,
                                 dt_tol=dt_tol))) %>%
     ungroup() %>%
     select(-yyyy)
