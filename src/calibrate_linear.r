@@ -9,10 +9,11 @@
 #'   observations, -99 for flush periods, or a positive value if sampling a known
 #'   concentration
 #' @param er_tol tolerated deviation from known value
-#' @param drift_tol tolerated drift between subsequent calibrations
+#' @param jump_tol tolerated jump between subsequent measurements of the same
+#'   reference gas, in the units of raw (Inf: no test)
 #' @param dt_tol maximum length of time to allow data outage and still calibrate data
 
-calibrate_linear <- function(time, raw, known, er_tol = 100, drift_tol = 100, dt_tol = 18000) {
+calibrate_linear <- function(time, raw, known, er_tol = 100, jump_tol = Inf, dt_tol = 18000) {
   
   require(dplyr)
   
@@ -43,7 +44,7 @@ calibrate_linear <- function(time, raw, known, er_tol = 100, drift_tol = 100, dt
   invisible(gc())
   
   data <- data[order(data$time), ]
-  data$dt <- with(data, c(NA, time[2:N] - time[1:(N-1)]))
+  data$dt <- c(NA, diff(as.numeric(data$time)))
   
   
   # Populate known and raw matrices -------------------------------------------------
@@ -128,10 +129,12 @@ calibrate_linear <- function(time, raw, known, er_tol = 100, drift_tol = 100, dt
   stdtelap[, lts_col] <- NA
   
   # Invalidate periods when difference between sequential reference gas measurements
-  # exceeds drift_tol.
+  # exceeds jump_tol. Between two measurements the interpolated reference moves by
+  # jump * dt / stdtelap from one record to the next, so this tests the jump itself,
+  # whatever the time between records.
   delta <- rbind(rep.int(NA, ncol(stdm)),
                  abs(as.matrix(stdm[2:N, ] - stdm[1:(N-1), ])))
-  mask <- delta > (drift_tol / stdtelap)
+  mask <- delta > (jump_tol * data$dt / stdtelap)
   stdk[mask] <- NA
   qaqc[rowSums(mask, na.rm = T) > 0] <- -4
   

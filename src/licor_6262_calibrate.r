@@ -19,10 +19,11 @@ licor_6262_calibrate <- function() {
   nd[with(nd, QAQC_Flag < 0 & !(QAQC_Flag %in% valid_flags)),
      invalid] <- NA
 
-  # Batch calibrate data by year to reduce matrix sizes
+  # Batch calibrate data by year to reduce matrix sizes. jump_tol (ppm): the largest jump
+  # between subsequent measurements of a tank, as for the LGR in lgr_ugga_calibrate.r
   cal <- nd %>%
     group_by(yyyy = format(Time_UTC, '%Y', tz = 'UTC')) %>%
-    do(with(., calibrate_linear(Time_UTC, CO2d_ppm, ID_CO2))) %>%
+    do(with(., calibrate_linear(Time_UTC, CO2d_ppm, ID_CO2, jump_tol=10))) %>%
     ungroup() %>%
     select(-yyyy)
   colnames(cal) <- data_config[[instrument]]$calibrated$col_names
