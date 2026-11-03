@@ -12,7 +12,7 @@ Numeric values are assigned to observations that meet certain automated or human
 | ↓    | **Calibration**                                                                   |
 | -2   | System flush                                                                      |
 | -3   | Invalid identifier                                                                |
-| -4   | Drift between adjacent reference tank measurements exceeds limit                  |
+| -4   | Jump between consecutive measurements of a reference tank exceeds limit           |
 | -5   | Time elapsed between reference tank measurements exceeds limit                    |
 | -6   | Reference tank measurements out of range                                          |
 | ↓    | **2B 205**                                                                        |
