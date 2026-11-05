@@ -1,6 +1,11 @@
 rsync <- function(from, to, port = 22, stats = F, return.files = F, quiet = F) {
   message('rsyncing from ', from)
 
+  # rsync 3.1 creates only the last folder of the destination, so create the
+  # whole path here; this lets a new site's raw folder appear on its first run
+  if (!dir.exists(to))
+    dir.create(to, recursive = T, mode = '0755')
+
   cmd <- '/usr/bin/rsync'
   args <- c('-azut',
             '--exclude="archive/"',
