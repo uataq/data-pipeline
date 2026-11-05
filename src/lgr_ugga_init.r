@@ -97,6 +97,11 @@ lgr_ugga_init <- function() {
   }) %>%
     bind_rows()
 
+  # Stop if no raw file could be read (e.g. a new site reprocessing before its
+  # first rsync); otherwise the column check below fails on a 0-column table
+  if (nrow(nd) == 0)
+    stop('No raw data to process in ', wd, call. = F)
+
   # Remove rows with too many columns (probably due to power outages)
   nd <- nd %>%
     dplyr::filter(!str_detect(nd[[ncol(nd)]], ','))  # check for extra commas
