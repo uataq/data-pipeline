@@ -11,7 +11,7 @@ cr1000_query <- function(ip, table, t_start) {
   uri <- paste0('http://', ip, '/?command=dataquery&uri=dl:', table, 
                 '&format=TOA5&mode=since-time&p1=', t_start)
   
-  message('Sending GET request to: ', uri)
+  message('Querying CR1000 at ', ip, ': ', table, ' table since ', t_start)
   
   response <- getURL(uri, timeout = 24*3600)  # seconds
   response <- unlist(str_split(response, pattern = '\r\n'))
