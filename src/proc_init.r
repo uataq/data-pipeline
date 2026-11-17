@@ -43,7 +43,7 @@ proc_init <- function(site = get('site', envir = globalenv()),
     message('Reprocessing data archive for: ', site_inst)
     for (path in file.path(wd, c('qaqc', 'calibrated', 'final'))) {
       if (file.exists(path)) {
-        message('Removing:', path)
+        message('Removing: ', path)
         system(paste('rm -r', path))
       }
     }
