@@ -1,7 +1,7 @@
 update_archive <- function(nd, path = '%Y_%m.dat', tz = 'UTC', check_header = T) {
 
   if (nrow(nd) < 1)
-    stop('No new data to append.')
+    stop('No new data to append to ', dirname(path))
 
   if (!dir.exists(dirname(path)))
     dir.create(dirname(path), recursive = T, mode = '0755')
