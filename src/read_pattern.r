@@ -45,15 +45,5 @@ read_pattern <- function(selector, colnums = NULL, pattern = NULL, ...) {
 
   strings <-readLines(con, skipNul = T)
   if (length(strings) == 0) return(NULL)
-
-  # Split each line on commas, keeping only lines with the usual number of
-  # fields, then guess each column's type. (uataq::breakstr does the same but
-  # uses dplyr::funs(), which prints a deprecation warning on every run.)
-  ndelim <- str_count(strings, ',')
-  ncol <- median(ndelim, na.rm = T) + 1
-  strings <- strings[!is.na(ndelim) & ndelim == ncol - 1]
-  df <- as.data.frame(str_split_fixed(strings, ',', n = ncol),
-                      stringsAsFactors = F)
-  df[] <- lapply(df, type.convert, as.is = T)
-  df
+  breakstr(strings)
 }
