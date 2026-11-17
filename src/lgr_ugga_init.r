@@ -67,9 +67,18 @@ lgr_ugga_init <- function() {
   }) %>%
     invisible()
 
-  # Read in data
-  nd <- lapply(tail(files, n_files), function(file) {
-    message('Reading: ', file)
+  # Read in data. A normal run reads a file or two; a reprocess reads every
+  # day file, so print a count and the range instead of thousands of lines
+  files <- tail(files, n_files)
+  if (length(files) == 0) {
+    # nothing to read
+  } else if (length(files) <= 3) {
+    message('Reading: ', paste(files, collapse = '\n  '))
+  } else {
+    message('Reading ', length(files), ' files: ', files[1], ' to ',
+            files[length(files)])
+  }
+  nd <- lapply(files, function(file) {
     # Catch change in number of columns in different model LGRs
     col_names <- data_config[[instrument]]$raw$col_names
     col_types <- data_config[[instrument]]$raw$col_types
