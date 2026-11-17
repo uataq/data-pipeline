@@ -6,7 +6,7 @@ cr1000_init <- function() {
   if (site_config$reprocess != 'FALSE') {
     # Read all historic raw data into memory as new data
     if (length(files) == 0) {
-      warning('No prior data found for reset: ', wd)
+      message('No prior data found for reset: ', wd)
     } else {
       message('Reading: ', file.path(wd, '*'))
       return(read_files(files))
@@ -16,7 +16,7 @@ cr1000_init <- function() {
   # Get last time of data in site/instrument/raw directory
   last_file <- tail(files, 1)
   if (length(last_file) == 0) {
-    warning('No prior data found: ', wd)
+    message('No prior data found: ', wd)
     last_time <- as.POSIXct('1970-01-01', tz = 'UTC')
   } else {
     last_time <- get_last_time(last_file)

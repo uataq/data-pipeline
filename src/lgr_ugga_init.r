@@ -17,7 +17,7 @@ lgr_ugga_init <- function() {
     # Get last time of data in site/instrument/raw directory
     last_txt_file <- tail(grep('\\.txt$', files, value = T), 1)
     if (length(last_txt_file) == 0) {
-      warning('No prior data found: ', wd)
+      message('No prior data found: ', wd)
       last_time <- as.POSIXct('1970-01-01', tz = 'UTC')
     } else {
       last_time <- get_last_time(last_txt_file, format = datetime_format)
@@ -67,9 +67,18 @@ lgr_ugga_init <- function() {
   }) %>%
     invisible()
 
-  # Read in data
-  nd <- lapply(tail(files, n_files), function(file) {
-    print(paste('Reading:', file))
+  # Read in data. A normal run reads a file or two; a reprocess reads every
+  # day file, so print a count and the range instead of thousands of lines
+  files <- tail(files, n_files)
+  if (length(files) == 0) {
+    # nothing to read
+  } else if (length(files) <= 3) {
+    message('Reading: ', paste(files, collapse = '\n  '))
+  } else {
+    message('Reading ', length(files), ' files: ', files[1], ' to ',
+            files[length(files)])
+  }
+  nd <- lapply(files, function(file) {
     # Catch change in number of columns in different model LGRs
     col_names <- data_config[[instrument]]$raw$col_names
     col_types <- data_config[[instrument]]$raw$col_types

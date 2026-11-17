@@ -34,9 +34,11 @@ proc_instrument <- function(expr) {
   }, error = function(e) {
     if (grepl("processing disabled", tolower(e$message))){
       # do nothing
-      cat('')
     } else {
-      message(e)
+      # message(e) would print the error without a trailing newline, so the
+      # next run's first line would join it in the log
+      message(conditionMessage(e))
     }
   })
+  invisible()
 }

@@ -8,24 +8,24 @@ print_nd <- function() {
     NULL
   }
 
-  # If no prior data, reprocessing, or nd is NULL, don't print anything
-  if (last_time == as.POSIXct('1970-01-01', tz = 'UTC') ||  # no prior data
-        is.null(last_time) || # reprocessing
+  # If reprocessing, no prior data, or nd is NULL, don't print anything
+  if (is.null(last_time) ||  # reprocessing
+        last_time == as.POSIXct('1970-01-01', tz = 'UTC') ||  # no prior data
         is.null(nd) ||
         nrow(nd) == 0) {
-    return()
+    return(invisible())
   }
 
   time_col <- get_time_col(nd)
 
-  # Print new data
-  new_data <- nd[nd[[time_col]] > last_time, ]
-  if (nrow(new_data) > 0) {
-    # Reserve order so newest data prints first
-    new_data <- new_data[order(new_data[[time_col]], decreasing = T), ]
-    message('New data:')
-    str(as.data.frame(new_data))
+  # One line summarizing the new data: how many rows and the time span
+  times <- nd[[time_col]][nd[[time_col]] > last_time]
+  times <- times[!is.na(times)]
+  if (length(times) > 0) {
+    message('New data: ', length(times), ' rows, ',
+            format(min(times), '%Y-%m-%d %H:%M:%S'), ' to ',
+            format(max(times), '%Y-%m-%d %H:%M:%S UTC'))
   } else {
-    message('No new data found since ', last_time)
+    message('No new data since ', format(last_time, '%Y-%m-%d %H:%M:%S UTC'))
   }
 }

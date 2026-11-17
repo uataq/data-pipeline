@@ -288,7 +288,7 @@ proc_gps <- function(qaqc_func = NULL,
     # Get last time of data in site/instrument/raw directory
     last_file <- tail(files, 1)
     if (length(last_file) == 0) {
-      warning('No prior data found: ', wd)
+      message('No prior data found: ', wd)
       last_time <- as.POSIXct('1970-01-01', tz = 'UTC')
     } else {
       last_time <- get_last_time(last_file, format = '%Y-%m-%dT%H:%M:%S')
